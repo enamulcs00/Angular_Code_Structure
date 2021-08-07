@@ -1,0 +1,29 @@
+.main-container {
+  margin-top: 60px;
+  margin-left: 235px;
+  padding: 15px;
+  -ms-overflow-x: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 992px) {
+  .main-container {
+    margin-left: 0px !important;
+  }
+}
+
+.horizontal-wrapper{
+ 
+  .page-wrapper{
+    margin-left: 0px;
+    // overflow: inherit;
+    height: calc(100vh - 115px);
+  }
+  footer{
+    left: 0;
+    position: fixed;
+  }
+ 
+}

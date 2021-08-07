@@ -1,0 +1,58 @@
+<div class="card">
+    <div class="card-body">
+        <div class="d-block text-right">
+            <div ngbDropdown class="d-inline-block mb-2 mr-2">
+                <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+                    Filter by order status
+                </button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button class="dropdown-item">All</button>
+                    <button ngbDropdownItem>Confirm </button>
+                    <button ngbDropdownItem>Cancel </button>
+                    <button ngbDropdownItem>Ready for Pickup</button>
+                    <button ngbDropdownItem>Completed/Shipped </button>
+                    <button ngbDropdownItem>Delivered </button>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <th>#</th>
+                    <th class="text-nowrap">Customer Name</th>
+                    <th class="text-nowrap">Phone Number</th>
+                    <th class="text-nowrap">Order ID</th>
+                    <th class="text-nowrap">Address</th>
+                    <th class="text-nowrap">Ordered Items</th>
+                    <th class="text-nowrap">Order Date</th>
+                    <th class="text-nowrap">Delivery Date</th>
+                    <th class="text-nowrap">Action</th>                  
+                </tr>
+                <tr *ngFor="let item of orderslist">
+                    <td>{{item.serial_no}}</td>
+                    <td>{{item.firstname}} {{item.lastname}}</td>
+                    <td>{{item.contact}}</td>
+                    <td>{{item.id}}</td>
+                    <td>{{item.address}}</td>
+                    <td>{{item.order}}</td>
+                    <td>{{item.orderdate}}</td>
+                    <td>{{item.deliverydate}}</td>
+                    <td>
+                        <div ngbDropdown class="d-inline-block" container="body">
+                            <button class="btn btn-outline-primary btn-sm" id="dropdownBasic1" ngbDropdownToggle>Action</button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                              <button ngbDropdownItem>Confirm </button>
+                              <button ngbDropdownItem>Cancel </button>
+                              <button ngbDropdownItem>Ready for Pickup</button>
+                              <button ngbDropdownItem>Completed/Shipped </button>
+                              <button ngbDropdownItem>Delivered </button>
+                              <!-- <button ngbDropdownItem>Ready for Pickup</button> -->
+                            </div>
+                          </div>
+                          <button class="btn btn-primary btn-sm ml-2" routerLink="/orders/orderdetail">View</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+<!-- ============================================================== -->
+<!-- Start Page Content -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-12">
+        <!-- You can find this in the dashboard-component -->
+     
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- chart and stats -->
+<!-- ============================================================== -->
+<div class="row">
+    <!-- chart component -->
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex flex-wrap m-b-30">
+                       <h4 class="card-title">Users</h4>
+                        <div ngbDropdown class="d-inline-block ml-auto">
+                            <button class="btn btn-outline-primary btn-sm mr-2" id="dropdownBasic1" ngbDropdownToggle >
+                             Users Reports
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-menu dropdown-menu-right">
+                              <button class="dropdown-item">Monthly</button>
+                              <button class="dropdown-item">Yearly</button>
+                            </div>
+                          </div>
+                  
+                    <!-- <div class="ml-auto">
+                        <ul class="list-inline">
+                            <li>
+                                <h6 class="text-muted text-success">
+                                    <i class="fa fa-circle font-10 m-r-10 "></i>Sales</h6>
+                            </li>
+                            <li>
+                                <h6 class="text-muted  text-info">
+                                    <i class="fa fa-circle font-10 m-r-10"></i>Earning (k)</h6>
+                            </li>
+                        </ul>
+                    </div> -->
+                </div>
+                <div style="height:350px;">
+                    <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+                        [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"> </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- other chart component -->
+   <div class="col-md-4">
+    <app-project-counter></app-project-counter>
+   </div>
+</div>
+<!-- ============================================================== -->
+<!-- Report and Comments -->
+<!-- ============================================================== -->
+<!-- Row -->
+<div class="row">
+    <div class="col-lg-6">
+        <!-- You can find this in the dashboard-component -->
+        <!-- <app-earning-report></app-earning-report> -->
+    </div>
+    <div class="col-lg-6">
+        <!-- You can find this in the dashboard-component -->
+        <!-- <app-recent-comment></app-recent-comment> -->
+    </div>
+</div>
+<!-- Row -->
+<!-- ============================================================== -->
+<!-- Carousel widgets -->
+<!-- You can find this in the dashboard-component -->
+<!-- ============================================================== -->
+<!-- <social-slider></social-slider> -->
+<!-- ============================================================== -->
+<!-- Activity widgets -->
+<!-- You can find this in the dashboard-component -->
+<!-- ============================================================== -->
+<!-- <div class="row">
+   
+    <div class="col-lg-8 col-xlg-9">
+        <app-activity-timeline></app-activity-timeline>
+    </div>
+    <div class="col-lg-4 col-xlg-3">
+        <app-profile-box></app-profile-box>
+    </div>
+</div> -->

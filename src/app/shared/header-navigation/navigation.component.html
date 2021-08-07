@@ -1,0 +1,130 @@
+<header class="topbar">
+    <nav class="d-flex top-navbar navbar-expand-md navbar-light">
+        <!-- ============================================================== -->
+        <!-- Logo -->
+        <!-- ============================================================== -->
+        <div class="">
+            <!-- <a class="navbar-brand logo" href="index.html"> -->
+                <!-- Logo icon -->
+                <!-- <b> -->
+                    <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                    <!-- Dark Logo icon -->
+                    <!-- <img src="assets/images/logo-icon.svg" alt="homepage" class="dark-logo logo-icon" /> -->
+                    <!-- Light Logo icon -->
+                    <!-- <img src="assets/images/logo-light-icon.svg" alt="homepage" class="light-logo logo-icon" /> -->
+                <!-- </b> -->
+                <!--End Logo icon -->
+                <!-- Logo text -->
+                <!-- <span class="ml-1"> -->
+                    <!-- dark Logo text -->
+                    <!-- <img src="assets/images/logo-text.svg" alt="homepage" class="dark-logo logo-text" /> -->
+                    <!-- Light Logo text -->
+                    <!-- <img src="assets/images/logo-light-text.svg" class="light-logo logo-text" alt="homepage" /> -->
+                <!-- </span> -->
+            <!-- </a> -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Logo -->
+        <!-- ============================================================== -->
+        <div class="navbar-collapse">
+            <div class="logo-box navbar-header">
+                <a href="javascript:void()"> 
+                    <img src="assets/images/logo-text.svg" alt="homepage" class="dark-logo logo-text" />
+                 </a>
+             </div>
+            <!-- ============================================================== -->
+            <!-- toggle and nav items -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav ml-auto mt-md-0">
+                <!-- This is  -->
+                <!-- <li (click)="toggleSidebar.emit()" class="nav-item m-l-10">
+                    <a class="nav-link sidebartoggler waves-effect waves-dark" href="javascript:void(0)">
+                        <i class="ti-menu"></i></a>
+                </li> -->
+                     <!-- Messages -->
+                <!-- ============================================================== -->               
+                <!-- End Messages -->
+                <!-- ============================================================== -->
+                <li  class="nav-item m-l-10">
+                   
+                    <a class="nav-link" href="javascript:void(0)">
+                        <div class="notify setpos">
+                            <span class="heartbit"></span>
+                            <span class="point"></span>
+                        </div>
+                        <i class="mdi mdi-bell"></i></a>
+                </li>
+            </ul>
+            
+            <!-- ============================================================== -->
+            <!-- User profile and search -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav my-lg-0">
+                <!-- ============================================================== -->
+                <!-- Search -->
+                <!-- ============================================================== -->
+                <li class="nav-item hidden-sm-down search-box">
+                    <!-- <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)">
+                        <i class="ti-search"></i>
+                    </a> -->
+                    <form class="app-search">
+                        <input type="text" class="form-control" placeholder="Search & enter">
+                        <a class="srh-btn">
+                            <i class="ti-close"></i>
+                        </a>
+                    </form>
+                </li>
+                <!-- ============================================================== -->
+                <!-- Profile -->
+                <!-- ============================================================== -->
+                <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
+                    <a ngbDropdownToggle class="nav-link dropdown-toggle text-muted waves-effect waves-dark"
+                        href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="assets/images/users/1.jpg" alt="user" class="profile-pic" />
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                        <ul class="dropdown-user">
+                            <li>
+                                <div class="dw-user-box">
+                                    <div class="u-img">
+                                        <img src="assets/images/users/1.jpg" alt="user">
+                                    </div>
+                                    <div class="u-text">
+                                        <h4>Steave Jobs</h4>
+                                        <p class="text-muted">varun@gmail.com</p>
+                                        <!-- <a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View
+                                            Profile</a> -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a routerLink="/setting/profile">
+                                    <i class="ti-user"></i> My Profile</a>
+                            </li>
+                            <li>
+                                <a routerLink="/authentication/login">
+                                    <i class="fa fa-power-off"></i> Logout</a>
+                            </li>
+                            <!-- <li>
+                                <a href="#">
+                                    <i class="ti-wallet"></i> My Balance</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="ti-email"></i> Inbox</a>
+                            </li> -->
+                            <!-- <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <i class="ti-settings"></i> Account Setting</a>
+                            </li>
+                            <li role="separator" class="divider"></li> -->
+                           
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

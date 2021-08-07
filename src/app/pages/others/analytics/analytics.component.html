@@ -1,0 +1,56 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-12 text-right">
+        <div class="d-flex w-100">
+            <div class="ml-auto">            
+                <mat-form-field class="example-form-field ml-auto">
+                    <mat-label>Enter a date range</mat-label>
+                    <mat-date-range-input [rangePicker]="rangePicker">
+                      <input matStartDate placeholder="Start date">
+                      <input matEndDate placeholder="End date">
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="rangePicker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #rangePicker>
+                      
+                    </mat-date-range-picker>
+                  </mat-form-field>
+        </div>
+       
+          <div class="d-block text-right ml-2 mr-2">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+                Filter by order status
+              </button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button class="dropdown-item">All</button>
+                <button class="dropdown-item" ngbDropdownItem>Day </button>
+                <button class="dropdown-item" ngbDropdownItem>Week </button>
+                <button class="dropdown-item" ngbDropdownItem>Month</button>
+                <button class="dropdown-item" ngbDropdownItem>Year</button>
+              </div>
+            </div>
+          </div>
+          <div class="">
+            <button class="btn btn-primary ">Export CSV</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <!-- <div class="card"> -->
+        <div class="card-body">
+          <!-- <h4 class="card-title">Bar Sales Chart</h4>
+                        <h6 class="card-subtitle">This is the simple example of bar chart</h6> -->
+          <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+            [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)"
+            [colors]="barChartColors" (chartClick)="chartClicked($event)">
+          </canvas>
+        </div>
+        <!-- <div class="card-footer">
+                        <button class="btn btn-info btn-sm" (click)="randomize()">Update</button>
+                    </div> -->
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+</div>

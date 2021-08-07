@@ -1,0 +1,12 @@
+@import '../../../../assets/scss/variable';
+
+.volume_element{
+  display: flex;
+  flex-wrap: wrap;
+&_group{
+    background: linear-gradient($themecolor,$themecolor1);
+    padding: 15px;
+  color: $white;
+    margin-bottom: 10px;
+}
+}
