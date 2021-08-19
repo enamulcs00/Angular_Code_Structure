@@ -1,4 +1,17 @@
-import { Component, AfterViewInit, EventEmitter, Output } from '@angular/core';
+import { Component, AfterViewInit,OnInit, EventEmitter, Output } from '@angular/core';
+
+import { Router } from '@angular/router';
+
+import { HttpClient } from '@angular/common/http';
+
+import { FormBuilder, FormGroup, Validators,ValidationErrors, ValidatorFn} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+
+
+import { ApiService } from '../../service/api.service';
+import { CommonService } from '../../service/common.service';
+import Swal from 'sweetalert2'
 import {
   NgbModal,
   ModalDismissReasons,
@@ -17,7 +30,7 @@ export class NavigationComponent implements AfterViewInit {
   @Output() toggleSidebar = new EventEmitter<void>();
 
   public config: PerfectScrollbarConfigInterface = {};
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal, private _router:Router) {}
 
   // This is for Notifications
   notifications: Object[] = [
@@ -84,4 +97,42 @@ export class NavigationComponent implements AfterViewInit {
   ];
 
   ngAfterViewInit() {}
+  logout(){
+
+    // localStorage.clear();
+    // this._router.navigate(['authentication/login'])
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You will not be able to recover this ',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, logout!',
+      cancelButtonText: 'No, stay here only'
+    }).then((result) => {
+     
+  
+      
+      if (result.isConfirmed) {
+        
+    localStorage.clear();
+    this._router.navigate(['authentication/login'])
+        
+       
+         
+          
+     
+    
+   
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        // Swal.fire(
+        //   'Cancelled',
+        //   'Your imaginary file is safe :)',
+        //   'error'
+        // )
+      }
+    })
+
+  
+
+  }
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -12,12 +13,16 @@ import { SignupComponent } from './signup/signup.component';
 import { Signup2Component } from './signup2/signup2.component';
 
 import { AuthenticationRoutes } from './authentication.routing';
+import { ForgotpwdComponent } from './forgotpwd/forgotpwd.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(AuthenticationRoutes),
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   declarations: [
     NotFoundComponent,
@@ -25,7 +30,8 @@ import { AuthenticationRoutes } from './authentication.routing';
     SignupComponent,
     LockComponent,
     Login2Component,
-    Signup2Component
+    Signup2Component,
+    ForgotpwdComponent
   ]
 })
 export class AuthenticationModule {}

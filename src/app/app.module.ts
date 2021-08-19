@@ -8,13 +8,15 @@ import {
 } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 
 import { FullComponent } from './layouts/full/full.component';
 import { BlankComponent } from './layouts/blank/blank.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-import { ToastrModule } from 'ngx-toastr';
+// import { ToastrModule } from 'ngx-toastr';
+import { ToastrModule } from 'ng6-toastr-notifications';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 import { NavigationComponent } from './shared/header-navigation/navigation.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
@@ -28,6 +30,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SpinnerComponent } from './shared/spinner.component';
 import { HeaderVerticalComponent } from './shared/header-vertical/header-vertical.component';
+
+import {GetInterceptorService} from '../../src/app/service/get-interceptor/get-interceptor.service'
+import {SetInterceptorService} from '../../src/app/service/set-interceptor/set-interceptor.service'
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -51,6 +56,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     imports: [
         CommonModule,
         BrowserModule,
+      
         BrowserAnimationsModule,
         FormsModule,
         HttpClientModule,
@@ -58,6 +64,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         ToastrModule.forRoot(),
         NgMultiSelectDropDownModule.forRoot(),
         PerfectScrollbarModule,
+        NgxSpinnerModule,
         AppRoutingModule
     ],
     providers: [
@@ -65,6 +72,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
             provide: PERFECT_SCROLLBAR_CONFIG,
             useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
         },
+        { provide: HTTP_INTERCEPTORS, useClass: SetInterceptorService, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: GetInterceptorService, multi: true }, 
         {
             provide: LocationStrategy,
             useClass: HashLocationStrategy

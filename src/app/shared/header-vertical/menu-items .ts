@@ -72,7 +72,7 @@ export const ROUTES: RouteInfo[] = [
   //   submenu: [],
   // },
   {
-    path: "/notification/notificationlist",
+    path: "/notification/addnotification",
     title: "Notification",
     icon: "mdi mdi-bell-ring",
     class: "",

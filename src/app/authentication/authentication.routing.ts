@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { Login2Component } from './login2/login2.component';
 import { SignupComponent } from './signup/signup.component';
 import { Signup2Component } from './signup2/signup2.component';
+import { ForgotpwdComponent } from './forgotpwd/forgotpwd.component';
 
 export const AuthenticationRoutes: Routes = [
   {
@@ -22,6 +23,10 @@ export const AuthenticationRoutes: Routes = [
       {
         path: 'login',
         component: LoginComponent
+      },
+      {
+        path: 'forgotpwd',
+        component: ForgotpwdComponent
       },
       {
         path: 'login2',
