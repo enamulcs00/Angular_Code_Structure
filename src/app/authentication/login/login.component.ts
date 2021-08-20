@@ -19,14 +19,28 @@ declare var $:any;
 export class LoginComponent implements OnInit {
   isSubmitted:boolean=false
   loginForm:FormGroup
-  constructor(public router: Router,private fb:FormBuilder, private _apiService:ApiService, private _commService:CommonService) {}
+  isChecked:boolean=false
+  constructor(public router: Router,private fb:FormBuilder, private _apiService:ApiService, private _commService:CommonService) {
+    this.isChecked=false
+  }
 
   ngOnInit() {
     this.loginForm=this.fb.group({
       email:["",[Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-      password:["", Validators.required, Validators.minLength(8) ]
+      password:["", [Validators.required, Validators.minLength(8) ]]
 
     })
+    if(sessionStorage.getItem("rememberMe")){
+      console.log("uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu")
+      // var data = sessionStorage.rememberMe ? JSON.parse(sessionStorage.rememberMe) : ''
+       var data=JSON.parse(sessionStorage.getItem("rememberMe"))
+      this.loginForm.patchValue({
+        email:data.email,
+        password:data.password
+
+      })
+      this.isChecked=true
+    }
   //  this.clickbtn();
   }
 
@@ -90,6 +104,23 @@ onLoggedin(){
 
 
 
+  }
+
+}
+remember(event){
+  console.log("pppppppppppppppppppppppppppppppppppppppppppppp");
+  
+  if(event.target.checked && this.loginForm.valid){
+    console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+    
+    sessionStorage.setItem("rememberMe", JSON.stringify(this.loginForm.value))
+  }
+  else{
+    console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
+    
+    sessionStorage.removeItem("rememberMe")
+ 
+    //  this.loginForm.reset()
   }
 
 }
