@@ -460,7 +460,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Enter valid email");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Enter valid email address");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -792,6 +792,8 @@
           this._apiService = _apiService;
           this._commService = _commService;
           this.isSubmitted = false;
+          this.isChecked = false;
+          this.isChecked = false;
         }
 
         _createClass(LoginComponent, [{
@@ -800,7 +802,19 @@
             this.loginForm = this.fb.group({
               email: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
               password: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8)]]
-            }); //  this.clickbtn();
+            });
+
+            if (sessionStorage.getItem("rememberMe")) {
+              console.log("uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"); // var data = sessionStorage.rememberMe ? JSON.parse(sessionStorage.rememberMe) : ''
+
+              var data = JSON.parse(sessionStorage.getItem("rememberMe"));
+              this.loginForm.patchValue({
+                email: data.email,
+                password: data.password
+              });
+              this.isChecked = true;
+            } //  this.clickbtn();
+
           } //   ngAfterViewInit() {
           //     $(function() {
           //             $(".preloader").fadeOut();
@@ -857,6 +871,19 @@
               });
             }
           }
+        }, {
+          key: "remember",
+          value: function remember(event) {
+            console.log("pppppppppppppppppppppppppppppppppppppppppppppp");
+
+            if (event.target.checked && this.loginForm.valid) {
+              console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+              sessionStorage.setItem("rememberMe", JSON.stringify(this.loginForm.value));
+            } else {
+              console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
+              sessionStorage.removeItem("rememberMe"); //  this.loginForm.reset()
+            }
+          }
         }]);
 
         return LoginComponent;
@@ -870,8 +897,8 @@
         type: LoginComponent,
         selectors: [["app-login"]],
         decls: 42,
-        vars: 7,
-        consts: [[1, "login-register", "align-items-center", "d-flex", 2, "background-image", "url(assets/images/background/login-register.jpg)"], [1, "login-box", "card"], [1, "card-body"], ["id", "loginform", 1, "form-horizontal", "form-material", 3, "formGroup"], [1, "box-title", "m-b-20"], [1, "form-group"], [1, "col-xs-12"], ["type", "text", "placeholder", "Email", "formControlName", "email", 1, "form-control"], [4, "ngIf"], ["type", "password", "placeholder", "Password", "formControlName", "password", 1, "form-control"], [1, "form-group", "row"], [1, "col-md-12", "font-14"], [1, "checkbox", "checkbox-primary", "pull-left", "p-t-0"], ["id", "checkbox-signup", "type", "checkbox"], ["for", "checkbox-signup ", 1, "ml-2"], ["routerLink", "/authentication/forgotpwd", "id", "to-recover", 1, "text-dark", "pull-right"], [1, "form-group", "text-center", "m-t-20"], [1, "btn", "btn-primary", "btn-lg", "btn-block", "text-uppercase", "waves-effect", "waves-light", 3, "click"], ["id", "recoverform", "action", "index.html", 1, "form-horizontal"], [1, "text-muted"], ["type", "text", "required", "", "placeholder", "Email", 1, "form-control"], ["id", "resetpwd", 1, "btn", "btn-primary", "btn-lg", "btn-block", "text-uppercase", "waves-effect", "waves-light", 3, "routerLink"]],
+        vars: 8,
+        consts: [[1, "login-register", "align-items-center", "d-flex", 2, "background-image", "url(assets/images/background/login-register.jpg)"], [1, "login-box", "card"], [1, "card-body"], ["id", "loginform", 1, "form-horizontal", "form-material", 3, "formGroup"], [1, "box-title", "m-b-20"], [1, "form-group"], [1, "col-xs-12"], ["type", "text", "placeholder", "Email", "formControlName", "email", 1, "form-control"], [4, "ngIf"], ["type", "password", "placeholder", "Password", "formControlName", "password", 1, "form-control"], [1, "form-group", "row"], [1, "col-md-12", "font-14"], [1, "checkbox", "checkbox-primary", "pull-left", "p-t-0"], ["id", "checkbox-signup", "type", "checkbox", 3, "checked", "change"], ["for", "checkbox-signup ", 1, "ml-2"], ["routerLink", "/authentication/forgotpwd", "id", "to-recover", 1, "text-dark", "pull-right"], [1, "form-group", "text-center", "m-t-20"], [1, "btn", "btn-primary", "btn-lg", "btn-block", "text-uppercase", "waves-effect", "waves-light", 3, "click"], ["id", "recoverform", "action", "index.html", 1, "form-horizontal"], [1, "text-muted"], ["type", "text", "required", "", "placeholder", "Email", 1, "form-control"], ["id", "resetpwd", 1, "btn", "btn-primary", "btn-lg", "btn-block", "text-uppercase", "waves-effect", "waves-light", 3, "routerLink"]],
         template: function LoginComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -922,7 +949,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "input", 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "input", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function LoginComponent_Template_input_change_19_listener($event) {
+              return ctx.remember($event);
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "label", 14);
 
@@ -1038,9 +1071,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.isSubmitted && ctx.loginForm.controls["password"].hasError("minlength"));
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](25);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](6, _c0));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("checked", ctx.isChecked);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](21);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](7, _c0));
           }
         },
         directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgForm"]],
