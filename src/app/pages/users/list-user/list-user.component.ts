@@ -63,6 +63,36 @@ export class ListUserComponent implements OnInit {
       
     
   // }
+  activeUsers(){
+    const reqbody={ "type":"active" }
+    this._apiService.postRequest('api/v1/admin/getAllUser',reqbody).subscribe((response:any) => {
+    
+      console.log("response",response)
+      this.userDetails=response.data.userData;
+      this.userDetailsCount=response.data.count
+    
+      console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+      
+    },(err: any) => {
+      this._commService.errorMsg(err.error.message)
+    })
+
+  }
+  inactiveUsers(){
+    const reqbody={ "type":"inactive" }
+    this._apiService.postRequest('api/v1/admin/getAllUser',reqbody).subscribe((response:any) => {
+    
+      console.log("response",response)
+      this.userDetails=response.data.userData;
+      this.userDetailsCount=response.data.count
+    
+      console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+      
+    },(err: any) => {
+      this._commService.errorMsg(err.error.message)
+    })
+
+  }
   changeStatus(event,id1){
     console.log(event);
     

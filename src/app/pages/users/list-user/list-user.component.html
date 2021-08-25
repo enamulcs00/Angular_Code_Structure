@@ -18,11 +18,11 @@
                 </button>
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                  
-                  <button class="dropdown-item">Active</button>
-                  <button class="dropdown-item">Inactive</button>
+                  <button (click)="activeUsers()" class="dropdown-item">Active</button>
+                  <button (click)="inactiveUsers()" class="dropdown-item">Inactive</button>
                 </div>
               </div>
-              <button (click)="exportcsv()" class="btn btn-primary  btn-sm"><i class="sl-icon-cloud-download"></i> Export CSV</button>
+              <button  class="btn btn-primary  btn-sm"><i class="sl-icon-cloud-download"></i> Export CSV</button>
               <!-- <button class="btn btn-seconadary mb-2" (click)="addUserModal(addUser)"><i class="sl-icon-plus"></i> Add
                 User</button> -->
             </div>
