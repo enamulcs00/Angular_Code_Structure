@@ -17,19 +17,24 @@ const routes: Routes = [
         }
       },
       {
+        path: "userlist/:type/:id",
+        component: EditUserComponent,
+        
+      },
+      {
         path: "userdetail",
         component: DetailUserComponent,
         data: {
           title: "Users Detail",
         }
       },
-      {
-        path: "useredit",
-        component: EditUserComponent,
-        data: {
-          title: "Users Edit",
-        }
-      },
+      // {
+      //   path: "useredit",
+      //   component: EditUserComponent,
+      //   data: {
+      //     title: "Users Edit",
+      //   }
+      // },
       
     ],
   },

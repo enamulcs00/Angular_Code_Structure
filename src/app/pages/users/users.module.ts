@@ -9,6 +9,7 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailUserComponent } from './detail-user/detail-user.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [UsersComponent, EditUserComponent, ListUserComponent, AddUserComponent, DetailUserComponent],
@@ -17,6 +18,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     UsersRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    MatPaginatorModule,
     NgbModule,
     MatSlideToggleModule
   ]

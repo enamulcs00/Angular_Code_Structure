@@ -79,6 +79,21 @@ export class ProfileComponent implements OnInit {
 
 
   }
+  profileUpdate(){
+    console.log("888888888888888888888")
+    this.isSubmitted=true
+    if(this.isSubmitted && this.updateProfile ){
+      this._apiService
+      .putRequest("api/v1/admin/updateProfile", this.updateProfile.value)
+      .subscribe((response) => {
+        console.log(response);
+         this.router.navigate(["/dashboard/dashboard"]);
+        this._commService.successMsg("Profile Updated Successfully");
+      });
+  } 
+
+    }
+  
   onSubmit() {
     this.submitted = true;
     if (this.changePasswordForm.valid && this.submitted) {

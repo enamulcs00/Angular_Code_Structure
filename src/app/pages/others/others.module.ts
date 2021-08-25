@@ -10,6 +10,7 @@ import { ChartsModule } from 'ng2-charts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GroupVolumeFormComponent } from './group-volume-form/group-volume-form.component';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [OthersComponent, AnalyticsComponent, GroupVolumeFormComponent],
@@ -21,6 +22,9 @@ import { GroupVolumeFormComponent } from './group-volume-form/group-volume-form.
     NgbModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    FormsModule,
+    ReactiveFormsModule,
+
     MatFormFieldModule
   ]
 })

@@ -4,22 +4,31 @@
   </div>
 </div>
 <div class="card">
-    <form action="#">
+    <form [formGroup]="userForm">
       <div class="form-body">
         <div class="card-body">         
           <div class="row p-t-20">
-            <div class="col-md-6">
-              <div class="form-group">
+            <!-- <div class="col-md-6">
+               <div class="form-group">
                 <label class="control-label">First Name</label>
                 <input type="text" id="firstName" class="form-control" placeholder="John doe">
   
-              </div>
-            </div>
-            <!--/span-->
+              </div> 
+            </div> 
+           -->
             <div class="col-md-6">
               <div class="form-group">
-                <label class="control-label">Last Name</label>
-                <input type="text" id="firstName" class="form-control" placeholder="John doe">
+                <label class="control-label"> Name</label>
+                <input type="text" id="firstName" class="form-control" formControlName="name" placeholder="Name">
+                <mat-error *ngIf="  isSubmitted && userForm.controls['name'].hasError('required')">
+                  Name is required
+              </mat-error>
+              <mat-error *ngIf="  isSubmitted && userForm.controls['name'].hasError('minlength')">
+                Minimum length of name should be 2 characters
+            </mat-error>
+            <mat-error *ngIf="  isSubmitted && userForm.controls['name'].hasError('maxlength')">
+              Maximum  length of name should be 20 characters
+          </mat-error>
   
               </div>
             </div>
@@ -28,8 +37,15 @@
               <div class="form-group">
                 <div class="form-group">
                   <label class="control-label">Upload User Profile</label>
-                  <div class="custom-file"><input class="custom-file-input" id="inputGroupFile01" type="file"
-                      ><label class="custom-file-label" for="inputGroupFile01">Choose file</label></div>
+                  <div class="custom-file"><input class="custom-file-input" id="inputGroupFile01" type="file" accept=".png, .jpg, .jpeg" name="image"  (change)="onChange($event)"
+                      ><label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                      <figure *ngIf="url" class="uploadimg"> <img   [src]="url" height="50" width="50"></figure>
+                      <!-- <figure *ngIf="!url"><img   [src]="" > </figure>   -->
+                    <mat-error *ngIf="  isSubmitted && userForm.controls['image'].hasError('required')">
+                        Image is required
+                    </mat-error>
+                    </div>
+                    
                 </div>
               </div>
             </div>
@@ -37,18 +53,30 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label class="control-label">Date of Birth</label>
-                <input type="date" id="firstName" class="form-control" placeholder="John doe">
+                <input type="date" id="firstName" class="form-control" formControlName="dob" placeholder="Date of Birth">
+                <mat-error *ngIf="  isSubmitted && userForm.controls['dob'].hasError('required')">
+                  Date of Birth is required
+              </mat-error>
   
               </div>
             </div>
             <!--/span-->
-          </div>
-          <!--/row-->
-          <div class="row ">
             <div class="col-md-6">
               <div class="form-group">
                 <label class="control-label">Phone Number</label>
-                <input type="number" id="firstName" class="form-control" placeholder="No.">
+                <input type="text" id="firstName" class="form-control" formControlName="phone" placeholder="Phone Number">
+                <mat-error *ngIf="  isSubmitted && userForm.controls['phone'].hasError('required')">
+                  Phone Number is required
+              </mat-error>
+              <mat-error *ngIf="  isSubmitted && userForm.controls['phone'].hasError('maxlength')">
+                Maximum  length of phone should be 15 
+            </mat-error>
+            <mat-error *ngIf="  isSubmitted && userForm.controls['phone'].hasError('minlength')">
+              Minimum  length of phone should be 7 
+          </mat-error>
+          <mat-error *ngIf="  isSubmitted && userForm.controls['phone'].hasError('pattern')">
+          Valid Phone Number is required 
+        </mat-error>
   
               </div>
             </div>
@@ -56,10 +84,20 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label class="control-label">Email</label>
-                <input type="email" id="firstName" class="form-control" placeholder="example@gmail.com">
+                <input type="email" id="firstName" class="form-control" formControlName="email" placeholder="Email">
+                <mat-error *ngIf="  isSubmitted && userForm.controls['email'].hasError('required')">
+                  Email is required
+              </mat-error>
+              <mat-error *ngIf="  isSubmitted && userForm.controls['email'].hasError('pattern')">
+                Valid Email is required
+            </mat-error>
   
               </div>
             </div>
+          </div>
+          <!--/row-->
+          <div class="row ">
+            
             <!--/span-->
             <!-- <div class="col-md-6">
               <div class="form-group ">
@@ -124,7 +162,7 @@
   
         <div class="form-actions">
           <div class="card-body">
-            <button type="submit" class="btn btn-primary mr-3" > Save</button>
+            <button type="submit" (click)="editUser()" class="btn btn-primary mr-3" > Save</button>
            
           </div>
         </div>

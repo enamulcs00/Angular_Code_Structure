@@ -4,7 +4,7 @@
           <div class="row">
             <div class="col-md-4">             
                 <div class="">
-                  <input type="text" class="form-control" id="prenametext" placeholder="Search">
+                  <input type="text" class="form-control" id="prenametext" placeholder="Search" (keyup.enter)="getAllUsers($event)">
                 </div>              
             </div>
             <div class="col-md-8  text-right">
@@ -17,12 +17,12 @@
                  All
                 </button>
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                  <button class="dropdown-item">ALL</button>
+                 
                   <button class="dropdown-item">Active</button>
                   <button class="dropdown-item">Inactive</button>
                 </div>
               </div>
-              <button class="btn btn-primary  btn-sm"><i class="sl-icon-cloud-download"></i> Export CSV</button>
+              <button (click)="exportcsv()" class="btn btn-primary  btn-sm"><i class="sl-icon-cloud-download"></i> Export CSV</button>
               <!-- <button class="btn btn-seconadary mb-2" (click)="addUserModal(addUser)"><i class="sl-icon-plus"></i> Add
                 User</button> -->
             </div>
@@ -34,8 +34,8 @@
         <table class="table">
             <tr>
             <th class="text-nowrap">#</th>
-            <th class="text-nowrap">First Name</th>
-            <th class="text-nowrap">Last Name</th>
+            <th class="text-nowrap"> Name</th>
+          
             <th class="text-nowrap">Date of Birth</th>
             <th class="text-nowrap">Phone No.</th>
             <th class="text-nowrap">Email</th>
@@ -43,15 +43,18 @@
             <th class="text-nowrap">Status</th>
             <th class="text-nowrap">Action</th>
         </tr>
-        <tr  *ngFor="let person of people">
-        <td>{{person.serial_no}}</td>
-        <td>{{person.firstname}}</td>
-        <td>{{person.lastname}}</td>
-        <td>{{person.dob}}</td>
-        <td>{{person.contact}}</td>
-        <td>{{person.email}}</td>
+        <tr  *ngFor="let user of userDetails, index as i">
+          <td>
+            {{i+limit*page+1}}
+          </td>
+        <td>{{user?.name}}</td>
+       
+        <td>{{user.dob | date: 'dd'}}/{{user.dob | date:'MM'}}/{{user.dob | date: 'yyyy'}}</td>
+        <td>{{user?.phone}}</td>
+        <td>{{user?.email}}</td>
         <!-- <td>{{person.address}}</td> -->
-        <td><mat-slide-toggle></mat-slide-toggle></td>
+        <td>   <mat-slide-toggle [checked]="user?.isBlocked" (change)="changeStatus($event,user._id)">
+        </mat-slide-toggle></td>
         
         <td>
           <div ngbDropdown placement="bottom" class="d-inline-block" container="body">
@@ -59,7 +62,7 @@
               Action
             </button>
 
-            <div *ngIf="person.action==0" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <!-- <div  ngbDropdownMenu aria-labelledby="dropdownBasic1">
               <a class="dropdown-item" routerLink="/pages/users_detail"><i class="ti-eye"></i>
                 Accept
               </a>
@@ -68,23 +71,26 @@
 
               <button class="dropdown-item" (click)="userDeleteModal(userDelete)"><i class="ti-trash"></i>
                 Reject</button>
-            </div>
+            </div> -->
 
-            <div *ngIf="person.action==1" ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <button class="dropdown-item" routerLink="/users/useredit"><i class="ti-marker-alt"></i>
+            <div  ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button class="dropdown-item" routerLink="/users/userlist/edit/{{user._id}}"><i class="ti-marker-alt"></i>
                 Edit</button>
-              <!-- <a class="dropdown-item" routerLink="/users/userdetail"><i class="ti-eye"></i>
-                View
-              </a> -->
+           
 
-              <button class="dropdown-item" (click)="userDeleteModal(userDelete)"><i class="ti-trash"></i>
+              <button (click)="deleteUser(user._id)" class="dropdown-item" (click)="userDeleteModal(userDelete)"><i class="ti-trash"></i>
                 Delete</button>
             </div>
           </div>
         </td>
         </tr>
         </table>
+        <div class="no-found" *ngIf="userDetails.length == 0">
+          <h4>No data found</h4>
+        </div>
     </div>
+    <mat-paginator *ngIf="userDetailsCount && userDetailsCount>0" [pageIndex]="page" [length]="userDetailsCount" (page)="handlePageEvent($event)"
+      [pageSize]="limit" [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
   </div>
 </div>
   

@@ -7,6 +7,7 @@ import { Login2Component } from './login2/login2.component';
 import { SignupComponent } from './signup/signup.component';
 import { Signup2Component } from './signup2/signup2.component';
 import { ForgotpwdComponent } from './forgotpwd/forgotpwd.component';
+import {AuthGuard} from '../service/auth-guard/auth.guard'
 
 export const AuthenticationRoutes: Routes = [
   {
@@ -22,11 +23,14 @@ export const AuthenticationRoutes: Routes = [
       },
       {
         path: 'login',
-        component: LoginComponent
+
+        component: LoginComponent,
+        //  canActivate: [AuthGuard],
       },
       {
         path: 'forgotpwd',
-        component: ForgotpwdComponent
+        component: ForgotpwdComponent,
+        // canActivate: [AuthGuard],
       },
       {
         path: 'login2',

@@ -69,7 +69,7 @@
                             <div class="form-group">
                                 <label class="col-md-12">Full Name</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line" formControlName="name"> 
+                                    <input type="text" placeholder="Full Name" class="form-control form-control-line" formControlName="name"> 
                                     <mat-error *ngIf="  isSubmitted && updateProfile.controls['name'].hasError('required')">Name 
                                         is
                                         required</mat-error>
@@ -78,7 +78,7 @@
                             <div class="form-group">
                                 <label for="example-email" class="col-md-12">Email</label>
                                 <div class="col-md-12">
-                                    <input type="email" placeholder="johnathan@admin.com" formControlName="email" class="form-control form-control-line" name="example-email" id="example-email">
+                                    <input type="email" placeholder="Email" formControlName="email" class="form-control form-control-line" name="example-email" id="example-email">
                                     <mat-error *ngIf="  isSubmitted && updateProfile.controls['email'].hasError('required')">Email 
                                         is
                                         required</mat-error>
@@ -93,7 +93,7 @@
                             <div class="form-group">
                                 <label class="col-md-12">Phone No</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="123 456 7890" formControlName="phone" class="form-control form-control-line">
+                                    <input type="text" placeholder="Phone No" formControlName="phone" class="form-control form-control-line">
                                     <mat-error *ngIf="  isSubmitted && updateProfile.controls['phone'].hasError('required')">Phone 
                                         is
                                         required</mat-error>

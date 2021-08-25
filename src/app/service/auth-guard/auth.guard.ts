@@ -13,20 +13,20 @@ export class AuthGuard implements CanActivate {
     let isOnboarding = false;
     let verifyndchangepass= false;
     let isAuth = localStorage.user ? true : false;
-    if (next.routeConfig.path === 'login'  || next.routeConfig.path === 'forgotpwd' ) {
+    if (next.routeConfig.path === '/authentication/login'  || next.routeConfig.path === '/authentication/forgotpwd' ) {
       isOnboarding = true;
     }
     
     if (isOnboarding && isAuth) { 
       isBasic = false;
-       return this.router.navigate(['/dashboard']);} 
+       return this.router.navigate(['/dashboard/dashboard']);} 
     if (isOnboarding && !isAuth) { isBasic = true; }
     if (!isOnboarding && isAuth) { isBasic = true; }
-    if (!isOnboarding && !isAuth && !verifyndchangepass) {
+    if (!isOnboarding && !isAuth ) {
        isBasic = false; 
-       return this.router.navigate(['/login']);}
-       if (!isOnboarding && !isAuth && verifyndchangepass) {
-        isBasic = true; }
+       return this.router.navigate(['/authentication/login']);}
+      //  if (!isOnboarding && !isAuth && verifyndchangepass) {
+      //   isBasic = true; }
 
     return isBasic;
   }
