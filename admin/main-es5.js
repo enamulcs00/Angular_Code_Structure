@@ -170,7 +170,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | charts-charts-module */
-            [__webpack_require__.e("default~charts-charts-module~pages-notification-notification-module~pages-others-others-module~pages~f437e37c"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module~pages-others-others-module"), __webpack_require__.e("default~charts-charts-module~pages-others-others-module"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module"), __webpack_require__.e("charts-charts-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~charts-charts-module~pages-notification-notification-module~pages-others-others-module~pages~5ffbb77b"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module~pages-others-others-module"), __webpack_require__.e("default~charts-charts-module~pages-others-others-module"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module"), __webpack_require__.e("charts-charts-module")]).then(__webpack_require__.bind(null,
             /*! ./charts/charts.module */
             "./src/app/charts/charts.module.ts")).then(function (m) {
               return m.ChartModule;
@@ -192,7 +192,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | extra-component-extra-component-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~f0a4155c"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~ad13ea5d"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~form-forms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module"), __webpack_require__.e("extra-component-extra-component-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~f0a4155c"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~form-forms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module"), __webpack_require__.e("extra-component-extra-component-module")]).then(__webpack_require__.bind(null,
             /*! ./extra-component/extra-component.module */
             "./src/app/extra-component/extra-component.module.ts")).then(function (m) {
               return m.ExtraComponentModule;
@@ -203,7 +203,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | apps-apps-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~f0a4155c"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~ad13ea5d"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~form-forms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module"), __webpack_require__.e("common"), __webpack_require__.e("apps-apps-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~f0a4155c"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~form-forms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module"), __webpack_require__.e("common"), __webpack_require__.e("apps-apps-module")]).then(__webpack_require__.bind(null,
             /*! ./apps/apps.module */
             "./src/app/apps/apps.module.ts")).then(function (m) {
               return m.AppsModule;
@@ -236,7 +236,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | pages-users-users-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~f0a4155c"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~a4dd8711"), __webpack_require__.e("default~pages-notification-notification-module~pages-users-users-module"), __webpack_require__.e("pages-users-users-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~f0a4155c"), __webpack_require__.e("default~charts-charts-module~pages-notification-notification-module~pages-others-others-module~pages~5ffbb77b"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~a4dd8711"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-users-users-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-users-users-module"), __webpack_require__.e("default~pages-others-others-module~pages-users-users-module"), __webpack_require__.e("pages-users-users-module")]).then(__webpack_require__.bind(null,
             /*! ./pages/users/users.module */
             "./src/app/pages/users/users.module.ts")).then(function (m) {
               return m.UsersModule;
@@ -269,7 +269,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | pages-notification-notification-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~f0a4155c"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~ad13ea5d"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~a4dd8711"), __webpack_require__.e("default~charts-charts-module~pages-notification-notification-module~pages-others-others-module~pages~f437e37c"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~5eec4b58"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-users-users-module"), __webpack_require__.e("pages-notification-notification-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~f0a4155c"), __webpack_require__.e("default~charts-charts-module~pages-notification-notification-module~pages-others-others-module~pages~5ffbb77b"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~a4dd8711"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-users-users-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-users-users-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module"), __webpack_require__.e("pages-notification-notification-module")]).then(__webpack_require__.bind(null,
             /*! ./pages/notification/notification.module */
             "./src/app/pages/notification/notification.module.ts")).then(function (m) {
               return m.NotificationModule;
@@ -289,9 +289,9 @@
         }, {
           path: 'setting',
           loadChildren: function loadChildren() {
-            return Promise.all(
+            return __webpack_require__.e(
             /*! import() | pages-setting-setting-module */
-            [__webpack_require__.e("common"), __webpack_require__.e("pages-setting-setting-module")]).then(__webpack_require__.bind(null,
+            "pages-setting-setting-module").then(__webpack_require__.bind(null,
             /*! ./pages/setting/setting.module */
             "./src/app/pages/setting/setting.module.ts")).then(function (m) {
               return m.SettingModule;
@@ -313,7 +313,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | pages-subscription-subscription-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~f0a4155c"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~ad13ea5d"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~a4dd8711"), __webpack_require__.e("default~charts-charts-module~pages-notification-notification-module~pages-others-others-module~pages~f437e37c"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~5eec4b58"), __webpack_require__.e("default~pages-others-others-module~pages-subscription-subscription-module"), __webpack_require__.e("pages-subscription-subscription-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~f0a4155c"), __webpack_require__.e("default~charts-charts-module~pages-notification-notification-module~pages-others-others-module~pages~5ffbb77b"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~a4dd8711"), __webpack_require__.e("default~pages-others-others-module~pages-subscription-subscription-module"), __webpack_require__.e("pages-subscription-subscription-module")]).then(__webpack_require__.bind(null,
             /*! ./pages/subscription/subscription.module */
             "./src/app/pages/subscription/subscription.module.ts")).then(function (m) {
               return m.SubscriptionModule;
@@ -368,7 +368,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | pages-others-others-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~f0a4155c"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~ad13ea5d"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~a4dd8711"), __webpack_require__.e("default~charts-charts-module~pages-notification-notification-module~pages-others-others-module~pages~f437e37c"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module~pages-others-others-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~5eec4b58"), __webpack_require__.e("default~charts-charts-module~pages-others-others-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module"), __webpack_require__.e("default~pages-others-others-module~pages-subscription-subscription-module"), __webpack_require__.e("pages-others-others-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~f0a4155c"), __webpack_require__.e("default~charts-charts-module~pages-notification-notification-module~pages-others-others-module~pages~5ffbb77b"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~a4dd8711"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module~pages-others-others-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-users-users-module"), __webpack_require__.e("default~charts-charts-module~pages-others-others-module"), __webpack_require__.e("default~pages-others-others-module~pages-subscription-subscription-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module"), __webpack_require__.e("default~pages-others-others-module~pages-users-users-module"), __webpack_require__.e("pages-others-others-module")]).then(__webpack_require__.bind(null,
             /*! ./pages/others/others.module */
             "./src/app/pages/others/others.module.ts")).then(function (m) {
               return m.OthersModule;
@@ -381,9 +381,9 @@
         children: [{
           path: 'authentication',
           loadChildren: function loadChildren() {
-            return Promise.all(
+            return __webpack_require__.e(
             /*! import() | authentication-authentication-module */
-            [__webpack_require__.e("common"), __webpack_require__.e("authentication-authentication-module")]).then(__webpack_require__.bind(null,
+            "authentication-authentication-module").then(__webpack_require__.bind(null,
             /*! ./authentication/authentication.module */
             "./src/app/authentication/authentication.module.ts")).then(function (m) {
               return m.AuthenticationModule;
@@ -698,13 +698,13 @@
           provide: _angular_common__WEBPACK_IMPORTED_MODULE_2__["LocationStrategy"],
           useClass: _angular_common__WEBPACK_IMPORTED_MODULE_2__["HashLocationStrategy"]
         }],
-        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_14__["NgbModule"], ng6_toastr_notifications__WEBPACK_IMPORTED_MODULE_9__["ToastrModule"].forRoot(), ng_multiselect_dropdown__WEBPACK_IMPORTED_MODULE_8__["NgMultiSelectDropDownModule"].forRoot(), ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_15__["PerfectScrollbarModule"], ngx_spinner__WEBPACK_IMPORTED_MODULE_10__["NgxSpinnerModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_16__["AppRoutingModule"]]]
+        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_14__["NgbModule"], ng6_toastr_notifications__WEBPACK_IMPORTED_MODULE_9__["ToastrModule"].forRoot(), ng_multiselect_dropdown__WEBPACK_IMPORTED_MODULE_8__["NgMultiSelectDropDownModule"].forRoot(), ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_15__["PerfectScrollbarModule"], ngx_spinner__WEBPACK_IMPORTED_MODULE_10__["NgxSpinnerModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_16__["AppRoutingModule"]]]
       });
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](AppModule, {
           declarations: [_app_component__WEBPACK_IMPORTED_MODULE_17__["AppComponent"], _shared_spinner_component__WEBPACK_IMPORTED_MODULE_18__["SpinnerComponent"], _layouts_full_full_component__WEBPACK_IMPORTED_MODULE_6__["FullComponent"], _layouts_blank_blank_component__WEBPACK_IMPORTED_MODULE_7__["BlankComponent"], _shared_header_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_11__["NavigationComponent"], _shared_breadcrumb_breadcrumb_component__WEBPACK_IMPORTED_MODULE_13__["BreadcrumbComponent"], _shared_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_12__["SidebarComponent"], _shared_header_vertical_header_vertical_component__WEBPACK_IMPORTED_MODULE_19__["HeaderVerticalComponent"]],
-          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_14__["NgbModule"], ng6_toastr_notifications__WEBPACK_IMPORTED_MODULE_9__["ToastrModule"], ng_multiselect_dropdown__WEBPACK_IMPORTED_MODULE_8__["NgMultiSelectDropDownModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_15__["PerfectScrollbarModule"], ngx_spinner__WEBPACK_IMPORTED_MODULE_10__["NgxSpinnerModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_16__["AppRoutingModule"]]
+          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_14__["NgbModule"], ng6_toastr_notifications__WEBPACK_IMPORTED_MODULE_9__["ToastrModule"], ng_multiselect_dropdown__WEBPACK_IMPORTED_MODULE_8__["NgMultiSelectDropDownModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_15__["PerfectScrollbarModule"], ngx_spinner__WEBPACK_IMPORTED_MODULE_10__["NgxSpinnerModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_16__["AppRoutingModule"]]
         });
       })();
       /*@__PURE__*/
@@ -715,7 +715,7 @@
           type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"],
           args: [{
             declarations: [_app_component__WEBPACK_IMPORTED_MODULE_17__["AppComponent"], _shared_spinner_component__WEBPACK_IMPORTED_MODULE_18__["SpinnerComponent"], _layouts_full_full_component__WEBPACK_IMPORTED_MODULE_6__["FullComponent"], _layouts_blank_blank_component__WEBPACK_IMPORTED_MODULE_7__["BlankComponent"], _shared_header_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_11__["NavigationComponent"], _shared_breadcrumb_breadcrumb_component__WEBPACK_IMPORTED_MODULE_13__["BreadcrumbComponent"], _shared_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_12__["SidebarComponent"], _shared_header_vertical_header_vertical_component__WEBPACK_IMPORTED_MODULE_19__["HeaderVerticalComponent"]],
-            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_14__["NgbModule"], ng6_toastr_notifications__WEBPACK_IMPORTED_MODULE_9__["ToastrModule"].forRoot(), ng_multiselect_dropdown__WEBPACK_IMPORTED_MODULE_8__["NgMultiSelectDropDownModule"].forRoot(), ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_15__["PerfectScrollbarModule"], ngx_spinner__WEBPACK_IMPORTED_MODULE_10__["NgxSpinnerModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_16__["AppRoutingModule"]],
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_14__["NgbModule"], ng6_toastr_notifications__WEBPACK_IMPORTED_MODULE_9__["ToastrModule"].forRoot(), ng_multiselect_dropdown__WEBPACK_IMPORTED_MODULE_8__["NgMultiSelectDropDownModule"].forRoot(), ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_15__["PerfectScrollbarModule"], ngx_spinner__WEBPACK_IMPORTED_MODULE_10__["NgxSpinnerModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_16__["AppRoutingModule"]],
             providers: [{
               provide: ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_15__["PERFECT_SCROLLBAR_CONFIG"],
               useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG

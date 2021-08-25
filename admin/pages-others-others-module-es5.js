@@ -3,23 +3,17 @@
 
   function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
+  function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
   function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
 
   function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
+  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
   function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
 
   function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
-
-  function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
-
-  function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
   function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -37,559 +31,11 @@
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["pages-others-others-module"], {
-    /***/
-    "./node_modules/@angular/material/fesm2015/button.js":
-    /*!***********************************************************!*\
-      !*** ./node_modules/@angular/material/fesm2015/button.js ***!
-      \***********************************************************/
-
-    /*! exports provided: MatAnchor, MatButton, MatButtonModule */
-
-    /***/
-    function node_modulesAngularMaterialFesm2015ButtonJs(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "MatAnchor", function () {
-        return MatAnchor;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "MatButton", function () {
-        return MatButton;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "MatButtonModule", function () {
-        return MatButtonModule;
-      });
-      /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! @angular/core */
-      "./node_modules/@angular/core/fesm2015/core.js");
-      /* harmony import */
-
-
-      var _angular_material_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! @angular/material/core */
-      "./node_modules/@angular/material/fesm2015/core.js");
-      /* harmony import */
-
-
-      var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! @angular/cdk/a11y */
-      "./node_modules/@angular/cdk/fesm2015/a11y.js");
-      /* harmony import */
-
-
-      var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! @angular/platform-browser/animations */
-      "./node_modules/@angular/platform-browser/fesm2015/animations.js");
-      /**
-       * @license
-       * Copyright Google LLC All Rights Reserved.
-       *
-       * Use of this source code is governed by an MIT-style license that can be
-       * found in the LICENSE file at https://angular.io/license
-       */
-
-      /** Default color palette for round buttons (mat-fab and mat-mini-fab) */
-
-
-      var _c0 = ["mat-button", ""];
-      var _c1 = ["*"];
-      var _c2 = ".mat-button .mat-button-focus-overlay,.mat-icon-button .mat-button-focus-overlay{opacity:0}.mat-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay,.mat-stroked-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay{opacity:.04}@media(hover: none){.mat-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay,.mat-stroked-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay{opacity:0}}.mat-button,.mat-icon-button,.mat-stroked-button,.mat-flat-button{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible}.mat-button::-moz-focus-inner,.mat-icon-button::-moz-focus-inner,.mat-stroked-button::-moz-focus-inner,.mat-flat-button::-moz-focus-inner{border:0}.mat-button.mat-button-disabled,.mat-icon-button.mat-button-disabled,.mat-stroked-button.mat-button-disabled,.mat-flat-button.mat-button-disabled{cursor:default}.mat-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-button.cdk-program-focused .mat-button-focus-overlay,.mat-icon-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-icon-button.cdk-program-focused .mat-button-focus-overlay,.mat-stroked-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-stroked-button.cdk-program-focused .mat-button-focus-overlay,.mat-flat-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-flat-button.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-button::-moz-focus-inner,.mat-icon-button::-moz-focus-inner,.mat-stroked-button::-moz-focus-inner,.mat-flat-button::-moz-focus-inner{border:0}.mat-raised-button{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1)}.mat-raised-button::-moz-focus-inner{border:0}.mat-raised-button.mat-button-disabled{cursor:default}.mat-raised-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-raised-button.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-raised-button::-moz-focus-inner{border:0}._mat-animation-noopable.mat-raised-button{transition:none;animation:none}.mat-stroked-button{border:1px solid currentColor;padding:0 15px;line-height:34px}.mat-stroked-button .mat-button-ripple.mat-ripple,.mat-stroked-button .mat-button-focus-overlay{top:-1px;left:-1px;right:-1px;bottom:-1px}.mat-fab{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);min-width:0;border-radius:50%;width:56px;height:56px;padding:0;flex-shrink:0}.mat-fab::-moz-focus-inner{border:0}.mat-fab.mat-button-disabled{cursor:default}.mat-fab.cdk-keyboard-focused .mat-button-focus-overlay,.mat-fab.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-fab::-moz-focus-inner{border:0}._mat-animation-noopable.mat-fab{transition:none;animation:none}.mat-fab .mat-button-wrapper{padding:16px 0;display:inline-block;line-height:24px}.mat-mini-fab{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);min-width:0;border-radius:50%;width:40px;height:40px;padding:0;flex-shrink:0}.mat-mini-fab::-moz-focus-inner{border:0}.mat-mini-fab.mat-button-disabled{cursor:default}.mat-mini-fab.cdk-keyboard-focused .mat-button-focus-overlay,.mat-mini-fab.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-mini-fab::-moz-focus-inner{border:0}._mat-animation-noopable.mat-mini-fab{transition:none;animation:none}.mat-mini-fab .mat-button-wrapper{padding:8px 0;display:inline-block;line-height:24px}.mat-icon-button{padding:0;min-width:0;width:40px;height:40px;flex-shrink:0;line-height:40px;border-radius:50%}.mat-icon-button i,.mat-icon-button .mat-icon{line-height:24px}.mat-button-ripple.mat-ripple,.mat-button-focus-overlay{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:inherit}.mat-button-ripple.mat-ripple:not(:empty){transform:translateZ(0)}.mat-button-focus-overlay{opacity:0;transition:opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1)}._mat-animation-noopable .mat-button-focus-overlay{transition:none}.cdk-high-contrast-active .mat-button-focus-overlay{background-color:#fff}.cdk-high-contrast-black-on-white .mat-button-focus-overlay{background-color:#000}.mat-button-ripple-round{border-radius:50%;z-index:1}.mat-button .mat-button-wrapper>*,.mat-flat-button .mat-button-wrapper>*,.mat-stroked-button .mat-button-wrapper>*,.mat-raised-button .mat-button-wrapper>*,.mat-icon-button .mat-button-wrapper>*,.mat-fab .mat-button-wrapper>*,.mat-mini-fab .mat-button-wrapper>*{vertical-align:middle}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button{display:block;font-size:inherit;width:2.5em;height:2.5em}.cdk-high-contrast-active .mat-button,.cdk-high-contrast-active .mat-flat-button,.cdk-high-contrast-active .mat-raised-button,.cdk-high-contrast-active .mat-icon-button,.cdk-high-contrast-active .mat-fab,.cdk-high-contrast-active .mat-mini-fab{outline:solid 1px}\n";
-      var DEFAULT_ROUND_BUTTON_COLOR = 'accent';
-      /**
-       * List of classes to add to MatButton instances based on host attributes to
-       * style as different variants.
-       */
-
-      var BUTTON_HOST_ATTRIBUTES = ['mat-button', 'mat-flat-button', 'mat-icon-button', 'mat-raised-button', 'mat-stroked-button', 'mat-mini-fab', 'mat-fab']; // Boilerplate for applying mixins to MatButton.
-
-      /** @docs-private */
-
-      var MatButtonBase = function MatButtonBase(_elementRef) {
-        _classCallCheck(this, MatButtonBase);
-
-        this._elementRef = _elementRef;
-      };
-
-      var _MatButtonMixinBase = Object(_angular_material_core__WEBPACK_IMPORTED_MODULE_1__["mixinColor"])(Object(_angular_material_core__WEBPACK_IMPORTED_MODULE_1__["mixinDisabled"])(Object(_angular_material_core__WEBPACK_IMPORTED_MODULE_1__["mixinDisableRipple"])(MatButtonBase)));
-      /**
-       * Material design button.
-       */
-
-
-      var MatButton = /*#__PURE__*/function (_MatButtonMixinBase2) {
-        _inherits(MatButton, _MatButtonMixinBase2);
-
-        var _super = _createSuper(MatButton);
-
-        function MatButton(elementRef, _focusMonitor, _animationMode) {
-          var _this;
-
-          _classCallCheck(this, MatButton);
-
-          _this = _super.call(this, elementRef);
-          _this._focusMonitor = _focusMonitor;
-          _this._animationMode = _animationMode;
-          /** Whether the button is round. */
-
-          _this.isRoundButton = _this._hasHostAttributes('mat-fab', 'mat-mini-fab');
-          /** Whether the button is icon button. */
-
-          _this.isIconButton = _this._hasHostAttributes('mat-icon-button'); // For each of the variant selectors that is present in the button's host
-          // attributes, add the correct corresponding class.
-
-          var _iterator = _createForOfIteratorHelper(BUTTON_HOST_ATTRIBUTES),
-              _step;
-
-          try {
-            for (_iterator.s(); !(_step = _iterator.n()).done;) {
-              var attr = _step.value;
-
-              if (_this._hasHostAttributes(attr)) {
-                _this._getHostElement().classList.add(attr);
-              }
-            } // Add a class that applies to all buttons. This makes it easier to target if somebody
-            // wants to target all Material buttons. We do it here rather than `host` to ensure that
-            // the class is applied to derived classes.
-
-          } catch (err) {
-            _iterator.e(err);
-          } finally {
-            _iterator.f();
-          }
-
-          elementRef.nativeElement.classList.add('mat-button-base');
-
-          if (_this.isRoundButton) {
-            _this.color = DEFAULT_ROUND_BUTTON_COLOR;
-          }
-
-          return _this;
-        }
-
-        _createClass(MatButton, [{
-          key: "ngAfterViewInit",
-          value: function ngAfterViewInit() {
-            this._focusMonitor.monitor(this._elementRef, true);
-          }
-        }, {
-          key: "ngOnDestroy",
-          value: function ngOnDestroy() {
-            this._focusMonitor.stopMonitoring(this._elementRef);
-          }
-          /** Focuses the button. */
-
-        }, {
-          key: "focus",
-          value: function focus() {
-            var origin = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'program';
-            var options = arguments.length > 1 ? arguments[1] : undefined;
-
-            this._focusMonitor.focusVia(this._getHostElement(), origin, options);
-          }
-        }, {
-          key: "_getHostElement",
-          value: function _getHostElement() {
-            return this._elementRef.nativeElement;
-          }
-        }, {
-          key: "_isRippleDisabled",
-          value: function _isRippleDisabled() {
-            return this.disableRipple || this.disabled;
-          }
-          /** Gets whether the button has one of the given attributes. */
-
-        }, {
-          key: "_hasHostAttributes",
-          value: function _hasHostAttributes() {
-            var _this2 = this;
-
-            for (var _len = arguments.length, attributes = new Array(_len), _key = 0; _key < _len; _key++) {
-              attributes[_key] = arguments[_key];
-            }
-
-            return attributes.some(function (attribute) {
-              return _this2._getHostElement().hasAttribute(attribute);
-            });
-          }
-        }]);
-
-        return MatButton;
-      }(_MatButtonMixinBase);
-
-      MatButton.ɵfac = function MatButton_Factory(t) {
-        return new (t || MatButton)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__["FocusMonitor"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["ANIMATION_MODULE_TYPE"], 8));
-      };
-
-      MatButton.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-        type: MatButton,
-        selectors: [["button", "mat-button", ""], ["button", "mat-raised-button", ""], ["button", "mat-icon-button", ""], ["button", "mat-fab", ""], ["button", "mat-mini-fab", ""], ["button", "mat-stroked-button", ""], ["button", "mat-flat-button", ""]],
-        viewQuery: function MatButton_Query(rf, ctx) {
-          if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_angular_material_core__WEBPACK_IMPORTED_MODULE_1__["MatRipple"], true);
-          }
-
-          if (rf & 2) {
-            var _t;
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.ripple = _t.first);
-          }
-        },
-        hostAttrs: [1, "mat-focus-indicator"],
-        hostVars: 5,
-        hostBindings: function MatButton_HostBindings(rf, ctx) {
-          if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("disabled", ctx.disabled || null);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("_mat-animation-noopable", ctx._animationMode === "NoopAnimations")("mat-button-disabled", ctx.disabled);
-          }
-        },
-        inputs: {
-          disabled: "disabled",
-          disableRipple: "disableRipple",
-          color: "color"
-        },
-        exportAs: ["matButton"],
-        features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
-        attrs: _c0,
-        ngContentSelectors: _c1,
-        decls: 4,
-        vars: 5,
-        consts: [[1, "mat-button-wrapper"], ["matRipple", "", 1, "mat-button-ripple", 3, "matRippleDisabled", "matRippleCentered", "matRippleTrigger"], [1, "mat-button-focus-overlay"]],
-        template: function MatButton_Template(rf, ctx) {
-          if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 0);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "div", 1);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "div", 2);
-          }
-
-          if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-button-ripple-round", ctx.isRoundButton || ctx.isIconButton);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("matRippleDisabled", ctx._isRippleDisabled())("matRippleCentered", ctx.isIconButton)("matRippleTrigger", ctx._getHostElement());
-          }
-        },
-        directives: [_angular_material_core__WEBPACK_IMPORTED_MODULE_1__["MatRipple"]],
-        styles: [_c2],
-        encapsulation: 2,
-        changeDetection: 0
-      });
-
-      MatButton.ctorParameters = function () {
-        return [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
-        }, {
-          type: _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__["FocusMonitor"]
-        }, {
-          type: String,
-          decorators: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
-          }, {
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
-            args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["ANIMATION_MODULE_TYPE"]]
-          }]
-        }];
-      };
-
-      MatButton.propDecorators = {
-        ripple: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
-          args: [_angular_material_core__WEBPACK_IMPORTED_MODULE_1__["MatRipple"]]
-        }]
-      };
-      /*@__PURE__*/
-
-      (function () {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatButton, [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
-          args: [{
-            selector: "button[mat-button], button[mat-raised-button], button[mat-icon-button],\n             button[mat-fab], button[mat-mini-fab], button[mat-stroked-button],\n             button[mat-flat-button]",
-            exportAs: 'matButton',
-            host: {
-              '[attr.disabled]': 'disabled || null',
-              '[class._mat-animation-noopable]': '_animationMode === "NoopAnimations"',
-              // Add a class for disabled button styling instead of the using attribute
-              // selector or pseudo-selector.  This allows users to create focusabled
-              // disabled buttons without recreating the styles.
-              '[class.mat-button-disabled]': 'disabled',
-              'class': 'mat-focus-indicator'
-            },
-            template: "<span class=\"mat-button-wrapper\"><ng-content></ng-content></span>\n<div matRipple class=\"mat-button-ripple\"\n     [class.mat-button-ripple-round]=\"isRoundButton || isIconButton\"\n     [matRippleDisabled]=\"_isRippleDisabled()\"\n     [matRippleCentered]=\"isIconButton\"\n     [matRippleTrigger]=\"_getHostElement()\"></div>\n<div class=\"mat-button-focus-overlay\"></div>\n",
-            inputs: ['disabled', 'disableRipple', 'color'],
-            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewEncapsulation"].None,
-            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectionStrategy"].OnPush,
-            styles: [".mat-button .mat-button-focus-overlay,.mat-icon-button .mat-button-focus-overlay{opacity:0}.mat-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay,.mat-stroked-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay{opacity:.04}@media(hover: none){.mat-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay,.mat-stroked-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay{opacity:0}}.mat-button,.mat-icon-button,.mat-stroked-button,.mat-flat-button{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible}.mat-button::-moz-focus-inner,.mat-icon-button::-moz-focus-inner,.mat-stroked-button::-moz-focus-inner,.mat-flat-button::-moz-focus-inner{border:0}.mat-button.mat-button-disabled,.mat-icon-button.mat-button-disabled,.mat-stroked-button.mat-button-disabled,.mat-flat-button.mat-button-disabled{cursor:default}.mat-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-button.cdk-program-focused .mat-button-focus-overlay,.mat-icon-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-icon-button.cdk-program-focused .mat-button-focus-overlay,.mat-stroked-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-stroked-button.cdk-program-focused .mat-button-focus-overlay,.mat-flat-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-flat-button.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-button::-moz-focus-inner,.mat-icon-button::-moz-focus-inner,.mat-stroked-button::-moz-focus-inner,.mat-flat-button::-moz-focus-inner{border:0}.mat-raised-button{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1)}.mat-raised-button::-moz-focus-inner{border:0}.mat-raised-button.mat-button-disabled{cursor:default}.mat-raised-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-raised-button.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-raised-button::-moz-focus-inner{border:0}._mat-animation-noopable.mat-raised-button{transition:none;animation:none}.mat-stroked-button{border:1px solid currentColor;padding:0 15px;line-height:34px}.mat-stroked-button .mat-button-ripple.mat-ripple,.mat-stroked-button .mat-button-focus-overlay{top:-1px;left:-1px;right:-1px;bottom:-1px}.mat-fab{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);min-width:0;border-radius:50%;width:56px;height:56px;padding:0;flex-shrink:0}.mat-fab::-moz-focus-inner{border:0}.mat-fab.mat-button-disabled{cursor:default}.mat-fab.cdk-keyboard-focused .mat-button-focus-overlay,.mat-fab.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-fab::-moz-focus-inner{border:0}._mat-animation-noopable.mat-fab{transition:none;animation:none}.mat-fab .mat-button-wrapper{padding:16px 0;display:inline-block;line-height:24px}.mat-mini-fab{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);min-width:0;border-radius:50%;width:40px;height:40px;padding:0;flex-shrink:0}.mat-mini-fab::-moz-focus-inner{border:0}.mat-mini-fab.mat-button-disabled{cursor:default}.mat-mini-fab.cdk-keyboard-focused .mat-button-focus-overlay,.mat-mini-fab.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-mini-fab::-moz-focus-inner{border:0}._mat-animation-noopable.mat-mini-fab{transition:none;animation:none}.mat-mini-fab .mat-button-wrapper{padding:8px 0;display:inline-block;line-height:24px}.mat-icon-button{padding:0;min-width:0;width:40px;height:40px;flex-shrink:0;line-height:40px;border-radius:50%}.mat-icon-button i,.mat-icon-button .mat-icon{line-height:24px}.mat-button-ripple.mat-ripple,.mat-button-focus-overlay{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:inherit}.mat-button-ripple.mat-ripple:not(:empty){transform:translateZ(0)}.mat-button-focus-overlay{opacity:0;transition:opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1)}._mat-animation-noopable .mat-button-focus-overlay{transition:none}.cdk-high-contrast-active .mat-button-focus-overlay{background-color:#fff}.cdk-high-contrast-black-on-white .mat-button-focus-overlay{background-color:#000}.mat-button-ripple-round{border-radius:50%;z-index:1}.mat-button .mat-button-wrapper>*,.mat-flat-button .mat-button-wrapper>*,.mat-stroked-button .mat-button-wrapper>*,.mat-raised-button .mat-button-wrapper>*,.mat-icon-button .mat-button-wrapper>*,.mat-fab .mat-button-wrapper>*,.mat-mini-fab .mat-button-wrapper>*{vertical-align:middle}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button{display:block;font-size:inherit;width:2.5em;height:2.5em}.cdk-high-contrast-active .mat-button,.cdk-high-contrast-active .mat-flat-button,.cdk-high-contrast-active .mat-raised-button,.cdk-high-contrast-active .mat-icon-button,.cdk-high-contrast-active .mat-fab,.cdk-high-contrast-active .mat-mini-fab{outline:solid 1px}\n"]
-          }]
-        }], function () {
-          return [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
-          }, {
-            type: _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__["FocusMonitor"]
-          }, {
-            type: String,
-            decorators: [{
-              type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
-            }, {
-              type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
-              args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["ANIMATION_MODULE_TYPE"]]
-            }]
-          }];
-        }, {
-          ripple: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
-            args: [_angular_material_core__WEBPACK_IMPORTED_MODULE_1__["MatRipple"]]
-          }]
-        });
-      })();
-      /**
-       * Material design anchor button.
-       */
-
-
-      var MatAnchor = /*#__PURE__*/function (_MatButton) {
-        _inherits(MatAnchor, _MatButton);
-
-        var _super2 = _createSuper(MatAnchor);
-
-        function MatAnchor(focusMonitor, elementRef, animationMode) {
-          _classCallCheck(this, MatAnchor);
-
-          return _super2.call(this, elementRef, focusMonitor, animationMode);
-        }
-
-        _createClass(MatAnchor, [{
-          key: "_haltDisabledEvents",
-          value: function _haltDisabledEvents(event) {
-            // A disabled button shouldn't apply any actions
-            if (this.disabled) {
-              event.preventDefault();
-              event.stopImmediatePropagation();
-            }
-          }
-        }]);
-
-        return MatAnchor;
-      }(MatButton);
-
-      MatAnchor.ɵfac = function MatAnchor_Factory(t) {
-        return new (t || MatAnchor)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__["FocusMonitor"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["ANIMATION_MODULE_TYPE"], 8));
-      };
-
-      MatAnchor.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-        type: MatAnchor,
-        selectors: [["a", "mat-button", ""], ["a", "mat-raised-button", ""], ["a", "mat-icon-button", ""], ["a", "mat-fab", ""], ["a", "mat-mini-fab", ""], ["a", "mat-stroked-button", ""], ["a", "mat-flat-button", ""]],
-        hostAttrs: [1, "mat-focus-indicator"],
-        hostVars: 7,
-        hostBindings: function MatAnchor_HostBindings(rf, ctx) {
-          if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function MatAnchor_click_HostBindingHandler($event) {
-              return ctx._haltDisabledEvents($event);
-            });
-          }
-
-          if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("tabindex", ctx.disabled ? 0 - 1 : ctx.tabIndex || 0)("disabled", ctx.disabled || null)("aria-disabled", ctx.disabled.toString());
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("_mat-animation-noopable", ctx._animationMode === "NoopAnimations")("mat-button-disabled", ctx.disabled);
-          }
-        },
-        inputs: {
-          disabled: "disabled",
-          disableRipple: "disableRipple",
-          color: "color",
-          tabIndex: "tabIndex"
-        },
-        exportAs: ["matButton", "matAnchor"],
-        features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
-        attrs: _c0,
-        ngContentSelectors: _c1,
-        decls: 4,
-        vars: 5,
-        consts: [[1, "mat-button-wrapper"], ["matRipple", "", 1, "mat-button-ripple", 3, "matRippleDisabled", "matRippleCentered", "matRippleTrigger"], [1, "mat-button-focus-overlay"]],
-        template: function MatAnchor_Template(rf, ctx) {
-          if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 0);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "div", 1);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "div", 2);
-          }
-
-          if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-button-ripple-round", ctx.isRoundButton || ctx.isIconButton);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("matRippleDisabled", ctx._isRippleDisabled())("matRippleCentered", ctx.isIconButton)("matRippleTrigger", ctx._getHostElement());
-          }
-        },
-        directives: [_angular_material_core__WEBPACK_IMPORTED_MODULE_1__["MatRipple"]],
-        styles: [_c2],
-        encapsulation: 2,
-        changeDetection: 0
-      });
-
-      MatAnchor.ctorParameters = function () {
-        return [{
-          type: _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__["FocusMonitor"]
-        }, {
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
-        }, {
-          type: String,
-          decorators: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
-          }, {
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
-            args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["ANIMATION_MODULE_TYPE"]]
-          }]
-        }];
-      };
-
-      MatAnchor.propDecorators = {
-        tabIndex: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-        }]
-      };
-      /*@__PURE__*/
-
-      (function () {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatAnchor, [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
-          args: [{
-            selector: "a[mat-button], a[mat-raised-button], a[mat-icon-button], a[mat-fab],\n             a[mat-mini-fab], a[mat-stroked-button], a[mat-flat-button]",
-            exportAs: 'matButton, matAnchor',
-            host: {
-              // Note that we ignore the user-specified tabindex when it's disabled for
-              // consistency with the `mat-button` applied on native buttons where even
-              // though they have an index, they're not tabbable.
-              '[attr.tabindex]': 'disabled ? -1 : (tabIndex || 0)',
-              '[attr.disabled]': 'disabled || null',
-              '[attr.aria-disabled]': 'disabled.toString()',
-              '(click)': '_haltDisabledEvents($event)',
-              '[class._mat-animation-noopable]': '_animationMode === "NoopAnimations"',
-              '[class.mat-button-disabled]': 'disabled',
-              'class': 'mat-focus-indicator'
-            },
-            inputs: ['disabled', 'disableRipple', 'color'],
-            template: "<span class=\"mat-button-wrapper\"><ng-content></ng-content></span>\n<div matRipple class=\"mat-button-ripple\"\n     [class.mat-button-ripple-round]=\"isRoundButton || isIconButton\"\n     [matRippleDisabled]=\"_isRippleDisabled()\"\n     [matRippleCentered]=\"isIconButton\"\n     [matRippleTrigger]=\"_getHostElement()\"></div>\n<div class=\"mat-button-focus-overlay\"></div>\n",
-            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewEncapsulation"].None,
-            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectionStrategy"].OnPush,
-            styles: [".mat-button .mat-button-focus-overlay,.mat-icon-button .mat-button-focus-overlay{opacity:0}.mat-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay,.mat-stroked-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay{opacity:.04}@media(hover: none){.mat-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay,.mat-stroked-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay{opacity:0}}.mat-button,.mat-icon-button,.mat-stroked-button,.mat-flat-button{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible}.mat-button::-moz-focus-inner,.mat-icon-button::-moz-focus-inner,.mat-stroked-button::-moz-focus-inner,.mat-flat-button::-moz-focus-inner{border:0}.mat-button.mat-button-disabled,.mat-icon-button.mat-button-disabled,.mat-stroked-button.mat-button-disabled,.mat-flat-button.mat-button-disabled{cursor:default}.mat-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-button.cdk-program-focused .mat-button-focus-overlay,.mat-icon-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-icon-button.cdk-program-focused .mat-button-focus-overlay,.mat-stroked-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-stroked-button.cdk-program-focused .mat-button-focus-overlay,.mat-flat-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-flat-button.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-button::-moz-focus-inner,.mat-icon-button::-moz-focus-inner,.mat-stroked-button::-moz-focus-inner,.mat-flat-button::-moz-focus-inner{border:0}.mat-raised-button{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1)}.mat-raised-button::-moz-focus-inner{border:0}.mat-raised-button.mat-button-disabled{cursor:default}.mat-raised-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-raised-button.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-raised-button::-moz-focus-inner{border:0}._mat-animation-noopable.mat-raised-button{transition:none;animation:none}.mat-stroked-button{border:1px solid currentColor;padding:0 15px;line-height:34px}.mat-stroked-button .mat-button-ripple.mat-ripple,.mat-stroked-button .mat-button-focus-overlay{top:-1px;left:-1px;right:-1px;bottom:-1px}.mat-fab{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);min-width:0;border-radius:50%;width:56px;height:56px;padding:0;flex-shrink:0}.mat-fab::-moz-focus-inner{border:0}.mat-fab.mat-button-disabled{cursor:default}.mat-fab.cdk-keyboard-focused .mat-button-focus-overlay,.mat-fab.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-fab::-moz-focus-inner{border:0}._mat-animation-noopable.mat-fab{transition:none;animation:none}.mat-fab .mat-button-wrapper{padding:16px 0;display:inline-block;line-height:24px}.mat-mini-fab{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);min-width:0;border-radius:50%;width:40px;height:40px;padding:0;flex-shrink:0}.mat-mini-fab::-moz-focus-inner{border:0}.mat-mini-fab.mat-button-disabled{cursor:default}.mat-mini-fab.cdk-keyboard-focused .mat-button-focus-overlay,.mat-mini-fab.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-mini-fab::-moz-focus-inner{border:0}._mat-animation-noopable.mat-mini-fab{transition:none;animation:none}.mat-mini-fab .mat-button-wrapper{padding:8px 0;display:inline-block;line-height:24px}.mat-icon-button{padding:0;min-width:0;width:40px;height:40px;flex-shrink:0;line-height:40px;border-radius:50%}.mat-icon-button i,.mat-icon-button .mat-icon{line-height:24px}.mat-button-ripple.mat-ripple,.mat-button-focus-overlay{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:inherit}.mat-button-ripple.mat-ripple:not(:empty){transform:translateZ(0)}.mat-button-focus-overlay{opacity:0;transition:opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1)}._mat-animation-noopable .mat-button-focus-overlay{transition:none}.cdk-high-contrast-active .mat-button-focus-overlay{background-color:#fff}.cdk-high-contrast-black-on-white .mat-button-focus-overlay{background-color:#000}.mat-button-ripple-round{border-radius:50%;z-index:1}.mat-button .mat-button-wrapper>*,.mat-flat-button .mat-button-wrapper>*,.mat-stroked-button .mat-button-wrapper>*,.mat-raised-button .mat-button-wrapper>*,.mat-icon-button .mat-button-wrapper>*,.mat-fab .mat-button-wrapper>*,.mat-mini-fab .mat-button-wrapper>*{vertical-align:middle}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button{display:block;font-size:inherit;width:2.5em;height:2.5em}.cdk-high-contrast-active .mat-button,.cdk-high-contrast-active .mat-flat-button,.cdk-high-contrast-active .mat-raised-button,.cdk-high-contrast-active .mat-icon-button,.cdk-high-contrast-active .mat-fab,.cdk-high-contrast-active .mat-mini-fab{outline:solid 1px}\n"]
-          }]
-        }], function () {
-          return [{
-            type: _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__["FocusMonitor"]
-          }, {
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
-          }, {
-            type: String,
-            decorators: [{
-              type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
-            }, {
-              type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
-              args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["ANIMATION_MODULE_TYPE"]]
-            }]
-          }];
-        }, {
-          tabIndex: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-          }]
-        });
-      })();
-      /**
-       * @license
-       * Copyright Google LLC All Rights Reserved.
-       *
-       * Use of this source code is governed by an MIT-style license that can be
-       * found in the LICENSE file at https://angular.io/license
-       */
-
-
-      var MatButtonModule = function MatButtonModule() {
-        _classCallCheck(this, MatButtonModule);
-      };
-
-      MatButtonModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
-        type: MatButtonModule
-      });
-      MatButtonModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-        factory: function MatButtonModule_Factory(t) {
-          return new (t || MatButtonModule)();
-        },
-        imports: [[_angular_material_core__WEBPACK_IMPORTED_MODULE_1__["MatRippleModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_1__["MatCommonModule"]], _angular_material_core__WEBPACK_IMPORTED_MODULE_1__["MatCommonModule"]]
-      });
-
-      (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](MatButtonModule, {
-          declarations: function declarations() {
-            return [MatButton, MatAnchor];
-          },
-          imports: function imports() {
-            return [_angular_material_core__WEBPACK_IMPORTED_MODULE_1__["MatRippleModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_1__["MatCommonModule"]];
-          },
-          exports: function exports() {
-            return [MatButton, MatAnchor, _angular_material_core__WEBPACK_IMPORTED_MODULE_1__["MatCommonModule"]];
-          }
-        });
-      })();
-      /*@__PURE__*/
-
-
-      (function () {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatButtonModule, [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
-          args: [{
-            imports: [_angular_material_core__WEBPACK_IMPORTED_MODULE_1__["MatRippleModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_1__["MatCommonModule"]],
-            exports: [MatButton, MatAnchor, _angular_material_core__WEBPACK_IMPORTED_MODULE_1__["MatCommonModule"]],
-            declarations: [MatButton, MatAnchor]
-          }]
-        }], null, null);
-      })();
-      /**
-       * @license
-       * Copyright Google LLC All Rights Reserved.
-       *
-       * Use of this source code is governed by an MIT-style license that can be
-       * found in the LICENSE file at https://angular.io/license
-       */
-
-      /**
-       * Generated bundle index. Do not edit.
-       */
-      //# sourceMappingURL=button.js.map
-
-      /***/
-
-    },
-
     /***/
     "./node_modules/@angular/material/fesm2015/datepicker.js":
     /*!***************************************************************!*\
@@ -1366,7 +812,7 @@
 
       var MatCalendarBody = /*#__PURE__*/function () {
         function MatCalendarBody(_elementRef, _ngZone) {
-          var _this3 = this;
+          var _this = this;
 
           _classCallCheck(this, MatCalendarBody);
 
@@ -1405,18 +851,18 @@
            */
 
           this._enterHandler = function (event) {
-            if (_this3._skipNextFocus && event.type === 'focus') {
-              _this3._skipNextFocus = false;
+            if (_this._skipNextFocus && event.type === 'focus') {
+              _this._skipNextFocus = false;
               return;
             } // We only need to hit the zone when we're selecting a range.
 
 
-            if (event.target && _this3.isRange) {
-              var cell = _this3._getCellFromElement(event.target);
+            if (event.target && _this.isRange) {
+              var cell = _this._getCellFromElement(event.target);
 
               if (cell) {
-                _this3._ngZone.run(function () {
-                  return _this3.previewChange.emit({
+                _this._ngZone.run(function () {
+                  return _this.previewChange.emit({
                     value: cell.enabled ? cell : null,
                     event: event
                   });
@@ -1432,13 +878,13 @@
 
           this._leaveHandler = function (event) {
             // We only need to hit the zone when we're selecting a range.
-            if (_this3.previewEnd !== null && _this3.isRange) {
+            if (_this.previewEnd !== null && _this.isRange) {
               // Only reset the preview end value when leaving cells. This looks better, because
               // we have a gap between the cells and the rows and we don't want to remove the
               // range just for it to show up again when the user moves a few pixels to the side.
               if (event.target && isTableCell(event.target)) {
-                _this3._ngZone.run(function () {
-                  return _this3.previewChange.emit({
+                _this._ngZone.run(function () {
+                  return _this.previewChange.emit({
                     value: null,
                     event: event
                   });
@@ -1449,10 +895,10 @@
 
           _ngZone.runOutsideAngular(function () {
             var element = _elementRef.nativeElement;
-            element.addEventListener('mouseenter', _this3._enterHandler, true);
-            element.addEventListener('focus', _this3._enterHandler, true);
-            element.addEventListener('mouseleave', _this3._leaveHandler, true);
-            element.addEventListener('blur', _this3._leaveHandler, true);
+            element.addEventListener('mouseenter', _this._enterHandler, true);
+            element.addEventListener('focus', _this._enterHandler, true);
+            element.addEventListener('mouseleave', _this._leaveHandler, true);
+            element.addEventListener('blur', _this._leaveHandler, true);
           });
         }
         /** Called when a cell is clicked. */
@@ -1521,17 +967,17 @@
         }, {
           key: "_focusActiveCell",
           value: function _focusActiveCell() {
-            var _this4 = this;
+            var _this2 = this;
 
             var movePreview = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
 
             this._ngZone.runOutsideAngular(function () {
-              _this4._ngZone.onStable.asObservable().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_12__["take"])(1)).subscribe(function () {
-                var activeCell = _this4._elementRef.nativeElement.querySelector('.mat-calendar-body-active');
+              _this2._ngZone.onStable.asObservable().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_12__["take"])(1)).subscribe(function () {
+                var activeCell = _this2._elementRef.nativeElement.querySelector('.mat-calendar-body-active');
 
                 if (activeCell) {
                   if (!movePreview) {
-                    _this4._skipNextFocus = true;
+                    _this2._skipNextFocus = true;
                   }
 
                   activeCell.focus();
@@ -1984,12 +1430,12 @@
       var MatSingleDateSelectionModel = /*#__PURE__*/function (_MatDateSelectionMode) {
         _inherits(MatSingleDateSelectionModel, _MatDateSelectionMode);
 
-        var _super3 = _createSuper(MatSingleDateSelectionModel);
+        var _super = _createSuper(MatSingleDateSelectionModel);
 
         function MatSingleDateSelectionModel(adapter) {
           _classCallCheck(this, MatSingleDateSelectionModel);
 
-          return _super3.call(this, null, adapter);
+          return _super.call(this, null, adapter);
         }
         /**
          * Adds a date to the current selection. In the case of a single date selection, the added date
@@ -2056,12 +1502,12 @@
       var MatRangeDateSelectionModel = /*#__PURE__*/function (_MatDateSelectionMode2) {
         _inherits(MatRangeDateSelectionModel, _MatDateSelectionMode2);
 
-        var _super4 = _createSuper(MatRangeDateSelectionModel);
+        var _super2 = _createSuper(MatRangeDateSelectionModel);
 
         function MatRangeDateSelectionModel(adapter) {
           _classCallCheck(this, MatRangeDateSelectionModel);
 
-          return _super4.call(this, new DateRange(null, null), adapter);
+          return _super2.call(this, new DateRange(null, null), adapter);
         }
         /**
          * Adds a date to the current selection. In the case of a date range selection, the added date
@@ -2311,10 +1757,10 @@
         _createClass(MatMonthView, [{
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this5 = this;
+            var _this3 = this;
 
             this._rerenderSubscription = this._dateAdapter.localeChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_12__["startWith"])(null)).subscribe(function () {
-              return _this5._init();
+              return _this3._init();
             });
           }
         }, {
@@ -2964,10 +2410,10 @@
         _createClass(MatMultiYearView, [{
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this6 = this;
+            var _this4 = this;
 
             this._rerenderSubscription = this._dateAdapter.localeChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_12__["startWith"])(null)).subscribe(function () {
-              return _this6._init();
+              return _this4._init();
             });
           }
         }, {
@@ -2980,7 +2426,7 @@
         }, {
           key: "_init",
           value: function _init() {
-            var _this7 = this;
+            var _this5 = this;
 
             this._todayYear = this._dateAdapter.getYear(this._dateAdapter.today()); // We want a range years such that we maximize the number of
             // enabled dates visible at once. This prevents issues where the minimum year
@@ -2998,7 +2444,7 @@
 
               if (row.length == yearsPerRow) {
                 this._years.push(row.map(function (year) {
-                  return _this7._createCellForYear(year);
+                  return _this5._createCellForYear(year);
                 }));
 
                 row = [];
@@ -3490,10 +2936,10 @@
         _createClass(MatYearView, [{
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this8 = this;
+            var _this6 = this;
 
             this._rerenderSubscription = this._dateAdapter.localeChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_12__["startWith"])(null)).subscribe(function () {
-              return _this8._init();
+              return _this6._init();
             });
           }
         }, {
@@ -3589,7 +3035,7 @@
         }, {
           key: "_init",
           value: function _init() {
-            var _this9 = this;
+            var _this7 = this;
 
             this._setSelectedMonth(this.selected);
 
@@ -3601,7 +3047,7 @@
 
             this._months = [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11]].map(function (row) {
               return row.map(function (month) {
-                return _this9._createCellForMonth(month, monthNames[month]);
+                return _this7._createCellForMonth(month, monthNames[month]);
               });
             });
 
@@ -4277,7 +3723,7 @@
 
       var MatCalendar = /*#__PURE__*/function () {
         function MatCalendar(_intl, _dateAdapter, _dateFormats, _changeDetectorRef) {
-          var _this10 = this;
+          var _this8 = this;
 
           _classCallCheck(this, MatCalendar);
 
@@ -4332,7 +3778,7 @@
           this._intlChanges = _intl.changes.subscribe(function () {
             _changeDetectorRef.markForCheck();
 
-            _this10.stateChanges.next();
+            _this8.stateChanges.next();
           });
         }
         /** A date representing the period (month or year) to start the calendar in. */
@@ -4878,7 +4324,7 @@
       var MatDatepickerContent = /*#__PURE__*/function (_MatDatepickerContent) {
         _inherits(MatDatepickerContent, _MatDatepickerContent);
 
-        var _super5 = _createSuper(MatDatepickerContent);
+        var _super3 = _createSuper(MatDatepickerContent);
 
         function MatDatepickerContent(elementRef,
         /**
@@ -4887,34 +4333,34 @@
          * @breaking-change 11.0.0
          */
         _changeDetectorRef, _model, _dateAdapter, _rangeSelectionStrategy) {
-          var _this11;
+          var _this9;
 
           _classCallCheck(this, MatDatepickerContent);
 
-          _this11 = _super5.call(this, elementRef);
-          _this11._changeDetectorRef = _changeDetectorRef;
-          _this11._model = _model;
-          _this11._dateAdapter = _dateAdapter;
-          _this11._rangeSelectionStrategy = _rangeSelectionStrategy;
-          _this11._subscriptions = new rxjs__WEBPACK_IMPORTED_MODULE_9__["Subscription"]();
+          _this9 = _super3.call(this, elementRef);
+          _this9._changeDetectorRef = _changeDetectorRef;
+          _this9._model = _model;
+          _this9._dateAdapter = _dateAdapter;
+          _this9._rangeSelectionStrategy = _rangeSelectionStrategy;
+          _this9._subscriptions = new rxjs__WEBPACK_IMPORTED_MODULE_9__["Subscription"]();
           /** Current state of the animation. */
 
-          _this11._animationState = 'enter';
+          _this9._animationState = 'enter';
           /** Emits when an animation has finished. */
 
-          _this11._animationDone = new rxjs__WEBPACK_IMPORTED_MODULE_9__["Subject"]();
-          return _this11;
+          _this9._animationDone = new rxjs__WEBPACK_IMPORTED_MODULE_9__["Subject"]();
+          return _this9;
         }
 
         _createClass(MatDatepickerContent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this12 = this;
+            var _this10 = this;
 
             // @breaking-change 11.0.0 Remove null check for `_changeDetectorRef.
             if (this._changeDetectorRef) {
               this._subscriptions.add(this.datepicker._stateChanges.subscribe(function () {
-                _this12._changeDetectorRef.markForCheck();
+                _this10._changeDetectorRef.markForCheck();
               }));
             }
 
@@ -5254,7 +4700,7 @@
         }, {
           key: "_registerInput",
           value: function _registerInput(input) {
-            var _this13 = this;
+            var _this11 = this;
 
             if (this._datepickerInput) {
               throw Error('A MatDatepicker can only be associated with a single input.');
@@ -5264,7 +4710,7 @@
 
             this._datepickerInput = input;
             this._inputStateChanges = input._stateChanges.subscribe(function () {
-              return _this13._stateChanges.next(undefined);
+              return _this11._stateChanges.next(undefined);
             });
             return this._model;
           }
@@ -5294,7 +4740,7 @@
         }, {
           key: "close",
           value: function close() {
-            var _this14 = this;
+            var _this12 = this;
 
             if (!this._opened) {
               return;
@@ -5306,7 +4752,7 @@
               instance._startExitAnimation();
 
               instance._animationDone.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_12__["take"])(1)).subscribe(function () {
-                return _this14._destroyPopup();
+                return _this12._destroyPopup();
               });
             }
 
@@ -5319,12 +4765,12 @@
             var completeClose = function completeClose() {
               // The `_opened` could've been reset already if
               // we got two events in quick succession.
-              if (_this14._opened) {
-                _this14._opened = false;
+              if (_this12._opened) {
+                _this12._opened = false;
 
-                _this14.closedStream.emit();
+                _this12.closedStream.emit();
 
-                _this14._focusedElementBeforeOpen = null;
+                _this12._focusedElementBeforeOpen = null;
               }
             };
 
@@ -5346,7 +4792,7 @@
         }, {
           key: "_openAsDialog",
           value: function _openAsDialog() {
-            var _this15 = this;
+            var _this13 = this;
 
             // Usually this would be handled by `open` which ensures that we can only have one overlay
             // open at a time, however since we reset the variables in async handlers some overlays
@@ -5382,7 +4828,7 @@
             });
 
             this._dialogRef.afterClosed().subscribe(function () {
-              return _this15.close();
+              return _this13.close();
             });
 
             this._forwardContentValues(this._dialogRef.componentInstance);
@@ -5392,7 +4838,7 @@
         }, {
           key: "_openAsPopup",
           value: function _openAsPopup() {
-            var _this16 = this;
+            var _this14 = this;
 
             var portal = new _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2__["ComponentPortal"](MatDatepickerContent, this._viewContainerRef);
 
@@ -5406,7 +4852,7 @@
 
 
             this._ngZone.onStable.asObservable().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_12__["take"])(1)).subscribe(function () {
-              _this16._popupRef.updatePosition();
+              _this14._popupRef.updatePosition();
             });
           }
           /** Forwards relevant values from the datepicker to the datepicker content inside the overlay. */
@@ -5422,7 +4868,7 @@
         }, {
           key: "_createPopup",
           value: function _createPopup() {
-            var _this17 = this;
+            var _this15 = this;
 
             var positionStrategy = this._overlay.position().flexibleConnectedTo(this._datepickerInput.getConnectedOverlayOrigin()).withTransformOriginOn('.mat-datepicker-content').withFlexibleDimensions(false).withViewportMargin(8).withLockedPosition();
 
@@ -5440,13 +4886,13 @@
 
             Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["merge"])(this._popupRef.backdropClick(), this._popupRef.detachments(), this._popupRef.keydownEvents().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_12__["filter"])(function (event) {
               // Closing on alt + up is only valid when there's an input associated with the datepicker.
-              return event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_10__["ESCAPE"] || _this17._datepickerInput && event.altKey && event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_10__["UP_ARROW"];
+              return event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_10__["ESCAPE"] || _this15._datepickerInput && event.altKey && event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_10__["UP_ARROW"];
             }))).subscribe(function (event) {
               if (event) {
                 event.preventDefault();
               }
 
-              _this17.close();
+              _this15.close();
             });
           }
           /** Destroys the current popup overlay. */
@@ -5788,12 +5234,12 @@
       var MatDatepicker = /*#__PURE__*/function (_MatDatepickerBase) {
         _inherits(MatDatepicker, _MatDatepickerBase);
 
-        var _super6 = _createSuper(MatDatepicker);
+        var _super4 = _createSuper(MatDatepicker);
 
         function MatDatepicker() {
           _classCallCheck(this, MatDatepicker);
 
-          return _super6.apply(this, arguments);
+          return _super4.apply(this, arguments);
         }
 
         return MatDatepicker;
@@ -5863,7 +5309,7 @@
 
       var MatDatepickerInputBase = /*#__PURE__*/function () {
         function MatDatepickerInputBase(_elementRef, _dateAdapter, _dateFormats) {
-          var _this18 = this;
+          var _this16 = this;
 
           _classCallCheck(this, MatDatepickerInputBase);
 
@@ -5894,9 +5340,9 @@
           /** The form control validator for whether the input parses. */
 
           this._parseValidator = function () {
-            return _this18._lastValueValid ? null : {
+            return _this16._lastValueValid ? null : {
               'matDatepickerParse': {
-                'text': _this18._elementRef.nativeElement.value
+                'text': _this16._elementRef.nativeElement.value
               }
             };
           };
@@ -5904,9 +5350,9 @@
 
 
           this._filterValidator = function (control) {
-            var controlValue = _this18._getValidDateOrNull(_this18._dateAdapter.deserialize(control.value));
+            var controlValue = _this16._getValidDateOrNull(_this16._dateAdapter.deserialize(control.value));
 
-            var dateFilter = _this18._getDateFilter();
+            var dateFilter = _this16._getDateFilter();
 
             return !dateFilter || !controlValue || dateFilter(controlValue) ? null : {
               'matDatepickerFilter': true
@@ -5916,11 +5362,11 @@
 
 
           this._minValidator = function (control) {
-            var controlValue = _this18._getValidDateOrNull(_this18._dateAdapter.deserialize(control.value));
+            var controlValue = _this16._getValidDateOrNull(_this16._dateAdapter.deserialize(control.value));
 
-            var min = _this18._getMinDate();
+            var min = _this16._getMinDate();
 
-            return !min || !controlValue || _this18._dateAdapter.compareDate(min, controlValue) <= 0 ? null : {
+            return !min || !controlValue || _this16._dateAdapter.compareDate(min, controlValue) <= 0 ? null : {
               'matDatepickerMin': {
                 'min': min,
                 'actual': controlValue
@@ -5931,11 +5377,11 @@
 
 
           this._maxValidator = function (control) {
-            var controlValue = _this18._getValidDateOrNull(_this18._dateAdapter.deserialize(control.value));
+            var controlValue = _this16._getValidDateOrNull(_this16._dateAdapter.deserialize(control.value));
 
-            var max = _this18._getMaxDate();
+            var max = _this16._getMaxDate();
 
-            return !max || !controlValue || _this18._dateAdapter.compareDate(max, controlValue) >= 0 ? null : {
+            return !max || !controlValue || _this16._dateAdapter.compareDate(max, controlValue) >= 0 ? null : {
               'matDatepickerMax': {
                 'max': max,
                 'actual': controlValue
@@ -5957,7 +5403,7 @@
 
 
           this._localeSubscription = _dateAdapter.localeChanges.subscribe(function () {
-            _this18.value = _this18.value;
+            _this16.value = _this16.value;
           });
         }
         /** The value of the input. */
@@ -5975,7 +5421,7 @@
         }, {
           key: "_registerModel",
           value: function _registerModel(model) {
-            var _this19 = this;
+            var _this17 = this;
 
             this._model = model;
 
@@ -5986,28 +5432,28 @@
             }
 
             this._valueChangesSubscription = this._model.selectionChanged.subscribe(function (event) {
-              if (event.source !== _this19) {
-                var _value3 = _this19._getValueFromModel(event.selection);
+              if (event.source !== _this17) {
+                var _value3 = _this17._getValueFromModel(event.selection);
 
-                _this19._lastValueValid = _this19._isValidValue(_value3);
+                _this17._lastValueValid = _this17._isValidValue(_value3);
 
-                _this19._cvaOnChange(_value3);
+                _this17._cvaOnChange(_value3);
 
-                _this19._onTouched();
+                _this17._onTouched();
 
-                _this19._formatValue(_value3); // Note that we can't wrap the entire block with this logic, because for the range inputs
+                _this17._formatValue(_value3); // Note that we can't wrap the entire block with this logic, because for the range inputs
                 // we want to revalidate whenever either one of the inputs changes and we don't have a
                 // good way of distinguishing it at the moment.
 
 
-                if (_this19._canEmitChangeEvent(event)) {
-                  _this19.dateInput.emit(new MatDatepickerInputEvent(_this19, _this19._elementRef.nativeElement));
+                if (_this17._canEmitChangeEvent(event)) {
+                  _this17.dateInput.emit(new MatDatepickerInputEvent(_this17, _this17._elementRef.nativeElement));
 
-                  _this19.dateChange.emit(new MatDatepickerInputEvent(_this19, _this19._elementRef.nativeElement));
+                  _this17.dateChange.emit(new MatDatepickerInputEvent(_this17, _this17._elementRef.nativeElement));
                 }
 
-                if (_this19._outsideValueChanged) {
-                  _this19._outsideValueChanged();
+                if (_this17._outsideValueChanged) {
+                  _this17._outsideValueChanged();
                 }
               }
             });
@@ -6349,17 +5795,17 @@
       var MatDatepickerInput = /*#__PURE__*/function (_MatDatepickerInputBa) {
         _inherits(MatDatepickerInput, _MatDatepickerInputBa);
 
-        var _super7 = _createSuper(MatDatepickerInput);
+        var _super5 = _createSuper(MatDatepickerInput);
 
         function MatDatepickerInput(elementRef, dateAdapter, dateFormats, _formField) {
-          var _thisSuper, _this20;
+          var _thisSuper, _this18;
 
           _classCallCheck(this, MatDatepickerInput);
 
-          _this20 = _super7.call(this, elementRef, dateAdapter, dateFormats);
-          _this20._formField = _formField;
-          _this20._validator = _angular_forms__WEBPACK_IMPORTED_MODULE_15__["Validators"].compose(_get((_thisSuper = _assertThisInitialized(_this20), _getPrototypeOf(MatDatepickerInput.prototype)), "_getValidators", _thisSuper).call(_thisSuper));
-          return _this20;
+          _this18 = _super5.call(this, elementRef, dateAdapter, dateFormats);
+          _this18._formField = _formField;
+          _this18._validator = _angular_forms__WEBPACK_IMPORTED_MODULE_15__["Validators"].compose(_get((_thisSuper = _assertThisInitialized(_this18), _getPrototypeOf(MatDatepickerInput.prototype)), "_getValidators", _thisSuper).call(_thisSuper));
+          return _this18;
         }
         /** The datepicker that this input is associated with. */
 
@@ -6717,7 +6163,7 @@
         }, {
           key: "_watchStateChanges",
           value: function _watchStateChanges() {
-            var _this21 = this;
+            var _this19 = this;
 
             var datepickerStateChanged = this.datepicker ? this.datepicker._stateChanges : Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["of"])();
             var inputStateChanged = this.datepicker && this.datepicker._datepickerInput ? this.datepicker._datepickerInput._stateChanges : Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["of"])();
@@ -6726,7 +6172,7 @@
             this._stateChanges.unsubscribe();
 
             this._stateChanges = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["merge"])(this._intl.changes, datepickerStateChanged, inputStateChanged, datepickerToggled).subscribe(function () {
-              return _this21._changeDetectorRef.markForCheck();
+              return _this19._changeDetectorRef.markForCheck();
             });
           }
         }, {
@@ -6953,27 +6399,27 @@
       var MatDateRangeInputPartBase = /*#__PURE__*/function (_MatDatepickerInputBa2) {
         _inherits(MatDateRangeInputPartBase, _MatDatepickerInputBa2);
 
-        var _super8 = _createSuper(MatDateRangeInputPartBase);
+        var _super6 = _createSuper(MatDateRangeInputPartBase);
 
         function MatDateRangeInputPartBase(_rangeInput, elementRef, _defaultErrorStateMatcher, _injector, _parentForm, _parentFormGroup, dateAdapter, dateFormats) {
-          var _this22;
+          var _this20;
 
           _classCallCheck(this, MatDateRangeInputPartBase);
 
-          _this22 = _super8.call(this, elementRef, dateAdapter, dateFormats);
-          _this22._rangeInput = _rangeInput;
-          _this22._defaultErrorStateMatcher = _defaultErrorStateMatcher;
-          _this22._injector = _injector;
-          _this22._parentForm = _parentForm;
-          _this22._parentFormGroup = _parentFormGroup;
+          _this20 = _super6.call(this, elementRef, dateAdapter, dateFormats);
+          _this20._rangeInput = _rangeInput;
+          _this20._defaultErrorStateMatcher = _defaultErrorStateMatcher;
+          _this20._injector = _injector;
+          _this20._parentForm = _parentForm;
+          _this20._parentFormGroup = _parentFormGroup;
 
-          _this22._outsideValueChanged = function () {
+          _this20._outsideValueChanged = function () {
             // Whenever the value changes outside the input we need to revalidate, because
             // the validation state of each of the inputs depends on the other one.
-            _this22._validatorOnChange();
+            _this20._validatorOnChange();
           };
 
-          return _this22;
+          return _this20;
         }
 
         _createClass(MatDateRangeInputPartBase, [{
@@ -7170,24 +6616,24 @@
       var MatStartDate = /*#__PURE__*/function (_MatDateRangeInputBas) {
         _inherits(MatStartDate, _MatDateRangeInputBas);
 
-        var _super9 = _createSuper(MatStartDate);
+        var _super7 = _createSuper(MatStartDate);
 
         function MatStartDate(rangeInput, elementRef, defaultErrorStateMatcher, injector, parentForm, parentFormGroup, dateAdapter, dateFormats) {
-          var _thisSuper2, _this23;
+          var _thisSuper2, _this21;
 
           _classCallCheck(this, MatStartDate);
 
           // TODO(crisbeto): this constructor shouldn't be necessary, but ViewEngine doesn't seem to
           // handle DI correctly when it is inherited from `MatDateRangeInputPartBase`. We can drop this
           // constructor once ViewEngine is removed.
-          _this23 = _super9.call(this, rangeInput, elementRef, defaultErrorStateMatcher, injector, parentForm, parentFormGroup, dateAdapter, dateFormats);
+          _this21 = _super7.call(this, rangeInput, elementRef, defaultErrorStateMatcher, injector, parentForm, parentFormGroup, dateAdapter, dateFormats);
           /** Validator that checks that the start date isn't after the end date. */
 
-          _this23._startValidator = function (control) {
-            var start = _this23._getValidDateOrNull(_this23._dateAdapter.deserialize(control.value));
+          _this21._startValidator = function (control) {
+            var start = _this21._getValidDateOrNull(_this21._dateAdapter.deserialize(control.value));
 
-            var end = _this23._model ? _this23._model.selection.end : null;
-            return !start || !end || _this23._dateAdapter.compareDate(start, end) <= 0 ? null : {
+            var end = _this21._model ? _this21._model.selection.end : null;
+            return !start || !end || _this21._dateAdapter.compareDate(start, end) <= 0 ? null : {
               'matStartDateInvalid': {
                 'end': end,
                 'actual': start
@@ -7195,13 +6641,13 @@
             };
           };
 
-          _this23._validator = _angular_forms__WEBPACK_IMPORTED_MODULE_15__["Validators"].compose([].concat(_toConsumableArray(_get((_thisSuper2 = _assertThisInitialized(_this23), _getPrototypeOf(MatStartDate.prototype)), "_getValidators", _thisSuper2).call(_thisSuper2)), [_this23._startValidator]));
+          _this21._validator = _angular_forms__WEBPACK_IMPORTED_MODULE_15__["Validators"].compose([].concat(_toConsumableArray(_get((_thisSuper2 = _assertThisInitialized(_this21), _getPrototypeOf(MatStartDate.prototype)), "_getValidators", _thisSuper2).call(_thisSuper2)), [_this21._startValidator]));
 
-          _this23._canEmitChangeEvent = function (event) {
-            return event.source !== _this23._rangeInput._endInput;
+          _this21._canEmitChangeEvent = function (event) {
+            return event.source !== _this21._rangeInput._endInput;
           };
 
-          return _this23;
+          return _this21;
         }
 
         _createClass(MatStartDate, [{
@@ -7396,24 +6842,24 @@
       var MatEndDate = /*#__PURE__*/function (_MatDateRangeInputBas2) {
         _inherits(MatEndDate, _MatDateRangeInputBas2);
 
-        var _super10 = _createSuper(MatEndDate);
+        var _super8 = _createSuper(MatEndDate);
 
         function MatEndDate(rangeInput, elementRef, defaultErrorStateMatcher, injector, parentForm, parentFormGroup, dateAdapter, dateFormats) {
-          var _thisSuper3, _this24;
+          var _thisSuper3, _this22;
 
           _classCallCheck(this, MatEndDate);
 
           // TODO(crisbeto): this constructor shouldn't be necessary, but ViewEngine doesn't seem to
           // handle DI correctly when it is inherited from `MatDateRangeInputPartBase`. We can drop this
           // constructor once ViewEngine is removed.
-          _this24 = _super10.call(this, rangeInput, elementRef, defaultErrorStateMatcher, injector, parentForm, parentFormGroup, dateAdapter, dateFormats);
+          _this22 = _super8.call(this, rangeInput, elementRef, defaultErrorStateMatcher, injector, parentForm, parentFormGroup, dateAdapter, dateFormats);
           /** Validator that checks that the end date isn't before the start date. */
 
-          _this24._endValidator = function (control) {
-            var end = _this24._getValidDateOrNull(_this24._dateAdapter.deserialize(control.value));
+          _this22._endValidator = function (control) {
+            var end = _this22._getValidDateOrNull(_this22._dateAdapter.deserialize(control.value));
 
-            var start = _this24._model ? _this24._model.selection.start : null;
-            return !end || !start || _this24._dateAdapter.compareDate(end, start) >= 0 ? null : {
+            var start = _this22._model ? _this22._model.selection.start : null;
+            return !end || !start || _this22._dateAdapter.compareDate(end, start) >= 0 ? null : {
               'matEndDateInvalid': {
                 'start': start,
                 'actual': end
@@ -7421,13 +6867,13 @@
             };
           };
 
-          _this24._validator = _angular_forms__WEBPACK_IMPORTED_MODULE_15__["Validators"].compose([].concat(_toConsumableArray(_get((_thisSuper3 = _assertThisInitialized(_this24), _getPrototypeOf(MatEndDate.prototype)), "_getValidators", _thisSuper3).call(_thisSuper3)), [_this24._endValidator]));
+          _this22._validator = _angular_forms__WEBPACK_IMPORTED_MODULE_15__["Validators"].compose([].concat(_toConsumableArray(_get((_thisSuper3 = _assertThisInitialized(_this22), _getPrototypeOf(MatEndDate.prototype)), "_getValidators", _thisSuper3).call(_thisSuper3)), [_this22._endValidator]));
 
-          _this24._canEmitChangeEvent = function (event) {
-            return event.source !== _this24._rangeInput._startInput;
+          _this22._canEmitChangeEvent = function (event) {
+            return event.source !== _this22._rangeInput._startInput;
           };
 
-          return _this24;
+          return _this22;
         }
 
         _createClass(MatEndDate, [{
@@ -7625,12 +7071,12 @@
       var MatDateRangePicker = /*#__PURE__*/function (_MatDatepickerBase2) {
         _inherits(MatDateRangePicker, _MatDatepickerBase2);
 
-        var _super11 = _createSuper(MatDateRangePicker);
+        var _super9 = _createSuper(MatDateRangePicker);
 
         function MatDateRangePicker() {
           _classCallCheck(this, MatDateRangePicker);
 
-          return _super11.apply(this, arguments);
+          return _super9.apply(this, arguments);
         }
 
         _createClass(MatDateRangePicker, [{
@@ -7770,7 +7216,7 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this25 = this;
+            var _this23 = this;
 
             if (!this._startInput) {
               throw Error('mat-date-range-input must contain a matStartDate input');
@@ -7787,7 +7233,7 @@
 
 
             Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["merge"])(this._startInput.stateChanges, this._endInput.stateChanges).subscribe(function () {
-              _this25._stateChanges.next(undefined);
+              _this23._stateChanges.next(undefined);
             });
           }
         }, {
@@ -8683,49 +8129,187 @@
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
       "./node_modules/@angular/core/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/fesm2015/router.js");
+      /* harmony import */
+
+
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/forms */
+      "./node_modules/@angular/forms/fesm2015/forms.js");
+      /* harmony import */
+
+
+      var _service_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ../../../service/api.service */
+      "./src/app/service/api.service.ts");
+      /* harmony import */
+
+
+      var _service_common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ../../../service/common.service */
+      "./src/app/service/common.service.ts");
 
       var GroupVolumeFormComponent = /*#__PURE__*/function () {
-        function GroupVolumeFormComponent() {
+        function GroupVolumeFormComponent(router, _apiService, _commService, fb) {
           _classCallCheck(this, GroupVolumeFormComponent);
+
+          this.router = router;
+          this._apiService = _apiService;
+          this._commService = _commService;
+          this.fb = fb;
         }
 
         _createClass(GroupVolumeFormComponent, [{
           key: "ngOnInit",
-          value: function ngOnInit() {}
+          value: function ngOnInit() {
+            this.getGroupForm();
+            this.getCadence();
+            this.groupForm = this.fb.group({
+              saveTheDate: [false, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+              theHealthCheck: [false, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+              thePeak: [false, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+              myPit: [false, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+              snapshot: [false, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+              myJam: [false, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+              reccomendation: [false, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+              theLesson: [false, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+              theForecast: [false, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+              freeSpace: [false, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
+            });
+            this.cadenceForm = this.fb.group({
+              weekly: [false, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+              biWeekly: [false, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+              monthly: [false, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+              quaterly: [false, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
+            });
+          }
+        }, {
+          key: "getGroupForm",
+          value: function getGroupForm() {
+            var _this24 = this;
+
+            this._apiService.getRequestWithoutbody('api/v1/admin/getGroupForm').subscribe(function (response) {
+              console.log("response", response);
+              _this24.groupFormDetails = response['data'];
+              console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+            }, function (err) {
+              _this24._commService.errorMsg(err.error.message);
+            });
+          }
+        }, {
+          key: "getCadence",
+          value: function getCadence() {
+            var _this25 = this;
+
+            this._apiService.getRequestWithoutbody('api/v1/admin/getCadence').subscribe(function (response) {
+              console.log("response", response);
+              _this25.cadenceDetails = response['data'];
+              console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+            }, function (err) {
+              _this25._commService.errorMsg(err.error.message);
+            });
+          }
+        }, {
+          key: "updateGroup",
+          value: function updateGroup() {
+            var _this26 = this;
+
+            var obj = {
+              "saveTheDate": this.groupForm.value.saveTheDate,
+              "theHealthCheck": this.groupForm.value.theHealthCheck,
+              "thePeak": this.groupForm.value.thePeak,
+              "myPit": this.groupForm.value.myPit,
+              "snapshot": this.groupForm.value.snapshot,
+              "myJam": this.groupForm.value.myJam,
+              "reccomendation": this.groupForm.value.reccomendation,
+              "theLesson": this.groupForm.value.theLesson,
+              "theForecast": this.groupForm.value.theForecast,
+              "freeSpace": this.groupForm.value.freeSpace
+            };
+
+            this._apiService.putRequest('api/v1/admin/activeInactiveGroupForm', obj).subscribe(function (response) {
+              console.log("response", response);
+
+              _this26._commService.successMsg("Updated Successfully");
+
+              _this26.getGroupForm();
+
+              console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+            }, function (err) {
+              _this26._commService.errorMsg(err.error.message);
+            });
+          }
+        }, {
+          key: "updateCadence",
+          value: function updateCadence() {
+            var _this27 = this;
+
+            var obj = {
+              "weekly": this.cadenceForm.value.weekly,
+              "biWeekly": this.cadenceForm.value.biWeekly,
+              "monthly": this.cadenceForm.value.monthly,
+              "quaterly": this.cadenceForm.value.quaterly
+            };
+
+            this._apiService.putRequest('api/v1/admin/activeInactiveCadence', obj).subscribe(function (response) {
+              console.log("response", response);
+
+              _this27._commService.successMsg("Updated Successfully");
+
+              _this27.getCadence();
+
+              console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+            }, function (err) {
+              _this27._commService.errorMsg(err.error.message);
+            });
+          }
         }]);
 
         return GroupVolumeFormComponent;
       }();
 
       GroupVolumeFormComponent.ɵfac = function GroupVolumeFormComponent_Factory(t) {
-        return new (t || GroupVolumeFormComponent)();
+        return new (t || GroupVolumeFormComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_service_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_service_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]));
       };
 
       GroupVolumeFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: GroupVolumeFormComponent,
         selectors: [["app-group-volume-form"]],
-        decls: 102,
-        vars: 0,
-        consts: [[1, "card"], [1, "card-body"], [1, "pl-0", "volume_element"], [1, "col-md-4"], [1, "volume_element_group"], [1, "custom-control", "custom-checkbox"], ["id", "customCheck2", "type", "checkbox", 1, "custom-control-input"], ["for", "customCheck2", 1, "custom-control-label"], ["id", "customCheck3", "type", "checkbox", 1, "custom-control-input"], ["for", "customCheck3", 1, "custom-control-label"], ["id", "customCheck4", "type", "checkbox", 1, "custom-control-input"], ["for", "customCheck4", 1, "custom-control-label"], ["id", "customCheck5", "type", "checkbox", 1, "custom-control-input"], ["for", "customCheck5", 1, "custom-control-label"], ["id", "customCheck6", "type", "checkbox", 1, "custom-control-input"], ["for", "customCheck6", 1, "custom-control-label"], ["id", "customCheck7", "type", "checkbox", 1, "custom-control-input"], ["for", "customCheck7", 1, "custom-control-label"], ["id", "customCheck8", "type", "checkbox", 1, "custom-control-input"], ["for", "customCheck8", 1, "custom-control-label"], ["id", "customCheck9", "type", "checkbox", 1, "custom-control-input"], ["for", "customCheck9", 1, "custom-control-label"], ["id", "customCheck9a", "type", "checkbox", 1, "custom-control-input"], ["for", "customCheck9a", 1, "custom-control-label"], ["id", "customCheck10", "type", "checkbox", 1, "custom-control-input"], ["for", "customCheck10", 1, "custom-control-label"], ["id", "customCheck11", "type", "checkbox", 1, "custom-control-input"], ["for", "customCheck11", 1, "custom-control-label"], [1, "pl-2", "pb-3"], [1, "btn", "btn-primary"], [1, "pl-2"], ["id", "cadence1", "type", "checkbox", 1, "custom-control-input"], ["for", "cadence1", 1, "custom-control-label"], ["id", "cadence2", "type", "checkbox", 1, "custom-control-input"], ["for", "cadence2", 1, "custom-control-label"], ["id", "cadence3", "type", "checkbox", 1, "custom-control-input"], ["for", "cadence3", 1, "custom-control-label"], ["id", "cadence4", "type", "checkbox", 1, "custom-control-input"], ["for", "cadence4", 1, "custom-control-label"]],
+        decls: 98,
+        vars: 16,
+        consts: [[1, "card"], [1, "card-body"], [3, "formGroup"], [1, "pl-0", "volume_element"], [1, "col-md-4"], [1, "volume_element_group"], [1, "custom-control", "custom-checkbox"], ["id", "customCheck2", "type", "checkbox", "formControlName", "saveTheDate", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck2", 1, "custom-control-label"], ["id", "customCheck3", "type", "checkbox", "formControlName", "theHealthCheck", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck3", 1, "custom-control-label"], ["id", "customCheck4", "type", "checkbox", "formControlName", "thePeak", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck4", 1, "custom-control-label"], ["id", "customCheck5", "type", "checkbox", "formControlName", "myPit", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck5", 1, "custom-control-label"], ["id", "customCheck6", "type", "checkbox", "formControlName", "snapshot", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck6", 1, "custom-control-label"], ["id", "customCheck7", "type", "checkbox", "formControlName", "myJam", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck7", 1, "custom-control-label"], ["id", "customCheck8", "type", "checkbox", "formControlName", "reccomendation", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck8", 1, "custom-control-label"], ["id", "customCheck9", "type", "checkbox", "formControlName", "theLesson", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck9", 1, "custom-control-label"], ["id", "customCheck9a", "type", "checkbox", "formControlName", "theForecast", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck9a", 1, "custom-control-label"], ["id", "customCheck10", "type", "checkbox", "formControlName", "freeSpace", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck10", 1, "custom-control-label"], [1, "pl-2", "pb-3"], [1, "btn", "btn-primary", 3, "click"], [1, "pl-2"], ["id", "cadence1", "type", "checkbox", "formControlName", "weekly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence1", 1, "custom-control-label"], ["id", "cadence2", "type", "checkbox", "formControlName", "biWeekly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence2", 1, "custom-control-label"], ["id", "cadence3", "type", "checkbox", "formControlName", "monthly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence3", 1, "custom-control-label"], ["id", "cadence4", "type", "checkbox", "formControlName", "quaterly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence4", 1, "custom-control-label"]],
         template: function GroupVolumeFormComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "ul", 2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "form", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "li", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "ul", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "li", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "input", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "label", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "input", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Save the Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_7_listener($event) {
+              return ctx.groupFormDetails.saveTheDate = $event;
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "label", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Save the Date");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8735,17 +8319,23 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "li", 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "li", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "input", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "label", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "input", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "The Health Check");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_13_listener($event) {
+              return ctx.groupFormDetails.theHealthCheck = $event;
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "label", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "The Health Check");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8755,17 +8345,23 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "li", 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "li", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](18, "input", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "label", 11);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "input", 11);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20, "The peak");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_19_listener($event) {
+              return ctx.groupFormDetails.thePeak = $event;
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "label", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "The peak");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8775,17 +8371,23 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "li", 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "li", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](24, "input", 12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "label", 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "input", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26, "My Pit");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_25_listener($event) {
+              return ctx.groupFormDetails.myPit = $event;
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "label", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "My Pit");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8795,17 +8397,23 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "li", 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "li", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](30, "input", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "label", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "input", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32, "The Snapshot");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_31_listener($event) {
+              return ctx.groupFormDetails.snapshot = $event;
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "label", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](33, "The Snapshot");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8815,17 +8423,23 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "li", 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "li", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](36, "input", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "label", 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "input", 17);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](38, " My Jam");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_37_listener($event) {
+              return ctx.groupFormDetails.myJam = $event;
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "label", 18);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39, " My Jam");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8835,17 +8449,23 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "li", 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "li", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](42, "input", 18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "label", 19);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "input", 19);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44, "The Recommendation");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_43_listener($event) {
+              return ctx.groupFormDetails.reccomendation = $event;
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "label", 20);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](45, "The Recommendation");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8855,17 +8475,23 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "li", 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "li", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](48, "input", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "label", 21);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "input", 21);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](50, "The Lesson");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_49_listener($event) {
+              return ctx.groupFormDetails.theLesson = $event;
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "label", 22);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, "The Lesson");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8875,17 +8501,23 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "li", 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "li", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](54, "input", 22);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "label", 23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "input", 23);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](56, "The forecast");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_55_listener($event) {
+              return ctx.groupFormDetails.theForecast = $event;
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "label", 24);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](57, "The forecast");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8895,37 +8527,23 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "li", 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "li", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](60, "input", 24);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "label", 25);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "input", 25);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](62, "Free Space");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_61_listener($event) {
+              return ctx.groupFormDetails.freeSpace = $event;
+            });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "label", 26);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "li", 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "div", 4);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "div", 5);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](66, "input", 26);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "label", 27);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](68, "Free Space");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](63, "Free Space");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8937,35 +8555,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "div", 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "div", 27);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "button", 29);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "button", 28);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](71, "Save");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function GroupVolumeFormComponent_Template_button_click_65_listener() {
+              return ctx.updateGroup();
+            });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "h3", 30);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, "Cadence");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "ul", 2);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "li", 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "div", 4);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "div", 5);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](78, "input", 31);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](79, "label", 32);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](80, "07 Days Weekly");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](66, "Save");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8973,19 +8571,33 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "form", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "h3", 29);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](69, "Cadence");
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](81, "li", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "ul", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](82, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "li", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](83, "div", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](84, "input", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](85, "label", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "input", 30);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](86, "14 Days Bi-Weekly");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_74_listener($event) {
+              return ctx.cadenceDetails.weekly = $event;
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "label", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](76, "07 Days Weekly");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8995,17 +8607,23 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](87, "li", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "li", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](88, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](89, "div", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](79, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](90, "input", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "input", 32);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](91, "label", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_80_listener($event) {
+              return ctx.cadenceDetails.biWeekly = $event;
+            });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](92, "30 Days Monthly");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](81, "label", 33);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](82, "14 Days Bi-Weekly");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -9015,17 +8633,49 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](93, "li", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](83, "li", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](94, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](84, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](95, "div", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](85, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](96, "input", 37);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](86, "input", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](97, "label", 38);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_86_listener($event) {
+              return ctx.cadenceDetails.monthly = $event;
+            });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](98, "90 Days Quarterly ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](87, "label", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](88, "30 Days Monthly");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](89, "li", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](90, "div", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](91, "div", 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](92, "input", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_92_listener($event) {
+              return ctx.cadenceDetails.quaterly = $event;
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](93, "label", 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](94, "90 Days Quarterly ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -9037,11 +8687,17 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](99, "div", 30);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](95, "div", 29);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](100, "button", 29);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](96, "button", 28);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](101, "Save");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function GroupVolumeFormComponent_Template_button_click_96_listener() {
+              return ctx.updateCadence();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](97, "Save");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -9051,7 +8707,74 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.groupForm);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.groupFormDetails.saveTheDate);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.groupFormDetails.theHealthCheck);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.groupFormDetails.thePeak);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.groupFormDetails.myPit);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.groupFormDetails.snapshot);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.groupFormDetails.myJam);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.groupFormDetails.reccomendation);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.groupFormDetails.theLesson);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.groupFormDetails.theForecast);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.groupFormDetails.freeSpace);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.cadenceForm);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.cadenceDetails.weekly);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.cadenceDetails.biWeekly);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.cadenceDetails.monthly);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.cadenceDetails.quaterly);
+          }
         },
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["CheckboxControlValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"]],
         styles: ["@import url(\"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700\");\n\n\n\n\n\n\n\n.preloader[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  top: 0px;\n  position: fixed;\n  z-index: 99999;\n  background: #fff;\n}\n.preloader[_ngcontent-%COMP%]   .cssload-speeding-wheel[_ngcontent-%COMP%] {\n  position: absolute;\n  top: calc(50% - 3.5px);\n  left: calc(50% - 3.5px);\n}\n.volume_element[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.volume_element_group[_ngcontent-%COMP%] {\n  background: linear-gradient(#27c3c8, #09e3a9);\n  padding: 15px;\n  color: #ffffff;\n  margin-bottom: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hc3NldHMvc2Nzcy92YXJpYWJsZS5zY3NzIiwic3JjL2FwcC9wYWdlcy9vdGhlcnMvZ3JvdXAtdm9sdW1lLWZvcm0vZ3JvdXAtdm9sdW1lLWZvcm0uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQU9BLGtGQUFZO0FBUFo7Ozs7O0NDS0M7QURRRCxlQUFBO0FBa0JBLGtCQUFBO0FBYUEsZUFBQTtBQXNDQSxlQUFBO0FBUUEsaUJBQUE7QUFVQSxZQUFBO0FBRUE7RUFDSSxXQUFXO0VBQ1gsWUFBWTtFQUNaLFFBQU87RUFDUCxlQUFlO0VBQ2YsY0FBYztFQUNkLGdCQUFnQjtBQ3hGcEI7QURrRkE7RUFRUSxrQkFBa0I7RUFDbEIsc0JBQXNCO0VBQ3RCLHVCQUF1QjtBQ3RGL0I7QUF4QkE7RUFDRSxhQUFhO0VBQ2IsZUFBZTtBQTJCakI7QUExQkE7RUFDSSw2Q0FBcUQ7RUFDckQsYUFBYTtFQUNmLGNEMkVhO0VDMUVYLG1CQUFtQjtBQTZCdkIiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9vdGhlcnMvZ3JvdXAtdm9sdW1lLWZvcm0vZ3JvdXAtdm9sdW1lLWZvcm0uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxyXG5UZW1wbGF0ZSBOYW1lOiBBZG1pbiBQcmVzcyBBZG1pblxyXG5BdXRob3I6IFRoZW1lZGVzaWduZXJcclxuRW1haWw6IG5pcmF2am9zaGk4N0BnbWFpbC5jb21cclxuRmlsZTogc2Nzc1xyXG4qL1xyXG4vLyBWYXJpYWJsZXNcclxuQGltcG9ydCB1cmwoJ2h0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzP2ZhbWlseT1Qb3BwaW5zOjMwMCw0MDAsNTAwLDYwMCw3MDAnKTtcclxuXHJcbiRib2R5Zm9udDonUG9wcGlucycsIHNhbnMtc2VyaWY7XHJcbiRoZWFkaW5nZm9udDonUG9wcGlucycsIHNhbnMtc2VyaWY7IFxyXG5cclxuXHJcbi8qVGhlbWUgQ29sb3JzKi9cclxuXHJcbiR0b3BiYXI6ICMyMjY2QTY7XHJcbiRzaWRlYmFyOiAjZmZmO1xyXG4kc2lkZWJhci13aGl0ZTogI2U1ZWRlZjtcclxuJHNpZGViYXItYWx0OiNmMmY2Zjg7XHJcbiRib2R5Y29sb3I6ICNlZWY1Zjk7XHJcbiRoZWFkaW5ndGV4dDogIzQ1NWE2NDtcclxuJGJvZHl0ZXh0OiAjN2Q4YjkyOyBcclxuJHNpZGViYXItdGV4dDogI2ZmZjtcclxuJHNpZGViYXItaWNvbnM6ICNmZmYgO1xyXG5cclxuJGxpZ2h0LXRleHQ6ICNhNmI3YmY7XHJcbiR0aGVtZWNvbG9yOiAjMjdjM2M4O1xyXG4kdGhlbWVjb2xvcjE6ICMwOWUzYTk7XHJcbiR0aGVtZWNvbG9yLWFsdDogIzI2YzZkYTtcclxuJHRoZW1lY29sb3ItZGFyazogIzAyOGVlMTtcclxuXHJcbi8qYm9vdHN0cmFwIENvbG9yKi9cclxuJGRhbmdlcjogI2VmNTM1MDtcclxuJHN1Y2Nlc3M6ICMyNmRhZDI7XHJcbiR3YXJuaW5nOiAjZmZiMjJiO1xyXG4kcHJpbWFyeTogIzg1NmVkYTtcclxuJGluZm86ICMxOTc2ZDI7XHJcbiRpbnZlcnNlOiAjMmYzZDRhO1xyXG4kbXV0ZWQ6ICM5OWFiYjQ7XHJcbiRkYXJrOiAjMjYzMjM4O1xyXG4kbGlnaHQ6ICNmMmY0Zjg7XHJcbiRleHRyYS1saWdodDogI2ViZjNmNTtcclxuJGJnbGlnaHQ6cmdiYSgwLCAwLCAwLCAwLjAyKTtcclxuXHJcbi8qTGlnaHQgY29sb3JzKi9cclxuJGxpZ2h0LWRhbmdlcjogI2Y5ZTdlYjtcclxuJGxpZ2h0LXN1Y2Nlc3M6ICNlOGZkZWI7XHJcbiRsaWdodC13YXJuaW5nOiAjZmZmOGVjO1xyXG4kbGlnaHQtcHJpbWFyeTogI2YxZWZmZDtcclxuJGxpZ2h0LWluZm86ICNjZmVjZmU7XHJcbiRsaWdodC1pbnZlcnNlOiAjZjZmNmY2O1xyXG4kbGlnaHQtbWVnbmE6ICNlMGYyZjQ7IFxyXG5cclxuXHJcblxyXG4kZGFuZ2VyLWRhcms6ICNlNjI5NGI7XHJcbiRzdWNjZXNzLWRhcms6ICMxZWFjYmU7XHJcbiR3YXJuaW5nLWRhcms6ICNlOWFiMmU7XHJcbiRwcmltYXJ5LWRhcms6ICMyMjY2QTY7IFxyXG4kaW5mby1kYXJrOiAjMDI4ZWUxO1xyXG4kcmVkLWRhcms6ICNkNjFmMWY7XHJcbiRpbnZlcnNlLWRhcms6ICMyMzJhMzc7XHJcbiRkYXJrLXRyYW5zcGFyZW50OnJnYmEoMCwgMCwgMCwgMC4wNSk7XHJcblxyXG4kaW5mby1zaGFkb3c6IDAgMnB4IDJweCAwIHJnYmEoNjYsMTY1LDI0NSwuMTQpLCAwIDNweCAxcHggLTJweCByZ2JhKDY2LDE2NSwyNDUsLjIpLCAwIDFweCA1cHggMCByZ2JhKDY2LDE2NSwyNDUsLjEyKTtcclxuJGluZm8tc2hhZG93LWhvdmVyOjAgMTRweCAyNnB4IC0xMnB4IHJnYmEoMjMsMTA1LDI1NSwuNDIpLCAwIDRweCAyM3B4IDAgcmdiYSgwLDAsMCwuMTIpLCAwIDhweCAxMHB4IC01cHggcmdiYSgyMywxMDUsMjU1LC4yKTtcclxuXHJcbiR3YXJuaW5nLXNoYWRvdzowIDJweCAycHggMCByZ2JhKDI0OCwxOTQsMCwuMTQpLCAwIDNweCAxcHggLTJweCByZ2JhKDI0OCwxOTQsMCwuMiksIDAgMXB4IDVweCAwIHJnYmEoMjQ4LDE5NCwwLC4xMik7XHJcbiR3YXJuaW5nLXNoYWRvdy1ob3ZlcjowIDE0cHggMjZweCAtMTJweCByZ2JhKDI0OCwxOTQsMCwuNDIpLCAwIDRweCAyM3B4IDAgcmdiYSgwLDAsMCwuMTIpLCAwIDhweCAxMHB4IC01cHggcmdiYSgyNDgsMTk0LDAsLjIpO1xyXG5cclxuJGRhbmdlci1zaGFkb3c6MCAycHggMnB4IDAgcmdiYSgyMzksODMsODAsLjE0KSwgMCAzcHggMXB4IC0ycHggcmdiYSgyMzksODMsODAsLjIpLCAwIDFweCA1cHggMCByZ2JhKDIzOSw4Myw4MCwuMTIpO1xyXG4kZGFuZ2VyLXNoYWRvdy1ob3ZlcjowIDE0cHggMjZweCAtMTJweCByZ2JhKDIzOSw4Myw4MCwuNDIpLCAwIDRweCAyM3B4IDAgcmdiYSgwLDAsMCwuMTIpLCAwIDhweCAxMHB4IC01cHggcmdiYSgyMzksODMsODAsLjIpO1xyXG5cclxuJHN1Y2Nlc3Mtc2hhZG93OjAgMnB4IDJweCAwIHJnYmEoNDAsMTkwLDE4OSwuMTQpLCAwIDNweCAxcHggLTJweCByZ2JhKDQwLDE5MCwxODksLjIpLCAwIDFweCA1cHggMCByZ2JhKDQwLDE5MCwxODksLjEyKTtcclxuJHN1Y2Nlc3Mtc2hhZG93LWhvdmVyOjAgMTRweCAyNnB4IC0xMnB4IHJnYmEoNDAsMTkwLDE4OSwuNDIpLCAwIDRweCAyM3B4IDAgcmdiYSgwLDAsMCwuMTIpLCAwIDhweCAxMHB4IC01cHggcmdiYSg0MCwxOTAsMTg5LC4yKTtcclxuICAgIFxyXG4kcHJpbWFyeS1zaGFkb3c6MCAycHggMnB4IDAgcmdiYSgxMTYsOTYsMjM4LC4xNCksIDAgM3B4IDFweCAtMnB4IHJnYmEoMTE2LDk2LDIzOCwuMiksIDAgMXB4IDVweCAwIHJnYmEoMTE2LDk2LDIzOCwuMTIpO1xyXG4kcHJpbWFyeS1zaGFkb3ctaG92ZXI6MCAxNHB4IDI2cHggLTEycHggcmdiYSgxMTYsOTYsMjM4LC40MiksIDAgNHB4IDIzcHggMCByZ2JhKDAsMCwwLC4xMiksIDAgOHB4IDEwcHggLTVweCByZ2JhKDExNiw5NiwyMzgsLjIpO1xyXG5cclxuJGRlZmF1bHQtc2hhZG93OjAgMnB4IDJweCAwIHJnYmEoMTY5LDE2OSwxNjksLjE0KSwgMCAzcHggMXB4IC0ycHggcmdiYSgxNjksMTY5LDE2OSwuMiksIDAgMXB4IDVweCAwIHJnYmEoMTY5LDE2OSwxNjksLjEyKTtcclxuJGRlZmF1bHQtc2hhZG93LWhvdmVyOjAgMTRweCAyNnB4IC0xMnB4IHJnYmEoMTY5LDE2OSwxNjksLjQyKSwgMCA0cHggMjNweCAwIHJnYmEoMCwwLDAsLjEyKSwgMCA4cHggMTBweCAtNXB4IHJnYmEoMTY5LDE2OSwxNjksLjIpO1xyXG5cclxuLypOb3JtYWwgQ29sb3IqL1xyXG4kd2hpdGU6ICNmZmZmZmY7XHJcbiRyZWQ6ICNmYjNhM2E7XHJcbiR5ZWxsb3c6ICNhMGFlYzQ7XHJcbiRwdXJwbGU6ICM3NDYwZWU7XHJcbiRibHVlOiAjMDJiZWM5O1xyXG4kbWVnbmE6ICMwMDg5N2I7XHJcblxyXG4vKkV4dHJhIFZhcmlhYmxlKi9cclxuJHJndDogcmlnaHQ7XHJcbiRsZnQ6IGxlZnQ7XHJcbiRib3JkZXI6IHJnYmEoMTIwLCAxMzAsIDE0MCwgMC4xMyk7XHJcbiR0YWJsZS1ib3JkZXI6I2YzZjFmMTtcclxuJGNhcmQtYnJkOiNkN2RmZTM7XHJcbiRkYXJrLXRleHQ6ICM4NDhhOTY7XHJcbiRyYWRpdXM6IDRweDtcclxuJGZvcm0tYnJkOiAjYjFiOGJiO1xyXG5cclxuLypQcmVsb2FkZXIqL1xyXG5cclxuLnByZWxvYWRlcntcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgdG9wOjBweDtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIHotaW5kZXg6IDk5OTk5O1xyXG4gICAgYmFja2dyb3VuZDogI2ZmZjtcclxuICAgIC5jc3Nsb2FkLXNwZWVkaW5nLXdoZWVse1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICB0b3A6IGNhbGMoNTAlIC0gMy41cHgpO1xyXG4gICAgICAgIGxlZnQ6IGNhbGMoNTAlIC0gMy41cHgpO1xyXG4gICAgfVxyXG59XHJcblxyXG4iLCIvKlxyXG5UZW1wbGF0ZSBOYW1lOiBBZG1pbiBQcmVzcyBBZG1pblxyXG5BdXRob3I6IFRoZW1lZGVzaWduZXJcclxuRW1haWw6IG5pcmF2am9zaGk4N0BnbWFpbC5jb21cclxuRmlsZTogc2Nzc1xyXG4qL1xuQGltcG9ydCB1cmwoXCJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9UG9wcGluczozMDAsNDAwLDUwMCw2MDAsNzAwXCIpO1xuLypUaGVtZSBDb2xvcnMqL1xuLypib290c3RyYXAgQ29sb3IqL1xuLypMaWdodCBjb2xvcnMqL1xuLypOb3JtYWwgQ29sb3IqL1xuLypFeHRyYSBWYXJpYWJsZSovXG4vKlByZWxvYWRlciovXG4ucHJlbG9hZGVyIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbiAgdG9wOiAwcHg7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgei1pbmRleDogOTk5OTk7XG4gIGJhY2tncm91bmQ6ICNmZmY7XG59XG5cbi5wcmVsb2FkZXIgLmNzc2xvYWQtc3BlZWRpbmctd2hlZWwge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogY2FsYyg1MCUgLSAzLjVweCk7XG4gIGxlZnQ6IGNhbGMoNTAlIC0gMy41cHgpO1xufVxuXG4udm9sdW1lX2VsZW1lbnQge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LXdyYXA6IHdyYXA7XG59XG5cbi52b2x1bWVfZWxlbWVudF9ncm91cCB7XG4gIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgjMjdjM2M4LCAjMDllM2E5KTtcbiAgcGFkZGluZzogMTVweDtcbiAgY29sb3I6ICNmZmZmZmY7XG4gIG1hcmdpbi1ib3R0b206IDEwcHg7XG59XG4iXX0= */"]
       });
       /*@__PURE__*/
@@ -9065,7 +8788,15 @@
             styleUrls: ['./group-volume-form.component.scss']
           }]
         }], function () {
-          return [];
+          return [{
+            type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]
+          }, {
+            type: _service_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]
+          }, {
+            type: _service_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]
+          }, {
+            type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]
+          }];
         }, null);
       })();
       /***/
@@ -9347,6 +9078,12 @@
       var _group_volume_form_group_volume_form_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! ./group-volume-form/group-volume-form.component */
       "./src/app/pages/others/group-volume-form/group-volume-form.component.ts");
+      /* harmony import */
+
+
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      /*! @angular/forms */
+      "./node_modules/@angular/forms/fesm2015/forms.js");
 
       var OthersModule = function OthersModule() {
         _classCallCheck(this, OthersModule);
@@ -9359,13 +9096,13 @@
         factory: function OthersModule_Factory(t) {
           return new (t || OthersModule)();
         },
-        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _others_routing_module__WEBPACK_IMPORTED_MODULE_5__["OthersRoutingModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_8__["ChartsModule"], _swimlane_ngx_charts__WEBPACK_IMPORTED_MODULE_9__["NgxChartsModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_10__["NgbModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_2__["MatDatepickerModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_3__["MatNativeDateModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__["MatFormFieldModule"]]]
+        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _others_routing_module__WEBPACK_IMPORTED_MODULE_5__["OthersRoutingModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_8__["ChartsModule"], _swimlane_ngx_charts__WEBPACK_IMPORTED_MODULE_9__["NgxChartsModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_10__["NgbModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_2__["MatDatepickerModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_3__["MatNativeDateModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ReactiveFormsModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__["MatFormFieldModule"]]]
       });
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](OthersModule, {
           declarations: [_others_component__WEBPACK_IMPORTED_MODULE_6__["OthersComponent"], _analytics_analytics_component__WEBPACK_IMPORTED_MODULE_7__["AnalyticsComponent"], _group_volume_form_group_volume_form_component__WEBPACK_IMPORTED_MODULE_11__["GroupVolumeFormComponent"]],
-          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _others_routing_module__WEBPACK_IMPORTED_MODULE_5__["OthersRoutingModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_8__["ChartsModule"], _swimlane_ngx_charts__WEBPACK_IMPORTED_MODULE_9__["NgxChartsModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_10__["NgbModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_2__["MatDatepickerModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_3__["MatNativeDateModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__["MatFormFieldModule"]]
+          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _others_routing_module__WEBPACK_IMPORTED_MODULE_5__["OthersRoutingModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_8__["ChartsModule"], _swimlane_ngx_charts__WEBPACK_IMPORTED_MODULE_9__["NgxChartsModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_10__["NgbModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_2__["MatDatepickerModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_3__["MatNativeDateModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ReactiveFormsModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__["MatFormFieldModule"]]
         });
       })();
       /*@__PURE__*/
@@ -9376,7 +9113,7 @@
           type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
           args: [{
             declarations: [_others_component__WEBPACK_IMPORTED_MODULE_6__["OthersComponent"], _analytics_analytics_component__WEBPACK_IMPORTED_MODULE_7__["AnalyticsComponent"], _group_volume_form_group_volume_form_component__WEBPACK_IMPORTED_MODULE_11__["GroupVolumeFormComponent"]],
-            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _others_routing_module__WEBPACK_IMPORTED_MODULE_5__["OthersRoutingModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_8__["ChartsModule"], _swimlane_ngx_charts__WEBPACK_IMPORTED_MODULE_9__["NgxChartsModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_10__["NgbModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_2__["MatDatepickerModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_3__["MatNativeDateModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__["MatFormFieldModule"]]
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _others_routing_module__WEBPACK_IMPORTED_MODULE_5__["OthersRoutingModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_8__["ChartsModule"], _swimlane_ngx_charts__WEBPACK_IMPORTED_MODULE_9__["NgxChartsModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_10__["NgbModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_2__["MatDatepickerModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_3__["MatNativeDateModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ReactiveFormsModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__["MatFormFieldModule"]]
           }]
         }], null, null);
       })();
