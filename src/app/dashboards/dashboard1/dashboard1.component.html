@@ -1,12 +1,7 @@
 <!-- ============================================================== -->
 <!-- Start Page Content -->
 <!-- ============================================================== -->
-<div class="row">
-    <div class="col-12">
-        <!-- You can find this in the dashboard-component -->
-     
-    </div>
-</div>
+
 <!-- ============================================================== -->
 <!-- chart and stats -->
 <!-- ============================================================== -->
@@ -22,8 +17,8 @@
                              Users Reports
                             </button>
                             <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-menu dropdown-menu-right">
-                              <button class="dropdown-item">Monthly</button>
-                              <button class="dropdown-item">Yearly</button>
+                              <button (click)="getDashboard(2)" class="dropdown-item">Monthly</button>
+                              <button (click)="getDashboard(3)" class="dropdown-item">Yearly</button>
                             </div>
                           </div>
                   
@@ -49,7 +44,7 @@
     </div>
     <!-- other chart component -->
    <div class="col-md-4">
-    <app-project-counter></app-project-counter>
+    <app-project-counter [item]="userCountsNumber"></app-project-counter>
    </div>
 </div>
 <!-- ============================================================== -->

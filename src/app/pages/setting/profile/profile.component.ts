@@ -31,9 +31,9 @@ export class ProfileComponent implements OnInit {
     
      this.updateProfile=this.fb.group({
 
-      name:[null, [Validators.required]],
-      email:[null, [Validators.required]],
-      phone:[null, [Validators.required]]
+      name:[null, [Validators.required,  Validators.minLength(2),Validators.maxLength(20)]],
+      email:[null, [Validators.required,  Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      phone:[null, [Validators.required,  Validators.minLength(7),Validators.maxLength(15),  Validators.pattern(/^-?(0|[1-9]\d*)?$/)]]
 
 
 
@@ -82,13 +82,13 @@ export class ProfileComponent implements OnInit {
   profileUpdate(){
     console.log("888888888888888888888")
     this.isSubmitted=true
-    if(this.isSubmitted && this.updateProfile ){
+    if(this.isSubmitted && this.updateProfile.valid ){
       this._apiService
       .putRequest("api/v1/admin/updateProfile", this.updateProfile.value)
-      .subscribe((response) => {
+      .subscribe((response:any) => {
         console.log(response);
          this.router.navigate(["/dashboard/dashboard"]);
-        this._commService.successMsg("Profile Updated Successfully");
+        this._commService.successMsg(response.message);
       });
   } 
 

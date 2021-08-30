@@ -1,14 +1,33 @@
-import { Component } from '@angular/core';
-import { NgbProgressbarConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+import {  Input } from '@angular/core'
+
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { HttpClient } from '@angular/common/http';
+
+ import { FormBuilder, FormGroup, Validators,ValidationErrors, ValidatorFn} from '@angular/forms';
+
+import { MatDialog } from '@angular/material/dialog';
+
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ApiService } from '../../service/api.service';
+import { CommonService } from '../../service/common.service';
+
 
 @Component({
   templateUrl: './dashboard1.component.html',
   styleUrls: ['./dashboard1.component.css']
 })
 export class Dashboard1Component {
+  [x: string]: any;
   subtitle: string;
-  constructor() {
-    this.subtitle = 'This is some text within a card block.';
+  userCounts: any;
+
+  constructor(private router: Router, private _apiService:ApiService, private _commService: CommonService, private fb:FormBuilder) { }
+  
+  ngOnInit(): void {
+    this.getDashboard(2)
+   
   }
   // This is for the dashboar line chart
   // lineChart
@@ -131,4 +150,48 @@ export class Dashboard1Component {
   ];
   public barChartLegend = false;
   public barChartType = 'bar';
+  getDashboard(id)
+  {
+    const reqbody = { userData: id};
+    console.log(reqbody);
+    this._apiService.postRequest("api/v1/admin/dashboard", reqbody).subscribe(
+      (response) => {
+
+        this.userCounts = response["data"]["userCounts"];
+        this.userCountsNumber= response["data"]["countUsers"];
+        console.log("yyyyyyyy", this.userCounts)
+        console.log("zzzzzzzz", this.userCountsNumber)
+        this.newUserType=[]
+        this.userlength=[]
+        if(this.userCounts && this.userCounts.length>0){
+          this.userCounts.forEach((res) => {
+            this.userlength.push(res.count);
+            if (id == 2) {
+              this.newUserType.push(res.month + "/" + res.year);
+            }
+            if (id==3) {
+              console.log("newUserCount1")
+              this.newUserType.push(res.year);
+            }
+          });
+
+        }
+        console.log("uuuuuuuuuuuuuuu",this.userlength)
+        console.log("oooooooooooooooo",this.newUserType)
+        this.lineChartData[0].data=this.userlength;
+        this.lineChartLabels=this.newUserType
+      
+
+       
+
+
+ 
+       
+      },
+      (err: any) => {
+        this._commService.errorMsg(err.message);
+      }
+    );
+
+  }
 }

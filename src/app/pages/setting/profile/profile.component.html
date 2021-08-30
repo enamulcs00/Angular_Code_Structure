@@ -73,6 +73,12 @@
                                     <mat-error *ngIf="  isSubmitted && updateProfile.controls['name'].hasError('required')">Name 
                                         is
                                         required</mat-error>
+                                        <mat-error *ngIf="  isSubmitted && updateProfile.controls['name'].hasError('minlength')">
+                                            Minimum length of name should be 2 characters
+                                        </mat-error>
+                                        <mat-error *ngIf="  isSubmitted && updateProfile.controls['name'].hasError('maxlength')">
+                                          Maximum  length of name should be 20 characters
+                                      </mat-error>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -82,6 +88,9 @@
                                     <mat-error *ngIf="  isSubmitted && updateProfile.controls['email'].hasError('required')">Email 
                                         is
                                         required</mat-error>
+                                        <mat-error *ngIf="  isSubmitted && updateProfile.controls['email'].hasError('pattern')">
+                                            Valid Email is required
+                                        </mat-error>
                                 </div>
                             </div>
                             <!-- <div class="form-group">
@@ -97,6 +106,15 @@
                                     <mat-error *ngIf="  isSubmitted && updateProfile.controls['phone'].hasError('required')">Phone 
                                         is
                                         required</mat-error>
+                                        <mat-error *ngIf="  isSubmitted && updateProfile.controls['phone'].hasError('maxlength')">
+                                            Maximum  length of phone should be 15 
+                                        </mat-error>
+                                        <mat-error *ngIf="  isSubmitted && updateProfile.controls['phone'].hasError('minlength')">
+                                          Minimum  length of phone should be 7 
+                                      </mat-error>
+                                      <mat-error *ngIf="  isSubmitted && updateProfile.controls['phone'].hasError('pattern')">
+                                      Valid Phone Number is required 
+                                    </mat-error>
                                 </div>
                             </div>
                             <!-- <div class="form-group">

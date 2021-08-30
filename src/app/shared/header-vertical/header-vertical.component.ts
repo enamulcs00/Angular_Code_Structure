@@ -41,7 +41,7 @@ export class HeaderVerticalComponent implements OnInit {
       console.log("CLicked Outside");
     }  // or some similar check
         else {
-          console.log("Licked Inskded");
+          console.log("Clicked Inside");
         }
 }
 

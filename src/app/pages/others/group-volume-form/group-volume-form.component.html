@@ -5,7 +5,7 @@
       <li class="col-md-4">
         <div class="volume_element_group">
           <div class="custom-control custom-checkbox"><input class="custom-control-input" id="customCheck2"
-              type="checkbox" [(ngModel)]="groupFormDetails.saveTheDate" formControlName="saveTheDate"  ><label class="custom-control-label" for="customCheck2">Save the Date</label>
+              type="checkbox" [(ngModel)]="groupFormDetails.saveTheDate" ngModelOptions="{standalone: true}" formControlName="saveTheDate"  ><label class="custom-control-label" for="customCheck2">Save the Date</label>
           </div>
         </div>
       </li>

@@ -18,10 +18,10 @@ import { CommonService } from '../../../service/common.service';
   styleUrls: ['./group-volume-form.component.scss']
 })
 export class GroupVolumeFormComponent implements OnInit {
-  groupFormDetails: any;
+  groupFormDetails: any={};
   groupForm:FormGroup
   cadenceForm:FormGroup
-  cadenceDetails: any;
+  cadenceDetails: any={};
 
   constructor(private router: Router, private _apiService:ApiService, private _commService: CommonService, private fb:FormBuilder) { }
 
@@ -101,10 +101,10 @@ export class GroupVolumeFormComponent implements OnInit {
 
 
     }
-    this._apiService.putRequest('api/v1/admin/activeInactiveGroupForm',obj).subscribe(response => {
+    this._apiService.putRequest('api/v1/admin/activeInactiveGroupForm',obj).subscribe((response:any) => {
     
       console.log("response",response)
-      this._commService.successMsg("Updated Successfully")
+      this._commService.successMsg(response.message)
       this.getGroupForm()
 
      
@@ -127,10 +127,10 @@ export class GroupVolumeFormComponent implements OnInit {
      
 
     }
-    this._apiService.putRequest('api/v1/admin/activeInactiveCadence',obj).subscribe(response => {
+    this._apiService.putRequest('api/v1/admin/activeInactiveCadence',obj).subscribe((response:any) => {
     
       console.log("response",response)
-      this._commService.successMsg("Updated Successfully")
+      this._commService.successMsg(response.message)
       this.getCadence()
 
      

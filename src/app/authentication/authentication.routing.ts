@@ -25,12 +25,12 @@ export const AuthenticationRoutes: Routes = [
         path: 'login',
 
         component: LoginComponent,
-        //  canActivate: [AuthGuard],
+          //  canActivate: [AuthGuard],
       },
       {
         path: 'forgotpwd',
         component: ForgotpwdComponent,
-        // canActivate: [AuthGuard],
+          // canActivate: [AuthGuard],
       },
       {
         path: 'login2',

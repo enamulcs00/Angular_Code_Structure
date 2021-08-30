@@ -6,6 +6,8 @@ import { ContactComponent } from "./contact/contact.component";
 import { FaqComponent } from "./faq/faq.component";
 import { LegalComponent } from "./legal/legal.component";
 import { PrivacyComponent } from "./privacy/privacy.component";
+import { CmslistComponent } from './cmslist/cmslist.component';
+import { AuthGuard } from "../../service/auth-guard/auth.guard";
 
 const routes: Routes = [
   {
@@ -17,6 +19,15 @@ const routes: Routes = [
         component: AboutComponent,
         data: {
           title: "About",
+        },
+      },
+      {
+        path: "cmslist",
+        // canActivate: [AuthGuard],
+         component: CmslistComponent,
+     
+        data: {
+          title: "CMS",
         },
       },
       {

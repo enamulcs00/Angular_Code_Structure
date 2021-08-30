@@ -1,12 +1,16 @@
+
 <div class="row">
     <div class="col-12">
         <div class="card">
-            <div class="card-body">               
-                <quill-editor [style]="{height: '300px',display: 'inline-block'}" class="w-100"></quill-editor>
+            <div class="card-body">
+               
+                <quill-editor *ngIf="items" [(ngModel)]="items.about" [style]="{height: '300px',display: 'inline-block'}" class="w-100"></quill-editor>
+
                <div class="d-block">
-                   <button class="btn btn-primary mt-3">Save</button>
+                   <button (click)="updateAbout()" class="btn btn-primary mt-3">Save</button>
                </div> 
             </div>
         </div>
+
     </div>
 </div>
