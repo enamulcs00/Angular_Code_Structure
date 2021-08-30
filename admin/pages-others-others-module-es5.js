@@ -8162,6 +8162,8 @@
           this._apiService = _apiService;
           this._commService = _commService;
           this.fb = fb;
+          this.groupFormDetails = {};
+          this.cadenceDetails = {};
         }
 
         _createClass(GroupVolumeFormComponent, [{
@@ -8235,7 +8237,7 @@
             this._apiService.putRequest('api/v1/admin/activeInactiveGroupForm', obj).subscribe(function (response) {
               console.log("response", response);
 
-              _this26._commService.successMsg("Updated Successfully");
+              _this26._commService.successMsg(response.message);
 
               _this26.getGroupForm();
 
@@ -8259,7 +8261,7 @@
             this._apiService.putRequest('api/v1/admin/activeInactiveCadence', obj).subscribe(function (response) {
               console.log("response", response);
 
-              _this27._commService.successMsg("Updated Successfully");
+              _this27._commService.successMsg(response.message);
 
               _this27.getCadence();
 
@@ -8282,7 +8284,7 @@
         selectors: [["app-group-volume-form"]],
         decls: 98,
         vars: 16,
-        consts: [[1, "card"], [1, "card-body"], [3, "formGroup"], [1, "pl-0", "volume_element"], [1, "col-md-4"], [1, "volume_element_group"], [1, "custom-control", "custom-checkbox"], ["id", "customCheck2", "type", "checkbox", "formControlName", "saveTheDate", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck2", 1, "custom-control-label"], ["id", "customCheck3", "type", "checkbox", "formControlName", "theHealthCheck", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck3", 1, "custom-control-label"], ["id", "customCheck4", "type", "checkbox", "formControlName", "thePeak", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck4", 1, "custom-control-label"], ["id", "customCheck5", "type", "checkbox", "formControlName", "myPit", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck5", 1, "custom-control-label"], ["id", "customCheck6", "type", "checkbox", "formControlName", "snapshot", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck6", 1, "custom-control-label"], ["id", "customCheck7", "type", "checkbox", "formControlName", "myJam", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck7", 1, "custom-control-label"], ["id", "customCheck8", "type", "checkbox", "formControlName", "reccomendation", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck8", 1, "custom-control-label"], ["id", "customCheck9", "type", "checkbox", "formControlName", "theLesson", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck9", 1, "custom-control-label"], ["id", "customCheck9a", "type", "checkbox", "formControlName", "theForecast", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck9a", 1, "custom-control-label"], ["id", "customCheck10", "type", "checkbox", "formControlName", "freeSpace", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck10", 1, "custom-control-label"], [1, "pl-2", "pb-3"], [1, "btn", "btn-primary", 3, "click"], [1, "pl-2"], ["id", "cadence1", "type", "checkbox", "formControlName", "weekly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence1", 1, "custom-control-label"], ["id", "cadence2", "type", "checkbox", "formControlName", "biWeekly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence2", 1, "custom-control-label"], ["id", "cadence3", "type", "checkbox", "formControlName", "monthly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence3", 1, "custom-control-label"], ["id", "cadence4", "type", "checkbox", "formControlName", "quaterly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence4", 1, "custom-control-label"]],
+        consts: [[1, "card"], [1, "card-body"], [3, "formGroup"], [1, "pl-0", "volume_element"], [1, "col-md-4"], [1, "volume_element_group"], [1, "custom-control", "custom-checkbox"], ["id", "customCheck2", "type", "checkbox", "ngModelOptions", "{standalone: true}", "formControlName", "saveTheDate", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck2", 1, "custom-control-label"], ["id", "customCheck3", "type", "checkbox", "formControlName", "theHealthCheck", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck3", 1, "custom-control-label"], ["id", "customCheck4", "type", "checkbox", "formControlName", "thePeak", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck4", 1, "custom-control-label"], ["id", "customCheck5", "type", "checkbox", "formControlName", "myPit", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck5", 1, "custom-control-label"], ["id", "customCheck6", "type", "checkbox", "formControlName", "snapshot", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck6", 1, "custom-control-label"], ["id", "customCheck7", "type", "checkbox", "formControlName", "myJam", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck7", 1, "custom-control-label"], ["id", "customCheck8", "type", "checkbox", "formControlName", "reccomendation", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck8", 1, "custom-control-label"], ["id", "customCheck9", "type", "checkbox", "formControlName", "theLesson", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck9", 1, "custom-control-label"], ["id", "customCheck9a", "type", "checkbox", "formControlName", "theForecast", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck9a", 1, "custom-control-label"], ["id", "customCheck10", "type", "checkbox", "formControlName", "freeSpace", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck10", 1, "custom-control-label"], [1, "pl-2", "pb-3"], [1, "btn", "btn-primary", 3, "click"], [1, "pl-2"], ["id", "cadence1", "type", "checkbox", "formControlName", "weekly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence1", 1, "custom-control-label"], ["id", "cadence2", "type", "checkbox", "formControlName", "biWeekly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence2", 1, "custom-control-label"], ["id", "cadence3", "type", "checkbox", "formControlName", "monthly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence3", 1, "custom-control-label"], ["id", "cadence4", "type", "checkbox", "formControlName", "quaterly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence4", 1, "custom-control-label"]],
         template: function GroupVolumeFormComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);

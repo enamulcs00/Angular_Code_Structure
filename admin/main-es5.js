@@ -91,10 +91,17 @@
       var _layouts_blank_blank_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ./layouts/blank/blank.component */
       "./src/app/layouts/blank/blank.component.ts");
+      /* harmony import */
+
+
+      var _service_auth_guard_auth_guard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ./service/auth-guard/auth.guard */
+      "./src/app/service/auth-guard/auth.guard.ts");
 
       var routes = [{
         path: '',
         component: _layouts_full_full_component__WEBPACK_IMPORTED_MODULE_3__["FullComponent"],
+        canActivate: [_service_auth_guard_auth_guard__WEBPACK_IMPORTED_MODULE_5__["AuthGuard"]],
         children: [{
           path: '',
           redirectTo: '/dashboard/dashboard',
@@ -170,7 +177,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | charts-charts-module */
-            [__webpack_require__.e("default~charts-charts-module~pages-notification-notification-module~pages-others-others-module~pages~5ffbb77b"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module~pages-others-others-module"), __webpack_require__.e("default~charts-charts-module~pages-others-others-module"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module"), __webpack_require__.e("charts-charts-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~97031e96"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module~pages-others-others-module"), __webpack_require__.e("default~charts-charts-module~pages-others-others-module"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module"), __webpack_require__.e("charts-charts-module")]).then(__webpack_require__.bind(null,
             /*! ./charts/charts.module */
             "./src/app/charts/charts.module.ts")).then(function (m) {
               return m.ChartModule;
@@ -192,7 +199,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | extra-component-extra-component-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~f0a4155c"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~form-forms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module"), __webpack_require__.e("extra-component-extra-component-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~e3d754ca"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~form-forms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module"), __webpack_require__.e("extra-component-extra-component-module")]).then(__webpack_require__.bind(null,
             /*! ./extra-component/extra-component.module */
             "./src/app/extra-component/extra-component.module.ts")).then(function (m) {
               return m.ExtraComponentModule;
@@ -203,7 +210,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | apps-apps-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~f0a4155c"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~form-forms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module"), __webpack_require__.e("common"), __webpack_require__.e("apps-apps-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~e3d754ca"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~form-forms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module"), __webpack_require__.e("common"), __webpack_require__.e("apps-apps-module")]).then(__webpack_require__.bind(null,
             /*! ./apps/apps.module */
             "./src/app/apps/apps.module.ts")).then(function (m) {
               return m.AppsModule;
@@ -236,7 +243,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | pages-users-users-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~f0a4155c"), __webpack_require__.e("default~charts-charts-module~pages-notification-notification-module~pages-others-others-module~pages~5ffbb77b"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~a4dd8711"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-users-users-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-users-users-module"), __webpack_require__.e("default~pages-others-others-module~pages-users-users-module"), __webpack_require__.e("pages-users-users-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~e3d754ca"), __webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~97031e96"), __webpack_require__.e("default~pages-cms-cms-module~pages-notification-notification-module~pages-others-others-module~pages~cf57f891"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~a4dd8711"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-users-users-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-users-users-module"), __webpack_require__.e("default~pages-others-others-module~pages-users-users-module"), __webpack_require__.e("pages-users-users-module")]).then(__webpack_require__.bind(null,
             /*! ./pages/users/users.module */
             "./src/app/pages/users/users.module.ts")).then(function (m) {
               return m.UsersModule;
@@ -269,7 +276,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | pages-notification-notification-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~f0a4155c"), __webpack_require__.e("default~charts-charts-module~pages-notification-notification-module~pages-others-others-module~pages~5ffbb77b"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~a4dd8711"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-users-users-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-users-users-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module"), __webpack_require__.e("pages-notification-notification-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~e3d754ca"), __webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~97031e96"), __webpack_require__.e("default~pages-cms-cms-module~pages-notification-notification-module~pages-others-others-module~pages~cf57f891"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~a4dd8711"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-users-users-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-users-users-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module"), __webpack_require__.e("pages-notification-notification-module")]).then(__webpack_require__.bind(null,
             /*! ./pages/notification/notification.module */
             "./src/app/pages/notification/notification.module.ts")).then(function (m) {
               return m.NotificationModule;
@@ -302,7 +309,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | pages-cms-cms-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module"), __webpack_require__.e("pages-cms-cms-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~e3d754ca"), __webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~97031e96"), __webpack_require__.e("default~pages-cms-cms-module~pages-notification-notification-module~pages-others-others-module~pages~cf57f891"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module"), __webpack_require__.e("pages-cms-cms-module")]).then(__webpack_require__.bind(null,
             /*! ./pages/cms/cms.module */
             "./src/app/pages/cms/cms.module.ts")).then(function (m) {
               return m.CmsModule;
@@ -313,7 +320,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | pages-subscription-subscription-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~f0a4155c"), __webpack_require__.e("default~charts-charts-module~pages-notification-notification-module~pages-others-others-module~pages~5ffbb77b"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~a4dd8711"), __webpack_require__.e("default~pages-others-others-module~pages-subscription-subscription-module"), __webpack_require__.e("pages-subscription-subscription-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~e3d754ca"), __webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~97031e96"), __webpack_require__.e("default~pages-cms-cms-module~pages-notification-notification-module~pages-others-others-module~pages~cf57f891"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~a4dd8711"), __webpack_require__.e("default~pages-others-others-module~pages-subscription-subscription-module"), __webpack_require__.e("pages-subscription-subscription-module")]).then(__webpack_require__.bind(null,
             /*! ./pages/subscription/subscription.module */
             "./src/app/pages/subscription/subscription.module.ts")).then(function (m) {
               return m.SubscriptionModule;
@@ -368,7 +375,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | pages-others-others-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-notification-notification-modu~f0a4155c"), __webpack_require__.e("default~charts-charts-module~pages-notification-notification-module~pages-others-others-module~pages~5ffbb77b"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~a4dd8711"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module~pages-others-others-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-users-users-module"), __webpack_require__.e("default~charts-charts-module~pages-others-others-module"), __webpack_require__.e("default~pages-others-others-module~pages-subscription-subscription-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module"), __webpack_require__.e("default~pages-others-others-module~pages-users-users-module"), __webpack_require__.e("pages-others-others-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~e3d754ca"), __webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~97031e96"), __webpack_require__.e("default~pages-cms-cms-module~pages-notification-notification-module~pages-others-others-module~pages~cf57f891"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-subscription-subscri~a4dd8711"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module~pages-others-others-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-users-users-module"), __webpack_require__.e("default~charts-charts-module~pages-others-others-module"), __webpack_require__.e("default~pages-others-others-module~pages-subscription-subscription-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module"), __webpack_require__.e("default~pages-others-others-module~pages-users-users-module"), __webpack_require__.e("pages-others-others-module")]).then(__webpack_require__.bind(null,
             /*! ./pages/others/others.module */
             "./src/app/pages/others/others.module.ts")).then(function (m) {
               return m.OthersModule;
@@ -1569,6 +1576,106 @@
             args: ['window:resize', ['$event']]
           }]
         });
+      })();
+      /***/
+
+    },
+
+    /***/
+    "./src/app/service/auth-guard/auth.guard.ts":
+    /*!**************************************************!*\
+      !*** ./src/app/service/auth-guard/auth.guard.ts ***!
+      \**************************************************/
+
+    /*! exports provided: AuthGuard */
+
+    /***/
+    function srcAppServiceAuthGuardAuthGuardTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "AuthGuard", function () {
+        return AuthGuard;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/fesm2015/router.js");
+
+      var AuthGuard = /*#__PURE__*/function () {
+        function AuthGuard(router) {
+          _classCallCheck(this, AuthGuard);
+
+          this.router = router;
+        }
+
+        _createClass(AuthGuard, [{
+          key: "canActivate",
+          value: function canActivate(next, state) {
+            //     let isBasic = false;
+            //     let isOnboarding = false;
+            //     let verifyndchangepass= false;
+            //     let isAuth = localStorage.user ? true : false;
+            //     if (next.routeConfig.path === '/authentication/login'  || next.routeConfig.path === '/authentication/forgotpwd' ) {
+            //       isOnboarding = true;
+            //     }
+            //     if (isOnboarding && isAuth) { 
+            //       isBasic = false;
+            //        return this.router.navigate(['/dashboard/dashboard']);} 
+            //     if (isOnboarding && !isAuth) { isBasic = true; }
+            //     if (!isOnboarding && isAuth) { isBasic = true; }
+            //     if (!isOnboarding && !isAuth ) {
+            //        isBasic = false; 
+            //        return this.router.navigate(['/authentication/login']);}
+            //       //  if (!isOnboarding && !isAuth && verifyndchangepass) {
+            //       //   isBasic = true; }
+            //     return isBasic;
+            //   }
+            // }
+            if (localStorage.getItem('accessToken')) {
+              return true;
+            } else {
+              this.router.navigate(["/authentication/login"]);
+            }
+          }
+        }]);
+
+        return AuthGuard;
+      }();
+
+      AuthGuard.ɵfac = function AuthGuard_Factory(t) {
+        return new (t || AuthGuard)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]));
+      };
+
+      AuthGuard.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: AuthGuard,
+        factory: AuthGuard.ɵfac,
+        providedIn: 'root'
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AuthGuard, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+          args: [{
+            providedIn: 'root'
+          }]
+        }], function () {
+          return [{
+            type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]
+          }];
+        }, null);
       })();
       /***/
 
@@ -2914,7 +3021,7 @@
               console.log("CLicked Outside");
             } // or some similar check
             else {
-                console.log("Licked Inskded");
+                console.log("Clicked Inside");
               }
           } // End open close
 
@@ -3173,59 +3280,14 @@
       //   submenu: [],
       // },
       {
-        path: "",
+        path: "cms/cmslist",
         title: "CMS",
         icon: "mdi mdi-message-settings-variant",
-        "class": "has-arrow",
+        "class": "",
         label: "",
         labelClass: "",
         extralink: false,
-        submenu: [{
-          path: "/cms/about",
-          title: "About",
-          icon: "mdi mdi-information",
-          "class": "",
-          label: "",
-          labelClass: "",
-          extralink: false,
-          submenu: []
-        }, {
-          path: "/cms/legal",
-          title: "Legal",
-          icon: "mdi mdi-lock",
-          "class": "",
-          label: "",
-          labelClass: "",
-          extralink: false,
-          submenu: []
-        }, {
-          path: "/cms/privacy",
-          title: "privacy",
-          icon: "mdi mdi-security-home",
-          "class": "",
-          label: "",
-          labelClass: "",
-          extralink: false,
-          submenu: []
-        }, {
-          path: "/cms/contact",
-          title: "Contact",
-          icon: "mdi mdi-phone-classic",
-          "class": "",
-          label: "",
-          labelClass: "",
-          extralink: false,
-          submenu: []
-        }, {
-          path: "/cms/faq",
-          title: "Faq",
-          icon: "mdi mdi-network-question",
-          "class": "",
-          label: "",
-          labelClass: "",
-          extralink: false,
-          submenu: []
-        }]
+        submenu: []
       }];
       /***/
     },
@@ -3385,50 +3447,14 @@
       //   submenu: [],
       // },
       {
-        path: "",
+        path: "cms/cmslist",
         title: "CMS",
         icon: "mdi mdi-message-settings-variant",
         "class": "has-arrow",
         label: "",
         labelClass: "",
         extralink: false,
-        submenu: [{
-          path: "/cms/about",
-          title: "About",
-          icon: "mdi mdi-information",
-          "class": "",
-          label: "",
-          labelClass: "",
-          extralink: false,
-          submenu: []
-        }, {
-          path: "/cms/legal",
-          title: "Legal",
-          icon: "mdi mdi-lock",
-          "class": "",
-          label: "",
-          labelClass: "",
-          extralink: false,
-          submenu: []
-        }, {
-          path: "/cms/privacy",
-          title: "privacy",
-          icon: "mdi mdi-security-home",
-          "class": "",
-          label: "",
-          labelClass: "",
-          extralink: false,
-          submenu: []
-        }, {
-          path: "/cms/contact",
-          title: "Contact",
-          icon: "mdi mdi-phone-classic",
-          "class": "",
-          label: "",
-          labelClass: "",
-          extralink: false,
-          submenu: []
-        }]
+        submenu: []
       }];
       /***/
     },
