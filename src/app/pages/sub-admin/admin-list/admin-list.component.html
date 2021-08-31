@@ -10,7 +10,7 @@
             <div class="col-md-4">
               <form >
                 <div class="mb-2">
-                    <input type="text" class="form-control" id="prenametext" placeholder="Search">
+                    <input type="text" class="form-control" id="prenametext" placeholder="Search" >
                 </div>
             </form>
             </div>
@@ -30,7 +30,8 @@
             <div class="table-responsive">
               <table class="table v-middle product-overview" id="zero_config">
                 <thead>
-                  <tr>                    
+                  <tr>
+                    <th>#</th>                    
                     <th>Image</th>                                    
                     <th>Name</th>                                    
                     <th>Contact</th>                     
@@ -41,32 +42,31 @@
                 </thead>
                 <tbody>
                   <tr>
+                    <td>1</td>
                     <td><span class="nowrap"> <img src="assets/images/users/3.jpg" alt="" width="60px"> </span></td>                 
                     <td><span class="nowrap"> Ronny </span></td>                 
                    <td><span class="text-nowrap">+91-7858485474</span></td>
                    <td class="text-nowrap">Ronny@example.com</td>                               
                     <td>                    
-                        <div ngbDropdown class="d-inline-block " container="body">
-                          <button class="btn btn-outline-primary btn-sm " id="dropdownBasic1" ngbDropdownToggle>
-                            Status
-                          </button>
-                          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                            <button class="dropdown-item">Active</button>
-                            <button class="dropdown-item">Inactive</button>
-                          </div>
-                        </div>         
+                      <mat-slide-toggle >
+                      </mat-slide-toggle> 
                       </td>
                     <td>
                         <a routerLink="/subadmin/editadmin" class="btn btn-primary" >
                           <i class="ti-marker-alt"></i> </a>
-                        <button class="btn btn-danger ml-2" (click)="userDeleteModal(userDelete)"><i class="ti-trash"></i>
+                        <button class="btn btn-danger ml-2"><i class="ti-trash"></i>
                           </button>
                     </td>
                   </tr>
                   
                 </tbody>
               </table>
+              <!-- <div class="no-found" *ngIf="userDetails?.length == 0">
+                <h4>No data found</h4>
+              </div> -->
             </div>
+            <!-- <mat-paginator *ngIf="userDetailsCount && userDetailsCount>0" [pageIndex]="page" [length]="userDetailsCount" (page)="handlePageEvent($event)"
+              [pageSize]="limit" [pageSizeOptions]="[10, 25, 100]"></mat-paginator> -->
           </div>
         </div>
       </div>

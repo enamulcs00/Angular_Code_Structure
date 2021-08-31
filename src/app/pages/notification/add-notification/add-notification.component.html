@@ -1,34 +1,24 @@
 <div class="card">
     <div class="card-body">
+        <form [formGroup]="notificationForm">
         <div class="row">
             <div class="col-md-12 text-right">
                 <button class="btn btn-primary" routerLink="/notification/notificationlist">View Notification History</button>
             </div>
+            
             <div class="col-md-4">
+                <h4 class="mb-3">Users Notification</h4>
                 
-                <div class="form-group mat-form-control mat-no-animation">
-                    <label>Notification Type</label>
-                    <mat-form-field >
-                        <mat-label>Choose an option</mat-label>
-                        <select matNativeControl >
-                          <option value="1"> Content-based changes and updates</option>
-                          <option value="2" >Activity-Based Updates</option>
-                          <option value="3">Broadcast Notification</option>
-                         
-                        </select>
-                      </mat-form-field>                      
+                <!-- <div class="form-group mat-form-control mat-no-animation">
+                    <mat-form-field floatLabel="always" class="static-text">
+                        <input matInput disabled placeholder="Push Notification" value="Push Notification" />
+                      </mat-form-field>                     
                 </div>
                 <div class="form-group mat-form-control mat-no-animation">
-                    <label>User Type</label>
-                    <mat-form-field >
-                        <mat-label>Choose an option</mat-label>
-                        <select matNativeControl >
-                          <option value="volvo"> All</option>
-                          <option value="saab" >Users</option> 
-                          <option value="saab" >Sub-Admin</option> 
-                        </select>
-                      </mat-form-field>                      
-                </div>
+                    <mat-form-field floatLabel="always" class="static-text">
+                        <input matInput disabled placeholder="Notification Type Users" value="Notification Type Users" />
+                      </mat-form-field>                     
+                </div> -->
                 <!-- <div class="d-flex">
                     <div class="form-group mat-form-control mat-no-animation col-6 pl-0 pr-1">
                         <label for="">Add Name</label>
@@ -51,17 +41,24 @@
                 </div>               -->
                 <div class="form-group">
                     <label>Add Heading</label>
-                   <input type="text" placeholder="" class="form-control">
+                   <input type="text" placeholder="" formControlName="heading" class="form-control">
+                   <mat-error *ngIf="  isSubmitted && notificationForm.controls['heading'].hasError('required')">
+                    Heading is required
+                </mat-error>
                 </div>
               <div class="form-group">
                   <label>Add Message</label>
-                  <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                  <textarea name="" id="" cols="30" formControlName="message" rows="5" class="form-control"></textarea>
+                  <mat-error *ngIf="  isSubmitted && notificationForm.controls['message'].hasError('required')">
+                    Message is required
+                </mat-error>
               </div>
             </div>
          <div class="col-md-12">
-             <button class="btn btn-primary">Send</button>
+             <button (click)="sendNotification()" class="btn btn-primary">Send</button>
              
          </div>
         </div>
+        </form>
     </div>
 </div>

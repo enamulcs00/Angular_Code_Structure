@@ -1,57 +1,21 @@
-<!-- <div class="card">
-    <div class="card-body">
-       
-<div class="row">
-    <div class="col-sm-12">
-        <div class="card card-body">           
-            <form class="form-horizontal">
-                <div class="bg-light p-3 mb-3">
-                    <div class="form-group">
-                        <input type="text" id="que" name="que" class="form-control" placeholder="Quetions">
-                    </div>                 
-                    <div class="">
-                        <textarea class="form-control" rows="3" placeholder="Add Answer here"></textarea>
-                    </div>
-                </div>  
-                <div class="showInputField"></div> 
-                <div class="form-group">
-                <button type="button"  class="btn btn-primary"><i class="mdi mdi-plus"></i></button>
-                </div>
 
-                <button class="btn btn-primary">Save</button>
-            </form>
+    <div>
+    <div class="row no-gutters faq-box" *ngFor="let data of faq1 ">
+        <div class="col-md-11">
+            <div class="faq-content">
+                <h4>{{data?.question}}</h4>
+                <p class="mb-0">{{data?.answer}}</p>
+            </div>
+        </div>
+        <div class="col-md-1 text-right">
+            <div class="btn-group">
+                <button class="btn btn-primary btn-sm" (click)="editFaq(userDetail,data._id)"><i class="fa fa-pencil"></i></button>
+                <button class="btn btn-danger btn-sm ml-2" (click)=" deleteFaq(data._id)"><i class="fa fa-trash"></i></button>
+            </div>
         </div>
     </div>
+    <button (click)="addnewFaq(usersDetail)" class="btn btn-primary common-btn mt-3" >Add</button>
 </div>
-
-    </div>
-</div> -->
-<form >
-    <table class="table para">
-      <thead>
-          <tr>
-              <th>Question</th>
-              <th>Answer</th>
-              
-          </tr>
-      </thead>
-          <tbody >
-              <tr *ngFor="let data of faq1 ">
-                <td style="width: 30%;">
-                  <p>{{data?.question}}</p>
-                </td>
-                <td style="width: 30%;">
-                  <p>{{data?.answer}}</p>
-                </td>
-                <td>
-                  <button  class="btn btn-primary common-btn  mt-10" (click)="editFaq(userDetail,data._id)">Edit</button>
-                <button  class="btn btn-danger common-btn ml-2 mt-10" (click)=" deleteFaq(data._id)" >Delete</button>
-                </td>
-              </tr>
-              <button (click)="addnewFaq(usersDetail)" class="btn btn-primary common-btn" >Add</button>
-          </tbody>
-    </table>
-    </form>
     <ng-template #userDetail let-modal>
         <div class="modal-body">
           <div class="card">
@@ -59,7 +23,7 @@
               <div class="form-body">
                 <div class="card-body">
                   <div class="row p-t-20">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label class="control-label"> Question</label>
                         <input type="text" id="fname" formControlName="question" class="form-control" placeholder=" Question">
@@ -69,10 +33,10 @@
                         
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label class="control-label">Answer</label>
-                        <input type="text" id="lname" formControlName="answer" class="form-control" placeholder="Answer">
+                        <textarea name="" id="" cols="20" rows="5" id="lname" formControlName="answer" class="form-control" placeholder="Answer"></textarea>
                         <mat-error *ngIf="  isSubmitted && editForm.controls['answer'].hasError('required')">Answer  
                           is
                           required</mat-error>  
@@ -86,7 +50,7 @@
       
                 <div class="form-actions">
                   <div class="card-body">
-                    <button  class="btn btn-success mr-3" (click)="updateFaq()">
+                    <button  class="btn btn-primary mr-3" (click)="updateFaq()">
                       <i class="fa fa-check"></i> Update</button>
                     <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">Cancel</button>
                   </div>
@@ -104,7 +68,7 @@
               <div class="form-body">
                 <div class="card-body">
                   <div class="row p-t-20">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label class="control-label"> Question</label>
                         <input type="text" id="fname" formControlName="question1" class="form-control" placeholder=" Question">
@@ -114,19 +78,15 @@
                         
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label class="control-label">Answer</label>
-                        <input type="text" id="lname" formControlName="answer1" class="form-control" placeholder="Answer">
-                        <mat-error *ngIf="  isSubmit && addForm.controls['answer1'].hasError('required')">Answer  
-                          is
-                          required</mat-error>  
+                        <textarea name="" id="" cols="20" rows="5" id="lname" formControlName="answer1" class="form-control" placeholder="Answer">
+                        </textarea> 
+                        <mat-error *ngIf="  isSubmit && addForm.controls['answer1'].hasError('required')">Answer  is required</mat-error>  
                         
                       </div>
                     </div>
-               
-                  
-                 
                   </div>
                
                   <div class="row ">
@@ -137,14 +97,14 @@
       
                 <div class="form-actions">
                   <div class="card-body">
-                    <button  class="btn btn-success mr-3" (click)="AddsFaq()">
+                    <button  class="btn btn-primary mr-3" (click)="AddsFaq()">
                       <i class="fa fa-check"></i> Add</button>
                     <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">Cancel</button>
                   </div>
                 </div>
               </div>
             </form>
-          </div>
-      
+          </div>      
         </div>
       </ng-template>
+
