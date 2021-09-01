@@ -21,7 +21,8 @@ import { CommonService } from '../../../service/common.service';
 })
 export class ContactComponent implements OnInit {
   contactForm:FormGroup
-  @Input() item = {};
+  isSubmitted:boolean=false
+  @Input('item') public items;
 
   constructor(private router: Router, private _apiService:ApiService, private _commService: CommonService, private fb:FormBuilder) {
     
@@ -30,7 +31,7 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
     this.contactForm=this.fb.group({
 
-      address:[null, [Validators.required,  Validators.minLength(2),Validators.maxLength(50)]],
+      address:[null, [Validators.required,  Validators.minLength(2),Validators.maxLength(100)]],
       email:[null, [Validators.required,  Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       phone:[null, [Validators.required,  Validators.minLength(7),Validators.maxLength(15),  Validators.pattern(/^-?(0|[1-9]\d*)?$/)]]
 
@@ -45,6 +46,14 @@ export class ContactComponent implements OnInit {
     //  })
     
     
+  }
+  updateContacts(){
+    this.isSubmitted=true
+    if(this.isSubmitted && this.contactForm.valid ){
+      
+
+    }
+
   }
 
 }

@@ -29,6 +29,9 @@
             <mat-error *ngIf="  isSubmitted && userForm.controls['name'].hasError('maxlength')">
               Maximum  length of name should be 20 characters
           </mat-error>
+          <mat-error *ngIf="  isSubmitted && userForm.controls['name'].hasError('pattern') && !userForm.controls['name'].hasError('minlength') && !userForm.controls['name'].hasError('maxlength') ">
+            Valid Name is required
+        </mat-error>
   
               </div>
             </div>
@@ -74,7 +77,7 @@
             <mat-error *ngIf="  isSubmitted && userForm.controls['phone'].hasError('minlength')">
               Minimum  length of phone should be 7 
           </mat-error>
-          <mat-error *ngIf="  isSubmitted && userForm.controls['phone'].hasError('pattern')">
+          <mat-error *ngIf="  isSubmitted && userForm.controls['phone'].hasError('pattern') && !userForm.controls['phone'].hasError('minlength') && !userForm.controls['phone'].hasError('maxlength') ">
           Valid Phone Number is required 
         </mat-error>
   

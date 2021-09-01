@@ -4,15 +4,42 @@
                 <div class="form-group">
                     <label for="example-email">Email</label>
                     <input type="email" id="example-email" name="example-email" class="form-control" placeholder="Email" formControlName="email">
+                    <mat-error *ngIf="  isSubmitted && contactForm.controls['email'].hasError('required')">Email  
+                        is
+                        required</mat-error> 
+                        <mat-error *ngIf="  isSubmitted && contactForm.controls['email'].hasError('pattern')"> Valid Email  
+                            is
+                            required</mat-error> 
                 </div>   
                 <div class="form-group">
                     <label for="example-email">Contact</label>
                     <input type="text" id="contact" name="example-email" class="form-control" placeholder="Contact No" formControlName="phone">
+                    <mat-error *ngIf="  isSubmitted && contactForm.controls['phone'].hasError('required')"> Contact No  
+                        is
+                        required</mat-error> 
+                        <mat-error *ngIf="  isSubmitted && contactForm.controls['phone'].hasError('pattern') &&  !contactForm.controls['phone'].hasError('minlength') &&  !contactForm.controls['phone'].hasError('maxlength')  ">Valid  Contact No   
+                            is
+                            required</mat-error> 
+                            <mat-error *ngIf="  isSubmitted && contactForm.controls['phone'].hasError('minlength')"> Minimum length of Contact No should 
+                                be 7 characters  </mat-error> 
+                                <mat-error *ngIf="  isSubmitted && contactForm.controls['phone'].hasError('maxlength')">Maximum length of Contact No should 
+                                    be 15 characters</mat-error> 
                 </div>   
                 <div class="form-group">
                     <label>Address</label>
-                    <textarea class="form-control" rows="5" formControlName="address"></textarea>
+                    <textarea class="form-control" placeholder="Address" rows="5" formControlName="address"></textarea>
+                    <mat-error *ngIf="  isSubmitted && contactForm.controls['address'].hasError('required')"> Address  
+                        is
+                        required</mat-error> 
+                        <mat-error *ngIf="  isSubmitted && contactForm.controls['address'].hasError('minlength')"> Minimum length of address should 
+                            be 2 characters  
+                            
+                            </mat-error> 
+                            <mat-error *ngIf="  isSubmitted && contactForm.controls['address'].hasError('maxlength')"> Maximum length of address should be 
+                                100 characters  
+                                
+                                </mat-error> 
                 </div>
-                <button type="button" class="btn btn-primary">Save</button>
+                <button (click)="updateContacts()" type="button" class="btn btn-primary">Save</button>
             </form>
         </div>

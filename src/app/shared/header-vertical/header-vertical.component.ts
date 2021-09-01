@@ -21,18 +21,18 @@ export class HeaderVerticalComponent implements OnInit {
   public topbarnavItems: any[];
   // this is for the open close
   addExpandClass(element: any) {
-    if (element === this.showMenu) {
-      this.showMenu = '0';
-    } else {
-      this.showMenu = element;
-    }
-  }
-  addActiveClass(element: any) {
-    if (element === this.showSubMenu) {
-      this.showSubMenu = '0';
-    } else {
-      this.showSubMenu = element;
-    }
+  //   if (element === this.showMenu) {
+  //     this.showMenu = '0';
+  //   } else {
+  //     this.showMenu = element;
+  //   }
+  // }
+  // addActiveClass(element: any) {
+  //   if (element === this.showSubMenu) {
+  //     this.showSubMenu = '0';
+  //   } else {
+  //     this.showSubMenu = element;
+  //   }
   }
 
   onClick(event) {
