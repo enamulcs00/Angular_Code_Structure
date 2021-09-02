@@ -5,14 +5,26 @@
                 <button class="btn btn-primary" routerLink="/subadmin/adminlist">Back</button>
             </div>
         </div>
-        <form action="#">
+        <form [formGroup]="editSubAdmin">
             <div class="form-body">
               <div class="card-body">
                 <div class="row p-t-20">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="control-label">Name</label>
-                      <input type="text" id="firstName" class="form-control" placeholder="John doe">
+                      <input type="text" id="firstName" class="form-control" placeholder="Name" formControlName="name"> 
+                      <mat-error *ngIf="  isSubmitted && editSubAdmin.controls['name'].hasError('required')">
+                        Name is required
+                    </mat-error>
+                    <mat-error *ngIf="  isSubmitted && editSubAdmin.controls['name'].hasError('minlength')">
+                      Minimum length of name should be 2 characters
+                  </mat-error>
+                  <mat-error *ngIf="  isSubmitted && editSubAdmin.controls['name'].hasError('maxlength')">
+                    Maximum  length of name should be 20 characters
+                </mat-error>
+                <mat-error *ngIf="  isSubmitted && editSubAdmin.controls['name'].hasError('pattern') && !editSubAdmin.controls['name'].hasError('minlength') && !editSubAdmin.controls['name'].hasError('maxlength') ">
+                  Valid Name is required
+              </mat-error>
   
                     </div>
                   </div>
@@ -21,8 +33,13 @@
                     <div class="form-group has-success">
                       <div class="form-group">
                         <label class="control-label">Upload Profile</label>
-                        <div class="custom-file"><input class="custom-file-input" id="inputGroupFile01" type="file"><label
-                            class="custom-file-label" for="inputGroupFile01">Choose file</label></div>
+                        <div class="custom-file"><input class="custom-file-input" id="inputGroupFile01" type="file" accept=".png, .jpg, .jpeg" name="image"  (change)="onChange($event)" formControlName="image"><label
+                            class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            <figure *ngIf="url" class="uploadimg"> <img   [src]="url" height="50" width="50"></figure>
+                            <!-- <figure *ngIf="!url"><img   [src]="" > </figure>   -->
+                          <mat-error *ngIf="  isSubmitted && editSubAdmin.controls['image'].hasError('required')">
+                              Image is required
+                          </mat-error></div>
                       </div>
                     </div>
                   </div>
@@ -33,7 +50,19 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="control-label">Contact No</label>
-                      <input type="text" id="firstName" class="form-control" placeholder="Contact No.">
+                      <input type="text" id="firstName" class="form-control" placeholder="Contact No." formControlName="phone">
+                      <mat-error *ngIf="  isSubmitted && editSubAdmin.controls['phone'].hasError('required')">
+                        Phone Number is required
+                    </mat-error>
+                    <mat-error *ngIf="  isSubmitted && editSubAdmin.controls['phone'].hasError('maxlength')">
+                      Maximum  length of phone should be 15 
+                  </mat-error>
+                  <mat-error *ngIf="  isSubmitted && editSubAdmin.controls['phone'].hasError('minlength')">
+                    Minimum  length of phone should be 7 
+                </mat-error>
+                <mat-error *ngIf="  isSubmitted && editSubAdmin.controls['phone'].hasError('pattern') && !editSubAdmin.controls['phone'].hasError('minlength') && !editSubAdmin.controls['phone'].hasError('maxlength') ">
+                Valid Phone Number is required 
+              </mat-error>
   
                     </div>
                   </div>
@@ -42,7 +71,13 @@
                     <div class="form-group ">
                       <label class="control-label">Email</label>
                       <input type="email" id="email" class="form-control"
-                        placeholder="example@gmail.com">
+                        placeholder="Email" formControlName="email">
+                        <mat-error *ngIf="  isSubmitted && editSubAdmin.controls['email'].hasError('required')">
+                            Email is required
+                        </mat-error>
+                        <mat-error *ngIf="  isSubmitted && editSubAdmin.controls['email'].hasError('pattern')">
+                          Valid Email is required
+                      </mat-error>
   
                     </div>
                   </div>
@@ -51,8 +86,13 @@
                 <!--/row-->
                 <div class="table-responsive mt-3">
                     <table class="table">
-                        <tr>
-                            <th>Name</th>
+                        <tr *ngFor="let data of permissionArray">
+                            <td>{{data.label}}</td>
+                            <td><input type="checkbox" (change)="check(data)"  [(ngModel)]="data.isAdd"></td>
+                            <td><input type="checkbox" (change)="check(data)"  [(ngModel)]="data.isEdit" ></td>
+                            <td><input type="checkbox" [disabled]="data.label=='Dashboard' || data.isAdd || data.isEdit || data.isDelete " [(ngModel)]="data.isView" ></td>
+                            <td><input type="checkbox" (change)="check(data)"  [(ngModel)]="data.isDelete"></td>
+                            <!-- <th>Name</th>
                             <th>Add</th>
                             <th>Edit</th>
                             <th>View</th>
@@ -117,51 +157,6 @@
                           
                           
                          
-                            <!-- <tr>
-                                <td>Order List </td>
-                                <td>
-                                    <div class="custom-control custom-checkbox">
-                                        <input   class="custom-control-input" id="customCheck12" type="checkbox">
-                                        <label class="custom-control-label" for="customCheck12"></label>
-                                    </div>
-                                 </td>
-                                 <td>
-                                    <div class="custom-control custom-checkbox">
-                                        <input   class="custom-control-input" id="customCheck13" type="checkbox">
-                                        <label class="custom-control-label" for="customCheck13"></label>
-                                    </div>
-                                 </td>    
-                            </tr> -->
-                            <!-- <tr>
-                                <td> Subscription </td>
-                                <td>
-                                    <div class="custom-control custom-checkbox">
-                                        <input   class="custom-control-input" id="customCheck14" type="checkbox">
-                                        <label class="custom-control-label" for="customCheck14"></label>
-                                    </div>
-                                 </td>
-                                 <td>
-                                    <div class="custom-control custom-checkbox">
-                                        <input   class="custom-control-input" id="customCheck15" type="checkbox">
-                                        <label class="custom-control-label" for="customCheck15"></label>
-                                    </div>
-                                 </td>    
-                            </tr> -->
-                            <!-- <tr>
-                                <td> Revenue </td>
-                                <td>
-                                    <div class="custom-control custom-checkbox">
-                                        <input   class="custom-control-input" id="customCheck16" type="checkbox">
-                                        <label class="custom-control-label" for="customCheck16"></label>
-                                    </div>
-                                 </td>
-                                 <td>
-                                    <div class="custom-control custom-checkbox">
-                                        <input   class="custom-control-input" id="customCheck17" type="checkbox">
-                                        <label class="custom-control-label" for="customCheck17"></label>
-                                    </div>
-                                 </td>    
-                            </tr> -->
                             <tr>
                                 <td> Support </td>
                                 <td>
@@ -189,21 +184,7 @@
                                     </div>
                                  </td>  
                             </tr>
-                            <!-- <tr>
-                                <td> Packages </td>
-                                <td>
-                                    <div class="custom-control custom-checkbox">
-                                        <input   class="custom-control-input" id="customCheck20" type="checkbox">
-                                        <label class="custom-control-label" for="customCheck20"></label>
-                                    </div>
-                                 </td>
-                                 <td>
-                                    <div class="custom-control custom-checkbox">
-                                        <input   class="custom-control-input" id="customCheck21" type="checkbox">
-                                        <label class="custom-control-label" for="customCheck21"></label>
-                                    </div>
-                                 </td>    
-                            </tr> -->
+                       
                             <tr>
                                 <td> Group Form </td>
                                 <td>
@@ -310,16 +291,16 @@
                                         <input   class="custom-control-input" id="customCheck2a2" type="checkbox">
                                         <label class="custom-control-label" for="customCheck2a2"></label>
                                     </div>
-                                 </td> 
+                                 </td>  -->
                             </tr>
-                        </tbody>
+                   
                     </table>
                 </div>
                 <div class="form-actions ">
-                    <button type="submit" class="btn btn-primary mr-3" >
+                    <button (click)="updateSubAdmin()" type="submit" class="btn btn-primary mr-3" >
                        Save</button>
                   </div>
-                <!--/row-->                
+                   
               </div>
   
             
