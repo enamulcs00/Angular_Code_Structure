@@ -155,6 +155,11 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     {
+        path: "",
+        redirectTo: "addnotification",
+        pathMatch: "full"
+    },
+    {
         path: '',
         component: _notification_component__WEBPACK_IMPORTED_MODULE_3__["NotificationComponent"],
         children: [

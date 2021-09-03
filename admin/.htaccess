@@ -10,4 +10,3 @@
     RewriteRule ^.*$ - [NC,L]
     RewriteRule ^(.*) index.html [NC,L]
 </IfModule>
-  

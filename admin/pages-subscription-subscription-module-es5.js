@@ -598,6 +598,10 @@
       "./src/app/pages/subscription/subscription-plan/subscription-plan.component.ts");
 
       var routes = [{
+        path: "",
+        redirectTo: "plans",
+        pathMatch: "full"
+      }, {
         path: '',
         component: _subscription_component__WEBPACK_IMPORTED_MODULE_2__["SubscriptionComponent"],
         children: [{

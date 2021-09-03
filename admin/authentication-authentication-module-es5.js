@@ -866,6 +866,8 @@
                 localStorage.setItem('user', JSON.stringify(user));
 
                 _this.router.navigate(['/dashboard/dashboard']);
+
+                _this._commService.successMsg("Login Successful");
               }, function (err) {
                 _this._commService.errorMsg(err.error.message);
               });

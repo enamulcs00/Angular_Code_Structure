@@ -284,6 +284,11 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     {
+        path: "",
+        redirectTo: "plans",
+        pathMatch: "full"
+    },
+    {
         path: '',
         component: _subscription_component__WEBPACK_IMPORTED_MODULE_2__["SubscriptionComponent"],
         children: [

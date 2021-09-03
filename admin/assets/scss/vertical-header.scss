@@ -44,7 +44,7 @@ Main sidebar
                     border-bottom: 1px solid $themecolor;
 
                     i {
-                        color: $themecolor;
+                        color: $sidebar-text;
                     }
                 }
                 &.active {
@@ -82,9 +82,12 @@ Main sidebar
         }
         &.active {
             font-weight: 400;
-            // background: #242933;
-            // color: $themecolor-alt;
-        } 
+           // background: #242933;
+            color: $themecolor-alt;
+            i{
+                color: $themecolor-alt;   
+            }
+        }
     }
     > ul > li {
         // margin-bottom: 5px;
@@ -95,7 +98,7 @@ Main sidebar
             background-color: $white;
             border-bottom: 1px solid $themecolor;
             i {
-                color: $themecolor;
+             color: $themecolor;
             }
         }
     }
@@ -126,7 +129,7 @@ Main sidebar
         -o-transform-origin: top;
         transform-origin: top;
         top: 23px;
-        -webkit-transition: all 0.3s ease-out ;
+        -webkit-transition: all 0.3s ease-out;
         -o-transition: all 0.3s ease-out;
         transition: all 0.3s ease-out;
     }

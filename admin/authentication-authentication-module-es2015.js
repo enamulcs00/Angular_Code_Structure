@@ -472,6 +472,7 @@ class LoginComponent {
                 localStorage.setItem("accessToken", JSON.stringify(user.token));
                 localStorage.setItem('user', JSON.stringify(user));
                 this.router.navigate(['/dashboard/dashboard']);
+                this._commService.successMsg("Login Successful");
             }, (err) => {
                 this._commService.errorMsg(err.error.message);
             });

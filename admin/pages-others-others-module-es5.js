@@ -8856,6 +8856,10 @@
       "./src/app/pages/others/group-volume-form/group-volume-form.component.ts");
 
       var routes = [{
+        path: "",
+        redirectTo: "groupform",
+        pathMatch: "full"
+      }, {
         path: '',
         component: _others_component__WEBPACK_IMPORTED_MODULE_2__["OthersComponent"],
         children: [{

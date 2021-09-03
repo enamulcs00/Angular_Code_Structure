@@ -2637,7 +2637,7 @@ class Dashboard1Component {
             this.lineChartData[0].data = this.userlength;
             this.lineChartLabels = this.newUserType;
         }, (err) => {
-            this._commService.errorMsg(err.message);
+            this._commService.errorMsg(err.error.message);
         });
     }
 }
