@@ -21,24 +21,39 @@ import { CommonService } from '../../../service/common.service';
 })
 export class PrivacyComponent implements OnInit {
   @Input('item') public items;
+  privacyDetails: any={};
 
   constructor(private router: Router, private _apiService:ApiService, private _commService: CommonService, private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    this.getPrivacy()
   }
   updatePrivacy(){
     const obj={
-      "privacy":this.items.privacy || ""
+      "privacy":this.privacyDetails.privacy || ""
 
 
     }
     this._apiService
     .postRequest("api/v1/admin/addCms", obj)
-    .subscribe((response) => {
+    .subscribe((response:any) => {
       console.log(response);
   
-      this._commService.successMsg(" Updated Successfully");
+      this._commService.successMsg(response.message);
     });
+  }
+  getPrivacy(){
+    this._apiService.getRequestWithoutbody('api/v1/admin/getCms').subscribe(response => {
+    
+    
+      this.privacyDetails=response['data'];
+    
+      console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+      
+    },(err: any) => {
+      this._commService.errorMsg(err.error.message)
+    })
+
   }
 
 }

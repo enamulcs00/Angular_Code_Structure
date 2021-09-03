@@ -33,6 +33,7 @@ export class CommonService {
   }
 
   showSpinner() {
+    console.log("qterlyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy")
     this.spinner.show();
   }
 

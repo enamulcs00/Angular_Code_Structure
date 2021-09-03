@@ -22,7 +22,7 @@ export const ROUTES: RouteInfo[] = [
     submenu: [],
   },
   {
-    path: "/users/userlist",
+    path: "/users",
     title: "Users",
     icon: "mdi mdi-account",
     class: "",
@@ -72,7 +72,7 @@ export const ROUTES: RouteInfo[] = [
   //   submenu: [],
   // },
   {
-    path: "/notification/addnotification",
+    path: "/notification",
     title: "Notification",
     icon: "mdi mdi-bell-ring",
     class: "",
@@ -92,7 +92,7 @@ export const ROUTES: RouteInfo[] = [
   //   submenu: [],
   // },
   {
-    path: "/others/groupform",
+    path: "/others",
     title: "Group Form",
     icon: "mdi mdi-account-box-outline",
     class: "",
@@ -102,7 +102,7 @@ export const ROUTES: RouteInfo[] = [
     submenu: [],
   },
   {
-    path: "/subadmin/adminlist",
+    path: "/subadmin/",
     title: "Sub Admin",
     icon: "mdi mdi-account-box-outline",
     class: "",
@@ -142,7 +142,7 @@ export const ROUTES: RouteInfo[] = [
   //   submenu: [],
   // },
   {
-    path: "cms/cmslist",
+    path: "cms/privacy",
     title: "CMS",
     icon: "mdi mdi-message-settings-variant",
     class: "",

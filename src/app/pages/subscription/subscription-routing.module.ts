@@ -5,6 +5,11 @@ import {SubscriptionPlanComponent} from './subscription-plan/subscription-plan.c
 
 const routes: Routes = [
   {
+    path : "",
+    redirectTo : "plans",
+    pathMatch : "full"
+  },
+  {
     path:'',
     component:SubscriptionComponent,
     children: [

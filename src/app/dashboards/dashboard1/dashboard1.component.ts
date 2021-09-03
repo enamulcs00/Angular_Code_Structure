@@ -156,6 +156,8 @@ export class Dashboard1Component {
     console.log(reqbody);
     this._apiService.postRequest("api/v1/admin/dashboard", reqbody).subscribe(
       (response) => {
+ 
+       
 
         this.userCounts = response["data"]["userCounts"];
         this.userCountsNumber= response["data"]["countUsers"];
@@ -189,7 +191,7 @@ export class Dashboard1Component {
        
       },
       (err: any) => {
-        this._commService.errorMsg(err.message);
+        this._commService.errorMsg(err.error.message);
       }
     );
 

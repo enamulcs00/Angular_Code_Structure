@@ -5,6 +5,11 @@ import { NotificationComponent } from './notification.component';
 import { AddNotificationComponent } from './add-notification/add-notification.component';
 const routes: Routes = [
   {
+    path : "",
+    redirectTo : "addnotification",
+    pathMatch : "full"
+  },
+  {
     path:'',
     component:NotificationComponent,
     children:[

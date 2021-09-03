@@ -6,6 +6,11 @@ import { GroupVolumeFormComponent } from './group-volume-form/group-volume-form.
 
 const routes: Routes = [
   {
+    path : "",
+    redirectTo : "groupform",
+    pathMatch : "full"
+  },
+  {
     path: '',
     component:OthersComponent,
     children:[

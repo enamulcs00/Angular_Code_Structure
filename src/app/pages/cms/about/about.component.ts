@@ -32,10 +32,10 @@ export class AboutComponent implements OnInit {
     }
     this._apiService
     .postRequest("api/v1/admin/addCms", params)
-    .subscribe((response) => {
+    .subscribe((response:any) => {
       console.log(response);
   
-      this._commService.successMsg(" Updated Successfully");
+      this._commService.successMsg(response.message);
     });
 } 
 

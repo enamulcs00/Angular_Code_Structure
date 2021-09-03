@@ -13,7 +13,7 @@ export class SetInterceptorService {
   constructor(private commonService: CommonService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    this.commonService.showSpinner();
+      this.commonService.showSpinner();
     const clonedReq = this.handleRequest(req);
     return next.handle(clonedReq);
 //     return next.handle(clonedReq).pipe(finalize( ()=>

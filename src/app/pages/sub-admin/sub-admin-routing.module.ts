@@ -7,6 +7,11 @@ import { SubAdminComponent } from './sub-admin.component';
 
 const routes: Routes = [
   {
+    path : "",
+    redirectTo : "adminlist",
+    pathMatch : "full"
+  },
+  {
     path:'',
     component:SubAdminComponent,
     children:[
