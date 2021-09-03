@@ -66,6 +66,7 @@ export class GroupVolumeFormComponent implements OnInit {
       
     },(err: any) => {
       this._commService.errorMsg(err.error.message)
+      this._commService.hideSpinner()
     })
 
     
@@ -81,6 +82,7 @@ export class GroupVolumeFormComponent implements OnInit {
       
     },(err: any) => {
       this._commService.errorMsg(err.error.message)
+      this._commService.hideSpinner()
     })
 
     
@@ -113,6 +115,7 @@ export class GroupVolumeFormComponent implements OnInit {
       
     },(err: any) => {
       this._commService.errorMsg(err.error.message)
+      this._commService.hideSpinner()
     })
 
     
@@ -139,6 +142,7 @@ export class GroupVolumeFormComponent implements OnInit {
       
     },(err: any) => {
       this._commService.errorMsg(err.error.message)
+      this._commService.hideSpinner()
     })
 
   }

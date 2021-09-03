@@ -10,7 +10,7 @@
             <div class="col-md-4">
               <form >
                 <div class="mb-2">
-                    <input type="text" class="form-control" id="prenametext" placeholder="Search" >
+                    <input type="text" class="form-control" id="prenametext" placeholder="Search" (keyup.enter)="getSubAdmin($event)" >
                 </div>
             </form>
             </div>
@@ -41,32 +41,31 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td><span class="nowrap"> <img src="assets/images/users/3.jpg" alt="" width="60px"> </span></td>                 
-                    <td><span class="nowrap"> Ronny </span></td>                 
-                   <td><span class="text-nowrap">+91-7858485474</span></td>
-                   <td class="text-nowrap">Ronny@example.com</td>                               
-                    <td>                    
-                      <mat-slide-toggle >
-                      </mat-slide-toggle> 
-                      </td>
+                  <tr *ngFor="let data of subAdminDetails, index as i">
+                    <td>   {{i+limit*page+1}}</td>
+                    <td><span class="nowrap"> <img src="{{data.image}}" alt="" width="60px"> </span></td>                 
+                    <td><span class="nowrap"> {{data.name}} </span></td>                 
+                   <td><span class="text-nowrap">{{data.phone}}</span></td>
+                   <td class="text-nowrap">{{data.email}}</td>                               
+                   <td>   <mat-slide-toggle [checked]="user?.isBlocked" (change)="changeStatus($event,data._id)">
+                  </mat-slide-toggle></td>
+                  
                     <td>
-                        <a routerLink="/subadmin/editadmin" class="btn btn-primary" >
+                        <a routerLink="/subadmin/editadmin/{{data._id}}" class="btn btn-primary" >
                           <i class="ti-marker-alt"></i> </a>
-                        <button class="btn btn-danger ml-2"><i class="ti-trash"></i>
+                        <button (click)="deleteUser(data._id)" class="btn btn-danger ml-2"><i class="ti-trash"></i>
                           </button>
                     </td>
                   </tr>
                   
                 </tbody>
               </table>
-              <!-- <div class="no-found" *ngIf="userDetails?.length == 0">
+              <div class="no-found" *ngIf="subAdminDetails?.length == 0">
                 <h4>No data found</h4>
-              </div> -->
+              </div>
             </div>
-            <!-- <mat-paginator *ngIf="userDetailsCount && userDetailsCount>0" [pageIndex]="page" [length]="userDetailsCount" (page)="handlePageEvent($event)"
-              [pageSize]="limit" [pageSizeOptions]="[10, 25, 100]"></mat-paginator> -->
+            <mat-paginator *ngIf="subAdminCount && subAdminCount>0" [pageIndex]="page" [length]="subAdminCount" (page)="handlePageEvent($event)"
+              [pageSize]="limit" [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
           </div>
         </div>
       </div>

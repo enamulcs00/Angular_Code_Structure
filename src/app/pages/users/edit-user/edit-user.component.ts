@@ -75,6 +75,7 @@ onChange(event){
       },(err:any)=>{
         // this.loading.loadingFalseCircle();
         this._commService.errorMsg(err.error.message);
+        this._commService.hideSpinner()
       })
     
       }
@@ -105,6 +106,7 @@ getUsers(){
     
   },(err: any) => {
     this._commService.errorMsg(err.error.message)
+    this._commService.hideSpinner()
   })
 
 }

@@ -73,6 +73,7 @@ export class ProfileComponent implements OnInit {
       
     },(err: any) => {
       this._commService.errorMsg(err.error.message)
+      this._commService.hideSpinner()
     })
 
     
@@ -89,7 +90,11 @@ export class ProfileComponent implements OnInit {
         console.log(response);
          this.router.navigate(["/dashboard/dashboard"]);
         this._commService.successMsg(response.message);
-      });
+      },(err: any) => {
+        this._commService.errorMsg(err.error.message)
+        this._commService.hideSpinner()
+      }
+      );
   } 
 
     }
@@ -104,6 +109,10 @@ export class ProfileComponent implements OnInit {
           console.log(response);
            this.router.navigate(["/dashboard/dashboard"]);
           this._commService.successMsg(response["message"]);
+        }
+        ,(err: any) => {
+          this._commService.errorMsg(err.error.message)
+          this._commService.hideSpinner()
         });
     } 
   }

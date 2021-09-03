@@ -30,7 +30,7 @@ const routes: Routes = [
         }
       },
       {
-        path:'editadmin',
+        path:'editadmin/:id',
         component:EditAdminComponent,
         data: {
           title: "Edit Sub Admin",

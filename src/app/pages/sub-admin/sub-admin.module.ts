@@ -9,6 +9,7 @@ import { AdminListComponent } from './admin-list/admin-list.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatSlideToggleModule,
     ReactiveFormsModule,
     FormsModule,
+    MatPaginatorModule,
     NgbModule
   ]
 })

@@ -29,6 +29,7 @@ export class AddAdminComponent implements OnInit {
       name:["", [Validators.required,  Validators.minLength(2),Validators.maxLength(20),  Validators.pattern(/^[a-zA-Z]*$/)]],
       phone:["",[Validators.required, Validators.minLength(7),Validators.maxLength(15),  Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
       email:["",[Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      password:["",[Validators.required,Validators.minLength(8),Validators.maxLength(20)]],
       image:["",[Validators.required]]
     })
     this.permissionArray.push( {label:'Dashboard',
@@ -96,6 +97,7 @@ export class AddAdminComponent implements OnInit {
         },(err:any)=>{
           // this.loading.loadingFalseCircle();
           this._commService.errorMsg(err.error.message);
+          this._commService.hideSpinner()
         })
       
         }
@@ -113,10 +115,12 @@ export class AddAdminComponent implements OnInit {
     
         "email":this.addSubAdmin.value.email,
         "phone":this.addSubAdmin.value.phone,
+        "password":this.addSubAdmin.value.password,
       
-        "image":this.url
+        "image":this.url,
+        "permission":this.permissionArray
       }
-      this._apiService.postRequest('api/v1/admin/editUser',data).subscribe((response:any) => {
+      this._apiService.postRequest('api/v1/admin/addSubAdmin',data).subscribe((response:any) => {
         console.log(response)
   
       

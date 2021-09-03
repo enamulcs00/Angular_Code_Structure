@@ -52,6 +52,7 @@ export class ListUserComponent implements OnInit {
       
     },(err: any) => {
       this._commService.errorMsg(err.error.message)
+      this._commService.hideSpinner()
     })
   }
   // exportcsv(){
@@ -75,6 +76,7 @@ export class ListUserComponent implements OnInit {
       
     },(err: any) => {
       this._commService.errorMsg(err.error.message)
+      this._commService.hideSpinner()
     })
 
   }
@@ -90,6 +92,7 @@ export class ListUserComponent implements OnInit {
       
     },(err: any) => {
       this._commService.errorMsg(err.error.message)
+      this._commService.hideSpinner()
     })
 
   }
@@ -110,7 +113,8 @@ export class ListUserComponent implements OnInit {
     //  console.log(this.AllProducts);
       
     },(err: any) => {
-      this._commService.errorMsg(err.message)
+      this._commService.errorMsg(err.error.message)
+      this._commService.hideSpinner()
     });
   }
   handlePageEvent(event:PageEvent){
@@ -127,6 +131,7 @@ export class ListUserComponent implements OnInit {
       
     },(err: any) => {
       this._commService.errorMsg(err.error.message)
+      this._commService.hideSpinner()
     })
   }
   // people = [
@@ -196,6 +201,7 @@ export class ListUserComponent implements OnInit {
           
         },(err: any) => {
           this._commService.errorMsg(err.error.message)
+          this._commService.hideSpinner()
         })
         
   

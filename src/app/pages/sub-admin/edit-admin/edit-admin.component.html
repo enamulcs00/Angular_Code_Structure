@@ -33,7 +33,7 @@
                     <div class="form-group has-success">
                       <div class="form-group">
                         <label class="control-label">Upload Profile</label>
-                        <div class="custom-file"><input class="custom-file-input" id="inputGroupFile01" type="file" accept=".png, .jpg, .jpeg" name="image"  (change)="onChange($event)" formControlName="image"><label
+                        <div class="custom-file"><input class="custom-file-input" id="inputGroupFile01" type="file" accept=".png, .jpg, .jpeg" name="image"  (change)="onChange($event)"  ><label
                             class="custom-file-label" for="inputGroupFile01">Choose file</label>
                             <figure *ngIf="url" class="uploadimg"> <img   [src]="url" height="50" width="50"></figure>
                             <!-- <figure *ngIf="!url"><img   [src]="" > </figure>   -->
@@ -81,17 +81,27 @@
   
                     </div>
                   </div>
-                  <!--/span-->
+                
                 </div>
-                <!--/row-->
+           
+              
                 <div class="table-responsive mt-3">
                     <table class="table">
+                        <tr>
+                            <th>Name</th>
+                            <th>Add</th>
+                            <th>Edit</th>
+                            <th>View</th>
+                            <th>Delete</th>
+                            
+                        </tr>
+                        <tbody>
                         <tr *ngFor="let data of permissionArray">
-                            <td>{{data.label}}</td>
-                            <td><input type="checkbox" (change)="check(data)"  [(ngModel)]="data.isAdd"></td>
-                            <td><input type="checkbox" (change)="check(data)"  [(ngModel)]="data.isEdit" ></td>
-                            <td><input type="checkbox" [disabled]="data.label=='Dashboard' || data.isAdd || data.isEdit || data.isDelete " [(ngModel)]="data.isView" ></td>
-                            <td><input type="checkbox" (change)="check(data)"  [(ngModel)]="data.isDelete"></td>
+                            <td>{{data?.label}}</td>
+                            <td><input  [(ngModel)]="data.isAdd" (change)="check(data)" type="checkbox" [ngModelOptions]="{standalone: true}" ></td>
+                            <td><input [(ngModel)]="data.isEdit" (change)="check(data)"  type="checkbox" [ngModelOptions]="{standalone: true}"   ></td>
+                            <td><input  [disabled]="data.label=='Dashboard' || data.isAdd || data.isEdit || data.isDelete " [(ngModel)]="data.isView" type="checkbox" [ngModelOptions]="{standalone: true}" ></td>
+                            <td><input  (change)="check(data)"  [(ngModel)]="data.isDelete" type="checkbox" [ngModelOptions]="{standalone: true}"></td>
                             <!-- <th>Name</th>
                             <th>Add</th>
                             <th>Edit</th>
@@ -293,7 +303,7 @@
                                     </div>
                                  </td>  -->
                             </tr>
-                   
+                        </tbody>
                     </table>
                 </div>
                 <div class="form-actions ">

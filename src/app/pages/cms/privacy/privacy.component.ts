@@ -40,7 +40,12 @@ export class PrivacyComponent implements OnInit {
       console.log(response);
   
       this._commService.successMsg(response.message);
-    });
+    }
+    ,(err: any) => {
+      this._commService.errorMsg(err.error.message)
+      this._commService.hideSpinner()
+    }
+    );
   }
   getPrivacy(){
     this._apiService.getRequestWithoutbody('api/v1/admin/getCms').subscribe(response => {
@@ -52,6 +57,7 @@ export class PrivacyComponent implements OnInit {
       
     },(err: any) => {
       this._commService.errorMsg(err.error.message)
+      this._commService.hideSpinner()
     })
 
   }

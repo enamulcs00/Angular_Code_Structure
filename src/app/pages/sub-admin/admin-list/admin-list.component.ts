@@ -31,7 +31,7 @@ export class AdminListComponent implements OnInit {
   constructor(private modalService: NgbModal, private router:Router, private _apiService:ApiService, private _commService:CommonService, private fb:FormBuilder, private routes:ActivatedRoute) { }
 
   ngOnInit(): void {
-    // this.getSubAdmin('')
+     this.getSubAdmin('')
   }
   // openWindowCustomClass(content3) {
   //   this.modalService.open(content3, {backdropClass: 'light-blue-backdrop',centered: true,size: 'lg'});
@@ -63,31 +63,53 @@ export class AdminListComponent implements OnInit {
   //     return  `with: ${reason}`;
   //   }
   // }
-  // getSubAdmin(event){
-  //   if(event != '') {
-  //     this.searchText = event.target.value
-  //     // this.serial = 0;
-  //     this.page = 0;
-  //    } 
-  //    const reqbody={  "search": this.searchText.trim(), "page": 0,"limit":this.limit}
-  //   this._apiService.postRequest('api/v1/admin/getAllUser',reqbody).subscribe((response:any) => {
+  changeStatus(event,id1){
+    console.log(event);
     
-  //     console.log("response",response)
-  //     this.subAdminDetails=response.data.userData;
-  //     this.subAdminCount=response.data.count
+    const reqbody={"subAdminId": id1,
     
-  //     console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+    "isBlocked":event.checked}
+    console.log(reqbody);
+    this._apiService.putRequest('api/v1/admin/editSubAdmin',reqbody).subscribe((response:any) => {
+      this._commService.successMsg(response.message);
+     
+
+    //  this.AllProducts=response['data'].productData
+    //  this.totalProducts = response['data'].count
+    //   // this.getAllCategories()
+    //  console.log(this.AllProducts);
       
-  //   },(err: any) => {
-  //     this._commService.errorMsg(err.error.message)
-  //   })
+    },(err: any) => {
+      this._commService.errorMsg(err.error.message)
+      this._commService.hideSpinner()
+    });
+  }
+  getSubAdmin(event){
+    if(event != '') {
+      this.searchText = event.target.value
+      // this.serial = 0;
+      this.page = 0;
+     } 
+     const reqbody={  "search": this.searchText.trim(), "page": 0,"limit":this.limit}
+    this._apiService.postRequest('api/v1/admin/getSubAdmin',reqbody).subscribe((response:any) => {
     
-  // }
+      console.log("response",response)
+      this.subAdminDetails=response.data.adminData;
+      this.subAdminCount=response.data.count
+    
+      console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+      
+    },(err: any) => {
+      this._commService.errorMsg(err.error.message)
+         this._commService.hideSpinner()
+    })
+    
+  }
   handlePageEvent(event:PageEvent){
     this.limit = event.pageSize;
     this.page = event.pageIndex;
     const reqbody={  "search": this.searchText.trim(), "page": this.page,"limit":this.limit}
-    this._apiService.postRequest('api/v1/admin/getAllUser',reqbody).subscribe((response:any) => {
+    this._apiService.postRequest('api/v1/admin/getSubAdmin',reqbody).subscribe((response:any) => {
     
       console.log("response",response)
       this.subAdminDetails=response.data.userData;
@@ -97,40 +119,42 @@ export class AdminListComponent implements OnInit {
       
     },(err: any) => {
       this._commService.errorMsg(err.error.message)
+      this._commService.hideSpinner()
     })
   }
-  // deleteUser(id){
+  deleteUser(id){
 
   
-  //   Swal.fire({
-  //     title: 'Are you sure?',
-  //     text: 'You will not be able to recover this ',
-  //     icon: 'warning',
-  //     showCancelButton: true,
-  //     confirmButtonText: 'Yes, Delete!',
-  //     cancelButtonText: 'No, dont Delete'
-  //   }).then((result) => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You will not be able to recover this ',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, Delete!',
+      cancelButtonText: 'No, dont Delete'
+    }).then((result) => {
      
   
       
-  //     if (result.isConfirmed) {
-  //       const obj={
-  //         "user":id,
-  //         "isDeleted": true
-  //       }
-  //       this._apiService.putRequest('api/v1/admin/deleteUser',obj).subscribe((response:any) => {
+      if (result.isConfirmed) {
+        const obj={
+          "id":id,
+          "isDeleted": true
+        }
+        this._apiService.putRequest('api/v1/admin/deleteSubAdmin',obj).subscribe((response:any) => {
     
-  //         console.log("response",response)
-  //         this._commService.successMsg(response.message)
-  //         this.getSubAdmin('')
+          console.log("response",response)
+          this._commService.successMsg(response.message)
+          this.getSubAdmin('')
 
         
         
         
           
-  //       },(err: any) => {
-  //         this._commService.errorMsg(err.error.message)
-  //       })
+        },(err: any) => {
+          this._commService.errorMsg(err.error.message)
+             this._commService.hideSpinner()  
+        })
         
   
         
@@ -140,16 +164,17 @@ export class AdminListComponent implements OnInit {
      
     
    
-  //     } else if (result.dismiss === Swal.DismissReason.cancel) {
-  //       // Swal.fire(
-  //       //   'Cancelled',
-  //       //   'Your imaginary file is safe :)',
-  //       //   'error'
-  //       // )
-  //     }
-  //   })
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        // Swal.fire(
+        //   'Cancelled',
+        //   'Your imaginary file is safe :)',
+        //   'error'
+        // )
+      }
+    })
 
 
-  // }
+  }
+
 
 }

@@ -192,6 +192,7 @@ export class Dashboard1Component {
       },
       (err: any) => {
         this._commService.errorMsg(err.error.message);
+        this._commService.hideSpinner()
       }
     );
 
