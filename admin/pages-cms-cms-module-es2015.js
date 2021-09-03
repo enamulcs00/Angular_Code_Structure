@@ -3401,6 +3401,9 @@ class PrivacyComponent {
             .subscribe((response) => {
             console.log(response);
             this._commService.successMsg(response.message);
+        }, (err) => {
+            this._commService.errorMsg(err.error.message);
+            this._commService.hideSpinner();
         });
     }
     getPrivacy() {
@@ -3409,6 +3412,7 @@ class PrivacyComponent {
             console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         }, (err) => {
             this._commService.errorMsg(err.error.message);
+            this._commService.hideSpinner();
         });
     }
 }

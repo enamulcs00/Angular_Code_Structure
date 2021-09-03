@@ -8201,6 +8201,8 @@
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
               _this24._commService.errorMsg(err.error.message);
+
+              _this24._commService.hideSpinner();
             });
           }
         }, {
@@ -8214,6 +8216,8 @@
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
               _this25._commService.errorMsg(err.error.message);
+
+              _this25._commService.hideSpinner();
             });
           }
         }, {
@@ -8244,6 +8248,8 @@
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
               _this26._commService.errorMsg(err.error.message);
+
+              _this26._commService.hideSpinner();
             });
           }
         }, {
@@ -8268,6 +8274,8 @@
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
               _this27._commService.errorMsg(err.error.message);
+
+              _this27._commService.hideSpinner();
             });
           }
         }]);

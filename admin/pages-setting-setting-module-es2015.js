@@ -326,6 +326,7 @@ class ProfileComponent {
             console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         }, (err) => {
             this._commService.errorMsg(err.error.message);
+            this._commService.hideSpinner();
         });
     }
     profileUpdate() {
@@ -338,6 +339,9 @@ class ProfileComponent {
                 console.log(response);
                 this.router.navigate(["/dashboard/dashboard"]);
                 this._commService.successMsg(response.message);
+            }, (err) => {
+                this._commService.errorMsg(err.error.message);
+                this._commService.hideSpinner();
             });
         }
     }
@@ -350,6 +354,9 @@ class ProfileComponent {
                 console.log(response);
                 this.router.navigate(["/dashboard/dashboard"]);
                 this._commService.successMsg(response["message"]);
+            }, (err) => {
+                this._commService.errorMsg(err.error.message);
+                this._commService.hideSpinner();
             });
         }
     }

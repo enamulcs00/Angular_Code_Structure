@@ -4656,6 +4656,8 @@
               _this.lineChartLabels = _this.newUserType;
             }, function (err) {
               _this._commService.errorMsg(err.error.message);
+
+              _this._commService.hideSpinner();
             });
           }
         }]);

@@ -2638,6 +2638,7 @@ class Dashboard1Component {
             this.lineChartLabels = this.newUserType;
         }, (err) => {
             this._commService.errorMsg(err.error.message);
+            this._commService.hideSpinner();
         });
     }
 }

@@ -4500,6 +4500,7 @@ class GroupVolumeFormComponent {
             console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         }, (err) => {
             this._commService.errorMsg(err.error.message);
+            this._commService.hideSpinner();
         });
     }
     getCadence() {
@@ -4509,6 +4510,7 @@ class GroupVolumeFormComponent {
             console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         }, (err) => {
             this._commService.errorMsg(err.error.message);
+            this._commService.hideSpinner();
         });
     }
     updateGroup() {
@@ -4531,6 +4533,7 @@ class GroupVolumeFormComponent {
             console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         }, (err) => {
             this._commService.errorMsg(err.error.message);
+            this._commService.hideSpinner();
         });
     }
     updateCadence() {
@@ -4547,6 +4550,7 @@ class GroupVolumeFormComponent {
             console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         }, (err) => {
             this._commService.errorMsg(err.error.message);
+            this._commService.hideSpinner();
         });
     }
 }

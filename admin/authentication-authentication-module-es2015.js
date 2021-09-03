@@ -475,6 +475,7 @@ class LoginComponent {
                 this._commService.successMsg("Login Successful");
             }, (err) => {
                 this._commService.errorMsg(err.error.message);
+                this._commService.hideSpinner();
             });
         }
     }

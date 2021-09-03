@@ -646,6 +646,8 @@
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
               _this._commService.errorMsg(err.error.message);
+
+              _this._commService.hideSpinner();
             });
           }
         }, {
@@ -663,6 +665,10 @@
                 _this2.router.navigate(["/dashboard/dashboard"]);
 
                 _this2._commService.successMsg(response.message);
+              }, function (err) {
+                _this2._commService.errorMsg(err.error.message);
+
+                _this2._commService.hideSpinner();
               });
             }
           }
@@ -680,6 +686,10 @@
                 _this3.router.navigate(["/dashboard/dashboard"]);
 
                 _this3._commService.successMsg(response["message"]);
+              }, function (err) {
+                _this3._commService.errorMsg(err.error.message);
+
+                _this3._commService.hideSpinner();
               });
             }
           }

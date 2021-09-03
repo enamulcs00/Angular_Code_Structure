@@ -6652,6 +6652,10 @@
               console.log(response);
 
               _this32._commService.successMsg(response.message);
+            }, function (err) {
+              _this32._commService.errorMsg(err.error.message);
+
+              _this32._commService.hideSpinner();
             });
           }
         }, {
@@ -6664,6 +6668,8 @@
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
               _this33._commService.errorMsg(err.error.message);
+
+              _this33._commService.hideSpinner();
             });
           }
         }]);
