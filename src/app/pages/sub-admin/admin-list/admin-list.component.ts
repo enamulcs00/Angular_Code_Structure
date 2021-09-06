@@ -27,6 +27,7 @@ export class AdminListComponent implements OnInit {
   searchText:any = '';
   subAdminDetails: any;
   subAdminCount: any;
+  type: string="";
 
   constructor(private modalService: NgbModal, private router:Router, private _apiService:ApiService, private _commService:CommonService, private fb:FormBuilder, private routes:ActivatedRoute) { }
 
@@ -84,20 +85,43 @@ export class AdminListComponent implements OnInit {
       this._commService.hideSpinner()
     });
   }
+
   getSubAdmin(event){
-    if(event != '') {
-      this.searchText = event.target.value
-      // this.serial = 0;
-      this.page = 0;
-     } 
-     const reqbody={  "search": this.searchText.trim(), "page": 0,"limit":this.limit}
+    
+
+    console.log("checkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",event)
+    if(event!='')
+    {
+      this.page=0
+    }
+    // if(event=='')
+    // {
+    //   this.page=0;
+    //   this.type=""
+    // }
+    // if(event && this.type == '') {
+    
+    //   this.page = 0;
+    //   this.type = "";
+    //  } 
+    //  if(event=="active"){
+    //   this.type="active"
+      
+    //   console.log("jjjjjjjjjjjjj",this.type)
+    // }
+    // if(event=="inActive"){
+    //   this.type="inActive"
+    //   console.log("ppppppppppppp",this.type, "oooooooooooooooooooooooooooooooooooooooo")
+    // }
+    
+    const reqbody={  "search": this.searchText.trim(), "page": 0,"limit":this.limit }
     this._apiService.postRequest('api/v1/admin/getSubAdmin',reqbody).subscribe((response:any) => {
     
       console.log("response",response)
       this.subAdminDetails=response.data.adminData;
       this.subAdminCount=response.data.count
     
-      console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+      console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"); 
       
     },(err: any) => {
       this._commService.errorMsg(err.error.message)

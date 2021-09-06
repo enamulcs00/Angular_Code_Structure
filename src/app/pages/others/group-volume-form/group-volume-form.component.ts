@@ -22,10 +22,33 @@ export class GroupVolumeFormComponent implements OnInit {
   groupForm:FormGroup
   cadenceForm:FormGroup
   cadenceDetails: any={};
+  a: any;
+  b: any;
+  add: any;
+  edit: any;
+  delete: any;
 
   constructor(private router: Router, private _apiService:ApiService, private _commService: CommonService, private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    this.a=JSON.parse(localStorage.getItem('user')).role
+   
+    this.b=JSON.parse(localStorage.getItem('permissionItems'))
+    console.log(this.a,this.b,"nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn");
+    if(this.a==2){
+      this.b.forEach(element=>{
+        if(element.label=="Group Form"){
+          this.add=element.isAdd,
+          this.edit=element.isEdit,
+          this.delete=element.isDelete
+        }
+  
+      })
+      console.log(this.add);
+      console.log(this.edit);
+      console.log(this.delete);
+    }
+
     this.getGroupForm()
     this.getCadence()
     this.groupForm=this.fb.group({

@@ -15,26 +15,68 @@ import { MatDialog } from '@angular/material/dialog';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ApiService } from '../../../service/api.service';
 import { CommonService } from '../../../service/common.service';
+import { PageEvent } from '@angular/material/paginator';
 @Component({
   selector: 'app-notificaton-list',
   templateUrl: './notificaton-list.component.html',
   styleUrls: ['./notificaton-list.component.css']
 })
 export class NotificatonListComponent implements OnInit {
-  disableSelect = new FormControl(false);
-  toppings = new FormControl();
-  toppingList: string[] = ['All', 'User1', 'User2', 'User3', 'User4', 'User5'];
-  toppingId: string[] = ['#334343', '#634343', '#454543', '#765654', '#334343', '#233232'];
+  page: number=0;
+  limit: number=10;
+  searchText:any = '';
+  type:any
+  notificationDetails: any;
+  notificationDetailsCount: any;
+
+ 
  
   constructor(private router: Router,  private modalService:NgbModal,  private _apiService:ApiService, private _commService: CommonService, private fb:FormBuilder) { }
 
   ngOnInit(): void {
-    this.getNotificationHistory()
+    this.getNotificationHistory('')
   }
-  reviewModal(review) {
-    this.modalService.open(review, {backdropClass: 'light-blue-backdrop',centered: true,size: 'lg'});
-  }
-  getNotificationHistory(){
+ 
+  getNotificationHistory(event){
+    console.log("eeeeeeeeeeeeeeeeeeeee");
+    console.log(event);
+    if(event != '' ) {
+ 
+      this.page = 0;
     
+     } 
+   
+     
+     const reqbody={  "search": this.searchText.trim(), "page": 0,"limit":this.limit }
+    this._apiService.postRequest('api/v1/admin/getAllUser',reqbody).subscribe((response:any) => {
+    
+      console.log("response",response)
+      this.notificationDetails=response.data.userData;
+      this.notificationDetailsCount=response.data.count
+    
+      console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+      
+    },(err: any) => {
+      this._commService.errorMsg(err.error.message)
+      this._commService.hideSpinner()
+    })
+    
+  }
+  handlePageEvent(event:PageEvent){
+    this.limit = event.pageSize;
+    this.page = event.pageIndex;
+    const reqbody={  "search": this.searchText.trim(), "page": this.page,"limit":this.limit}
+    this._apiService.postRequest('api/v1/admin/getAllUser',reqbody).subscribe((response:any) => {
+    
+      console.log("response",response)
+      this.notificationDetails=response.data.userData;
+      this.notificationDetailsCount=response.data.count
+    
+      console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+      
+    },(err: any) => {
+      this._commService.errorMsg(err.error.message)
+      this._commService.hideSpinner()
+    })
   }
 }

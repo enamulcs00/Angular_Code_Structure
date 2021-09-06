@@ -42,12 +42,12 @@ export class ProfileComponent implements OnInit {
       {
         // email: ["", [Validators.required, Validators.pattern("[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}")]],
         oldPassword: ["", [Validators.required]],
-        newPassword: ["", [Validators.required, Validators.minLength(8)]],
+        password: ["", [Validators.required, Validators.minLength(8)]],
         confirmPassword: ["", [Validators.required]],
       },
       {
         validator: this._commService.MustMatch(
-          "newPassword",
+          "password",
           "confirmPassword"
         ),
       }
@@ -104,7 +104,7 @@ export class ProfileComponent implements OnInit {
     if (this.changePasswordForm.valid && this.submitted) {
      
       this._apiService
-        .postRequest("api/changePassword", this.changePasswordForm.value)
+        .postRequest("api/v1/admin/changePassword", this.changePasswordForm.value)
         .subscribe((response) => {
           console.log(response);
            this.router.navigate(["/dashboard/dashboard"]);

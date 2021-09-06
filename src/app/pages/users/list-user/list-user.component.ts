@@ -23,25 +23,69 @@ export class ListUserComponent implements OnInit {
   page: number=0;
   limit: number=10;
   searchText:any = '';
+  type:any
 
   //table: any
   action:string;
   userDetails: any;
   userDetailsCount: any;
+  a: any;
+  b: any;
+  edit: any;
+  add: any;
+  delete: any;
   constructor(private router:Router, private _apiService:ApiService, private _commService:CommonService, private fb:FormBuilder, private routes:ActivatedRoute  ) { }
 
 
  
   ngOnInit(): void {
+    this.a=JSON.parse(localStorage.getItem('user')).role
+   
+    this.b=JSON.parse(localStorage.getItem('permissionItems'))
+    console.log(this.a,this.b,"nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn");
+    if(this.a==2){
+      this.b.forEach(element=>{
+        if(element.label=="Users"){
+          this.add=element.isAdd,
+          this.edit=element.isEdit,
+          this.delete=element.isDelete
+        }
+  
+      })
+      console.log(this.add);
+      console.log(this.edit);
+      console.log(this.delete);
+    }
     this.getAllUsers('')
   }
   getAllUsers(event){
-    if(event != '') {
-      this.searchText = event.target.value
-      // this.serial = 0;
-      this.page = 0;
-     } 
-     const reqbody={  "search": this.searchText.trim(), "page": 0,"limit":this.limit}
+    console.log("eeeeeeeeeeeeeeeeeeeee");
+    console.log(event);
+    if(event!=''){
+      this.page=0
+    }
+    
+   
+    // if(event=='')
+    // {
+    //   this.page=0;
+    //   this.type=""
+    // }
+    // if(event && this.type == '') {
+    
+    //   this.page = 0;
+    //   this.type = "";
+    //  } 
+    //  if(event=="active"){
+    //    this.type="active"
+
+    //    console.log("jjjjjjjjjjjjj",this.type)
+    //  }
+    //  if(event=="inActive"){
+    //    this.type="inActive"
+    //    console.log("ppppppppppppp",this.type, "oooooooooooooooooooooooooooooooooooooooo")
+    //  }
+     const reqbody={  "search": this.searchText.trim(), "page": 0,"limit":this.limit }
     this._apiService.postRequest('api/v1/admin/getAllUser',reqbody).subscribe((response:any) => {
     
       console.log("response",response)
@@ -64,38 +108,38 @@ export class ListUserComponent implements OnInit {
       
     
   // }
-  activeUsers(){
-    const reqbody={ "type":"active" }
-    this._apiService.postRequest('api/v1/admin/getAllUser',reqbody).subscribe((response:any) => {
+  // activeUsers(){
+  //   const reqbody={ "type":"active" }
+  //   this._apiService.postRequest('api/v1/admin/getAllUser',reqbody).subscribe((response:any) => {
     
-      console.log("response",response)
-      this.userDetails=response.data.userData;
-      this.userDetailsCount=response.data.count
+  //     console.log("response",response)
+  //     this.userDetails=response.data.userData;
+  //     this.userDetailsCount=response.data.count
     
-      console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+  //     console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
       
-    },(err: any) => {
-      this._commService.errorMsg(err.error.message)
-      this._commService.hideSpinner()
-    })
+  //   },(err: any) => {
+  //     this._commService.errorMsg(err.error.message)
+  //     this._commService.hideSpinner()
+  //   })
 
-  }
-  inactiveUsers(){
-    const reqbody={ "type":"inactive" }
-    this._apiService.postRequest('api/v1/admin/getAllUser',reqbody).subscribe((response:any) => {
+  // }
+  // inactiveUsers(){
+  //   const reqbody={ "type":"inactive" }
+  //   this._apiService.postRequest('api/v1/admin/getAllUser',reqbody).subscribe((response:any) => {
     
-      console.log("response",response)
-      this.userDetails=response.data.userData;
-      this.userDetailsCount=response.data.count
+  //     console.log("response",response)
+  //     this.userDetails=response.data.userData;
+  //     this.userDetailsCount=response.data.count
     
-      console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+  //     console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
       
-    },(err: any) => {
-      this._commService.errorMsg(err.error.message)
-      this._commService.hideSpinner()
-    })
+  //   },(err: any) => {
+  //     this._commService.errorMsg(err.error.message)
+  //     this._commService.hideSpinner()
+  //   })
 
-  }
+  // }
   changeStatus(event,id1){
     console.log(event);
     

@@ -22,6 +22,8 @@ export class Dashboard1Component {
   [x: string]: any;
   subtitle: string;
   userCounts: any;
+  volumeCountNumber:any;
+  dashboardData:any
 
   constructor(private router: Router, private _apiService:ApiService, private _commService: CommonService, private fb:FormBuilder) { }
   
@@ -158,9 +160,10 @@ export class Dashboard1Component {
       (response) => {
  
        
-
+          this.dashboardData=response["data"];
         this.userCounts = response["data"]["userCounts"];
         this.userCountsNumber= response["data"]["countUsers"];
+        this.volumeCountNumber= response["data"]["countVolume"];
         console.log("yyyyyyyy", this.userCounts)
         console.log("zzzzzzzz", this.userCountsNumber)
         this.newUserType=[]

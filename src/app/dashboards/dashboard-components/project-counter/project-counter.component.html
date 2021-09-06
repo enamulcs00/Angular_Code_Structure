@@ -1,12 +1,12 @@
 <div class=" m-b-30">
     <div class="card mb-2">
-        <div class="card-body">
-            <div class="row">
-                <div routerLink="/users/userlist" class="col-12">
+        <div *ngIf="view || a==1" class="card-body">
+            <div  class="row">
+                <div  routerLink="/users/userlist" class="col-12">
                     <h2 class="m-b-0">
                     <i class="mdi mdi-account-multiple text-info"></i>
                     </h2>
-                    <h3 class="">{{items}}</h3>
+                    <h3 class="">{{items.countUsers}}</h3>
                     <h6  class="card-subtitle">Total Users</h6>
                 </div>
                 <div class="col-12">
@@ -24,7 +24,7 @@
                     <h2 class="m-b-0">
                         <i class="mdi mdi-alert-circle text-success"></i>
                     </h2>
-                    <h3 class="">1546</h3>
+                    <h3 class="">{{items.countVolume}}</h3>
                     <h6 class="card-subtitle">Total Newsletters</h6>
                 </div>
                 <div class="col-12">

@@ -55,7 +55,7 @@
               </div>
             </div>
          <div class="col-md-12">
-             <button (click)="sendNotification()" class="btn btn-primary">Send</button>
+             <button *ngIf="add || a==1" (click)="sendNotification()" class="btn btn-primary">Send</button>
              
          </div>
         </div>

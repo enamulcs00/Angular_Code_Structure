@@ -22,11 +22,34 @@ import { CommonService } from '../../../service/common.service';
 export class PrivacyComponent implements OnInit {
   @Input('item') public items;
   privacyDetails: any={};
+  a: any;
+  b: any;
+  add: any;
+  edit: any;
+  delete: any;
 
   constructor(private router: Router, private _apiService:ApiService, private _commService: CommonService, private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    this.a=JSON.parse(localStorage.getItem('user')).role
+   
+    this.b=JSON.parse(localStorage.getItem('permissionItems'))
+    console.log(this.a,this.b,"nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn");
+    if(this.a==2){
+      this.b.forEach(element=>{
+        if(element.label=="CMS"){
+          this.add=element.isAdd,
+          this.edit=element.isEdit,
+          this.delete=element.isDelete
+        }
+  
+      })
+      console.log(this.add);
+      console.log(this.edit);
+      console.log(this.delete);
+    }
     this.getPrivacy()
+
   }
   updatePrivacy(){
     const obj={

@@ -4,11 +4,11 @@
           <div class="row">
             <div class="col-md-4">             
                 <div class="">
-                  <input type="text" class="form-control" id="prenametext" placeholder="Search" (keyup.enter)="getAllUsers($event)">
+                  <input type="text" class="form-control" id="prenametext" placeholder="Search" [(ngModel)]="searchText" [ngModelOptions]="{standalone: true}" (keyup.enter)="getAllUsers($event)" >
                 </div>              
             </div>
             <div class="col-md-8  text-right">
-              <div ngbDropdown class="d-inline-block">
+              <!-- <div ngbDropdown class="d-inline-block">
                 <button
                   class="btn btn-outline-primary btn-sm mr-2"
                   id="dropdownBasic1"
@@ -17,11 +17,12 @@
                  All
                 </button>
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button (click)="getAllUsers('')"  class="dropdown-item">All</button>
                  
-                  <button (click)="activeUsers()" class="dropdown-item">Active</button>
-                  <button (click)="inactiveUsers()" class="dropdown-item">Inactive</button>
+                  <button (click)="getAllUsers('active')"  class="dropdown-item">Active</button>
+                  <button (click)="getAllUsers('inActive')"  class="dropdown-item">Inactive</button>
                 </div>
-              </div>
+              </div> -->
               <button  class="btn btn-primary  btn-sm"><i class="sl-icon-cloud-download"></i> Export CSV</button>
               <!-- <button class="btn btn-seconadary mb-2" (click)="addUserModal(addUser)"><i class="sl-icon-plus"></i> Add
                 User</button> -->
@@ -53,7 +54,7 @@
         <td>{{user?.phone}}</td>
         <td>{{user?.email}}</td>
         <!-- <td>{{person.address}}</td> -->
-        <td>   <mat-slide-toggle [checked]="user?.isBlocked" (change)="changeStatus($event,user._id)">
+        <td>   <mat-slide-toggle *ngIf="edit || a==1" [checked]="user?.isBlocked" (change)="changeStatus($event,user._id)">
         </mat-slide-toggle></td>
         
         <td>
@@ -62,23 +63,13 @@
               Action
             </button>
 
-            <!-- <div  ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <a class="dropdown-item" routerLink="/pages/users_detail"><i class="ti-eye"></i>
-                Accept
-              </a>
-              <button class="dropdown-item" (click)="userDetailModal(userDetail)"><i _ngcontent-axh-c146=""
-                  class="ti-marker-alt"></i> Edit</button>
 
-              <button class="dropdown-item" (click)="userDeleteModal(userDelete)"><i class="ti-trash"></i>
-                Reject</button>
-            </div> -->
-
-            <div  ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <button class="dropdown-item" routerLink="/users/userlist/edit/{{user._id}}"><i class="ti-marker-alt"></i>
+            <div *ngIf="edit || delete || a==1"  ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button *ngIf="edit || a==1" class="dropdown-item" routerLink="/users/userlist/edit/{{user._id}}"><i class="ti-marker-alt"></i>
                 Edit</button>
            
 
-              <button (click)="deleteUser(user._id)" class="dropdown-item" ><i class="ti-trash"></i>
+              <button *ngIf="delete || a==1" (click)="deleteUser(user._id)" class="dropdown-item" ><i class="ti-trash"></i>
                 Delete</button>
             </div>
           </div>

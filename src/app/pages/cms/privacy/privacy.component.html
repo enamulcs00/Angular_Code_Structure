@@ -4,7 +4,7 @@
                 <quill-editor [(ngModel)]="privacyDetails.privacy" [style]="{height: '300px',display: 'inline-block'}" class="w-100"></quill-editor>
 
                <div class="d-block">
-                   <button (click)="updatePrivacy()" class="btn btn-primary mt-3">Save</button>
+                   <button *ngIf="edit || a==1" (click)="updatePrivacy()" class="btn btn-primary mt-3">Save</button>
                </div> 
             </div>
         </div>
