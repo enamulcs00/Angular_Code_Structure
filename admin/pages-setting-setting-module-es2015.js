@@ -279,9 +279,9 @@ function ProfileComponent_ng_template_25_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r3.submitted && ctx_r3.changePasswordForm.controls["oldPassword"].hasError("required"));
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r3.submitted && ctx_r3.changePasswordForm.controls["newPassword"].hasError("required"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r3.submitted && ctx_r3.changePasswordForm.controls["password"].hasError("required"));
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r3.submitted && ctx_r3.changePasswordForm.controls["newPassword"].hasError("minlength"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r3.submitted && ctx_r3.changePasswordForm.controls["password"].hasError("minlength"));
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r3.submitted && ctx_r3.changePasswordForm.controls["confirmPassword"].hasError("required"));
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
@@ -308,10 +308,10 @@ class ProfileComponent {
         this.changePasswordForm = this.fb.group({
             // email: ["", [Validators.required, Validators.pattern("[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}")]],
             oldPassword: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
-            newPassword: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8)]],
+            password: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8)]],
             confirmPassword: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
         }, {
-            validator: this._commService.MustMatch("newPassword", "confirmPassword"),
+            validator: this._commService.MustMatch("password", "confirmPassword"),
         });
     }
     getProfileDetails() {
@@ -349,7 +349,7 @@ class ProfileComponent {
         this.submitted = true;
         if (this.changePasswordForm.valid && this.submitted) {
             this._apiService
-                .postRequest("api/changePassword", this.changePasswordForm.value)
+                .postRequest("api/v1/admin/changePassword", this.changePasswordForm.value)
                 .subscribe((response) => {
                 console.log(response);
                 this.router.navigate(["/dashboard/dashboard"]);
@@ -362,7 +362,7 @@ class ProfileComponent {
     }
 }
 ProfileComponent.ɵfac = function ProfileComponent_Factory(t) { return new (t || ProfileComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_service_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_service_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"])); };
-ProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProfileComponent, selectors: [["app-profile"]], decls: 27, vars: 5, consts: [[1, "row"], [1, "col-lg-4", "col-xlg-3", "col-md-5"], [1, "card"], [1, "card-body"], [1, "m-t-30", "text-center"], ["src", "assets/images/qSznlfGw.jpg", "width", "150", 1, "img-circle"], [1, "card-title", "m-t-10"], [1, "col-lg-8", "col-xlg-9", "col-md-7"], [1, "card", "p-2"], ["ngbNav", "", 1, "nav-tabs", 3, "activeId", "activeIdChange"], ["nav", "ngbNav"], [3, "ngbNavItem"], ["ngbNavLink", ""], ["ngbNavContent", ""], [1, "mt-2", 3, "ngbNavOutlet"], [1, "col-md-3", "col-xs-6", "b-r"], [1, "text-muted"], [1, "col-md-3", "col-xs-6"], [1, "form-horizontal", "form-material", 3, "formGroup"], [1, "form-group"], [1, "col-md-12"], ["type", "text", "placeholder", "Full Name", "formControlName", "name", 1, "form-control", "form-control-line"], [4, "ngIf"], ["for", "example-email", 1, "col-md-12"], ["type", "email", "placeholder", "Email", "formControlName", "email", "name", "example-email", "id", "example-email", 1, "form-control", "form-control-line"], ["type", "text", "placeholder", "Phone No", "formControlName", "phone", 1, "form-control", "form-control-line"], [1, "col-sm-12"], [1, "btn", "btn-primary", 3, "click"], ["type", "password", "placeholder", "Old Password", "formControlName", "oldPassword", 1, "form-control", "form-control-line"], ["type", "password", "placeholder", "New Passowrd", "formControlName", "newPassword", "name", "example-email", "id", "example-email", 1, "form-control", "form-control-line"], ["type", "password", "placeholder", "Confirm Passowrd", "formControlName", "confirmPassword", "name", "example-email", "id", "example-email", 1, "form-control", "form-control-line"]], template: function ProfileComponent_Template(rf, ctx) { if (rf & 1) {
+ProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProfileComponent, selectors: [["app-profile"]], decls: 27, vars: 5, consts: [[1, "row"], [1, "col-lg-4", "col-xlg-3", "col-md-5"], [1, "card"], [1, "card-body"], [1, "m-t-30", "text-center"], ["src", "assets/images/qSznlfGw.jpg", "width", "150", 1, "img-circle"], [1, "card-title", "m-t-10"], [1, "col-lg-8", "col-xlg-9", "col-md-7"], [1, "card", "p-2"], ["ngbNav", "", 1, "nav-tabs", 3, "activeId", "activeIdChange"], ["nav", "ngbNav"], [3, "ngbNavItem"], ["ngbNavLink", ""], ["ngbNavContent", ""], [1, "mt-2", 3, "ngbNavOutlet"], [1, "col-md-3", "col-xs-6", "b-r"], [1, "text-muted"], [1, "col-md-3", "col-xs-6"], [1, "form-horizontal", "form-material", 3, "formGroup"], [1, "form-group"], [1, "col-md-12"], ["type", "text", "placeholder", "Full Name", "formControlName", "name", 1, "form-control", "form-control-line"], [4, "ngIf"], ["for", "example-email", 1, "col-md-12"], ["type", "email", "placeholder", "Email", "formControlName", "email", "name", "example-email", "id", "example-email", 1, "form-control", "form-control-line"], ["type", "text", "placeholder", "Phone No", "formControlName", "phone", 1, "form-control", "form-control-line"], [1, "col-sm-12"], [1, "btn", "btn-primary", 3, "click"], ["type", "password", "placeholder", "Old Password", "formControlName", "oldPassword", 1, "form-control", "form-control-line"], ["type", "password", "placeholder", "New Passowrd", "formControlName", "password", "name", "example-email", "id", "example-email", 1, "form-control", "form-control-line"], ["type", "password", "placeholder", "Confirm Passowrd", "formControlName", "confirmPassword", "name", "example-email", "id", "example-email", 1, "form-control", "form-control-line"]], template: function ProfileComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);

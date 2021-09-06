@@ -6615,6 +6615,32 @@
       var ngx_quill__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ngx-quill */
       "./node_modules/ngx-quill/fesm2015/ngx-quill.js");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! @angular/common */
+      "./node_modules/@angular/common/fesm2015/common.js");
+
+      function PrivacyComponent_button_4_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PrivacyComponent_button_4_Template_button_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r2);
+
+            var ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r1.updatePrivacy();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Save");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
 
       var _c0 = function _c0() {
         return {
@@ -6637,12 +6663,29 @@
         _createClass(PrivacyComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
+            var _this32 = this;
+
+            this.a = JSON.parse(localStorage.getItem('user')).role;
+            this.b = JSON.parse(localStorage.getItem('permissionItems'));
+            console.log(this.a, this.b, "nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn");
+
+            if (this.a == 2) {
+              this.b.forEach(function (element) {
+                if (element.label == "CMS") {
+                  _this32.add = element.isAdd, _this32.edit = element.isEdit, _this32["delete"] = element.isDelete;
+                }
+              });
+              console.log(this.add);
+              console.log(this.edit);
+              console.log(this["delete"]);
+            }
+
             this.getPrivacy();
           }
         }, {
           key: "updatePrivacy",
           value: function updatePrivacy() {
-            var _this32 = this;
+            var _this33 = this;
 
             var obj = {
               "privacy": this.privacyDetails.privacy || ""
@@ -6651,25 +6694,25 @@
             this._apiService.postRequest("api/v1/admin/addCms", obj).subscribe(function (response) {
               console.log(response);
 
-              _this32._commService.successMsg(response.message);
+              _this33._commService.successMsg(response.message);
             }, function (err) {
-              _this32._commService.errorMsg(err.error.message);
+              _this33._commService.errorMsg(err.error.message);
 
-              _this32._commService.hideSpinner();
+              _this33._commService.hideSpinner();
             });
           }
         }, {
           key: "getPrivacy",
           value: function getPrivacy() {
-            var _this33 = this;
+            var _this34 = this;
 
             this._apiService.getRequestWithoutbody('api/v1/admin/getCms').subscribe(function (response) {
-              _this33.privacyDetails = response['data'];
+              _this34.privacyDetails = response['data'];
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
-              _this33._commService.errorMsg(err.error.message);
+              _this34._commService.errorMsg(err.error.message);
 
-              _this33._commService.hideSpinner();
+              _this34._commService.hideSpinner();
             });
           }
         }]);
@@ -6687,9 +6730,9 @@
         inputs: {
           items: ["item", "items"]
         },
-        decls: 6,
-        vars: 4,
-        consts: [[1, "card"], [1, "card-body"], [1, "w-100", 3, "ngModel", "ngModelChange"], [1, "d-block"], [1, "btn", "btn-primary", "mt-3", 3, "click"]],
+        decls: 5,
+        vars: 5,
+        consts: [[1, "card"], [1, "card-body"], [1, "w-100", 3, "ngModel", "ngModelChange"], [1, "d-block"], ["class", "btn btn-primary mt-3", 3, "click", 4, "ngIf"], [1, "btn", "btn-primary", "mt-3", 3, "click"]],
         template: function PrivacyComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -6706,15 +6749,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "button", 4);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PrivacyComponent_Template_button_click_4_listener() {
-              return ctx.updatePrivacy();
-            });
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Save");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, PrivacyComponent_button_4_Template, 2, 0, "button", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -6726,12 +6761,16 @@
           if (rf & 2) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleMap"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](3, _c0));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleMap"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](4, _c0));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.privacyDetails.privacy);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.edit || ctx.a == 1);
           }
         },
-        directives: [ngx_quill__WEBPACK_IMPORTED_MODULE_5__["QuillEditorComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgModel"]],
+        directives: [ngx_quill__WEBPACK_IMPORTED_MODULE_5__["QuillEditorComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgModel"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"]],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2Ntcy9wcml2YWN5L3ByaXZhY3kuY29tcG9uZW50LmNzcyJ9 */"]
       });
       /*@__PURE__*/

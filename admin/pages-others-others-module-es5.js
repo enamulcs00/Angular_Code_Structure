@@ -8153,6 +8153,52 @@
       var _service_common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ../../../service/common.service */
       "./src/app/service/common.service.ts");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/common */
+      "./node_modules/@angular/common/fesm2015/common.js");
+
+      function GroupVolumeFormComponent_button_65_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function GroupVolumeFormComponent_button_65_Template_button_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3);
+
+            var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r2.updateGroup();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Save");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function GroupVolumeFormComponent_button_95_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function GroupVolumeFormComponent_button_95_Template_button_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5);
+
+            var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r4.updateCadence();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Save");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
 
       var GroupVolumeFormComponent = /*#__PURE__*/function () {
         function GroupVolumeFormComponent(router, _apiService, _commService, fb) {
@@ -8169,6 +8215,23 @@
         _createClass(GroupVolumeFormComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
+            var _this24 = this;
+
+            this.a = JSON.parse(localStorage.getItem('user')).role;
+            this.b = JSON.parse(localStorage.getItem('permissionItems'));
+            console.log(this.a, this.b, "nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn");
+
+            if (this.a == 2) {
+              this.b.forEach(function (element) {
+                if (element.label == "Group Form") {
+                  _this24.add = element.isAdd, _this24.edit = element.isEdit, _this24["delete"] = element.isDelete;
+                }
+              });
+              console.log(this.add);
+              console.log(this.edit);
+              console.log(this["delete"]);
+            }
+
             this.getGroupForm();
             this.getCadence();
             this.groupForm = this.fb.group({
@@ -8193,26 +8256,11 @@
         }, {
           key: "getGroupForm",
           value: function getGroupForm() {
-            var _this24 = this;
+            var _this25 = this;
 
             this._apiService.getRequestWithoutbody('api/v1/admin/getGroupForm').subscribe(function (response) {
               console.log("response", response);
-              _this24.groupFormDetails = response['data'];
-              console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
-            }, function (err) {
-              _this24._commService.errorMsg(err.error.message);
-
-              _this24._commService.hideSpinner();
-            });
-          }
-        }, {
-          key: "getCadence",
-          value: function getCadence() {
-            var _this25 = this;
-
-            this._apiService.getRequestWithoutbody('api/v1/admin/getCadence').subscribe(function (response) {
-              console.log("response", response);
-              _this25.cadenceDetails = response['data'];
+              _this25.groupFormDetails = response['data'];
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
               _this25._commService.errorMsg(err.error.message);
@@ -8221,9 +8269,24 @@
             });
           }
         }, {
+          key: "getCadence",
+          value: function getCadence() {
+            var _this26 = this;
+
+            this._apiService.getRequestWithoutbody('api/v1/admin/getCadence').subscribe(function (response) {
+              console.log("response", response);
+              _this26.cadenceDetails = response['data'];
+              console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+            }, function (err) {
+              _this26._commService.errorMsg(err.error.message);
+
+              _this26._commService.hideSpinner();
+            });
+          }
+        }, {
           key: "updateGroup",
           value: function updateGroup() {
-            var _this26 = this;
+            var _this27 = this;
 
             var obj = {
               "saveTheDate": this.groupForm.value.saveTheDate,
@@ -8241,21 +8304,21 @@
             this._apiService.putRequest('api/v1/admin/activeInactiveGroupForm', obj).subscribe(function (response) {
               console.log("response", response);
 
-              _this26._commService.successMsg(response.message);
+              _this27._commService.successMsg(response.message);
 
-              _this26.getGroupForm();
+              _this27.getGroupForm();
 
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
-              _this26._commService.errorMsg(err.error.message);
+              _this27._commService.errorMsg(err.error.message);
 
-              _this26._commService.hideSpinner();
+              _this27._commService.hideSpinner();
             });
           }
         }, {
           key: "updateCadence",
           value: function updateCadence() {
-            var _this27 = this;
+            var _this28 = this;
 
             var obj = {
               "weekly": this.cadenceForm.value.weekly,
@@ -8267,15 +8330,15 @@
             this._apiService.putRequest('api/v1/admin/activeInactiveCadence', obj).subscribe(function (response) {
               console.log("response", response);
 
-              _this27._commService.successMsg(response.message);
+              _this28._commService.successMsg(response.message);
 
-              _this27.getCadence();
+              _this28.getCadence();
 
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
-              _this27._commService.errorMsg(err.error.message);
+              _this28._commService.errorMsg(err.error.message);
 
-              _this27._commService.hideSpinner();
+              _this28._commService.hideSpinner();
             });
           }
         }]);
@@ -8290,9 +8353,9 @@
       GroupVolumeFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: GroupVolumeFormComponent,
         selectors: [["app-group-volume-form"]],
-        decls: 98,
-        vars: 16,
-        consts: [[1, "card"], [1, "card-body"], [3, "formGroup"], [1, "pl-0", "volume_element"], [1, "col-md-4"], [1, "volume_element_group"], [1, "custom-control", "custom-checkbox"], ["id", "customCheck2", "type", "checkbox", "ngModelOptions", "{standalone: true}", "formControlName", "saveTheDate", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck2", 1, "custom-control-label"], ["id", "customCheck3", "type", "checkbox", "formControlName", "theHealthCheck", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck3", 1, "custom-control-label"], ["id", "customCheck4", "type", "checkbox", "formControlName", "thePeak", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck4", 1, "custom-control-label"], ["id", "customCheck5", "type", "checkbox", "formControlName", "myPit", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck5", 1, "custom-control-label"], ["id", "customCheck6", "type", "checkbox", "formControlName", "snapshot", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck6", 1, "custom-control-label"], ["id", "customCheck7", "type", "checkbox", "formControlName", "myJam", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck7", 1, "custom-control-label"], ["id", "customCheck8", "type", "checkbox", "formControlName", "reccomendation", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck8", 1, "custom-control-label"], ["id", "customCheck9", "type", "checkbox", "formControlName", "theLesson", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck9", 1, "custom-control-label"], ["id", "customCheck9a", "type", "checkbox", "formControlName", "theForecast", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck9a", 1, "custom-control-label"], ["id", "customCheck10", "type", "checkbox", "formControlName", "freeSpace", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck10", 1, "custom-control-label"], [1, "pl-2", "pb-3"], [1, "btn", "btn-primary", 3, "click"], [1, "pl-2"], ["id", "cadence1", "type", "checkbox", "formControlName", "weekly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence1", 1, "custom-control-label"], ["id", "cadence2", "type", "checkbox", "formControlName", "biWeekly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence2", 1, "custom-control-label"], ["id", "cadence3", "type", "checkbox", "formControlName", "monthly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence3", 1, "custom-control-label"], ["id", "cadence4", "type", "checkbox", "formControlName", "quaterly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence4", 1, "custom-control-label"]],
+        decls: 96,
+        vars: 18,
+        consts: [[1, "card"], [1, "card-body"], [3, "formGroup"], [1, "pl-0", "volume_element"], [1, "col-md-4"], [1, "volume_element_group"], [1, "custom-control", "custom-checkbox"], ["id", "customCheck2", "type", "checkbox", "ngModelOptions", "{standalone: true}", "formControlName", "saveTheDate", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck2", 1, "custom-control-label"], ["id", "customCheck3", "type", "checkbox", "formControlName", "theHealthCheck", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck3", 1, "custom-control-label"], ["id", "customCheck4", "type", "checkbox", "formControlName", "thePeak", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck4", 1, "custom-control-label"], ["id", "customCheck5", "type", "checkbox", "formControlName", "myPit", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck5", 1, "custom-control-label"], ["id", "customCheck6", "type", "checkbox", "formControlName", "snapshot", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck6", 1, "custom-control-label"], ["id", "customCheck7", "type", "checkbox", "formControlName", "myJam", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck7", 1, "custom-control-label"], ["id", "customCheck8", "type", "checkbox", "formControlName", "reccomendation", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck8", 1, "custom-control-label"], ["id", "customCheck9", "type", "checkbox", "formControlName", "theLesson", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck9", 1, "custom-control-label"], ["id", "customCheck9a", "type", "checkbox", "formControlName", "theForecast", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck9a", 1, "custom-control-label"], ["id", "customCheck10", "type", "checkbox", "formControlName", "freeSpace", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "customCheck10", 1, "custom-control-label"], [1, "pl-2", "pb-3"], ["class", "btn btn-primary", 3, "click", 4, "ngIf"], [1, "pl-2"], ["id", "cadence1", "type", "checkbox", "formControlName", "weekly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence1", 1, "custom-control-label"], ["id", "cadence2", "type", "checkbox", "formControlName", "biWeekly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence2", 1, "custom-control-label"], ["id", "cadence3", "type", "checkbox", "formControlName", "monthly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence3", 1, "custom-control-label"], ["id", "cadence4", "type", "checkbox", "formControlName", "quaterly", 1, "custom-control-input", 3, "ngModel", "ngModelChange"], ["for", "cadence4", 1, "custom-control-label"], [1, "btn", "btn-primary", 3, "click"]],
         template: function GroupVolumeFormComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -8567,49 +8630,39 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "div", 27);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "button", 28);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function GroupVolumeFormComponent_Template_button_click_65_listener() {
-              return ctx.updateGroup();
-            });
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](66, "Save");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](65, GroupVolumeFormComponent_button_65_Template, 2, 0, "button", 28);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "form", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "form", 2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "h3", 29);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "h3", 29);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](69, "Cadence");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](68, "Cadence");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "ul", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "ul", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "li", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "li", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "div", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "div", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "input", 30);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "input", 30);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_74_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_73_listener($event) {
               return ctx.cadenceDetails.weekly = $event;
             });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "label", 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "label", 31);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](76, "07 Days Weekly");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](75, "07 Days Weekly");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8617,25 +8670,25 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "li", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "div", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "li", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](79, "div", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "input", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_80_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](79, "input", 32);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_79_listener($event) {
               return ctx.cadenceDetails.biWeekly = $event;
             });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](81, "label", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "label", 33);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](82, "14 Days Bi-Weekly");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](81, "14 Days Bi-Weekly");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8643,25 +8696,25 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](83, "li", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](84, "div", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](82, "li", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](85, "div", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](83, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](86, "input", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](84, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_86_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](85, "input", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_85_listener($event) {
               return ctx.cadenceDetails.monthly = $event;
             });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](87, "label", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](86, "label", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](88, "30 Days Monthly");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](87, "30 Days Monthly");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8669,25 +8722,25 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](89, "li", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](90, "div", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](88, "li", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](91, "div", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](89, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](92, "input", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](90, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_92_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](91, "input", 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GroupVolumeFormComponent_Template_input_ngModelChange_91_listener($event) {
               return ctx.cadenceDetails.quaterly = $event;
             });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](93, "label", 37);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](92, "label", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](94, "90 Days Quarterly ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](93, "90 Days Quarterly ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8697,17 +8750,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](95, "div", 29);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](96, "button", 28);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function GroupVolumeFormComponent_Template_button_click_96_listener() {
-              return ctx.updateCadence();
-            });
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](97, "Save");
-
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](94, "div", 29);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](95, GroupVolumeFormComponent_button_95_Template, 2, 0, "button", 28);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -8763,7 +8810,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.groupFormDetails.freeSpace);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.edit || ctx.a == 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.cadenceForm);
 
@@ -8782,9 +8833,13 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.cadenceDetails.quaterly);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.edit || ctx.a == 1);
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["CheckboxControlValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"]],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["CheckboxControlValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"]],
         styles: ["@import url(\"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700\");\n\n\n\n\n\n\n\n.preloader[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  top: 0px;\n  position: fixed;\n  z-index: 99999;\n  background: #fff;\n}\n.preloader[_ngcontent-%COMP%]   .cssload-speeding-wheel[_ngcontent-%COMP%] {\n  position: absolute;\n  top: calc(50% - 3.5px);\n  left: calc(50% - 3.5px);\n}\n.volume_element[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.volume_element_group[_ngcontent-%COMP%] {\n  background: linear-gradient(#27c3c8, #09e3a9);\n  padding: 15px;\n  color: #ffffff;\n  margin-bottom: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hc3NldHMvc2Nzcy92YXJpYWJsZS5zY3NzIiwic3JjL2FwcC9wYWdlcy9vdGhlcnMvZ3JvdXAtdm9sdW1lLWZvcm0vZ3JvdXAtdm9sdW1lLWZvcm0uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQU9BLGtGQUFZO0FBUFo7Ozs7O0NDS0M7QURRRCxlQUFBO0FBa0JBLGtCQUFBO0FBYUEsZUFBQTtBQXNDQSxlQUFBO0FBUUEsaUJBQUE7QUFVQSxZQUFBO0FBRUE7RUFDSSxXQUFXO0VBQ1gsWUFBWTtFQUNaLFFBQU87RUFDUCxlQUFlO0VBQ2YsY0FBYztFQUNkLGdCQUFnQjtBQ3hGcEI7QURrRkE7RUFRUSxrQkFBa0I7RUFDbEIsc0JBQXNCO0VBQ3RCLHVCQUF1QjtBQ3RGL0I7QUF4QkE7RUFDRSxhQUFhO0VBQ2IsZUFBZTtBQTJCakI7QUExQkE7RUFDSSw2Q0FBcUQ7RUFDckQsYUFBYTtFQUNmLGNEMkVhO0VDMUVYLG1CQUFtQjtBQTZCdkIiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9vdGhlcnMvZ3JvdXAtdm9sdW1lLWZvcm0vZ3JvdXAtdm9sdW1lLWZvcm0uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxyXG5UZW1wbGF0ZSBOYW1lOiBBZG1pbiBQcmVzcyBBZG1pblxyXG5BdXRob3I6IFRoZW1lZGVzaWduZXJcclxuRW1haWw6IG5pcmF2am9zaGk4N0BnbWFpbC5jb21cclxuRmlsZTogc2Nzc1xyXG4qL1xyXG4vLyBWYXJpYWJsZXNcclxuQGltcG9ydCB1cmwoJ2h0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzP2ZhbWlseT1Qb3BwaW5zOjMwMCw0MDAsNTAwLDYwMCw3MDAnKTtcclxuXHJcbiRib2R5Zm9udDonUG9wcGlucycsIHNhbnMtc2VyaWY7XHJcbiRoZWFkaW5nZm9udDonUG9wcGlucycsIHNhbnMtc2VyaWY7IFxyXG5cclxuXHJcbi8qVGhlbWUgQ29sb3JzKi9cclxuXHJcbiR0b3BiYXI6ICMyMjY2QTY7XHJcbiRzaWRlYmFyOiAjZmZmO1xyXG4kc2lkZWJhci13aGl0ZTogI2U1ZWRlZjtcclxuJHNpZGViYXItYWx0OiNmMmY2Zjg7XHJcbiRib2R5Y29sb3I6ICNlZWY1Zjk7XHJcbiRoZWFkaW5ndGV4dDogIzQ1NWE2NDtcclxuJGJvZHl0ZXh0OiAjN2Q4YjkyOyBcclxuJHNpZGViYXItdGV4dDogI2ZmZjtcclxuJHNpZGViYXItaWNvbnM6ICNmZmYgO1xyXG5cclxuJGxpZ2h0LXRleHQ6ICNhNmI3YmY7XHJcbiR0aGVtZWNvbG9yOiAjMjdjM2M4O1xyXG4kdGhlbWVjb2xvcjE6ICMwOWUzYTk7XHJcbiR0aGVtZWNvbG9yLWFsdDogIzI2YzZkYTtcclxuJHRoZW1lY29sb3ItZGFyazogIzAyOGVlMTtcclxuXHJcbi8qYm9vdHN0cmFwIENvbG9yKi9cclxuJGRhbmdlcjogI2VmNTM1MDtcclxuJHN1Y2Nlc3M6ICMyNmRhZDI7XHJcbiR3YXJuaW5nOiAjZmZiMjJiO1xyXG4kcHJpbWFyeTogIzg1NmVkYTtcclxuJGluZm86ICMxOTc2ZDI7XHJcbiRpbnZlcnNlOiAjMmYzZDRhO1xyXG4kbXV0ZWQ6ICM5OWFiYjQ7XHJcbiRkYXJrOiAjMjYzMjM4O1xyXG4kbGlnaHQ6ICNmMmY0Zjg7XHJcbiRleHRyYS1saWdodDogI2ViZjNmNTtcclxuJGJnbGlnaHQ6cmdiYSgwLCAwLCAwLCAwLjAyKTtcclxuXHJcbi8qTGlnaHQgY29sb3JzKi9cclxuJGxpZ2h0LWRhbmdlcjogI2Y5ZTdlYjtcclxuJGxpZ2h0LXN1Y2Nlc3M6ICNlOGZkZWI7XHJcbiRsaWdodC13YXJuaW5nOiAjZmZmOGVjO1xyXG4kbGlnaHQtcHJpbWFyeTogI2YxZWZmZDtcclxuJGxpZ2h0LWluZm86ICNjZmVjZmU7XHJcbiRsaWdodC1pbnZlcnNlOiAjZjZmNmY2O1xyXG4kbGlnaHQtbWVnbmE6ICNlMGYyZjQ7IFxyXG5cclxuXHJcblxyXG4kZGFuZ2VyLWRhcms6ICNlNjI5NGI7XHJcbiRzdWNjZXNzLWRhcms6ICMxZWFjYmU7XHJcbiR3YXJuaW5nLWRhcms6ICNlOWFiMmU7XHJcbiRwcmltYXJ5LWRhcms6ICMyMjY2QTY7IFxyXG4kaW5mby1kYXJrOiAjMDI4ZWUxO1xyXG4kcmVkLWRhcms6ICNkNjFmMWY7XHJcbiRpbnZlcnNlLWRhcms6ICMyMzJhMzc7XHJcbiRkYXJrLXRyYW5zcGFyZW50OnJnYmEoMCwgMCwgMCwgMC4wNSk7XHJcblxyXG4kaW5mby1zaGFkb3c6IDAgMnB4IDJweCAwIHJnYmEoNjYsMTY1LDI0NSwuMTQpLCAwIDNweCAxcHggLTJweCByZ2JhKDY2LDE2NSwyNDUsLjIpLCAwIDFweCA1cHggMCByZ2JhKDY2LDE2NSwyNDUsLjEyKTtcclxuJGluZm8tc2hhZG93LWhvdmVyOjAgMTRweCAyNnB4IC0xMnB4IHJnYmEoMjMsMTA1LDI1NSwuNDIpLCAwIDRweCAyM3B4IDAgcmdiYSgwLDAsMCwuMTIpLCAwIDhweCAxMHB4IC01cHggcmdiYSgyMywxMDUsMjU1LC4yKTtcclxuXHJcbiR3YXJuaW5nLXNoYWRvdzowIDJweCAycHggMCByZ2JhKDI0OCwxOTQsMCwuMTQpLCAwIDNweCAxcHggLTJweCByZ2JhKDI0OCwxOTQsMCwuMiksIDAgMXB4IDVweCAwIHJnYmEoMjQ4LDE5NCwwLC4xMik7XHJcbiR3YXJuaW5nLXNoYWRvdy1ob3ZlcjowIDE0cHggMjZweCAtMTJweCByZ2JhKDI0OCwxOTQsMCwuNDIpLCAwIDRweCAyM3B4IDAgcmdiYSgwLDAsMCwuMTIpLCAwIDhweCAxMHB4IC01cHggcmdiYSgyNDgsMTk0LDAsLjIpO1xyXG5cclxuJGRhbmdlci1zaGFkb3c6MCAycHggMnB4IDAgcmdiYSgyMzksODMsODAsLjE0KSwgMCAzcHggMXB4IC0ycHggcmdiYSgyMzksODMsODAsLjIpLCAwIDFweCA1cHggMCByZ2JhKDIzOSw4Myw4MCwuMTIpO1xyXG4kZGFuZ2VyLXNoYWRvdy1ob3ZlcjowIDE0cHggMjZweCAtMTJweCByZ2JhKDIzOSw4Myw4MCwuNDIpLCAwIDRweCAyM3B4IDAgcmdiYSgwLDAsMCwuMTIpLCAwIDhweCAxMHB4IC01cHggcmdiYSgyMzksODMsODAsLjIpO1xyXG5cclxuJHN1Y2Nlc3Mtc2hhZG93OjAgMnB4IDJweCAwIHJnYmEoNDAsMTkwLDE4OSwuMTQpLCAwIDNweCAxcHggLTJweCByZ2JhKDQwLDE5MCwxODksLjIpLCAwIDFweCA1cHggMCByZ2JhKDQwLDE5MCwxODksLjEyKTtcclxuJHN1Y2Nlc3Mtc2hhZG93LWhvdmVyOjAgMTRweCAyNnB4IC0xMnB4IHJnYmEoNDAsMTkwLDE4OSwuNDIpLCAwIDRweCAyM3B4IDAgcmdiYSgwLDAsMCwuMTIpLCAwIDhweCAxMHB4IC01cHggcmdiYSg0MCwxOTAsMTg5LC4yKTtcclxuICAgIFxyXG4kcHJpbWFyeS1zaGFkb3c6MCAycHggMnB4IDAgcmdiYSgxMTYsOTYsMjM4LC4xNCksIDAgM3B4IDFweCAtMnB4IHJnYmEoMTE2LDk2LDIzOCwuMiksIDAgMXB4IDVweCAwIHJnYmEoMTE2LDk2LDIzOCwuMTIpO1xyXG4kcHJpbWFyeS1zaGFkb3ctaG92ZXI6MCAxNHB4IDI2cHggLTEycHggcmdiYSgxMTYsOTYsMjM4LC40MiksIDAgNHB4IDIzcHggMCByZ2JhKDAsMCwwLC4xMiksIDAgOHB4IDEwcHggLTVweCByZ2JhKDExNiw5NiwyMzgsLjIpO1xyXG5cclxuJGRlZmF1bHQtc2hhZG93OjAgMnB4IDJweCAwIHJnYmEoMTY5LDE2OSwxNjksLjE0KSwgMCAzcHggMXB4IC0ycHggcmdiYSgxNjksMTY5LDE2OSwuMiksIDAgMXB4IDVweCAwIHJnYmEoMTY5LDE2OSwxNjksLjEyKTtcclxuJGRlZmF1bHQtc2hhZG93LWhvdmVyOjAgMTRweCAyNnB4IC0xMnB4IHJnYmEoMTY5LDE2OSwxNjksLjQyKSwgMCA0cHggMjNweCAwIHJnYmEoMCwwLDAsLjEyKSwgMCA4cHggMTBweCAtNXB4IHJnYmEoMTY5LDE2OSwxNjksLjIpO1xyXG5cclxuLypOb3JtYWwgQ29sb3IqL1xyXG4kd2hpdGU6ICNmZmZmZmY7XHJcbiRyZWQ6ICNmYjNhM2E7XHJcbiR5ZWxsb3c6ICNhMGFlYzQ7XHJcbiRwdXJwbGU6ICM3NDYwZWU7XHJcbiRibHVlOiAjMDJiZWM5O1xyXG4kbWVnbmE6ICMwMDg5N2I7XHJcblxyXG4vKkV4dHJhIFZhcmlhYmxlKi9cclxuJHJndDogcmlnaHQ7XHJcbiRsZnQ6IGxlZnQ7XHJcbiRib3JkZXI6IHJnYmEoMTIwLCAxMzAsIDE0MCwgMC4xMyk7XHJcbiR0YWJsZS1ib3JkZXI6I2YzZjFmMTtcclxuJGNhcmQtYnJkOiNkN2RmZTM7XHJcbiRkYXJrLXRleHQ6ICM4NDhhOTY7XHJcbiRyYWRpdXM6IDRweDtcclxuJGZvcm0tYnJkOiAjYjFiOGJiO1xyXG5cclxuLypQcmVsb2FkZXIqL1xyXG5cclxuLnByZWxvYWRlcntcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgdG9wOjBweDtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIHotaW5kZXg6IDk5OTk5O1xyXG4gICAgYmFja2dyb3VuZDogI2ZmZjtcclxuICAgIC5jc3Nsb2FkLXNwZWVkaW5nLXdoZWVse1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICB0b3A6IGNhbGMoNTAlIC0gMy41cHgpO1xyXG4gICAgICAgIGxlZnQ6IGNhbGMoNTAlIC0gMy41cHgpO1xyXG4gICAgfVxyXG59XHJcblxyXG4iLCIvKlxyXG5UZW1wbGF0ZSBOYW1lOiBBZG1pbiBQcmVzcyBBZG1pblxyXG5BdXRob3I6IFRoZW1lZGVzaWduZXJcclxuRW1haWw6IG5pcmF2am9zaGk4N0BnbWFpbC5jb21cclxuRmlsZTogc2Nzc1xyXG4qL1xuQGltcG9ydCB1cmwoXCJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9UG9wcGluczozMDAsNDAwLDUwMCw2MDAsNzAwXCIpO1xuLypUaGVtZSBDb2xvcnMqL1xuLypib290c3RyYXAgQ29sb3IqL1xuLypMaWdodCBjb2xvcnMqL1xuLypOb3JtYWwgQ29sb3IqL1xuLypFeHRyYSBWYXJpYWJsZSovXG4vKlByZWxvYWRlciovXG4ucHJlbG9hZGVyIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbiAgdG9wOiAwcHg7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgei1pbmRleDogOTk5OTk7XG4gIGJhY2tncm91bmQ6ICNmZmY7XG59XG5cbi5wcmVsb2FkZXIgLmNzc2xvYWQtc3BlZWRpbmctd2hlZWwge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogY2FsYyg1MCUgLSAzLjVweCk7XG4gIGxlZnQ6IGNhbGMoNTAlIC0gMy41cHgpO1xufVxuXG4udm9sdW1lX2VsZW1lbnQge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LXdyYXA6IHdyYXA7XG59XG5cbi52b2x1bWVfZWxlbWVudF9ncm91cCB7XG4gIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgjMjdjM2M4LCAjMDllM2E5KTtcbiAgcGFkZGluZzogMTVweDtcbiAgY29sb3I6ICNmZmZmZmY7XG4gIG1hcmdpbi1ib3R0b206IDEwcHg7XG59XG4iXX0= */"]
       });
       /*@__PURE__*/

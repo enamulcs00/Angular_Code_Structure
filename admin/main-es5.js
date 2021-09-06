@@ -243,7 +243,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | pages-users-users-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~a809a9f7"), __webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~82547c2b"), __webpack_require__.e("default~pages-cms-cms-module~pages-notification-notification-module~pages-others-others-module~pages~db1e6954"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~c3505187"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~b193c330"), __webpack_require__.e("default~pages-notification-notification-module~pages-sub-admin-sub-admin-module~pages-users-users-module"), __webpack_require__.e("default~pages-others-others-module~pages-sub-admin-sub-admin-module~pages-users-users-module"), __webpack_require__.e("default~pages-sub-admin-sub-admin-module~pages-users-users-module"), __webpack_require__.e("pages-users-users-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~a809a9f7"), __webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~82547c2b"), __webpack_require__.e("default~pages-cms-cms-module~pages-notification-notification-module~pages-others-others-module~pages~db1e6954"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~c3505187"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~b193c330"), __webpack_require__.e("default~pages-notification-notification-module~pages-sub-admin-sub-admin-module~pages-users-users-module"), __webpack_require__.e("pages-users-users-module")]).then(__webpack_require__.bind(null,
             /*! ./pages/users/users.module */
             "./src/app/pages/users/users.module.ts")).then(function (m) {
               return m.UsersModule;
@@ -342,7 +342,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | pages-sub-admin-sub-admin-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~a809a9f7"), __webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~82547c2b"), __webpack_require__.e("default~pages-cms-cms-module~pages-notification-notification-module~pages-others-others-module~pages~db1e6954"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~c3505187"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~b193c330"), __webpack_require__.e("default~pages-notification-notification-module~pages-sub-admin-sub-admin-module~pages-users-users-module"), __webpack_require__.e("default~pages-others-others-module~pages-sub-admin-sub-admin-module~pages-users-users-module"), __webpack_require__.e("default~pages-sub-admin-sub-admin-module~pages-users-users-module"), __webpack_require__.e("pages-sub-admin-sub-admin-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~a809a9f7"), __webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~82547c2b"), __webpack_require__.e("default~pages-cms-cms-module~pages-notification-notification-module~pages-others-others-module~pages~db1e6954"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~c3505187"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~b193c330"), __webpack_require__.e("default~pages-notification-notification-module~pages-sub-admin-sub-admin-module~pages-users-users-module"), __webpack_require__.e("pages-sub-admin-sub-admin-module")]).then(__webpack_require__.bind(null,
             /*! ./pages/sub-admin/sub-admin.module */
             "./src/app/pages/sub-admin/sub-admin.module.ts")).then(function (m) {
               return m.SubAdminModule;
@@ -375,7 +375,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | pages-others-others-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~a809a9f7"), __webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~82547c2b"), __webpack_require__.e("default~pages-cms-cms-module~pages-notification-notification-module~pages-others-others-module~pages~db1e6954"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~c3505187"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~b193c330"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module~pages-others-others-module"), __webpack_require__.e("default~pages-others-others-module~pages-sub-admin-sub-admin-module~pages-users-users-module"), __webpack_require__.e("default~charts-charts-module~pages-others-others-module"), __webpack_require__.e("default~pages-others-others-module~pages-subscription-subscription-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module"), __webpack_require__.e("pages-others-others-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~a809a9f7"), __webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~82547c2b"), __webpack_require__.e("default~pages-cms-cms-module~pages-notification-notification-module~pages-others-others-module~pages~db1e6954"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~c3505187"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~b193c330"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module~pages-others-others-module"), __webpack_require__.e("default~charts-charts-module~pages-others-others-module"), __webpack_require__.e("default~pages-others-others-module~pages-subscription-subscription-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module"), __webpack_require__.e("pages-others-others-module")]).then(__webpack_require__.bind(null,
             /*! ./pages/others/others.module */
             "./src/app/pages/others/others.module.ts")).then(function (m) {
               return m.OthersModule;
@@ -1761,7 +1761,6 @@
         }, {
           key: "showSpinner",
           value: function showSpinner() {
-            console.log("qterlyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy");
             this.spinner.show();
           }
         }, {
@@ -3023,15 +3022,58 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            this.topbarnavItems = _menu_items___WEBPACK_IMPORTED_MODULE_2__["ROUTES"].filter(function (topbarnavItem) {
-              return topbarnavItem;
-            }); // $(document).click(function (event) {
+            var _this4 = this;
+
+            this.role = JSON.parse(localStorage.getItem("user")).role;
+            console.log(this.role, "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+            this.permission = JSON.parse(localStorage.getItem("user")).permission;
+
+            if (this.role == 2) {
+              var items = this.permission;
+              var permissionItems = [{
+                label: "Dashboard"
+              }];
+
+              for (var i = 0; i < items.length; i++) {
+                if (items[i].isAdd || items[i].isDelete || items[i].isEdit || items[i].isView) {
+                  permissionItems.push(items[i]);
+                }
+              }
+
+              localStorage.setItem("permissionItems", JSON.stringify(permissionItems));
+              this.permission = permissionItems;
+              this.topbarnavItems = _menu_items___WEBPACK_IMPORTED_MODULE_2__["ROUTES"].filter(function (topbarnavItem) {
+                return topbarnavItem;
+              });
+              console.log("permission", this.permission);
+              var filtered = this.topbarnavItems.filter(function (item) {
+                for (var j = 0; j < _this4.permission.length; j++) {
+                  console.log("jmmmmmmmmmmmmmmmmmmmm", item);
+
+                  if (item.title == _this4.permission[j].label) {
+                    return item;
+                  }
+                }
+              });
+              console.log(filtered, "filtered");
+
+              if (filtered && filtered.length > 0) {
+                this.topbarnavItems = filtered;
+              }
+
+              console.log(this.topbarnavItems, "this.sidebarnavItems");
+            } else {
+              this.topbarnavItems = _menu_items___WEBPACK_IMPORTED_MODULE_2__["ROUTES"].filter(function (topbarnavItem) {
+                return topbarnavItem;
+              });
+            } // $(document).click(function (event) {
             //     var clickover = $(event.target);
             //     var _opened = $(".collapse").hasClass("in");
             //     if (_opened === true && !clickover.hasClass("in")) {
             //         $("#topbarnav li").click();
             //     }
             // });
+
           }
         }]);
 
@@ -3950,7 +3992,7 @@
 
       var SpinnerComponent = /*#__PURE__*/function () {
         function SpinnerComponent(router, document) {
-          var _this4 = this;
+          var _this5 = this;
 
           _classCallCheck(this, SpinnerComponent);
 
@@ -3960,12 +4002,12 @@
           this.backgroundColor = 'rgba(0, 115, 170, 0.69)';
           this.router.events.subscribe(function (event) {
             if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationStart"]) {
-              _this4.isSpinnerVisible = true;
+              _this5.isSpinnerVisible = true;
             } else if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"] || event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationCancel"] || event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationError"]) {
-              _this4.isSpinnerVisible = false;
+              _this5.isSpinnerVisible = false;
             }
           }, function () {
-            _this4.isSpinnerVisible = false;
+            _this5.isSpinnerVisible = false;
           });
         }
 
