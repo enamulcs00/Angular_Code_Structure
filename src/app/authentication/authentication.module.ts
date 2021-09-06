@@ -14,6 +14,8 @@ import { Signup2Component } from './signup2/signup2.component';
 
 import { AuthenticationRoutes } from './authentication.routing';
 import { ForgotpwdComponent } from './forgotpwd/forgotpwd.component';
+import { ResetpwdComponent } from './resetpwd/resetpwd.component';
+import { RestComponent } from './rest/rest.component';
 
 @NgModule({
   imports: [
@@ -27,11 +29,14 @@ import { ForgotpwdComponent } from './forgotpwd/forgotpwd.component';
   declarations: [
     NotFoundComponent,
     LoginComponent,
+  
     SignupComponent,
     LockComponent,
     Login2Component,
     Signup2Component,
-    ForgotpwdComponent
+    ForgotpwdComponent,
+
+    ResetpwdComponent
   ]
 })
 export class AuthenticationModule {}

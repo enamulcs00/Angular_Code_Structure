@@ -7,6 +7,8 @@ import { Login2Component } from './login2/login2.component';
 import { SignupComponent } from './signup/signup.component';
 import { Signup2Component } from './signup2/signup2.component';
 import { ForgotpwdComponent } from './forgotpwd/forgotpwd.component';
+import { ResetpwdComponent } from './resetpwd/resetpwd.component';
+import { RestComponent } from './rest/rest.component';
 import {AuthGuard} from '../service/auth-guard/auth.guard'
 
 export const AuthenticationRoutes: Routes = [
@@ -28,10 +30,17 @@ export const AuthenticationRoutes: Routes = [
           //  canActivate: [AuthGuard],
       },
       {
+        path: 'reset',
+
+        component: RestComponent,
+          //  canActivate: [AuthGuard],
+      },
+      {
         path: 'forgotpwd',
         component: ForgotpwdComponent,
           // canActivate: [AuthGuard],
       },
+    
       {
         path: 'login2',
         component: Login2Component

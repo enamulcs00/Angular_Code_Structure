@@ -1,0 +1,45 @@
+<div class="login-register align-items-center d-flex" style="background-image:url(assets/images/background/login-register.jpg);">
+    <div class="login-box  card">
+      <div class="card-body">
+        <form class="form-horizontal" >
+          <div class="form-group ">
+            <div class="col-xs-12">
+              <h3>Reset Password</h3>
+              <!-- <p class="text-muted">Enter your password and instructions will be sent to you! </p> -->
+            </div>
+          </div>
+          <div class="form-group ">
+            <div class="col-xs-12">
+              <input class="form-control" type="password" required="" placeholder="New Password" formControlName="password" > </div>
+              <div *ngIf="submitted && f.password.errors">
+                <div class="error" *ngIf="f.password.errors.required">password is required</div>
+                <div class="error" *ngIf="f.password.errors.minlength">
+                  Password must be at least 8 characters
+                </div>
+                <div class="error" *ngIf="f.password.errors.maxlength">
+                  Password should not be more than 15 characters.
+                </div>
+                <!-- <div  class="error" *ngIf="f.password.errors.pattern">password is invalid</div> -->
+                
+               </div>          
+          </div>
+          <div class="form-group">
+            <div class="col-xs-12">
+                <input class="form-control" type="password" required="" placeholder="Re-enter Password" formControlName="confirmpassword" > </div>
+                <div *ngIf="submitted && f.confirmpassword.errors">
+                  <div class="error" *ngIf="f.confirmpassword.errors.required">Password is required</div>
+                  <div class="error" *ngIf="f.confirmpassword.errors.mustMatch"> Confirm
+                    Password must match</div>
+                  
+                 </div> 
+          </div>
+          <div class="form-group text-center m-t-20">
+            <div class="col-xs-12">
+              <a class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light  text-white" >Reset</a>
+              <a class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light  text-white" routerLink="/authentication/login">Back to login</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
