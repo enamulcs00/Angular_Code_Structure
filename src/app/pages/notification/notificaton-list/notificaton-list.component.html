@@ -1,6 +1,11 @@
 <div class="row">
   <div class="col-md-12 text-right"><button class="btn btn-primary" routerLink="/notification/addnotification">Back</button></div>
 </div>
+<div class="col-md-4">   
+<div class="">
+  <input type="text" class="form-control" id="prenametext" placeholder="Search" [(ngModel)]="searchText" [ngModelOptions]="{standalone: true}" (keyup.enter)="getNotificationHistory($event)" >
+</div> 
+</div> 
 
 <div class="table-responsive">
   <table class="table ">

@@ -99,15 +99,15 @@ export class ListUserComponent implements OnInit {
       this._commService.hideSpinner()
     })
   }
-  // exportcsv(){
-  //   this._apiService.getRequestWithoutbody('api/getVendorCsv').subscribe((res:any) => {
-  //     console.log(res,"allvendors");
+  exportcsv(){
+    this._apiService.getRequestWithoutbody('api/v1/admin/getUserCsv').subscribe((res:any) => {
+      console.log(res,"allvendors");
       
-  //     window.open(res.data.redirection);
-  //   })
+      window.open(res.data.redirection);
+    })
       
     
-  // }
+  }
   // activeUsers(){
   //   const reqbody={ "type":"active" }
   //   this._apiService.postRequest('api/v1/admin/getAllUser',reqbody).subscribe((response:any) => {
@@ -230,7 +230,7 @@ export class ListUserComponent implements OnInit {
       
       if (result.isConfirmed) {
         const obj={
-          "user":id,
+          "id":id,
           "isDeleted": true
         }
         this._apiService.putRequest('api/v1/admin/deleteUser',obj).subscribe((response:any) => {
