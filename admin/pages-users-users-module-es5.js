@@ -1435,13 +1435,15 @@
 
               _this5._commService.hideSpinner();
             });
-          } // exportcsv(){
-          //   this._apiService.getRequestWithoutbody('api/getVendorCsv').subscribe((res:any) => {
-          //     console.log(res,"allvendors");
-          //     window.open(res.data.redirection);
-          //   })
-          // }
-          // activeUsers(){
+          }
+        }, {
+          key: "exportcsv",
+          value: function exportcsv() {
+            this._apiService.getRequestWithoutbody('api/v1/admin/getUserCsv').subscribe(function (res) {
+              console.log(res, "allvendors");
+              window.open(res.data.redirection);
+            });
+          } // activeUsers(){
           //   const reqbody={ "type":"active" }
           //   this._apiService.postRequest('api/v1/admin/getAllUser',reqbody).subscribe((response:any) => {
           //     console.log("response",response)
@@ -1564,7 +1566,7 @@
             }).then(function (result) {
               if (result.isConfirmed) {
                 var obj = {
-                  "user": id,
+                  "id": id,
                   "isDeleted": true
                 };
 
@@ -1601,7 +1603,7 @@
         selectors: [["app-list-user"]],
         decls: 32,
         vars: 6,
-        consts: [[1, "card"], [1, "card-body"], [1, "row"], [1, "col-md-4"], [1, ""], ["type", "text", "id", "prenametext", "placeholder", "Search", 1, "form-control", 3, "ngModel", "ngModelOptions", "ngModelChange", "keyup.enter"], [1, "col-md-8", "text-right"], [1, "btn", "btn-primary", "btn-sm"], [1, "sl-icon-cloud-download"], [1, "table-responsive"], [1, "table"], [1, "text-nowrap"], [4, "ngFor", "ngForOf"], ["class", "no-found", 4, "ngIf"], [3, "pageIndex", "length", "pageSize", "pageSizeOptions", "page", 4, "ngIf"], ["userDelete", ""], [3, "checked", "change", 4, "ngIf"], ["ngbDropdown", "", "placement", "bottom", "container", "body", 1, "d-inline-block"], ["id", "dropdownBasic1", "ngbDropdownToggle", "", 1, "btn", "btn-outline-primary", "btn-sm"], ["ngbDropdownMenu", "", "aria-labelledby", "dropdownBasic1", 4, "ngIf"], [3, "checked", "change"], ["ngbDropdownMenu", "", "aria-labelledby", "dropdownBasic1"], ["class", "dropdown-item", 3, "routerLink", 4, "ngIf"], ["class", "dropdown-item", 3, "click", 4, "ngIf"], [1, "dropdown-item", 3, "routerLink"], [1, "ti-marker-alt"], [1, "dropdown-item", 3, "click"], [1, "ti-trash"], [1, "no-found"], [3, "pageIndex", "length", "pageSize", "pageSizeOptions", "page"], [1, "modal-body"], [1, "btn-group"], ["type", "button", "aria-label", "Close", 1, "btn", "btn-primary", "mr-2", 3, "click"], ["type", "button", "aria-label", "Close", 1, "btn", "btn-seconadary", 3, "click"]],
+        consts: [[1, "card"], [1, "card-body"], [1, "row"], [1, "col-md-4"], [1, ""], ["type", "text", "id", "prenametext", "placeholder", "Search", 1, "form-control", 3, "ngModel", "ngModelOptions", "ngModelChange", "keyup.enter"], [1, "col-md-8", "text-right"], [1, "btn", "btn-primary", "btn-sm", 3, "click"], [1, "sl-icon-cloud-download"], [1, "table-responsive"], [1, "table"], [1, "text-nowrap"], [4, "ngFor", "ngForOf"], ["class", "no-found", 4, "ngIf"], [3, "pageIndex", "length", "pageSize", "pageSizeOptions", "page", 4, "ngIf"], ["userDelete", ""], [3, "checked", "change", 4, "ngIf"], ["ngbDropdown", "", "placement", "bottom", "container", "body", 1, "d-inline-block"], ["id", "dropdownBasic1", "ngbDropdownToggle", "", 1, "btn", "btn-outline-primary", "btn-sm"], ["ngbDropdownMenu", "", "aria-labelledby", "dropdownBasic1", 4, "ngIf"], [3, "checked", "change"], ["ngbDropdownMenu", "", "aria-labelledby", "dropdownBasic1"], ["class", "dropdown-item", 3, "routerLink", 4, "ngIf"], ["class", "dropdown-item", 3, "click", 4, "ngIf"], [1, "dropdown-item", 3, "routerLink"], [1, "ti-marker-alt"], [1, "dropdown-item", 3, "click"], [1, "ti-trash"], [1, "no-found"], [3, "pageIndex", "length", "pageSize", "pageSizeOptions", "page"], [1, "modal-body"], [1, "btn-group"], ["type", "button", "aria-label", "Close", 1, "btn", "btn-primary", "mr-2", 3, "click"], ["type", "button", "aria-label", "Close", 1, "btn", "btn-seconadary", 3, "click"]],
         template: function ListUserComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -1631,6 +1633,10 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "button", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ListUserComponent_Template_button_click_7_listener() {
+              return ctx.exportcsv();
+            });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "i", 8);
 
