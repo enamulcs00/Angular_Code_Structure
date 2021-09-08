@@ -26,11 +26,33 @@ declare var $: any;
   templateUrl: './navigation.component.html',
   styleUrls:['./navigation.component.scss']
 })
-export class NavigationComponent implements AfterViewInit {
+export class NavigationComponent implements AfterViewInit, OnInit {
   @Output() toggleSidebar = new EventEmitter<void>();
 
   public config: PerfectScrollbarConfigInterface = {};
-  constructor(private modalService: NgbModal, private _router:Router) {}
+  profileDetails: any;
+  constructor(private router:Router, private _apiService:ApiService, private _commService:CommonService, private fb:FormBuilder ) {}
+  ngOnInit(){
+    this.getProfileDetails()
+
+  }
+  getProfileDetails(){
+    this._apiService.getRequestWithoutbody('api/v1/admin/getProfile').subscribe(response => {
+    
+      console.log("response",response)
+      this.profileDetails=response['data'];
+   
+      console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+      
+    },(err: any) => {
+      this._commService.errorMsg(err.error.message)
+      this._commService.hideSpinner()
+    })
+
+    
+
+
+  }
 
   // This is for Notifications
   notifications: Object[] = [
@@ -103,7 +125,7 @@ export class NavigationComponent implements AfterViewInit {
     // this._router.navigate(['authentication/login'])
     Swal.fire({
       title: 'Are you sure?',
-      text: 'You will not be able to recover this ',
+     
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Yes, logout!',
@@ -115,7 +137,7 @@ export class NavigationComponent implements AfterViewInit {
       if (result.isConfirmed) {
         
     localStorage.clear();
-    this._router.navigate(['authentication/login'])
+    this.router.navigate(['authentication/login'])
         
        
          

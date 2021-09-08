@@ -43,12 +43,7 @@ export class AddAdminComponent implements OnInit {
     isEdit:false,
     isDelete:false,
     },
-    {label:'Support',
-    isView:false,
-    isAdd:false,
-    isEdit:false,
-    isDelete:false,
-    },
+  
     {label:'Notification',
     isView:false,
     isAdd:false,
@@ -125,6 +120,7 @@ export class AddAdminComponent implements OnInit {
   
       
        this._commService.successMsg(response.message);
+
         this.router.navigateByUrl("subadmin/adminlist");
       
       //  this.allProductsCount = response['data'].count

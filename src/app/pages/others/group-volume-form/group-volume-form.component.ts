@@ -53,7 +53,7 @@ export class GroupVolumeFormComponent implements OnInit {
     this.getCadence()
     this.groupForm=this.fb.group({
 
-      saveTheDate:[false, [Validators.required]],
+      saveTheDate:[true, [Validators.required]],
       theHealthCheck:[false, [Validators.required]],
       thePeak:[false, [Validators.required]],
       myPit:[false, [Validators.required]],

@@ -155,7 +155,7 @@ export class AdminListComponent implements OnInit {
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Yes, Delete!',
-      cancelButtonText: 'No, dont Delete'
+      cancelButtonText: 'Cancel'
     }).then((result) => {
      
   

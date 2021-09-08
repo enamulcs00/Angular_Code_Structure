@@ -20,13 +20,14 @@ import { CommonService } from '../../../service/common.service';
   styleUrls: ['./privacy.component.css']
 })
 export class PrivacyComponent implements OnInit {
-  @Input('item') public items;
+   @Input('item') public items;
   privacyDetails: any={};
   a: any;
   b: any;
   add: any;
   edit: any;
   delete: any;
+  value: any;
 
   constructor(private router: Router, private _apiService:ApiService, private _commService: CommonService, private fb:FormBuilder) { }
 
@@ -52,29 +53,44 @@ export class PrivacyComponent implements OnInit {
 
   }
   updatePrivacy(){
-    const obj={
-      "privacy":this.privacyDetails.privacy || ""
-
-
-    }
-    this._apiService
-    .postRequest("api/v1/admin/addCms", obj)
-    .subscribe((response:any) => {
-      console.log(response);
+    console.log("checkkkkkkkkkkkkkkkk",this.privacyDetails.privacy?.length,this.privacyDetails.privacy)
+    if(this.privacyDetails.privacy.replace(/<(.|\n)*?>/g, '').trim().length != 0){
+      const obj={
+        "privacy":this.privacyDetails.privacy
   
-      this._commService.successMsg(response.message);
+  
+      }
+      this._apiService
+      .postRequest("api/v1/admin/addCms", obj)
+      .subscribe((response:any) => {
+        console.log(response);
+    
+        this._commService.successMsg(response.message);
+        this.getPrivacy()
+      }
+      ,(err: any) => {
+        this._commService.errorMsg(err.error.message)
+        this._commService.hideSpinner()
+      }
+      );
+
     }
-    ,(err: any) => {
-      this._commService.errorMsg(err.error.message)
-      this._commService.hideSpinner()
+    else{
+      this._commService.errorMsg("Please add some value to update")
     }
-    );
+    
   }
+
+  
+//   handleInput(event) {
+//     if (event.which === 32 && this.value?.length==8)
+//         event.preventDefault();
+// }
   getPrivacy(){
     this._apiService.getRequestWithoutbody('api/v1/admin/getCms').subscribe(response => {
     
     
-      this.privacyDetails=response['data'];
+       this.privacyDetails=response['data'];
     
       console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
       
