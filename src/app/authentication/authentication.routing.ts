@@ -9,6 +9,8 @@ import { Signup2Component } from './signup2/signup2.component';
 import { ForgotpwdComponent } from './forgotpwd/forgotpwd.component';
 import { ResetpwdComponent } from './resetpwd/resetpwd.component';
 import { RestComponent } from './rest/rest.component';
+import{OtpComponent} from './otp/otp.component'
+import { ChangepwdComponent } from './changepwd/changepwd.component'
 import {AuthGuard} from '../service/auth-guard/auth.guard'
 
 export const AuthenticationRoutes: Routes = [
@@ -27,6 +29,18 @@ export const AuthenticationRoutes: Routes = [
         path: 'login',
 
         component: LoginComponent,
+          //  canActivate: [AuthGuard],
+      },
+      {
+        path: 'otp',
+
+        component: OtpComponent,
+          //  canActivate: [AuthGuard],
+      },
+      {
+        path: 'changepwd',
+
+        component: ChangepwdComponent,
           //  canActivate: [AuthGuard],
       },
       {

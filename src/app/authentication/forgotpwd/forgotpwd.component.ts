@@ -10,6 +10,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ApiService } from '../../service/api.service';
 import { CommonService } from '../../service/common.service';
+import { OtpComponent } from '../otp/otp.component';
+// import{OtpComponent} from './otp/otp.component'
+// import{OtpComponent} from './otp/otp.component'
+
 @Component({
   selector: 'app-forgotpwd',
   templateUrl: './forgotpwd.component.html',
@@ -19,7 +23,7 @@ export class ForgotpwdComponent implements OnInit {
   forgotPwdForm: FormGroup;
   isSubmitted:boolean=false
 
-  constructor(public router: Router,private fb:FormBuilder, private _apiService:ApiService, private _commService:CommonService) { }
+  constructor(public router: Router, private dialog:MatDialog, private fb:FormBuilder, private _apiService:ApiService, private _commService:CommonService) { }
 
   ngOnInit(): void {
     this.forgotPwdForm=this.fb.group({
@@ -35,8 +39,10 @@ export class ForgotpwdComponent implements OnInit {
       this._apiService.postRequest('api/v1/admin/forgotPassword', this.forgotPwdForm.value).subscribe((response:any) => {
 
                 this._commService.successMsg(response.message);
+                this.openDialogs()
   
-                this.router.navigate(['/authentication/login']);
+                // this.router.navigate(['/authentication/login']);
+              
            
         
               },(err: any) => {
@@ -47,6 +53,18 @@ export class ForgotpwdComponent implements OnInit {
                 
 
     }
+  }
+  openDialogs(): void {
+    const dialogRef = this.dialog.open(OtpComponent, {
+      // width: '100px',
+      data: { }
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      
+    
+    });
   }
 
 }

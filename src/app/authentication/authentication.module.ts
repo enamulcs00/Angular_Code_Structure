@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import {MatDialogModule} from '@angular/material/dialog';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -16,6 +17,8 @@ import { AuthenticationRoutes } from './authentication.routing';
 import { ForgotpwdComponent } from './forgotpwd/forgotpwd.component';
 import { ResetpwdComponent } from './resetpwd/resetpwd.component';
 import { RestComponent } from './rest/rest.component';
+import{OtpComponent} from './otp/otp.component';
+import { ChangepwdComponent } from './changepwd/changepwd.component'
 
 @NgModule({
   imports: [
@@ -23,6 +26,8 @@ import { RestComponent } from './rest/rest.component';
     RouterModule.forChild(AuthenticationRoutes),
     NgbModule,
     FormsModule,
+  
+    MatDialogModule,
     ReactiveFormsModule
 
   ],
@@ -32,11 +37,14 @@ import { RestComponent } from './rest/rest.component';
   
     SignupComponent,
     LockComponent,
+    OtpComponent,
     Login2Component,
     Signup2Component,
     ForgotpwdComponent,
 
-    ResetpwdComponent
+    ResetpwdComponent,
+
+    ChangepwdComponent
   ]
 })
 export class AuthenticationModule {}
