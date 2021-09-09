@@ -99,6 +99,13 @@ export class ListUserComponent implements OnInit {
       this._commService.hideSpinner()
     })
   }
+  reset(event){
+    if(event.target.value.length<1){
+      this.page=0
+      this.getAllUsers('')
+
+    }
+  }
   exportcsv(){
     this._apiService.getRequestWithoutbody('api/v1/admin/getUserCsv').subscribe((res:any) => {
       console.log(res,"allvendors");

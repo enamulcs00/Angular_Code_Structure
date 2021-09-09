@@ -38,7 +38,7 @@ export class EditUserComponent implements OnInit {
   this.getUsers()
   this.userForm=this.fb.group({
 
-    name:[null, [Validators.required, Validators.minLength(2),Validators.maxLength(20),  Validators.pattern(/^[a-zA-Z]*$/)]],
+    name:[null, [Validators.required, Validators.minLength(2),Validators.maxLength(20),  Validators.pattern("[a-zA-Z ]*")]],
     dob:[null, [Validators.required]],
     phone:[null, [Validators.required, Validators.minLength(7),Validators.maxLength(15),  Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
     email:[null, [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],

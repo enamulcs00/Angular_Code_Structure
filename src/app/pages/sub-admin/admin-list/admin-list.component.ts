@@ -129,6 +129,13 @@ export class AdminListComponent implements OnInit {
     })
     
   }
+  reset(event){
+    if(event.target.value.length<1){
+      this.page=0
+      this.getSubAdmin('')
+
+    }
+  }
   handlePageEvent(event:PageEvent){
     this.limit = event.pageSize;
     this.page = event.pageIndex;

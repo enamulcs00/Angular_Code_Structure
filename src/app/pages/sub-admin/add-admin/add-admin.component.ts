@@ -26,7 +26,7 @@ export class AddAdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.addSubAdmin=this.fb.group({
-      name:["", [Validators.required,  Validators.minLength(2),Validators.maxLength(20),  Validators.pattern(/^[a-zA-Z]*$/)]],
+      name:["", [Validators.required,  Validators.minLength(2),Validators.maxLength(20),  Validators.pattern("[a-zA-Z ]*")]],
       phone:["",[Validators.required, Validators.minLength(7),Validators.maxLength(15),  Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
       email:["",[Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       password:["",[Validators.required,Validators.minLength(8),Validators.maxLength(20)]],
