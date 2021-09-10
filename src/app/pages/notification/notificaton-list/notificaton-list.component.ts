@@ -48,10 +48,10 @@ export class NotificatonListComponent implements OnInit {
    
      
      const reqbody={  "search": this.searchText.trim(), "page": 0,"limit":this.limit }
-    this._apiService.postRequest('api/v1/admin/getAllUser',reqbody).subscribe((response:any) => {
+    this._apiService.postRequest('api/v1/admin/getNotification',reqbody).subscribe((response:any) => {
     
       console.log("response",response)
-      this.notificationDetails=response.data.userData;
+      this.notificationDetails=response.data;
       this.notificationDetailsCount=response.data.count
     
       console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
@@ -66,10 +66,10 @@ export class NotificatonListComponent implements OnInit {
     this.limit = event.pageSize;
     this.page = event.pageIndex;
     const reqbody={  "search": this.searchText.trim(), "page": this.page,"limit":this.limit}
-    this._apiService.postRequest('api/v1/admin/getAllUser',reqbody).subscribe((response:any) => {
+    this._apiService.postRequest('api/v1/admin/getNotification',reqbody).subscribe((response:any) => {
     
       console.log("response",response)
-      this.notificationDetails=response.data.userData;
+      this.notificationDetails=response.data;
       this.notificationDetailsCount=response.data.count
     
       console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");

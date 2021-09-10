@@ -53,7 +53,7 @@ export class AddNotificationComponent implements OnInit {
     }
     this.getNotification()
     this.notificationForm=this.fb.group({
-      heading:["",[Validators.required]],
+      title:["",[Validators.required]],
       message:["",[Validators.required]]
 
 
@@ -65,6 +65,24 @@ export class AddNotificationComponent implements OnInit {
   sendNotification(){
     this.isSubmitted=true
     if(this.isSubmitted && this.notificationForm.valid){
+      const obj={
+        "title":this.notificationForm.value.title,
+        "message":this.notificationForm.value.message
+      }
+      this._apiService
+      .postRequest("api/v1/admin/sendNotification", obj)
+      .subscribe((response:any) => {
+        console.log(response);
+    
+        this._commService.successMsg(response.message);
+        
+      }
+      ,(err: any) => {
+        this._commService.errorMsg(err.error.message)
+        this._commService.hideSpinner()
+      }
+      );
+
       
     }
 

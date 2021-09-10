@@ -1,27 +1,27 @@
 <div class="row">
   <div class="col-md-12 text-right"><button class="btn btn-primary" routerLink="/notification/addnotification">Back</button></div>
 </div>
-<div class="col-md-4">   
-<div class="">
-  <input type="text" class="form-control" id="prenametext" placeholder="Search" [(ngModel)]="searchText" [ngModelOptions]="{standalone: true}" (keyup.enter)="getNotificationHistory($event)" >
+<!-- <div class="col-md-4">   
+  <div class="src_bx">
+    <i class="fa fa-search"></i>
+  <input type="text" class="form-control" id="prenametext" placeholder="Search"   (keyup.enter)="getNotificationHistory($event)" >
 </div> 
-</div> 
+</div>  -->
 
 <div class="table-responsive">
   <table class="table ">
     <tr>
       <th class="text-nowrap">#</th>
    
-        <th class="text-nowrap">Users</th>
+        <th class="text-nowrap">Title</th>
     
           <th>Message</th>                    
         </tr>
         <tr *ngFor="let data of notificationDetails,index as i" >
           <td>  {{i+limit*page+1}}</td>
-          <td>{{data.name}}</td>
+          <td>{{data.title}}</td>
     
-          <td>Lorem ipsum dummy content It is useful for all type site and use for dummy content all type site and
-            use for dummy content all type site and use for dummy content</td>
+          <td>{{data.message}}</td>
           </tr>
           <!-- <tr>
             <td>2</td>
@@ -34,9 +34,9 @@
             </tr> -->
             
           </table>
-          <!-- <div class="no-found" *ngIf="userDetails?.length == 0">
+          <div class="no-found" *ngIf="notificationDetails?.length == 0">
             <h4>No data found</h4>
-          </div> -->
+          </div>
           </div>
           <mat-paginator *ngIf="notificationDetailsCount && notificationDetailsCount>0" [pageIndex]="page" [length]="notificationDetailsCount" (page)="handlePageEvent($event)"
             [pageSize]="limit" [pageSizeOptions]="[10, 25, 100]"></mat-paginator>

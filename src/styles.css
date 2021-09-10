@@ -9,3 +9,25 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.src_bx {
+  border: 1px solid #ced4da;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.src_bx i {
+  font-size: 20px;
+  margin: 0px auto;
+}
+.src_bx input {
+  width: 90%;
+  border: none;
+}
+
+.src_bx .form-control:focus {
+  box-shadow: none;
+}
+mat-error {
+  color: red;
+}

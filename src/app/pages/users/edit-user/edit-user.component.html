@@ -42,7 +42,7 @@
                   <label class="control-label">Upload User Profile</label>
                   <div class="custom-file"><input class="custom-file-input" id="inputGroupFile01" type="file" accept=".png, .jpg, .jpeg" name="image"  (change)="onChange($event)"
                       ><label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                      <figure *ngIf="url" class="uploadimg"> <img   [src]="url" height="50" width="50"></figure>
+                      <figure *ngIf="url" class="uploadimg"> <img   [src]="url"></figure>
                       <!-- <figure *ngIf="!url"><img   [src]="" > </figure>   -->
                     <mat-error *ngIf="  isSubmitted && userForm.controls['image'].hasError('required')">
                         Image is required

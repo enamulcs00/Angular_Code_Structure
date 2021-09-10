@@ -52,16 +52,16 @@
                       <label class="control-label">Contact No</label>
                       <input type="text" id="firstName" class="form-control" placeholder="Contact No." formControlName="phone">
                       <mat-error *ngIf="  isSubmitted && editSubAdmin.controls['phone'].hasError('required')">
-                        Phone Number is required
+                        Contact Number is required
                     </mat-error>
                     <mat-error *ngIf="  isSubmitted && editSubAdmin.controls['phone'].hasError('maxlength')">
-                      Maximum  length of phone should be 15 
+                      Maximum  length of  Contact Number should be 15 
                   </mat-error>
                   <mat-error *ngIf="  isSubmitted && editSubAdmin.controls['phone'].hasError('minlength')">
-                    Minimum  length of phone should be 7 
+                    Minimum  length of  Contact Number should be 7 
                 </mat-error>
                 <mat-error *ngIf="  isSubmitted && editSubAdmin.controls['phone'].hasError('pattern') && !editSubAdmin.controls['phone'].hasError('minlength') && !editSubAdmin.controls['phone'].hasError('maxlength') ">
-                Valid Phone Number is required 
+                Valid  Contact Number is required 
               </mat-error>
   
                     </div>

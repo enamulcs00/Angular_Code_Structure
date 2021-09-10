@@ -3,7 +3,8 @@
         <div class="card-body">
           <div class="row">
             <div class="col-md-4">             
-                <div class="">
+                <div class="src_bx">
+                  <i class="fa fa-search"></i>
                   <input type="text" class="form-control" id="prenametext" placeholder="Search" [(ngModel)]="searchText" [ngModelOptions]="{standalone: true}" (keyup.enter)="getAllUsers($event)" (keydown.backspace)="reset($event)" >
                 </div>              
             </div>
