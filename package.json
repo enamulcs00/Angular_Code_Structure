@@ -26,6 +26,7 @@
     "@angular/platform-browser-dynamic": "^10.0.8",
     "@angular/router": "^10.0.8",
     "@iplab/ngx-file-upload": "^2.0.6",
+    "@ismaestro/ngx-scroll-to-first-invalid": "^3.0.0",
     "@mattlewis92/dom-autoscroller": "^2.4.1",
     "@ng-bootstrap/ng-bootstrap": "^7.0.0",
     "@swimlane/ngx-charts": "^14.0.0",

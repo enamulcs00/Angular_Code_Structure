@@ -177,7 +177,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | charts-charts-module */
-            [__webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~82547c2b"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module~pages-others-others-module"), __webpack_require__.e("default~charts-charts-module~pages-others-others-module"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module"), __webpack_require__.e("charts-charts-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~authentication-authentication-module~charts-charts-module~pages-cms-cms-module~pages-notific~8ff7d753"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module~pages-others-others-module"), __webpack_require__.e("default~charts-charts-module~pages-others-others-module"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module"), __webpack_require__.e("charts-charts-module")]).then(__webpack_require__.bind(null,
             /*! ./charts/charts.module */
             "./src/app/charts/charts.module.ts")).then(function (m) {
               return m.ChartModule;
@@ -199,7 +199,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | extra-component-extra-component-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~a809a9f7"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~form-forms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module"), __webpack_require__.e("extra-component-extra-component-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~authentication-authentication-module~extra-component-extra-component-module~51cebb47"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~form-forms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module"), __webpack_require__.e("extra-component-extra-component-module")]).then(__webpack_require__.bind(null,
             /*! ./extra-component/extra-component.module */
             "./src/app/extra-component/extra-component.module.ts")).then(function (m) {
               return m.ExtraComponentModule;
@@ -210,7 +210,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | apps-apps-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~a809a9f7"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~form-forms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module"), __webpack_require__.e("common"), __webpack_require__.e("apps-apps-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~authentication-authentication-module~extra-component-extra-component-module~51cebb47"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~form-forms-module"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module"), __webpack_require__.e("common"), __webpack_require__.e("apps-apps-module")]).then(__webpack_require__.bind(null,
             /*! ./apps/apps.module */
             "./src/app/apps/apps.module.ts")).then(function (m) {
               return m.AppsModule;
@@ -243,7 +243,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | pages-users-users-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~a809a9f7"), __webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~82547c2b"), __webpack_require__.e("default~pages-cms-cms-module~pages-notification-notification-module~pages-others-others-module~pages~db1e6954"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~c3505187"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~b193c330"), __webpack_require__.e("default~pages-notification-notification-module~pages-sub-admin-sub-admin-module~pages-users-users-module"), __webpack_require__.e("pages-users-users-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~authentication-authentication-module~extra-component-extra-component-module~51cebb47"), __webpack_require__.e("default~authentication-authentication-module~charts-charts-module~pages-cms-cms-module~pages-notific~8ff7d753"), __webpack_require__.e("default~authentication-authentication-module~pages-cms-cms-module~pages-notification-notification-mo~def12fd0"), __webpack_require__.e("default~authentication-authentication-module~pages-notification-notification-module~pages-others-oth~e24f958d"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~b193c330"), __webpack_require__.e("default~pages-notification-notification-module~pages-sub-admin-sub-admin-module~pages-users-users-module"), __webpack_require__.e("pages-users-users-module")]).then(__webpack_require__.bind(null,
             /*! ./pages/users/users.module */
             "./src/app/pages/users/users.module.ts")).then(function (m) {
               return m.UsersModule;
@@ -276,7 +276,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | pages-notification-notification-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~a809a9f7"), __webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~82547c2b"), __webpack_require__.e("default~pages-cms-cms-module~pages-notification-notification-module~pages-others-others-module~pages~db1e6954"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~c3505187"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~b193c330"), __webpack_require__.e("default~pages-notification-notification-module~pages-sub-admin-sub-admin-module~pages-users-users-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module"), __webpack_require__.e("pages-notification-notification-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~authentication-authentication-module~extra-component-extra-component-module~51cebb47"), __webpack_require__.e("default~authentication-authentication-module~charts-charts-module~pages-cms-cms-module~pages-notific~8ff7d753"), __webpack_require__.e("default~authentication-authentication-module~pages-cms-cms-module~pages-notification-notification-mo~def12fd0"), __webpack_require__.e("default~authentication-authentication-module~pages-notification-notification-module~pages-others-oth~e24f958d"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~b193c330"), __webpack_require__.e("default~pages-notification-notification-module~pages-sub-admin-sub-admin-module~pages-users-users-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module"), __webpack_require__.e("pages-notification-notification-module")]).then(__webpack_require__.bind(null,
             /*! ./pages/notification/notification.module */
             "./src/app/pages/notification/notification.module.ts")).then(function (m) {
               return m.NotificationModule;
@@ -309,7 +309,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | pages-cms-cms-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~a809a9f7"), __webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~82547c2b"), __webpack_require__.e("default~pages-cms-cms-module~pages-notification-notification-module~pages-others-others-module~pages~db1e6954"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module"), __webpack_require__.e("pages-cms-cms-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~authentication-authentication-module~extra-component-extra-component-module~51cebb47"), __webpack_require__.e("default~authentication-authentication-module~charts-charts-module~pages-cms-cms-module~pages-notific~8ff7d753"), __webpack_require__.e("default~authentication-authentication-module~pages-cms-cms-module~pages-notification-notification-mo~def12fd0"), __webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module"), __webpack_require__.e("pages-cms-cms-module")]).then(__webpack_require__.bind(null,
             /*! ./pages/cms/cms.module */
             "./src/app/pages/cms/cms.module.ts")).then(function (m) {
               return m.CmsModule;
@@ -320,7 +320,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | pages-subscription-subscription-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~a809a9f7"), __webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~82547c2b"), __webpack_require__.e("default~pages-cms-cms-module~pages-notification-notification-module~pages-others-others-module~pages~db1e6954"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~c3505187"), __webpack_require__.e("default~pages-others-others-module~pages-subscription-subscription-module"), __webpack_require__.e("pages-subscription-subscription-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~authentication-authentication-module~extra-component-extra-component-module~51cebb47"), __webpack_require__.e("default~authentication-authentication-module~charts-charts-module~pages-cms-cms-module~pages-notific~8ff7d753"), __webpack_require__.e("default~authentication-authentication-module~pages-cms-cms-module~pages-notification-notification-mo~def12fd0"), __webpack_require__.e("default~authentication-authentication-module~pages-notification-notification-module~pages-others-oth~e24f958d"), __webpack_require__.e("default~authentication-authentication-module~pages-others-others-module~pages-subscription-subscript~cc882a5b"), __webpack_require__.e("pages-subscription-subscription-module")]).then(__webpack_require__.bind(null,
             /*! ./pages/subscription/subscription.module */
             "./src/app/pages/subscription/subscription.module.ts")).then(function (m) {
               return m.SubscriptionModule;
@@ -342,7 +342,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | pages-sub-admin-sub-admin-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~a809a9f7"), __webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~82547c2b"), __webpack_require__.e("default~pages-cms-cms-module~pages-notification-notification-module~pages-others-others-module~pages~db1e6954"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~c3505187"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~b193c330"), __webpack_require__.e("default~pages-notification-notification-module~pages-sub-admin-sub-admin-module~pages-users-users-module"), __webpack_require__.e("pages-sub-admin-sub-admin-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~authentication-authentication-module~extra-component-extra-component-module~51cebb47"), __webpack_require__.e("default~authentication-authentication-module~charts-charts-module~pages-cms-cms-module~pages-notific~8ff7d753"), __webpack_require__.e("default~authentication-authentication-module~pages-cms-cms-module~pages-notification-notification-mo~def12fd0"), __webpack_require__.e("default~authentication-authentication-module~pages-notification-notification-module~pages-others-oth~e24f958d"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~b193c330"), __webpack_require__.e("default~pages-notification-notification-module~pages-sub-admin-sub-admin-module~pages-users-users-module"), __webpack_require__.e("pages-sub-admin-sub-admin-module")]).then(__webpack_require__.bind(null,
             /*! ./pages/sub-admin/sub-admin.module */
             "./src/app/pages/sub-admin/sub-admin.module.ts")).then(function (m) {
               return m.SubAdminModule;
@@ -375,7 +375,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | pages-others-others-module */
-            [__webpack_require__.e("default~apps-apps-module~extra-component-extra-component-module~pages-cms-cms-module~pages-notificat~a809a9f7"), __webpack_require__.e("default~charts-charts-module~pages-cms-cms-module~pages-notification-notification-module~pages-other~82547c2b"), __webpack_require__.e("default~pages-cms-cms-module~pages-notification-notification-module~pages-others-others-module~pages~db1e6954"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~c3505187"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~b193c330"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module~pages-others-others-module"), __webpack_require__.e("default~charts-charts-module~pages-others-others-module"), __webpack_require__.e("default~pages-others-others-module~pages-subscription-subscription-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module"), __webpack_require__.e("pages-others-others-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~authentication-authentication-module~extra-component-extra-component-module~51cebb47"), __webpack_require__.e("default~authentication-authentication-module~charts-charts-module~pages-cms-cms-module~pages-notific~8ff7d753"), __webpack_require__.e("default~authentication-authentication-module~pages-cms-cms-module~pages-notification-notification-mo~def12fd0"), __webpack_require__.e("default~authentication-authentication-module~pages-notification-notification-module~pages-others-oth~e24f958d"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module~pages-sub-admin-sub-admin-~b193c330"), __webpack_require__.e("default~charts-charts-module~dashboards-dashboard-module~pages-others-others-module"), __webpack_require__.e("default~authentication-authentication-module~pages-others-others-module~pages-subscription-subscript~cc882a5b"), __webpack_require__.e("default~charts-charts-module~pages-others-others-module"), __webpack_require__.e("default~pages-notification-notification-module~pages-others-others-module"), __webpack_require__.e("pages-others-others-module")]).then(__webpack_require__.bind(null,
             /*! ./pages/others/others.module */
             "./src/app/pages/others/others.module.ts")).then(function (m) {
               return m.OthersModule;
@@ -388,9 +388,9 @@
         children: [{
           path: 'authentication',
           loadChildren: function loadChildren() {
-            return __webpack_require__.e(
+            return Promise.all(
             /*! import() | authentication-authentication-module */
-            "authentication-authentication-module").then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~apps-apps-module~authentication-authentication-module~extra-component-extra-component-module~51cebb47"), __webpack_require__.e("default~authentication-authentication-module~charts-charts-module~pages-cms-cms-module~pages-notific~8ff7d753"), __webpack_require__.e("default~authentication-authentication-module~pages-cms-cms-module~pages-notification-notification-mo~def12fd0"), __webpack_require__.e("default~authentication-authentication-module~pages-notification-notification-module~pages-others-oth~e24f958d"), __webpack_require__.e("default~authentication-authentication-module~pages-others-others-module~pages-subscription-subscript~cc882a5b"), __webpack_require__.e("authentication-authentication-module")]).then(__webpack_require__.bind(null,
             /*! ./authentication/authentication.module */
             "./src/app/authentication/authentication.module.ts")).then(function (m) {
               return m.AuthenticationModule;
@@ -1591,6 +1591,142 @@
     },
 
     /***/
+    "./src/app/service/api.service.ts":
+    /*!****************************************!*\
+      !*** ./src/app/service/api.service.ts ***!
+      \****************************************/
+
+    /*! exports provided: ApiService */
+
+    /***/
+    function srcAppServiceApiServiceTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ApiService", function () {
+        return ApiService;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ../../environments/environment */
+      "./src/environments/environment.ts");
+      /* harmony import */
+
+
+      var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/common/http */
+      "./node_modules/@angular/common/fesm2015/http.js");
+      /* harmony import */
+
+
+      var _common_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ./common.service */
+      "./src/app/service/common.service.ts");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/fesm2015/router.js");
+
+      var ApiService = /*#__PURE__*/function () {
+        function ApiService(http, _commService, _router) {
+          _classCallCheck(this, ApiService);
+
+          this.http = http;
+          this._commService = _commService;
+          this._router = _router;
+          this.baseUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].baseUrl;
+        }
+
+        _createClass(ApiService, [{
+          key: "isLoggedIn",
+          value: function isLoggedIn() {
+            return this.getToken() !== null;
+          }
+        }, {
+          key: "getToken",
+          value: function getToken() {
+            return localStorage.getItem("accessToken");
+          }
+        }, {
+          key: "getRequest",
+          value: function getRequest(endPoint, reqBody) {
+            return this.http.get("".concat(this.baseUrl).concat(endPoint), reqBody);
+          }
+        }, {
+          key: "getRequestWithoutbody",
+          value: function getRequestWithoutbody(endPoint) {
+            return this.http.get("".concat(this.baseUrl).concat(endPoint));
+          }
+        }, {
+          key: "postRequest",
+          value: function postRequest(endPoint, reqBody) {
+            return this.http.post("".concat(this.baseUrl).concat(endPoint), reqBody);
+          }
+        }, {
+          key: "postRequestById",
+          value: function postRequestById(endPoint, reqBody) {
+            return this.http.post("".concat(this.baseUrl).concat(endPoint), reqBody);
+          }
+        }, {
+          key: "putRequest",
+          value: function putRequest(endPoint, reqBody) {
+            return this.http.put("".concat(this.baseUrl).concat(endPoint), reqBody);
+          }
+        }, {
+          key: "deleteRequest",
+          value: function deleteRequest(endPoint, reqBody) {
+            return this.http["delete"]("".concat(this.baseUrl).concat(endPoint), reqBody);
+          }
+        }]);
+
+        return ApiService;
+      }();
+
+      ApiService.ɵfac = function ApiService_Factory(t) {
+        return new (t || ApiService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_common_service__WEBPACK_IMPORTED_MODULE_3__["CommonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]));
+      };
+
+      ApiService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: ApiService,
+        factory: ApiService.ɵfac,
+        providedIn: 'root'
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ApiService, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+          args: [{
+            providedIn: 'root'
+          }]
+        }], function () {
+          return [{
+            type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+          }, {
+            type: _common_service__WEBPACK_IMPORTED_MODULE_3__["CommonService"]
+          }, {
+            type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
+          }];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
     "./src/app/service/auth-guard/auth.guard.ts":
     /*!**************************************************!*\
       !*** ./src/app/service/auth-guard/auth.guard.ts ***!
@@ -2334,32 +2470,46 @@
       /* harmony import */
 
 
-      var sweetalert2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/forms */
+      "./node_modules/@angular/forms/fesm2015/forms.js");
+      /* harmony import */
+
+
+      var _service_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ../../service/api.service */
+      "./src/app/service/api.service.ts");
+      /* harmony import */
+
+
+      var _service_common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ../../service/common.service */
+      "./src/app/service/common.service.ts");
+      /* harmony import */
+
+
+      var sweetalert2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! sweetalert2 */
       "./node_modules/sweetalert2/dist/sweetalert2.all.js");
       /* harmony import */
 
 
-      var sweetalert2__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_2__);
+      var sweetalert2__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_5__);
       /* harmony import */
 
 
-      var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @ng-bootstrap/ng-bootstrap */
       "./node_modules/@ng-bootstrap/ng-bootstrap/fesm2015/ng-bootstrap.js");
-      /* harmony import */
-
-
-      var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! @angular/forms */
-      "./node_modules/@angular/forms/fesm2015/forms.js");
 
       var NavigationComponent = /*#__PURE__*/function () {
-        function NavigationComponent(modalService, _router) {
+        function NavigationComponent(router, _apiService, _commService, fb) {
           _classCallCheck(this, NavigationComponent);
 
-          this.modalService = modalService;
-          this._router = _router;
+          this.router = router;
+          this._apiService = _apiService;
+          this._commService = _commService;
+          this.fb = fb;
           this.toggleSidebar = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
           this.config = {}; // This is for Notifications
 
@@ -2417,18 +2567,37 @@
         }
 
         _createClass(NavigationComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            this.getProfileDetails();
+          }
+        }, {
+          key: "getProfileDetails",
+          value: function getProfileDetails() {
+            var _this3 = this;
+
+            this._apiService.getRequestWithoutbody('api/v1/admin/getProfile').subscribe(function (response) {
+              console.log("response", response);
+              _this3.profileDetails = response['data'];
+              console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+            }, function (err) {
+              _this3._commService.errorMsg(err.error.message);
+
+              _this3._commService.hideSpinner();
+            });
+          }
+        }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {}
         }, {
           key: "logout",
           value: function logout() {
-            var _this3 = this;
+            var _this4 = this;
 
             // localStorage.clear();
             // this._router.navigate(['authentication/login'])
-            sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.fire({
+            sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a.fire({
               title: 'Are you sure?',
-              text: 'You will not be able to recover this ',
               icon: 'warning',
               showCancelButton: true,
               confirmButtonText: 'Yes, logout!',
@@ -2437,8 +2606,8 @@
               if (result.isConfirmed) {
                 localStorage.clear();
 
-                _this3._router.navigate(['authentication/login']);
-              } else if (result.dismiss === sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.DismissReason.cancel) {// Swal.fire(
+                _this4.router.navigate(['authentication/login']);
+              } else if (result.dismiss === sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a.DismissReason.cancel) {// Swal.fire(
                 //   'Cancelled',
                 //   'Your imaginary file is safe :)',
                 //   'error'
@@ -2452,7 +2621,7 @@
       }();
 
       NavigationComponent.ɵfac = function NavigationComponent_Factory(t) {
-        return new (t || NavigationComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbModal"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]));
+        return new (t || NavigationComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_service_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_service_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]));
       };
 
       NavigationComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -2461,9 +2630,9 @@
         outputs: {
           toggleSidebar: "toggleSidebar"
         },
-        decls: 43,
-        vars: 0,
-        consts: [[1, "topbar"], [1, "d-flex", "top-navbar", "navbar-expand-md", "navbar-light"], [1, ""], [1, "navbar-collapse"], [1, "logo-box", "navbar-header"], ["href", "javascript:void()"], ["src", "assets/images/logo-text.svg", "alt", "homepage", 1, "dark-logo", "logo-text"], [1, "navbar-nav", "ml-auto", "mt-md-0"], [1, "nav-item", "m-l-10"], ["href", "javascript:void(0)", 1, "nav-link"], [1, "notify", "setpos"], [1, "heartbit"], [1, "point"], [1, "mdi", "mdi-bell"], [1, "navbar-nav", "my-lg-0"], [1, "nav-item", "hidden-sm-down", "search-box"], [1, "app-search"], ["type", "text", "placeholder", "Search & enter", 1, "form-control"], [1, "srh-btn"], [1, "ti-close"], ["ngbDropdown", "", "placement", "bottom-right", 1, "nav-item", "dropdown"], ["ngbDropdownToggle", "", "href", "javascript:void(0)", "data-toggle", "dropdown", "aria-haspopup", "true", "aria-expanded", "false", 1, "nav-link", "dropdown-toggle", "text-muted", "waves-effect", "waves-dark"], ["src", "assets/images/users/1.jpg", "alt", "user", 1, "profile-pic"], ["ngbDropdownMenu", "", 1, "dropdown-menu", "dropdown-menu-right"], [1, "dropdown-user"], [1, "dw-user-box"], [1, "u-img"], ["src", "assets/images/users/1.jpg", "alt", "user"], [1, "u-text"], [1, "text-muted"], ["role", "separator", 1, "divider"], ["href", "javascript:void(0)", "routerLink", "/setting/profile", 1, "dropdown-item"], [1, "ti-user"], [1, "dropdown-item", 3, "click"], [1, "fa", "fa-power-off"]],
+        decls: 37,
+        vars: 2,
+        consts: [[1, "topbar"], [1, "d-flex", "top-navbar", "navbar-expand-md", "navbar-light"], [1, ""], [1, "navbar-collapse"], [1, "logo-box", "navbar-header"], ["href", "javascript:void()"], ["src", "assets/images/logo-text.svg", "alt", "homepage", 1, "dark-logo", "logo-text"], [1, "navbar-nav", "ml-auto", "mt-md-0"], [1, "navbar-nav", "my-lg-0"], [1, "nav-item", "hidden-sm-down", "search-box"], [1, "app-search"], ["type", "text", "placeholder", "Search & enter", 1, "form-control"], [1, "srh-btn"], [1, "ti-close"], ["ngbDropdown", "", "placement", "bottom-right", 1, "nav-item", "dropdown"], ["ngbDropdownToggle", "", "href", "javascript:void(0)", "data-toggle", "dropdown", "aria-haspopup", "true", "aria-expanded", "false", 1, "nav-link", "dropdown-toggle", "text-muted", "waves-effect", "waves-dark"], ["src", "assets/images/qSznlfGw.jpg", "alt", "user", 1, "profile-pic"], ["ngbDropdownMenu", "", 1, "dropdown-menu", "dropdown-menu-right"], [1, "dropdown-user"], [1, "dw-user-box"], [1, "u-img"], ["src", "assets/images/qSznlfGw.jpg", "alt", "user"], [1, "u-text"], [1, "text-muted"], ["role", "separator", 1, "divider"], ["href", "javascript:void(0)", "routerLink", "/setting/profile", 1, "dropdown-item"], [1, "ti-user"], [1, "dropdown-item", 3, "click"], [1, "fa", "fa-power-off"]],
         template: function NavigationComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "header", 0);
@@ -2484,19 +2653,17 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "ul", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "ul", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "li", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "ul", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "a", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "li", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "form", 10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "span", 11);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "input", 11);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "span", 12);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "a", 12);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "i", 13);
 
@@ -2506,57 +2673,39 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "ul", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "li", 14);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "li", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "a", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "form", 16);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "input", 17);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "a", 18);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "i", 19);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](16, "img", 16);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 17);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "ul", 18);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 19);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 20);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](22, "img", 21);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "li", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "div", 22);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "a", 21);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "h4");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](22, "img", 22);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "div", 23);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "ul", 24);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "li");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 25);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "div", 26);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](28, "img", 27);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "p", 23);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "h4");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, "Steave Jobs");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "p", 29);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](33, "varun@gmail.com");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -2566,31 +2715,31 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](34, "li", 30);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](28, "li", 24);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "li");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "li");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "a", 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "a", 25);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](37, "i", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](31, "i", 26);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](38, " My Profile");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32, " My Profile");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "li");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "a", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "li");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function NavigationComponent_Template_a_click_40_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "a", 27);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function NavigationComponent_Template_a_click_34_listener() {
               return ctx.logout();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](41, "i", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](35, "i", 28);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](42, " Logout");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](36, " Logout");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -2610,8 +2759,18 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](25);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.profileDetails == null ? null : ctx.profileDetails.name);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.profileDetails == null ? null : ctx.profileDetails.email);
+          }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgForm"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbDropdown"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbDropdownToggle"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbDropdownMenu"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"]],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgForm"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_6__["NgbDropdown"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_6__["NgbDropdownToggle"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_6__["NgbDropdownMenu"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"]],
         styles: [".logo[_ngcontent-%COMP%]   .logo-text[_ngcontent-%COMP%] {\n  width: 90px;\n}\n\n.logo[_ngcontent-%COMP%]   .logo-icon[_ngcontent-%COMP%] {\n  width: 60px;\n}\n\n.logo-box[_ngcontent-%COMP%] {\n  margin: 0px auto;\n  position: absolute;\n  width: 100%;\n  padding: 10px 0px;\n}\n\n.logo-box[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  max-width: 100%;\n  width: 110px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL2hlYWRlci1uYXZpZ2F0aW9uL25hdmlnYXRpb24uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFFUSxXQUFXO0FBQW5COztBQUZBO0VBS1EsV0FDSjtBQUFKOztBQUVBO0VBQ0ksZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsaUJBQWlCO0FBQ3JCOztBQUxBO0VBTVEsZUFBZTtFQUNuQixZQUFZO0FBR2hCIiwiZmlsZSI6InNyYy9hcHAvc2hhcmVkL2hlYWRlci1uYXZpZ2F0aW9uL25hdmlnYXRpb24uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubG9nb3tcclxuICAgIC5sb2dvLXRleHR7XHJcbiAgICAgICAgd2lkdGg6IDkwcHg7XHJcbiAgICB9XHJcbiAgICAubG9nby1pY29ue1xyXG4gICAgICAgIHdpZHRoOjYwcHhcclxuICAgIH1cclxufVxyXG4ubG9nby1ib3h7XHJcbiAgICBtYXJnaW46IDBweCBhdXRvO1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBwYWRkaW5nOiAxMHB4IDBweDtcclxuICAgIGltZ3tcclxuICAgICAgICBtYXgtd2lkdGg6IDEwMCU7XHJcbiAgICB3aWR0aDogMTEwcHg7XHJcbiAgICB9XHJcbn0iXX0= */"]
       });
       /*@__PURE__*/
@@ -2626,9 +2785,13 @@
           }]
         }], function () {
           return [{
-            type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbModal"]
-          }, {
             type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]
+          }, {
+            type: _service_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]
+          }, {
+            type: _service_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]
+          }, {
+            type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]
           }];
         }, {
           toggleSidebar: [{
@@ -3022,7 +3185,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this4 = this;
+            var _this5 = this;
 
             this.role = JSON.parse(localStorage.getItem("user")).role;
             console.log(this.role, "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
@@ -3047,10 +3210,10 @@
               });
               console.log("permission", this.permission);
               var filtered = this.topbarnavItems.filter(function (item) {
-                for (var j = 0; j < _this4.permission.length; j++) {
+                for (var j = 0; j < _this5.permission.length; j++) {
                   console.log("jmmmmmmmmmmmmmmmmmmmm", item);
 
-                  if (item.title == _this4.permission[j].label) {
+                  if (item.title == _this5.permission[j].label) {
                     return item;
                   }
                 }
@@ -3220,16 +3383,17 @@
       //     extralink: false,
       //     submenu: [],
       //   },
-      {
-        path: "/review/reviewlist",
-        title: "Support",
-        icon: "mdi mdi-star",
-        "class": "",
-        label: "",
-        labelClass: "",
-        extralink: false,
-        submenu: []
-      }, // {
+      // {
+      //   path: "/review/reviewlist",
+      //   title: "Support",
+      //   icon: "mdi mdi-star",
+      //   class: "",
+      //   label: "",
+      //   labelClass: "",
+      //   extralink: false,
+      //   submenu: [],
+      // },
+      // {
       //   path: "/product/productlist",
       //   title: "Product",
       //   icon: "mdi mdi-package-variant",
@@ -3387,16 +3551,17 @@
       //     extralink: false,
       //     submenu: [],
       //   },
-      {
-        path: "/review/reviewlist",
-        title: "Support",
-        icon: "mdi mdi-star",
-        "class": "",
-        label: "",
-        labelClass: "",
-        extralink: false,
-        submenu: []
-      }, // {
+      // {
+      //   path: "/review/reviewlist",
+      //   title: "Support",
+      //   icon: "mdi mdi-star",
+      //   class: "",
+      //   label: "",
+      //   labelClass: "",
+      //   extralink: false,
+      //   submenu: [],
+      // },
+      // {
       //   path: "/product/productlist",
       //   title: "Product",
       //   icon: "mdi mdi-package-variant",
@@ -3992,7 +4157,7 @@
 
       var SpinnerComponent = /*#__PURE__*/function () {
         function SpinnerComponent(router, document) {
-          var _this5 = this;
+          var _this6 = this;
 
           _classCallCheck(this, SpinnerComponent);
 
@@ -4002,12 +4167,12 @@
           this.backgroundColor = 'rgba(0, 115, 170, 0.69)';
           this.router.events.subscribe(function (event) {
             if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationStart"]) {
-              _this5.isSpinnerVisible = true;
+              _this6.isSpinnerVisible = true;
             } else if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"] || event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationCancel"] || event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationError"]) {
-              _this5.isSpinnerVisible = false;
+              _this6.isSpinnerVisible = false;
             }
           }, function () {
-            _this5.isSpinnerVisible = false;
+            _this6.isSpinnerVisible = false;
           });
         }
 
