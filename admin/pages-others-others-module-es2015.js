@@ -4530,7 +4530,12 @@ class GroupVolumeFormComponent {
             this.groupFormDetails = response['data'];
             console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         }, (err) => {
-            this._commService.errorMsg(err.error.message);
+            if (err.error.message)
+                this._commService.errorMsg(err.error.message);
+            else {
+                this._commService.errorMsg("No Internet Connection");
+            }
+            console.log(err, "very goooooooooooooooooooooooooooooooooooooooooood");
             this._commService.hideSpinner();
         });
     }
@@ -4540,7 +4545,11 @@ class GroupVolumeFormComponent {
             this.cadenceDetails = response['data'];
             console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         }, (err) => {
-            this._commService.errorMsg(err.error.message);
+            if (err.error.message)
+                this._commService.errorMsg(err.error.message);
+            else {
+                this._commService.errorMsg("No Internet Connection");
+            }
             this._commService.hideSpinner();
         });
     }

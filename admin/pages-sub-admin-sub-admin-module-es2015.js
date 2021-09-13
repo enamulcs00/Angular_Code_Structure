@@ -376,7 +376,11 @@ class AddAdminComponent {
                 this.router.navigateByUrl("subadmin/adminlist");
                 //  this.allProductsCount = response['data'].count
             }, (err) => {
-                this._commService.errorMsg(err.error.message);
+                if (err.error.message)
+                    this._commService.errorMsg(err.error.message);
+                else {
+                    this._commService.errorMsg("No Internet Connection");
+                }
                 this._commService.hideSpinner();
             });
         }
@@ -1095,7 +1099,11 @@ class AdminListComponent {
             this.subAdminCount = response.data.count;
             console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         }, (err) => {
-            this._commService.errorMsg(err.error.message);
+            if (err.error.message)
+                this._commService.errorMsg(err.error.message);
+            else {
+                this._commService.errorMsg("No Internet Connection");
+            }
             this._commService.hideSpinner();
         });
     }
@@ -1115,7 +1123,11 @@ class AdminListComponent {
             this.subAdminCount = response.data.count;
             console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         }, (err) => {
-            this._commService.errorMsg(err.error.message);
+            if (err.error.message)
+                this._commService.errorMsg(err.error.message);
+            else {
+                this._commService.errorMsg("No Internet Connection");
+            }
             this._commService.hideSpinner();
         });
     }
@@ -1138,7 +1150,11 @@ class AdminListComponent {
                     this._commService.successMsg(response.message);
                     this.getSubAdmin('');
                 }, (err) => {
-                    this._commService.errorMsg(err.error.message);
+                    if (err.error.message)
+                        this._commService.errorMsg(err.error.message);
+                    else {
+                        this._commService.errorMsg("No Internet Connection");
+                    }
                     this._commService.hideSpinner();
                 });
             }
@@ -1449,7 +1465,11 @@ class EditAdminComponent {
             });
             console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii", this.permissionArray);
         }, (err) => {
-            this._commService.errorMsg(err.error.message);
+            if (err.error.message)
+                this._commService.errorMsg(err.error.message);
+            else {
+                this._commService.errorMsg("No Internet Connection");
+            }
             this._commService.hideSpinner();
         });
     }
@@ -1477,7 +1497,11 @@ class EditAdminComponent {
                 this.router.navigateByUrl("subadmin/adminlist");
                 //  this.allProductsCount = response['data'].count
             }, (err) => {
-                this._commService.errorMsg(err.error.message);
+                if (err.error.message)
+                    this._commService.errorMsg(err.error.message);
+                else {
+                    this._commService.errorMsg("No Internet Connection");
+                }
                 this._commService.hideSpinner();
             });
         }

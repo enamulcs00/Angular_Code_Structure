@@ -655,7 +655,9 @@
 
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
-              _this2._commService.errorMsg(err.error.message);
+              if (err.error.message) _this2._commService.errorMsg(err.error.message);else {
+                _this2._commService.errorMsg("No Internet Connection");
+              }
 
               _this2._commService.hideSpinner();
             });
@@ -696,7 +698,9 @@
                 _this3.router.navigateByUrl("users/userlist"); //  this.allProductsCount = response['data'].count
 
               }, function (err) {
-                _this3._commService.errorMsg(err.error.message);
+                if (err.error.message) _this3._commService.errorMsg(err.error.message);else {
+                  _this3._commService.errorMsg("No Internet Connection");
+                }
 
                 _this3._commService.hideSpinner();
               });
@@ -1431,7 +1435,9 @@
               _this5.userDetailsCount = response.data.count;
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
-              _this5._commService.errorMsg(err.error.message);
+              if (err.error.message) _this5._commService.errorMsg(err.error.message);else {
+                _this5._commService.errorMsg("No Internet Connection");
+              }
 
               _this5._commService.hideSpinner();
             });
@@ -1495,7 +1501,9 @@
               //  console.log(this.AllProducts);
 
             }, function (err) {
-              _this6._commService.errorMsg(err.error.message);
+              if (err.error.message) _this6._commService.errorMsg(err.error.message);else {
+                _this6._commService.errorMsg("No Internet Connection");
+              }
 
               _this6._commService.hideSpinner();
             });
@@ -1519,7 +1527,9 @@
               _this7.userDetailsCount = response.data.count;
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
-              _this7._commService.errorMsg(err.error.message);
+              if (err.error.message) _this7._commService.errorMsg(err.error.message);else {
+                _this7._commService.errorMsg("No Internet Connection");
+              }
 
               _this7._commService.hideSpinner();
             });
@@ -1585,7 +1595,9 @@
 
                   _this8.getAllUsers('');
                 }, function (err) {
-                  _this8._commService.errorMsg(err.error.message);
+                  if (err.error.message) _this8._commService.errorMsg(err.error.message);else {
+                    _this8._commService.errorMsg("No Internet Connection");
+                  }
 
                   _this8._commService.hideSpinner();
                 });

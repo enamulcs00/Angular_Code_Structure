@@ -4574,7 +4574,7 @@
 
           this.lineChartData = [{
             data: [50, 130, 80, 70, 180, 105, 250],
-            label: 'Sales'
+            label: 'Users'
           }];
           this.lineChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
           this.lineChartOptions = {
@@ -4707,7 +4707,9 @@
               _this2.lineChartData[0].data = _this2.userlength;
               _this2.lineChartLabels = _this2.newUserType;
             }, function (err) {
-              _this2._commService.errorMsg(err.error.message);
+              if (err.error.message) _this2._commService.errorMsg(err.error.message);else {
+                _this2._commService.errorMsg("No Internet Connection");
+              }
 
               _this2._commService.hideSpinner();
             });

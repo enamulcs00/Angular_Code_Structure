@@ -709,7 +709,9 @@
                 _this2.router.navigateByUrl("subadmin/adminlist"); //  this.allProductsCount = response['data'].count
 
               }, function (err) {
-                _this2._commService.errorMsg(err.error.message);
+                if (err.error.message) _this2._commService.errorMsg(err.error.message);else {
+                  _this2._commService.errorMsg("No Internet Connection");
+                }
 
                 _this2._commService.hideSpinner();
               });
@@ -2155,7 +2157,9 @@
               _this4.subAdminCount = response.data.count;
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
-              _this4._commService.errorMsg(err.error.message);
+              if (err.error.message) _this4._commService.errorMsg(err.error.message);else {
+                _this4._commService.errorMsg("No Internet Connection");
+              }
 
               _this4._commService.hideSpinner();
             });
@@ -2187,7 +2191,9 @@
               _this5.subAdminCount = response.data.count;
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
-              _this5._commService.errorMsg(err.error.message);
+              if (err.error.message) _this5._commService.errorMsg(err.error.message);else {
+                _this5._commService.errorMsg("No Internet Connection");
+              }
 
               _this5._commService.hideSpinner();
             });
@@ -2218,7 +2224,9 @@
 
                   _this6.getSubAdmin('');
                 }, function (err) {
-                  _this6._commService.errorMsg(err.error.message);
+                  if (err.error.message) _this6._commService.errorMsg(err.error.message);else {
+                    _this6._commService.errorMsg("No Internet Connection");
+                  }
 
                   _this6._commService.hideSpinner();
                 });
@@ -2852,7 +2860,9 @@
 
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii", _this8.permissionArray);
             }, function (err) {
-              _this8._commService.errorMsg(err.error.message);
+              if (err.error.message) _this8._commService.errorMsg(err.error.message);else {
+                _this8._commService.errorMsg("No Internet Connection");
+              }
 
               _this8._commService.hideSpinner();
             });
@@ -2891,7 +2901,9 @@
                 _this9.router.navigateByUrl("subadmin/adminlist"); //  this.allProductsCount = response['data'].count
 
               }, function (err) {
-                _this9._commService.errorMsg(err.error.message);
+                if (err.error.message) _this9._commService.errorMsg(err.error.message);else {
+                  _this9._commService.errorMsg("No Internet Connection");
+                }
 
                 _this9._commService.hideSpinner();
               });

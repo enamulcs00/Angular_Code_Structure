@@ -6703,7 +6703,9 @@
 
                 _this33.getPrivacy();
               }, function (err) {
-                _this33._commService.errorMsg(err.error.message);
+                if (err.error.message) _this33._commService.errorMsg(err.error.message);else {
+                  _this33._commService.errorMsg("No Internet Connection");
+                }
 
                 _this33._commService.hideSpinner();
               });
@@ -6724,7 +6726,9 @@
               _this34.privacyDetails = response['data'];
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
-              _this34._commService.errorMsg(err.error.message);
+              if (err.error.message) _this34._commService.errorMsg(err.error.message);else {
+                _this34._commService.errorMsg("No Internet Connection");
+              }
 
               _this34._commService.hideSpinner();
             });

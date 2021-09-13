@@ -339,7 +339,11 @@ class EditUserComponent {
             this.userForm.get('dob').patchValue(this.formatDate(new Date(this.userDetails.dob)));
             console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         }, (err) => {
-            this._commService.errorMsg(err.error.message);
+            if (err.error.message)
+                this._commService.errorMsg(err.error.message);
+            else {
+                this._commService.errorMsg("No Internet Connection");
+            }
             this._commService.hideSpinner();
         });
     }
@@ -371,7 +375,11 @@ class EditUserComponent {
                 this.router.navigateByUrl("users/userlist");
                 //  this.allProductsCount = response['data'].count
             }, (err) => {
-                this._commService.errorMsg(err.error.message);
+                if (err.error.message)
+                    this._commService.errorMsg(err.error.message);
+                else {
+                    this._commService.errorMsg("No Internet Connection");
+                }
                 this._commService.hideSpinner();
             });
         }
@@ -728,7 +736,11 @@ class ListUserComponent {
             this.userDetailsCount = response.data.count;
             console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         }, (err) => {
-            this._commService.errorMsg(err.error.message);
+            if (err.error.message)
+                this._commService.errorMsg(err.error.message);
+            else {
+                this._commService.errorMsg("No Internet Connection");
+            }
             this._commService.hideSpinner();
         });
     }
@@ -780,7 +792,11 @@ class ListUserComponent {
             //   // this.getAllCategories()
             //  console.log(this.AllProducts);
         }, (err) => {
-            this._commService.errorMsg(err.error.message);
+            if (err.error.message)
+                this._commService.errorMsg(err.error.message);
+            else {
+                this._commService.errorMsg("No Internet Connection");
+            }
             this._commService.hideSpinner();
         });
     }
@@ -794,7 +810,11 @@ class ListUserComponent {
             this.userDetailsCount = response.data.count;
             console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         }, (err) => {
-            this._commService.errorMsg(err.error.message);
+            if (err.error.message)
+                this._commService.errorMsg(err.error.message);
+            else {
+                this._commService.errorMsg("No Internet Connection");
+            }
             this._commService.hideSpinner();
         });
     }
@@ -852,7 +872,11 @@ class ListUserComponent {
                     this._commService.successMsg(response.message);
                     this.getAllUsers('');
                 }, (err) => {
-                    this._commService.errorMsg(err.error.message);
+                    if (err.error.message)
+                        this._commService.errorMsg(err.error.message);
+                    else {
+                        this._commService.errorMsg("No Internet Connection");
+                    }
                     this._commService.hideSpinner();
                 });
             }

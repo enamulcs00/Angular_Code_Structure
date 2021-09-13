@@ -2526,7 +2526,7 @@ class Dashboard1Component {
         // This is for the dashboar line chart
         // lineChart
         this.lineChartData = [
-            { data: [50, 130, 80, 70, 180, 105, 250], label: 'Sales' },
+            { data: [50, 130, 80, 70, 180, 105, 250], label: 'Users' },
         ];
         this.lineChartLabels = [
             'January',
@@ -2668,7 +2668,11 @@ class Dashboard1Component {
             this.lineChartData[0].data = this.userlength;
             this.lineChartLabels = this.newUserType;
         }, (err) => {
-            this._commService.errorMsg(err.error.message);
+            if (err.error.message)
+                this._commService.errorMsg(err.error.message);
+            else {
+                this._commService.errorMsg("No Internet Connection");
+            }
             this._commService.hideSpinner();
         });
     }

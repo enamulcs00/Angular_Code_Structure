@@ -2057,9 +2057,9 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, OtpComponent_mat_error_11_Template, 2, 0, "mat-error", 9);
-
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, OtpComponent_mat_error_11_Template, 2, 0, "mat-error", 9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 

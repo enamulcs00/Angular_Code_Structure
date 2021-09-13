@@ -177,7 +177,9 @@
 
                 _this2._commService.successMsg(response.message);
               }, function (err) {
-                _this2._commService.errorMsg(err.error.message);
+                if (err.error.message) _this2._commService.errorMsg(err.error.message);else {
+                  _this2._commService.errorMsg("No Internet Connection");
+                }
 
                 _this2._commService.hideSpinner();
               });
@@ -836,11 +838,13 @@
 
             this._apiService.postRequest('api/v1/admin/getNotification', reqbody).subscribe(function (response) {
               console.log("response", response);
-              _this3.notificationDetails = response.data;
+              _this3.notificationDetails = response.data.data;
               _this3.notificationDetailsCount = response.data.count;
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
-              _this3._commService.errorMsg(err.error.message);
+              if (err.error.message) _this3._commService.errorMsg(err.error.message);else {
+                _this3._commService.errorMsg("No Internet Connection");
+              }
 
               _this3._commService.hideSpinner();
             });
@@ -860,11 +864,13 @@
 
             this._apiService.postRequest('api/v1/admin/getNotification', reqbody).subscribe(function (response) {
               console.log("response", response);
-              _this4.notificationDetails = response.data;
+              _this4.notificationDetails = response.data.data;
               _this4.notificationDetailsCount = response.data.count;
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
-              _this4._commService.errorMsg(err.error.message);
+              if (err.error.message) _this4._commService.errorMsg(err.error.message);else {
+                _this4._commService.errorMsg("No Internet Connection");
+              }
 
               _this4._commService.hideSpinner();
             });

@@ -100,7 +100,11 @@ class AddNotificationComponent {
                 console.log(response);
                 this._commService.successMsg(response.message);
             }, (err) => {
-                this._commService.errorMsg(err.error.message);
+                if (err.error.message)
+                    this._commService.errorMsg(err.error.message);
+                else {
+                    this._commService.errorMsg("No Internet Connection");
+                }
                 this._commService.hideSpinner();
             });
         }
@@ -445,11 +449,15 @@ class NotificatonListComponent {
         const reqbody = { "search": this.searchText.trim(), "page": 0, "limit": this.limit };
         this._apiService.postRequest('api/v1/admin/getNotification', reqbody).subscribe((response) => {
             console.log("response", response);
-            this.notificationDetails = response.data;
+            this.notificationDetails = response.data.data;
             this.notificationDetailsCount = response.data.count;
             console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         }, (err) => {
-            this._commService.errorMsg(err.error.message);
+            if (err.error.message)
+                this._commService.errorMsg(err.error.message);
+            else {
+                this._commService.errorMsg("No Internet Connection");
+            }
             this._commService.hideSpinner();
         });
     }
@@ -459,11 +467,15 @@ class NotificatonListComponent {
         const reqbody = { "search": this.searchText.trim(), "page": this.page, "limit": this.limit };
         this._apiService.postRequest('api/v1/admin/getNotification', reqbody).subscribe((response) => {
             console.log("response", response);
-            this.notificationDetails = response.data;
+            this.notificationDetails = response.data.data;
             this.notificationDetailsCount = response.data.count;
             console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         }, (err) => {
-            this._commService.errorMsg(err.error.message);
+            if (err.error.message)
+                this._commService.errorMsg(err.error.message);
+            else {
+                this._commService.errorMsg("No Internet Connection");
+            }
             this._commService.hideSpinner();
         });
     }

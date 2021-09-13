@@ -3430,7 +3430,11 @@ class PrivacyComponent {
                 this._commService.successMsg(response.message);
                 this.getPrivacy();
             }, (err) => {
-                this._commService.errorMsg(err.error.message);
+                if (err.error.message)
+                    this._commService.errorMsg(err.error.message);
+                else {
+                    this._commService.errorMsg("No Internet Connection");
+                }
                 this._commService.hideSpinner();
             });
         }
@@ -3447,7 +3451,11 @@ class PrivacyComponent {
             this.privacyDetails = response['data'];
             console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         }, (err) => {
-            this._commService.errorMsg(err.error.message);
+            if (err.error.message)
+                this._commService.errorMsg(err.error.message);
+            else {
+                this._commService.errorMsg("No Internet Connection");
+            }
             this._commService.hideSpinner();
         });
     }

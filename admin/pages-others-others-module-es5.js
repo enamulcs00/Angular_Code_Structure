@@ -8263,7 +8263,10 @@
               _this25.groupFormDetails = response['data'];
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
-              _this25._commService.errorMsg(err.error.message);
+              if (err.error.message) _this25._commService.errorMsg(err.error.message);else {
+                _this25._commService.errorMsg("No Internet Connection");
+              }
+              console.log(err, "very goooooooooooooooooooooooooooooooooooooooooood");
 
               _this25._commService.hideSpinner();
             });
@@ -8278,7 +8281,9 @@
               _this26.cadenceDetails = response['data'];
               console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             }, function (err) {
-              _this26._commService.errorMsg(err.error.message);
+              if (err.error.message) _this26._commService.errorMsg(err.error.message);else {
+                _this26._commService.errorMsg("No Internet Connection");
+              }
 
               _this26._commService.hideSpinner();
             });
