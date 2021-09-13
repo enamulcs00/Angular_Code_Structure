@@ -69,7 +69,11 @@ export class PrivacyComponent implements OnInit {
         this.getPrivacy()
       }
       ,(err: any) => {
+        if(err.error.message)
         this._commService.errorMsg(err.error.message)
+        else{
+          this._commService.errorMsg("No Internet Connection")
+        }
         this._commService.hideSpinner()
       }
       );
@@ -95,7 +99,11 @@ export class PrivacyComponent implements OnInit {
       console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
       
     },(err: any) => {
+      if(err.error.message)
       this._commService.errorMsg(err.error.message)
+      else{
+        this._commService.errorMsg("No Internet Connection")
+      }
       this._commService.hideSpinner()
     })
 

@@ -88,7 +88,12 @@ export class GroupVolumeFormComponent implements OnInit {
       console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
       
     },(err: any) => {
+      if(err.error.message)
       this._commService.errorMsg(err.error.message)
+      else{
+        this._commService.errorMsg("No Internet Connection")
+      }
+      console.log(err, "very goooooooooooooooooooooooooooooooooooooooooood")
       this._commService.hideSpinner()
     })
 
@@ -104,7 +109,12 @@ export class GroupVolumeFormComponent implements OnInit {
       console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
       
     },(err: any) => {
+      if(err.error.message)
       this._commService.errorMsg(err.error.message)
+      else{
+        this._commService.errorMsg("No Internet Connection")
+      }
+     
       this._commService.hideSpinner()
     })
 

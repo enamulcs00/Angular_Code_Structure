@@ -3,11 +3,13 @@ import { FormGroup } from '@angular/forms';
 import { ToastrManager } from 'ng6-toastr-notifications';
 
 import { NgxSpinnerService } from "ngx-spinner"
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommonService {
+  imageFlag=new BehaviorSubject('');
   constructor(
     private _toastrService: ToastrManager,private spinner: NgxSpinnerService
   ) { }

@@ -95,7 +95,11 @@ export class ListUserComponent implements OnInit {
       console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
       
     },(err: any) => {
+      if(err.error.message)
       this._commService.errorMsg(err.error.message)
+      else{
+        this._commService.errorMsg("No Internet Connection")
+      }
       this._commService.hideSpinner()
     })
   }
@@ -164,7 +168,11 @@ export class ListUserComponent implements OnInit {
     //  console.log(this.AllProducts);
       
     },(err: any) => {
+      if(err.error.message)
       this._commService.errorMsg(err.error.message)
+      else{
+        this._commService.errorMsg("No Internet Connection")
+      }
       this._commService.hideSpinner()
     });
   }
@@ -181,7 +189,11 @@ export class ListUserComponent implements OnInit {
       console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
       
     },(err: any) => {
+      if(err.error.message)
       this._commService.errorMsg(err.error.message)
+      else{
+        this._commService.errorMsg("No Internet Connection")
+      }
       this._commService.hideSpinner()
     })
   }
@@ -251,7 +263,11 @@ export class ListUserComponent implements OnInit {
         
           
         },(err: any) => {
-          this._commService.errorMsg(err.error.message)
+          if(err.error.message)
+      this._commService.errorMsg(err.error.message)
+      else{
+        this._commService.errorMsg("No Internet Connection")
+      }
           this._commService.hideSpinner()
         })
         

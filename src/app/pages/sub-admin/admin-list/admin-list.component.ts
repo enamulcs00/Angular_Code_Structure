@@ -124,7 +124,11 @@ export class AdminListComponent implements OnInit {
       console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"); 
       
     },(err: any) => {
+      if(err.error.message)
       this._commService.errorMsg(err.error.message)
+      else{
+        this._commService.errorMsg("No Internet Connection")
+      }
          this._commService.hideSpinner()
     })
     
@@ -149,7 +153,11 @@ export class AdminListComponent implements OnInit {
       console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
       
     },(err: any) => {
+      if(err.error.message)
       this._commService.errorMsg(err.error.message)
+      else{
+        this._commService.errorMsg("No Internet Connection")
+      }
       this._commService.hideSpinner()
     })
   }
@@ -183,7 +191,11 @@ export class AdminListComponent implements OnInit {
         
           
         },(err: any) => {
+          if(err.error.message)
           this._commService.errorMsg(err.error.message)
+          else{
+            this._commService.errorMsg("No Internet Connection")
+          }
              this._commService.hideSpinner()  
         })
         

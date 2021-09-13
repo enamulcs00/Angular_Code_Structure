@@ -27,11 +27,12 @@
                         <ul class="signin_form">
                             <li>
                                 <input type="number" placeholder="Enter code" formControlName="otp" (keyup)="check($event)" >
+                            </li>
                                 <mat-error *ngIf="  isSubmitted && otpForm.controls['otp'].hasError('required')">OTP 
                                     is
                                     required</mat-error>
                              
-                            </li>
+                        
                         </ul>
 
                         <div class="signup-btngroup">

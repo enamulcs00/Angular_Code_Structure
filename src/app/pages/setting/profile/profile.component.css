@@ -1,0 +1,16 @@
+.custom-file {
+    height: auto;
+}
+
+.custom-file figure {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 10px 0px 0px;
+}
+
+.custom-file figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

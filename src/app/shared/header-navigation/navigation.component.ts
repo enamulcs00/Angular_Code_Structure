@@ -37,6 +37,7 @@ export class NavigationComponent implements AfterViewInit, OnInit {
 
   }
   getProfileDetails(){
+    this._commService.imageFlag.subscribe(res=>{
     this._apiService.getRequestWithoutbody('api/v1/admin/getProfile').subscribe(response => {
     
       console.log("response",response)
@@ -48,6 +49,7 @@ export class NavigationComponent implements AfterViewInit, OnInit {
       this._commService.errorMsg(err.error.message)
       this._commService.hideSpinner()
     })
+  })
 
     
 

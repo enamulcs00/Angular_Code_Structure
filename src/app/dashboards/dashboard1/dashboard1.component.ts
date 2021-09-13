@@ -34,7 +34,7 @@ export class Dashboard1Component {
   // This is for the dashboar line chart
   // lineChart
   public lineChartData: Array<any> = [
-    { data: [50, 130, 80, 70, 180, 105, 250], label: 'Sales' },
+    { data: [50, 130, 80, 70, 180, 105, 250], label: 'Users' },
     // { data: [80, 100, 60, 200, 150, 100, 150], label: 'Earnings' }
   ];
 
@@ -194,7 +194,11 @@ export class Dashboard1Component {
        
       },
       (err: any) => {
-        this._commService.errorMsg(err.error.message);
+        if(err.error.message)
+        this._commService.errorMsg(err.error.message)
+        else{
+          this._commService.errorMsg("No Internet Connection")
+        }
         this._commService.hideSpinner()
       }
     );

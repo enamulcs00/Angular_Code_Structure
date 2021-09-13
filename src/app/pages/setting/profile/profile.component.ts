@@ -18,6 +18,7 @@ import { CommonService } from '../../../service/common.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  url: any=''
   isSubmitted:boolean=false
   submitted:boolean=false
   updateProfile:FormGroup
@@ -33,6 +34,7 @@ export class ProfileComponent implements OnInit {
 
       name:[null, [Validators.required,  Validators.minLength(2),Validators.maxLength(20),Validators.pattern("[a-zA-Z ]*")]],
       email:[null, [Validators.required,  Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      image:[null, [Validators.required ]],
       phone:[null, [Validators.required,  Validators.minLength(7),Validators.maxLength(15),  Validators.pattern(/^-?(0|[1-9]\d*)?$/)]]
 
 
@@ -54,6 +56,40 @@ export class ProfileComponent implements OnInit {
     );
  
   }
+  onChange(event){
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+  
+      reader.readAsDataURL(event.target.files[0]); 
+  
+      reader.onload = (event) => { 
+        this.url = event.target.result;
+      }
+      const formData = new FormData();
+      formData.append("photo", event.target.files[0]);
+      
+      // this.loading.loadingTrueCircle();
+          this._apiService.postRequest('api/v1/uploadFile',formData).subscribe((res: any) => {
+          
+        if (!res.error) {
+          console.log('uploadFile  result:',res);
+          this.url=res.data
+         this.updateProfile.patchValue({image:res.data});   
+          
+        } else {
+          console.log('error keys')
+        }
+        },(err:any)=>{
+          // this.loading.loadingFalseCircle();
+          this._commService.errorMsg(err.error.message);
+          this._commService.hideSpinner()
+        })
+      
+        }
+    
+  
+  
+  }
     
      
 
@@ -66,13 +102,19 @@ export class ProfileComponent implements OnInit {
       this.updateProfile.patchValue({
         name:this.profileDetails.name,
         email:this.profileDetails.email,
-        phone:this.profileDetails.phone
+        phone:this.profileDetails.phone,
+        image:this.profileDetails.image
 
       })
+      this.url=this.profileDetails.image;
       console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
       
     },(err: any) => {
+      if(err.error.message)
       this._commService.errorMsg(err.error.message)
+      else{
+        this._commService.errorMsg("No Internet Connection")
+      }
       this._commService.hideSpinner()
     })
 
@@ -88,10 +130,15 @@ export class ProfileComponent implements OnInit {
       .putRequest("api/v1/admin/updateProfile", this.updateProfile.value)
       .subscribe((response:any) => {
         console.log(response);
+        this._commService.imageFlag.next("Flag");
          this.router.navigate(["/dashboard/dashboard"]);
         this._commService.successMsg(response.message);
       },(err: any) => {
+        if(err.error.message)
         this._commService.errorMsg(err.error.message)
+        else{
+          this._commService.errorMsg("No Internet Connection")
+        }
         this._commService.hideSpinner()
       }
       );
@@ -111,7 +158,11 @@ export class ProfileComponent implements OnInit {
           this._commService.successMsg(response["message"]);
         }
         ,(err: any) => {
+          if(err.error.message)
           this._commService.errorMsg(err.error.message)
+          else{
+            this._commService.errorMsg("No Internet Connection")
+          }
           this._commService.hideSpinner()
         });
     } 

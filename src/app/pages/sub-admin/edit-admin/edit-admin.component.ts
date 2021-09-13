@@ -121,7 +121,11 @@ export class EditAdminComponent implements OnInit {
       console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",this.permissionArray);
       
     },(err: any) => {
+      if(err.error.message)
       this._commService.errorMsg(err.error.message)
+      else{
+        this._commService.errorMsg("No Internet Connection")
+      }
       this._commService.hideSpinner()
     })
 
@@ -163,7 +167,11 @@ export class EditAdminComponent implements OnInit {
        
         
       },(err: any) => {
+        if(err.error.message)
         this._commService.errorMsg(err.error.message)
+        else{
+          this._commService.errorMsg("No Internet Connection")
+        }
         this._commService.hideSpinner()
       });
   

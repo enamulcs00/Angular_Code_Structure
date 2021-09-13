@@ -51,13 +51,17 @@ export class NotificatonListComponent implements OnInit {
     this._apiService.postRequest('api/v1/admin/getNotification',reqbody).subscribe((response:any) => {
     
       console.log("response",response)
-      this.notificationDetails=response.data;
+      this.notificationDetails=response.data.data;
       this.notificationDetailsCount=response.data.count
     
       console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
       
     },(err: any) => {
+      if(err.error.message)
       this._commService.errorMsg(err.error.message)
+      else{
+        this._commService.errorMsg("No Internet Connection")
+      }
       this._commService.hideSpinner()
     })
     
@@ -69,13 +73,17 @@ export class NotificatonListComponent implements OnInit {
     this._apiService.postRequest('api/v1/admin/getNotification',reqbody).subscribe((response:any) => {
     
       console.log("response",response)
-      this.notificationDetails=response.data;
+      this.notificationDetails=response.data.data;
       this.notificationDetailsCount=response.data.count
     
       console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
       
     },(err: any) => {
+      if(err.error.message)
       this._commService.errorMsg(err.error.message)
+      else{
+        this._commService.errorMsg("No Internet Connection")
+      }
       this._commService.hideSpinner()
     })
   }
