@@ -16,6 +16,7 @@ import { CommonService } from '../../service/common.service';
   styleUrls: ['./otp.component.css']
 })
 export class OtpComponent implements OnInit {
+  a:any
   otpForm:FormGroup
   isSubmitted:boolean=false
 
@@ -38,21 +39,36 @@ export class OtpComponent implements OnInit {
   constructor(public router: Router,private fb:FormBuilder, private _apiService:ApiService, private _commService:CommonService) { }
 
   ngOnInit() {
+    this.a=localStorage.getItem('email')
+    console.log("niceeeeeeeeeeeeeeeee",this.a);
+    
     this.otpForm=this.fb.group({
-      otp:["",[Validators.required]]
+      otp:["",[Validators.required, Validators.minLength(4)]]
     })
   }
   verifyOtp(){
     this.isSubmitted=true
-    if(this.isSubmitted && this.otpForm.valid){
-
+    
+  }
+  phoneNoInput(event) {
+    const charCode = event.which ? event.which : event.keyCode;
+    if (charCode >= 48 && charCode <= 57) {
+      return true;
     }
+    return false;
   }
   check(event){
     if (event.target.value.length==4){
-      this._apiService.getRequestWithoutbody('api/v1/admin/getProfile').subscribe(response => {
+      const obj={
+        "otp":event.target.value,
+        "email":localStorage.getItem('email')
+
+      }
+      this._apiService.postRequest('api/v1/admin/otp',obj).subscribe((response:any) => {
     
         console.log("response",response)
+        this._commService.successMsg(response.message)
+        this.router.navigateByUrl('/authentiction/changepwd')
         
       
         console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
@@ -67,21 +83,9 @@ export class OtpComponent implements OnInit {
     }
   }
 
-  onCancel() {
-    // this.dialog.close();
-  }
 
-  onOtpChange(otp) {
-    this.otp = otp;
-  }
 
-  onProcced() {
-    if(this.otp.length == 4) {
-      // this.dialog.close(this.otp);
-    }
-  } 
-  onReset() {
+
   
-  }
 
 }

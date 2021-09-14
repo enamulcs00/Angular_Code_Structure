@@ -43,8 +43,31 @@ export class ChangepwdComponent implements OnInit {
   updatePwd(){
     this.isSubmitted=true
     if(this.isSubmitted && this.changePwdForm.valid){
+      const obj={
+        "password":this.changePwdForm.value.password,
+        "email":localStorage.getItem('email')
+      }
+      this._apiService.postRequest('api/v1/admin/reset', obj).subscribe((response:any) => {
+       
+
+      this._commService.successMsg(response.message);
+      localStorage.removeItem('email');
+     
+
+       this.router.navigate(['/authentication/login']);
+    
+ 
+
+    },(err: any) => {
+      this._commService.errorMsg(err.error.message)
+      this._commService.hideSpinner()
+    });
+
+      
+
+}
       
     }
-  }
+  
 
 }

@@ -5,6 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FullComponent } from './layouts/full/full.component';
 import { BlankComponent } from './layouts/blank/blank.component';
 import { AuthGuard } from './service/auth-guard/auth.guard';
+import { Auth1Guard } from './service/auth1.guard';
 
 export const routes: Routes = [
     {
@@ -105,6 +106,7 @@ export const routes: Routes = [
     {
         path: '',
         component: BlankComponent,
+        canActivate: [Auth1Guard],
         children: [
             {
                 path: 'authentication',

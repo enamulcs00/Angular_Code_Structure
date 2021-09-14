@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl:'http://appgrowthcompany.com:3022/'
+  baseUrl:'https://appgrowthcompany.com:3022/'
 };
 
 /*

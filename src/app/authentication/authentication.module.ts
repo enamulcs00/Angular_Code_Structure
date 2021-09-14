@@ -3,6 +3,8 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import {MatDialogModule} from '@angular/material/dialog';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { NgOtpInputModule } from  'ng-otp-input';
+
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -28,7 +30,8 @@ import { ChangepwdComponent } from './changepwd/changepwd.component'
     FormsModule,
   
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgOtpInputModule
 
   ],
   declarations: [

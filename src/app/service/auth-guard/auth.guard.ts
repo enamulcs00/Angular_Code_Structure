@@ -36,7 +36,8 @@ if (localStorage.getItem('accessToken')) {
 } else {
   this.router.navigate(["/authentication/login"]);
 }
-    }}
+    }
+  }
   //   canDeactivate(
   //     next: ActivatedRouteSnapshot,
   //     state: RouterStateSnapshot){

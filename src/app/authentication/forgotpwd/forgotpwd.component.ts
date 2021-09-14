@@ -37,6 +37,7 @@ export class ForgotpwdComponent implements OnInit {
     console.log("very niceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
     if(this.isSubmitted && this.forgotPwdForm.valid){
       this._apiService.postRequest('api/v1/admin/forgotPassword', this.forgotPwdForm.value).subscribe((response:any) => {
+                  localStorage.setItem('email', this.forgotPwdForm.value.email);
 
                 this._commService.successMsg(response.message);
                 this.openDialogs()
