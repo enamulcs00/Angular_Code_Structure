@@ -97,6 +97,12 @@
       var _service_auth_guard_auth_guard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ./service/auth-guard/auth.guard */
       "./src/app/service/auth-guard/auth.guard.ts");
+      /* harmony import */
+
+
+      var _service_auth1_guard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ./service/auth1.guard */
+      "./src/app/service/auth1.guard.ts");
 
       var routes = [{
         path: '',
@@ -385,6 +391,7 @@
       }, {
         path: '',
         component: _layouts_blank_blank_component__WEBPACK_IMPORTED_MODULE_4__["BlankComponent"],
+        canActivate: [_service_auth1_guard__WEBPACK_IMPORTED_MODULE_6__["Auth1Guard"]],
         children: [{
           path: 'authentication',
           loadChildren: function loadChildren() {
@@ -1812,6 +1819,86 @@
 
       (function () {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AuthGuard, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+          args: [{
+            providedIn: 'root'
+          }]
+        }], function () {
+          return [{
+            type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]
+          }];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
+    "./src/app/service/auth1.guard.ts":
+    /*!****************************************!*\
+      !*** ./src/app/service/auth1.guard.ts ***!
+      \****************************************/
+
+    /*! exports provided: Auth1Guard */
+
+    /***/
+    function srcAppServiceAuth1GuardTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "Auth1Guard", function () {
+        return Auth1Guard;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/fesm2015/router.js");
+
+      var Auth1Guard = /*#__PURE__*/function () {
+        function Auth1Guard(router) {
+          _classCallCheck(this, Auth1Guard);
+
+          this.router = router;
+        }
+
+        _createClass(Auth1Guard, [{
+          key: "canActivate",
+          value: function canActivate(next, state) {
+            if (!localStorage.getItem('accessToken')) {
+              return true;
+            } else {
+              this.router.navigate(["/dashboard/dashboard"]);
+            }
+          }
+        }]);
+
+        return Auth1Guard;
+      }();
+
+      Auth1Guard.ɵfac = function Auth1Guard_Factory(t) {
+        return new (t || Auth1Guard)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]));
+      };
+
+      Auth1Guard.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: Auth1Guard,
+        factory: Auth1Guard.ɵfac,
+        providedIn: 'root'
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](Auth1Guard, [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
           args: [{
             providedIn: 'root'
@@ -4283,7 +4370,7 @@
 
       var environment = {
         production: false,
-        baseUrl: 'http://appgrowthcompany.com:3022/'
+        baseUrl: 'https://appgrowthcompany.com:3022/'
       };
       /*
        * In development mode, to ignore zone related error stack frames such as
