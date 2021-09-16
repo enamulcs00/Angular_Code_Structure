@@ -46,6 +46,7 @@ export class OtpComponent implements OnInit {
       otp:["",[Validators.required, Validators.minLength(4)]]
     })
   }
+  
   verifyOtp(){
     this.isSubmitted=true
   
@@ -60,7 +61,7 @@ export class OtpComponent implements OnInit {
           console.log("response",response)
            localStorage.setItem('passwordToken', response.data);
           this._commService.successMsg("Otp Verified Successfully")
-          this.dialog.openDialogs[0].close();
+      
           this.router.navigateByUrl('/authentication/changepwd')
           
         

@@ -21,6 +21,7 @@ import { ResetpwdComponent } from './resetpwd/resetpwd.component';
 import { RestComponent } from './rest/rest.component';
 import{OtpComponent} from './otp/otp.component';
 import { ChangepwdComponent } from './changepwd/changepwd.component'
+// import { NgxOtpInputModule } from 'ngx-otp-input';
 
 @NgModule({
   imports: [

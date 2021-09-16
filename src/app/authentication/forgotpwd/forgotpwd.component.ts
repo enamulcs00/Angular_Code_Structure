@@ -40,9 +40,9 @@ export class ForgotpwdComponent implements OnInit {
                   localStorage.setItem('email', this.forgotPwdForm.value.email);
 
                 this._commService.successMsg(response.message);
-                this.openDialogs()
+                // this.openDialogs()
   
-                // this.router.navigate(['/authentication/login']);
+                 this.router.navigate(['/authentication/otp']);
               
            
         

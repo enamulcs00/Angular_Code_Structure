@@ -3,8 +3,9 @@
         <div *ngIf="view || a==1" class="card-body">
             <div class="row">
                 <div  routerLink="/users/userlist" class="col-12">
-                    <h2 class="m-b-0">
-                    <i class="mdi mdi-account-multiple text-info"></i>
+                    <h2 class="m-b-0 text-info">
+                    <i class="mdi mdi-account-multiple "></i> 
+                    Users
                     </h2>
                     <h3 class="">{{items?.countUsers}}</h3>
                     <h6  class="card-subtitle">Total Users</h6>
@@ -21,8 +22,9 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="m-b-0">
-                        <i class="mdi mdi-alert-circle text-success"></i>
+                    <h2 class="m-b-0 text-success">
+                        <i class="mdi mdi-alert-circle "></i>
+                        Newsletters
                     </h2>
                     <h3 class="">{{items?.countVolume}}</h3>
                     <h6 class="card-subtitle">Total Newsletters</h6>
