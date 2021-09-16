@@ -1054,31 +1054,37 @@
       /* harmony import */
 
 
-      var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/common/http */
+      "./node_modules/@angular/common/fesm2015/http.js");
+      /* harmony import */
+
+
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/forms */
       "./node_modules/@angular/forms/fesm2015/forms.js");
       /* harmony import */
 
 
-      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/material/dialog */
       "./node_modules/@angular/material/fesm2015/dialog.js");
       /* harmony import */
 
 
-      var _service_api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _service_api_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ../../service/api.service */
       "./src/app/service/api.service.ts");
       /* harmony import */
 
 
-      var _service_common_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _service_common_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ../../service/common.service */
       "./src/app/service/common.service.ts");
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/common */
       "./node_modules/@angular/common/fesm2015/common.js");
 
@@ -1102,7 +1108,7 @@
         }
       }
 
-      function ChangepwdComponent_mat_error_14_Template(rf, ctx) {
+      function ChangepwdComponent_mat_error_16_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -1112,7 +1118,7 @@
         }
       }
 
-      function ChangepwdComponent_mat_error_15_Template(rf, ctx) {
+      function ChangepwdComponent_mat_error_17_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -1123,10 +1129,11 @@
       }
 
       var ChangepwdComponent = /*#__PURE__*/function () {
-        function ChangepwdComponent(router, dialog, fb, _apiService, _commService) {
+        function ChangepwdComponent(router, http, dialog, fb, _apiService, _commService) {
           _classCallCheck(this, ChangepwdComponent);
 
           this.router = router;
+          this.http = http;
           this.dialog = dialog;
           this.fb = fb;
           this._apiService = _apiService;
@@ -1138,8 +1145,8 @@
           key: "ngOnInit",
           value: function ngOnInit() {
             this.changePwdForm = this.fb.group({
-              password: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8)]],
-              confirmpassword: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8)]]
+              password: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(8)]],
+              confirmpassword: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(8)]]
             }, {
               validator: this._commService.MustMatch("password", "confirmpassword")
             });
@@ -1153,18 +1160,19 @@
 
             if (this.isSubmitted && this.changePwdForm.valid) {
               var obj = {
-                "password": this.changePwdForm.value.password,
-                "email": localStorage.getItem('email')
+                "password": this.changePwdForm.value.password
               };
 
-              this._apiService.postRequest('api/v1/admin/reset', obj).subscribe(function (response) {
-                _this4._commService.successMsg(response.message);
+              this._apiService.postRequest('api/v1/admin/setPassword', obj).subscribe(function (response) {
+                localStorage.clear();
 
-                localStorage.removeItem('email');
+                _this4._commService.successMsg(response.message);
 
                 _this4.router.navigate(['/authentication/login']);
               }, function (err) {
-                _this4._commService.errorMsg(err.error.message);
+                console.log(err);
+
+                _this4._commService.errorMsg("Invalid");
 
                 _this4._commService.hideSpinner();
               });
@@ -1176,13 +1184,13 @@
       }();
 
       ChangepwdComponent.ɵfac = function ChangepwdComponent_Factory(t) {
-        return new (t || ChangepwdComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_service_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_service_common_service__WEBPACK_IMPORTED_MODULE_5__["CommonService"]));
+        return new (t || ChangepwdComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_service_api_service__WEBPACK_IMPORTED_MODULE_5__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_service_common_service__WEBPACK_IMPORTED_MODULE_6__["CommonService"]));
       };
 
       ChangepwdComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ChangepwdComponent,
         selectors: [["app-changepwd"]],
-        decls: 20,
+        decls: 22,
         vars: 5,
         consts: [[1, "login-register", "align-items-center", "d-flex", 2, "background-image", "url(assets/images/background/login-register.jpg)"], [1, "login-box", "card"], [1, "card-body"], [1, "form-horizontal", 3, "formGroup"], [1, "form-group"], [1, "col-xs-12"], ["type", "text", "required", "", "placeholder", "Password", "formControlName", "password", 1, "form-control"], [4, "ngIf"], ["type", "text", "required", "", "placeholder", " Confirm Password", "formControlName", "confirmpassword", 1, "form-control"], [1, "form-group", "text-center"], ["type", "submit", 1, "btn-primary", "btn-lg", "btn-block", "text-uppercase", "waves-effect", "waves-light", "text-white", 3, "click"]],
         template: function ChangepwdComponent_Template(rf, ctx) {
@@ -1221,25 +1229,33 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "input", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, ChangepwdComponent_mat_error_14_Template, 2, 0, "mat-error", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, ChangepwdComponent_mat_error_15_Template, 2, 0, "mat-error", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "input", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, ChangepwdComponent_mat_error_16_Template, 2, 0, "mat-error", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, ChangepwdComponent_mat_error_17_Template, 2, 0, "mat-error", 7);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "a", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ChangepwdComponent_Template_a_click_18_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "a", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ChangepwdComponent_Template_a_click_20_listener() {
               return ctx.updatePwd();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Reset");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "Reset");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1269,7 +1285,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.isSubmitted && ctx.changePwdForm.controls["password"].hasError("minlength"));
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.isSubmitted && ctx.changePwdForm.controls["confirmpassword"].hasError("required"));
 
@@ -1278,7 +1294,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.isSubmitted && ctx.changePwdForm.controls["confirmpassword"].hasError("mustMatch"));
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["RequiredValidator"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"]],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["RequiredValidator"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"]],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2F1dGhlbnRpY2F0aW9uL2NoYW5nZXB3ZC9jaGFuZ2Vwd2QuY29tcG9uZW50LmNzcyJ9 */"]
       });
       /*@__PURE__*/
@@ -1295,13 +1311,15 @@
           return [{
             type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]
           }, {
-            type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"]
+            type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
           }, {
-            type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]
+            type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialog"]
           }, {
-            type: _service_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]
+            type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]
           }, {
-            type: _service_common_service__WEBPACK_IMPORTED_MODULE_5__["CommonService"]
+            type: _service_api_service__WEBPACK_IMPORTED_MODULE_5__["ApiService"]
+          }, {
+            type: _service_common_service__WEBPACK_IMPORTED_MODULE_6__["CommonService"]
           }];
         }, null);
       })();
@@ -1449,7 +1467,7 @@
               data: {}
             });
             dialogRef.afterClosed().subscribe(function (result) {
-              console.log('The dialog was closed');
+              console.log(result, 'The dialog was closed');
             });
           }
         }]);
@@ -2538,21 +2556,21 @@
       /* harmony import */
 
 
-      var _service_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/material/dialog */
+      "./node_modules/@angular/material/fesm2015/dialog.js");
+      /* harmony import */
+
+
+      var _service_api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ../../service/api.service */
       "./src/app/service/api.service.ts");
       /* harmony import */
 
 
-      var _service_common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _service_common_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ../../service/common.service */
       "./src/app/service/common.service.ts");
-      /* harmony import */
-
-
-      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! @angular/material/dialog */
-      "./node_modules/@angular/material/fesm2015/dialog.js");
       /* harmony import */
 
 
@@ -2574,20 +2592,21 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Minimum length of OTP should be 4 digits ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Length of OTP should be 4 digits ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
 
       var OtpComponent = /*#__PURE__*/function () {
-        function OtpComponent(router, fb, _apiService, _commService) {
+        function OtpComponent(router, fb, _apiService, _commService, dialog) {
           _classCallCheck(this, OtpComponent);
 
           this.router = router;
           this.fb = fb;
           this._apiService = _apiService;
           this._commService = _commService;
+          this.dialog = dialog;
           this.isSubmitted = false;
           this.config = {
             allowNumbersOnly: true,
@@ -2615,7 +2634,33 @@
         }, {
           key: "verifyOtp",
           value: function verifyOtp() {
+            var _this7 = this;
+
             this.isSubmitted = true;
+
+            if (this.isSubmitted && this.otpForm.valid) {
+              var obj = {
+                "code": this.otpForm.value.otp,
+                "email": localStorage.getItem('email')
+              };
+
+              this._apiService.postRequest('api/v1/admin/verifyOtp', obj).subscribe(function (response) {
+                console.log("response", response);
+                localStorage.setItem('passwordToken', response.data);
+
+                _this7._commService.successMsg("Otp Verified Successfully");
+
+                _this7.dialog.openDialogs[0].close();
+
+                _this7.router.navigateByUrl('/authentication/changepwd');
+
+                console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+              }, function (err) {
+                _this7._commService.errorMsg(err.error.message);
+
+                _this7._commService.hideSpinner();
+              });
+            }
           }
         }, {
           key: "phoneNoInput",
@@ -2628,39 +2673,13 @@
 
             return false;
           }
-        }, {
-          key: "check",
-          value: function check(event) {
-            var _this7 = this;
-
-            if (event.target.value.length == 4) {
-              var obj = {
-                "otp": event.target.value,
-                "email": localStorage.getItem('email')
-              };
-
-              this._apiService.postRequest('api/v1/admin/otp', obj).subscribe(function (response) {
-                console.log("response", response);
-
-                _this7._commService.successMsg(response.message);
-
-                _this7.router.navigateByUrl('/authentiction/changepwd');
-
-                console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
-              }, function (err) {
-                _this7._commService.errorMsg(err.error.message);
-
-                _this7._commService.hideSpinner();
-              });
-            }
-          }
         }]);
 
         return OtpComponent;
       }();
 
       OtpComponent.ɵfac = function OtpComponent_Factory(t) {
-        return new (t || OtpComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_service_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_service_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]));
+        return new (t || OtpComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_service_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_service_common_service__WEBPACK_IMPORTED_MODULE_5__["CommonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"]));
       };
 
       OtpComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -2668,7 +2687,7 @@
         selectors: [["app-otp"]],
         decls: 16,
         vars: 3,
-        consts: [["mat-dialog-content", ""], [1, "singin_content", "recoverpassword", "verfiy"], [1, "signin_right", "otp-screen"], [1, "signin_right_inner"], [1, "otp-text"], [1, "input_field"], [3, "formGroup"], [1, "signin_form"], ["type", "text", "placeholder", "Enter code", "formControlName", "otp", 3, "keyup", "keypress"], [4, "ngIf"], [1, "signup-btngroup"], [1, "btn", "btn-primary", 3, "click"]],
+        consts: [["mat-dialog-content", ""], [1, "singin_content", "recoverpassword", "verfiy"], [1, "signin_right", "otp-screen"], [1, "signin_right_inner"], [1, "otp-text"], [1, "input_field"], [3, "formGroup"], [1, "signin_form"], ["type", "text", "placeholder", "Enter code", "formControlName", "otp", "maxlength", "4", 3, "keypress"], [4, "ngIf"], [1, "signup-btngroup"], [1, "btn", "btn-primary", 3, "click"]],
         template: function OtpComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -2695,9 +2714,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "input", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keyup", function OtpComponent_Template_input_keyup_10_listener($event) {
-              return ctx.check($event);
-            })("keypress", function OtpComponent_Template_input_keypress_10_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keypress", function OtpComponent_Template_input_keypress_10_listener($event) {
               return ctx.phoneNoInput($event);
             });
 
@@ -2752,7 +2769,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.isSubmitted && ctx.otpForm.controls["otp"].hasError("minlength"));
           }
         },
-        directives: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__["MatDialogContent"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"]],
+        directives: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialogContent"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["MaxLengthValidator"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"]],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2F1dGhlbnRpY2F0aW9uL290cC9vdHAuY29tcG9uZW50LmNzcyJ9 */"]
       });
       /*@__PURE__*/
@@ -2771,9 +2788,11 @@
           }, {
             type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]
           }, {
-            type: _service_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]
+            type: _service_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]
           }, {
-            type: _service_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]
+            type: _service_common_service__WEBPACK_IMPORTED_MODULE_5__["CommonService"]
+          }, {
+            type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"]
           }];
         }, null);
       })();

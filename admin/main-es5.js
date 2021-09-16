@@ -2221,7 +2221,15 @@
         }, {
           key: "handleRequest",
           value: function handleRequest(req) {
-            var user = JSON.parse(localStorage.getItem('accessToken'));
+            var user;
+
+            if (localStorage.getItem('passwordToken')) {
+              console.log("plzzzzzzzzzzzzzzzzzzzzzzzzzz");
+              user = localStorage.getItem('passwordToken');
+            } else {
+              user = JSON.parse(localStorage.getItem('accessToken'));
+            }
+
             var admin = localStorage.getItem('isAdmin');
             var authReq;
 
@@ -2728,7 +2736,7 @@
         },
         decls: 37,
         vars: 4,
-        consts: [[1, "topbar"], [1, "d-flex", "top-navbar", "navbar-expand-md", "navbar-light"], [1, ""], [1, "navbar-collapse"], [1, "logo-box", "navbar-header"], ["href", "javascript:void()"], ["src", "assets/images/logo-text.svg", "alt", "homepage", 1, "dark-logo", "logo-text"], [1, "navbar-nav", "ml-auto", "mt-md-0"], [1, "navbar-nav", "my-lg-0"], [1, "nav-item", "hidden-sm-down", "search-box"], [1, "app-search"], ["type", "text", "placeholder", "Search & enter", 1, "form-control"], [1, "srh-btn"], [1, "ti-close"], ["ngbDropdown", "", "placement", "bottom-right", 1, "nav-item", "dropdown"], ["ngbDropdownToggle", "", "href", "javascript:void(0)", "data-toggle", "dropdown", "aria-haspopup", "true", "aria-expanded", "false", 1, "nav-link", "dropdown-toggle", "text-muted", "waves-effect", "waves-dark"], ["alt", "user", 1, "profile-pic", 3, "src"], ["ngbDropdownMenu", "", 1, "dropdown-menu", "dropdown-menu-right"], [1, "dropdown-user"], [1, "dw-user-box"], [1, "u-img"], ["alt", "user", 3, "src"], [1, "u-text"], [1, "text-muted"], ["role", "separator", 1, "divider"], ["href", "javascript:void(0)", "routerLink", "/setting/profile", 1, "dropdown-item"], [1, "ti-user"], [1, "dropdown-item", 3, "click"], [1, "fa", "fa-power-off"]],
+        consts: [[1, "topbar"], [1, "d-flex", "top-navbar", "navbar-expand-md", "navbar-light"], [1, ""], [1, "navbar-collapse"], [1, "logo-box", "navbar-header"], ["href", "javascript:void()"], ["src", "assets/images/logo-text.svg", "alt", "homepage", 1, "dark-logo", "logo-text"], [1, "navbar-nav", "ml-auto", "mt-md-0"], [1, "navbar-nav", "my-lg-0"], [1, "nav-item", "hidden-sm-down", "search-box"], [1, "app-search"], ["type", "text", "placeholder", "Search & enter", 1, "form-control"], [1, "srh-btn"], [1, "ti-close"], ["ngbDropdown", "", "placement", "bottom-right", 1, "nav-item", "dropdown"], ["ngbDropdownToggle", "", "href", "javascript:void(0)", "data-toggle", "dropdown", "aria-haspopup", "true", "aria-expanded", "false", 1, "nav-link", "dropdown-toggle", "text-muted", "waves-effect", "waves-dark"], ["alt", "user", 1, "profile-pic", 3, "src"], ["ngbDropdownMenu", "", 1, "dropdown-menu", "dropdown-menu-right"], [1, "dropdown-user"], [1, "dw-user-box"], [1, "u-img"], ["alt", "user", 3, "src"], [1, "u-text"], [1, "text-muted"], ["role", "separator", 1, "divider"], ["href", "javascript:void(0)", "routerLink", "/setting/profile", 1, "dropdown-item"], [1, "ti-user"], [1, "dropdown-item", 2, "cursor", "pointer", 3, "click"], [1, "fa", "fa-power-off"]],
         template: function NavigationComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "header", 0);
