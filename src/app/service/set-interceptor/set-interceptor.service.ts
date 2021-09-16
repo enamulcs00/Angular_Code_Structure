@@ -21,8 +21,15 @@ export class SetInterceptorService {
 // ));
   }
   handleRequest(req: HttpRequest<any>) {
+    let user
+    if(localStorage.getItem('passwordToken')){
+      console.log("plzzzzzzzzzzzzzzzzzzzzzzzzzz")
    
-    const user = JSON.parse(localStorage.getItem('accessToken'));
+     user = localStorage.getItem('passwordToken');
+    }
+    else{
+       user = JSON.parse(localStorage.getItem('accessToken'));
+    }
     const admin =localStorage.getItem('isAdmin');
     
     let authReq;

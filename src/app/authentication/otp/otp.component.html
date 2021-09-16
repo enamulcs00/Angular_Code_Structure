@@ -26,12 +26,12 @@
                     <form [formGroup]="otpForm" >
                         <ul class="signin_form">
                             <li>
-                                <input type="text" placeholder="Enter code" formControlName="otp" (keyup)="check($event)" (keypress)="phoneNoInput($event)"  >
+                                <input type="text" placeholder="Enter code" formControlName="otp"   (keypress)="phoneNoInput($event)" maxlength="4"  >
                             </li>
                                 <mat-error *ngIf="  isSubmitted && otpForm.controls['otp'].hasError('required')">OTP 
                                     is
                                     required</mat-error>
-                                    <mat-error *ngIf="  isSubmitted && otpForm.controls['otp'].hasError('minlength')">Minimum length of 
+                                    <mat-error *ngIf="  isSubmitted && otpForm.controls['otp'].hasError('minlength')"> Length of 
                                         OTP should be 4 digits 
                                         
                                         </mat-error>

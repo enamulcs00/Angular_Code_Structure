@@ -36,7 +36,7 @@ export class OtpComponent implements OnInit {
   otp: any;
   submitted: boolean = false;;
 
-  constructor(public router: Router,private fb:FormBuilder, private _apiService:ApiService, private _commService:CommonService) { }
+  constructor(public router: Router,private fb:FormBuilder, private _apiService:ApiService, private _commService:CommonService, private dialog : MatDialog) { }
 
   ngOnInit() {
     this.a=localStorage.getItem('email')
@@ -48,6 +48,33 @@ export class OtpComponent implements OnInit {
   }
   verifyOtp(){
     this.isSubmitted=true
+  
+      if (this.isSubmitted && this.otpForm.valid){
+        const obj={
+          "code":this.otpForm.value.otp,
+          "email":localStorage.getItem('email')
+  
+        }
+        this._apiService.postRequest('api/v1/admin/verifyOtp',obj).subscribe((response:any) => {
+      
+          console.log("response",response)
+           localStorage.setItem('passwordToken', response.data);
+          this._commService.successMsg("Otp Verified Successfully")
+          this.dialog.openDialogs[0].close();
+          this.router.navigateByUrl('/authentication/changepwd')
+          
+        
+          console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+          
+        },(err: any) => {
+          this._commService.errorMsg(err.error.message)
+          this._commService.hideSpinner()
+        })
+    
+        
+  
+      }
+    
     
   }
   phoneNoInput(event) {
@@ -57,31 +84,33 @@ export class OtpComponent implements OnInit {
     }
     return false;
   }
-  check(event){
-    if (event.target.value.length==4){
-      const obj={
-        "otp":event.target.value,
-        "email":localStorage.getItem('email')
+  // check(event){
+  //   if (event.target.value.length==4){
+  //     const obj={
+  //       "code":event.target.value,
+  //       "email":localStorage.getItem('email')
 
-      }
-      this._apiService.postRequest('api/v1/admin/otp',obj).subscribe((response:any) => {
+  //     }
+  //     this._apiService.postRequest('api/v1/admin/verifyOtp',obj).subscribe((response:any) => {
     
-        console.log("response",response)
-        this._commService.successMsg(response.message)
-        this.router.navigateByUrl('/authentiction/changepwd')
+  //       console.log("response",response)
+  //       localStorage.setItem('passwordToken', response.token);
+  //       this._commService.successMsg(response.message)
+  //       this.dialog.openDialogs[0].close();
+  //       this.router.navigateByUrl('/authentication/changepwd')
         
       
-        console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+  //       console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         
-      },(err: any) => {
-        this._commService.errorMsg(err.error.message)
-        this._commService.hideSpinner()
-      })
+  //     },(err: any) => {
+  //       this._commService.errorMsg(err.error.message)
+  //       this._commService.hideSpinner()
+  //     })
   
       
 
-    }
-  }
+  //   }
+  // }
 
 
 
