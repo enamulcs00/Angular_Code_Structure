@@ -1449,7 +1449,7 @@
               this._apiService.postRequest('api/v1/admin/forgotPassword', this.forgotPwdForm.value).subscribe(function (response) {
                 localStorage.setItem('email', _this5.forgotPwdForm.value.email);
 
-                _this5._commService.successMsg(response.message); // this.openDialogs()
+                _this5._commService.successMsg("Verification code has been sent to your email"); // this.openDialogs()
 
 
                 _this5.router.navigate(['/authentication/otp']);
