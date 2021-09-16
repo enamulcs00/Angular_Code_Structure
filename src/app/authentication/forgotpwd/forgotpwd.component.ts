@@ -39,7 +39,7 @@ export class ForgotpwdComponent implements OnInit {
       this._apiService.postRequest('api/v1/admin/forgotPassword', this.forgotPwdForm.value).subscribe((response:any) => {
                   localStorage.setItem('email', this.forgotPwdForm.value.email);
 
-                this._commService.successMsg(response.message);
+                this._commService.successMsg("Verification code has been sent to your email");
                 // this.openDialogs()
   
                  this.router.navigate(['/authentication/otp']);
