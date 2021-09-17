@@ -1060,8 +1060,13 @@ class AdminListComponent {
             "isBlocked": event.checked };
         console.log(reqbody);
         this._apiService.putRequest('api/v1/admin/editSubAdmin', reqbody).subscribe((response) => {
-            this._commService.successMsg(response.message);
-            //  this.AllProducts=response['data'].productData
+            if (response.data.isBlocked) {
+                this._commService.successMsg("Sub Admin Blocked Successfully");
+            }
+            else {
+                this._commService.successMsg("Sub Admin Unblocked Successfully");
+            }
+            //  this.AllProducts=response['data'].productData()
             //  this.totalProducts = response['data'].count
             //   // this.getAllCategories()
             //  console.log(this.AllProducts);

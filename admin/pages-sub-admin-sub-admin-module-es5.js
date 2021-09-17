@@ -2106,7 +2106,11 @@
             console.log(reqbody);
 
             this._apiService.putRequest('api/v1/admin/editSubAdmin', reqbody).subscribe(function (response) {
-              _this3._commService.successMsg(response.message); //  this.AllProducts=response['data'].productData
+              if (response.data.isBlocked) {
+                _this3._commService.successMsg("Sub Admin Blocked Successfully");
+              } else {
+                _this3._commService.successMsg("Sub Admin Unblocked Successfully");
+              } //  this.AllProducts=response['data'].productData()
               //  this.totalProducts = response['data'].count
               //   // this.getAllCategories()
               //  console.log(this.AllProducts);

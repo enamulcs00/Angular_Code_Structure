@@ -642,7 +642,7 @@ function ChangepwdComponent_mat_error_16_Template(rf, ctx) { if (rf & 1) {
 } }
 function ChangepwdComponent_mat_error_17_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Password must match ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Confirm Password must match ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 class ChangepwdComponent {
@@ -658,7 +658,7 @@ class ChangepwdComponent {
     ngOnInit() {
         this.changePwdForm = this.fb.group({
             password: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(8)]],
-            confirmpassword: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(8)]]
+            confirmpassword: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]]
         }, {
             validator: this._commService.MustMatch("password", "confirmpassword"),
         });
