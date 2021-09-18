@@ -32,7 +32,7 @@ export class AddAdminComponent implements OnInit {
       password:["",[Validators.required,Validators.minLength(8),Validators.maxLength(20)]],
       image:["",[Validators.required]]
     })
-    this.permissionArray.push( {label:'Dashboard',
+    this.pe,
     isView:true,
     isAdd:false,
     isEdit:false,
